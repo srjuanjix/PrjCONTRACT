@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: rg.ActSrnv03.datachoose
+OpenIDE-Module-Localizing-Bundle: rg/ActSrnv03/datachoose/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
