@@ -106,7 +106,7 @@ public class PymesDao {
                 int val;
                 String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
                         + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
-                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones"
+                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas"
                         + " FROM t_makro_pymes" ;
             //    filtroEstado = 3 ;
                 switch (filtroEstado){
@@ -303,81 +303,77 @@ public class PymesDao {
                                              fila[15]  = ""; 
                                         }
                                        
-                                        
+                                     
                                         //...........................................................
                                       
-                                        tablaDatos[cnt][30] = Integer.toString(rs.getInt(1)) ;      //  Id_m_r
-                                        tablaDatos[cnt][32] = "-1" ;                                // Id última Locucion
+                                        tablaDatos[cnt][30] = Integer.toString(rs.getInt("id_m_p")) ;      //  Id_m_p
+                                        tablaDatos[cnt][32] = "-1" ;                                       // Id última Locucion
                                         //........................................................... Aqui cargamos en la tabla de datos de formulario
-                                        tablaDatos[cnt][0] = Integer.toString(rs.getInt(2)); // System.out.println(cnt+"-Estado="+tablaDatos[cnt][0]+" ID_C="+tablaDatos[cnt][30] );
+                                        
+                                        tablaDatos[cnt][0] = Integer.toString(rs.getInt("Estado"));         // System.out.println(cnt+"-Estado="+tablaDatos[cnt][0]+" ID_C="+tablaDatos[cnt][30] );
                                                                               
-                                        tablaDatos[cnt][1] = Integer.toString(rs.getInt(4)); 
-                                        tablaDatos[cnt][2] = formatDateJava.format(rs.getDate(5)) ;  
+                                        tablaDatos[cnt][1] = Integer.toString(rs.getInt("Incidencia"));     // Incidencia
+                                        tablaDatos[cnt][2] = formatDateJava.format(rs.getDate("Orden")) ;   // Fecha de orden
                                       
-                                       
+                                        tablaDatos[cnt][3] = rs.getString("CUPS_Gas") ;                     // CUPS gas
+                                        tablaDatos[cnt][4] = rs.getString("CUPS_Elect") ;                   // CUPS electrico
                                         
-                                        tablaDatos[cnt][3] = rs.getString(11) ;  // CUPS gas
-                                        tablaDatos[cnt][4] = rs.getString(12) ;  // CUPS electrico
-                                        
-                                        tablaDatos[cnt][5] = Integer.toString(rs.getInt(13)) ;   // cod_postal ;
-                                        tablaDatos[cnt][6] = rs.getString(14);   // municipio.toUpperCase() ;
-                                        tablaDatos[cnt][7] = rs.getString(15);   //provincia.toUpperCase();
-                                        tablaDatos[cnt][8] = rs.getString(16);   // direccion.toUpperCase();
-                                        tablaDatos[cnt][9] = rs.getString(17);   // titular.toUpperCase();
-                                        tablaDatos[cnt][10]= rs.getString(18);    // nif_cif.toUpperCase();
-                                        tablaDatos[cnt][16]= rs.getString(19);   // telefono;     
-                                        tablaDatos[cnt][11]= formatDateJava.format(rs.getDate(20));      // fecha_firma ; 
-                                        tablaDatos[cnt][12]= Integer.toString(rs.getInt(21)) ;      // consumo elec
-                                        tablaDatos[cnt][13]= Integer.toString(rs.getInt(22)) ;      // consumo gas                                                        
+                                        tablaDatos[cnt][5] = Integer.toString(rs.getInt("CodPostal")) ;     // cod_postal ;
+                                        tablaDatos[cnt][6] = rs.getString("Municipio");                     // municipio.toUpperCase() ;
+                                        tablaDatos[cnt][7] = rs.getString("Provincia");                     //provincia.toUpperCase();
+                                        tablaDatos[cnt][8] = rs.getString("Direccion");                     // direccion.toUpperCase();
+                                        tablaDatos[cnt][9] = rs.getString("Titular");                       // titular.toUpperCase();
+                                        tablaDatos[cnt][10]= rs.getString("NIF_CIF");                       // nif_cif.toUpperCase();
+                                        tablaDatos[cnt][16]= rs.getString("Telefono_Cli");                  // telefono;     
+                                        tablaDatos[cnt][11]= formatDateJava.format(rs.getDate("Fecha_Firma_Cliente"));         // fecha_firma ; 
+                                        tablaDatos[cnt][12]= Integer.toString(rs.getInt("Consumo_elect_kwha")) ;              // consumo elec
+                                        tablaDatos[cnt][13]= Integer.toString(rs.getInt("Consumo_elect_kwha_websale")) ;      // consumo elec websale                                                        
                                        
                                         tablaDatos[cnt][14] = "0";
                                        
-                                        val = rs.getInt(23); if ( val==1 ) {tablaDatos[cnt][34] = "1" ; }  else tablaDatos[cnt][34] = "0" ;
-                                        val = rs.getInt(24); if ( val==1 ) {tablaDatos[cnt][35] = "1" ; }  else tablaDatos[cnt][35] = "0" ;
-                                        val = rs.getInt(25); if ( val==1 ) {tablaDatos[cnt][36] = "1" ; }  else tablaDatos[cnt][36] = "0" ;
-                                        val = rs.getInt(26); if ( val==1 ) {tablaDatos[cnt][37] = "1" ; }  else tablaDatos[cnt][37] = "0" ;
-                                        val = rs.getInt(27); if ( val==1 ) {tablaDatos[cnt][38] = "1" ; }  else tablaDatos[cnt][38] = "0" ;
-                                        
-                             //           System.out.println("VAl1 ="+rs.getInt(23)+" VAl2 ="+rs.getInt(24)+" VAl3 ="+rs.getInt(25)+" VAl4 ="+rs.getInt(26)+" VAl5 ="+rs.getInt(27)+" para Titular = "+ tablaDatos[cnt][9]);
-                   
-                
-                                        tablaDatos[cnt][15]= rs.getString(32); // observaciones.toUpperCase();   
-                                        tablaDatos[cnt][20]= rs.getString(29); // incidencia.toUpperCase();   
-                                        tablaDatos[cnt][21]= rs.getString(30); // solucion.toUpperCase();   
+                                        tablaDatos[cnt][34] = "0" ;
+                                        tablaDatos[cnt][35] = "0" ;
+                                        tablaDatos[cnt][36] = "0" ;
+                                        tablaDatos[cnt][37] = "0" ;
+                                        tablaDatos[cnt][38] = "0" ;
+                                   
+                                        tablaDatos[cnt][15]= rs.getString("Observaciones");                 // observaciones.toUpperCase();   
+                                        tablaDatos[cnt][20]= rs.getString("Explicacion");                   // incidencia.toUpperCase();   
+                                        tablaDatos[cnt][21]= rs.getString("Solucion");                      // solucion.toUpperCase();   
 
-                                        tablaDatos[cnt][17] = rs.getString(6) ; //  agente.toUpperCase() ;
+                                        tablaDatos[cnt][17] = rs.getString("Agente") ;                      //  agente.toUpperCase() ;
                                         
-                                        tablaDatos[cnt][28] = rs.getString(33) ; //  tarifa gas
-                                        tablaDatos[cnt][29] = rs.getString(34) ; //  tarifa electrica
+                                        tablaDatos[cnt][29] = rs.getString("Tarifa_gas") ;                  //  tarifa gas
+                                        tablaDatos[cnt][28] = rs.getString("Tarifa") ;                      //  tarifa electrica
                                         
                                         tablaDatos[cnt][33] = "0";
-                                        val = rs.getInt(8); if ( val==1 ) {tablaDatos[cnt][33] = "1" ; }        // Contrato Swg
-                                        val = rs.getInt(9); if ( val==1 ) {tablaDatos[cnt][33] = "2" ; }        // Contrato Swe
-                                        val = rs.getInt(10); if ( val==1 ) {tablaDatos[cnt][33] = "3" ; }        // Contrato DualFuel
-                                                                                                                                                         
+                                                                                                                                                                                                
                                         try {
-                                            tablaDatos[cnt][39] = formatDateJava.format(rs.getDate(3));      // fecha memo ; 
+                                            tablaDatos[cnt][39] = formatDateJava.format(rs.getDate("Fecha_docout"));      // fecha docout ; 
                                             
                                         } catch (NullPointerException nfe){
                                             tablaDatos[cnt][39] = ""; 
                                         }
                                         tablaDatos[cnt][40] = "-1";                                             // ID certificación
-                                        tablaDatos[cnt][41] = rs.getString(35) ;                                // Agente  Comercial
+                                        tablaDatos[cnt][41] = rs.getString("CV") ;                                // Agente  Comercial
                                         System.out.println(" tablaDatos[cnt][41] ="+ tablaDatos[cnt][41] );
                                         tablaDatos[cnt][43] = "0";  
                                         tablaDatos[cnt][44] = "0"; 
-                                       
-                                        val = rs.getInt(36); if ( val==1 ) {tablaDatos[cnt][43] = "1" ; }        // Tur Gas
-                                        val = rs.getInt(37); if ( val==1 ) {tablaDatos[cnt][44] = "1" ; }        // Punteado
-                                        tablaDatos[cnt][45] = "0" ;
-                                        tablaDatos[cnt][46] = "0" ;
-                                        val = rs.getInt(38); if ( val==1 ) {tablaDatos[cnt][45] = "1" ; }        // SVG Con Calefaccion
-                                        val = rs.getInt(39); if ( val==1 ) {tablaDatos[cnt][46] = "1" ; }        // SVG Sin Calefacción
-                                        tablaDatos[cnt][47] = "1";
-                                        tablaDatos[cnt][48] = "0" ;
-                                        val = rs.getInt(40); if ( val==1 ) {tablaDatos[cnt][48] = "1" ; }        // Tarifa Plana
-                                        tablaDatos[cnt][51] = "0" ;
-                                        val = rs.getInt(41); if ( val==1 ) {tablaDatos[cnt][51] = "1" ; }        // SPP
+                                                                      
+                                        
+                                        tablaDatos[cnt][34]="0";
+                                        tablaDatos[cnt][35]="0";
+                                        tablaDatos[cnt][36]="0";
+                                        tablaDatos[cnt][37]="0";
+                                        tablaDatos[cnt][38]="0";
+                                        tablaDatos[cnt][45]="0"; // SWG Con Calef
+                                        tablaDatos[cnt][46]="0"; // SWG Sin Calef
+
+                                        tablaDatos[cnt][43]="0"; // Tur GAS
+                                        tablaDatos[cnt][44]="0"; // Punteado
+                                        tablaDatos[cnt][48]="0"; // Tarifa plana
+                                        tablaDatos[cnt][51]="0"; // SPP
+                                        
                                         
                                 cnt ++;
                                 

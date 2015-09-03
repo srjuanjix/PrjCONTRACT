@@ -30,7 +30,7 @@ public final class conectarBaseDatosPymes implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        PymesTopComponent tc = PymesTopComponent.findInstance();       
-        tc.conectarBDBoton();
+        PymesTopComponent tc2 = PymesTopComponent.findInstance();       
+        tc2.conectarBDBoton();
     }
 }

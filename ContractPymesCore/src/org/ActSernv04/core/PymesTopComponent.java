@@ -4004,8 +4004,8 @@ public final class PymesTopComponent extends TopComponent {
                     
                     jTextField22.setText(this.tablaDatos[ireg][16]); // telefono   
                     
-                    jTextField19.setText(this.tablaDatos[ireg][28]); // tarifa gas
-                    jTextField20.setText(this.tablaDatos[ireg][29]); // tarifa elec
+                    jTextField19.setText(this.tablaDatos[ireg][28]); // tarifa elec
+                    jTextField20.setText(this.tablaDatos[ireg][29]); // tarifa gas
                     
                     jTextField24.setText(this.tablaDatos[ireg][39]); // memo  
                     
