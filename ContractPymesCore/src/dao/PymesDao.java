@@ -106,7 +106,7 @@ public class PymesDao {
                 int val;
                 String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
                         + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
-                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas"
+                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,C_servicios,Reactiva"
                         + " FROM t_makro_pymes" ;
             //    filtroEstado = 3 ;
                 switch (filtroEstado){
@@ -279,9 +279,9 @@ public class PymesDao {
 
 			while (rs.next()) {
 				// es para obtener los datos y almacenar las filas
-				Object[] fila = new Object[28];
+				Object[] fila = new Object[31];
 				// para llenar cada columna con lo datos almacenados
-				for (int i = 0; i < 28; i++) 
+				for (int i = 0; i < 31; i++) 
 					fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                                        
                                         try {
@@ -346,7 +346,7 @@ public class PymesDao {
                                         tablaDatos[cnt][29] = rs.getString("Tarifa_gas") ;                  //  tarifa gas
                                         tablaDatos[cnt][28] = rs.getString("Tarifa") ;                      //  tarifa electrica
                                         
-                                        tablaDatos[cnt][33] = "0";
+                                        tablaDatos[cnt][33] = rs.getString("C_servicios");
                                                                                                                                                                                                 
                                         try {
                                             tablaDatos[cnt][39] = formatDateJava.format(rs.getDate("Fecha_docout"));      // fecha docout ; 

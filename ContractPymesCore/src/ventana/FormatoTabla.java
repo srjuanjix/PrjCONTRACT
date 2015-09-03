@@ -76,6 +76,7 @@ public class FormatoTabla implements TableCellRenderer{
             }
                         
         }
+        /*
         if (column == 7) {
           if(((Integer)table.getValueAt(row, 7)).compareTo(new Integer(0))== 0){ 
              campoTexto.setText("");
@@ -233,33 +234,33 @@ public class FormatoTabla implements TableCellRenderer{
         //Se verifica si el valor de la INCIDENCIA estado es igual a 1  para establecer todas las celdas de dicha fila en color amarillo
         
        
-        if(((Integer)table.getValueAt(row, 3)).compareTo(new Integer(1))== 0){ 
+        if(((Integer)table.getValueAt(row, 4)).compareTo(new Integer(1))== 0){ 
             campoTexto.setBackground(new Color(0xFFFF99)); 
             campoTexto.setOpaque(true); 
          
         } 
          //Se verifica si el valor de la INCIDENCIA estado es igual a 3  para establecer todas las celdas de dicha fila en color rojo
-         if(((Integer)table.getValueAt(row, 3)).compareTo(new Integer(3))== 0){ 
+         if(((Integer)table.getValueAt(row, 4)).compareTo(new Integer(3))== 0){ 
             campoTexto.setBackground(new Color(0xFE899B)); 
             campoTexto.setOpaque(true); 
         } 
         //Se verifica si el valor de la INCIDENCIA estado es igual a 2  para establecer todas las celdas de dicha fila en color naranja
-         if(((Integer)table.getValueAt(row, 3)).compareTo(new Integer(2))== 0){ 
+         if(((Integer)table.getValueAt(row, 4)).compareTo(new Integer(2))== 0){ 
             campoTexto.setBackground(new Color(0xFFCC99)); 
             campoTexto.setOpaque(true); 
         } 
          //Se verifica si el valor de la INCIDENCIA estado es igual a 4  para establecer todas las celdas de dicha fila en color verde
-         if(((Integer)table.getValueAt(row, 3)).compareTo(new Integer(4))== 0){ 
+         if(((Integer)table.getValueAt(row, 4)).compareTo(new Integer(4))== 0){ 
             campoTexto.setBackground(new Color(0x66FF66)); 
             campoTexto.setOpaque(true); 
         } 
         //Se verifica si el valor de la INCIDENCIA estado es igual a 5  para establecer todas las celdas de dicha fila en color MORADO
-         if(((Integer)table.getValueAt(row, 3)).compareTo(new Integer(5))== 0){ 
+         if(((Integer)table.getValueAt(row, 4)).compareTo(new Integer(5))== 0){ 
             campoTexto.setBackground(new Color(0xFF99FF)); 
             campoTexto.setOpaque(true); 
         } 
          //Se verifica si el valor de la INCIDENCIA estado es igual a 5  para establecer todas las celdas de dicha fila en color AZUL
-         if(((Integer)table.getValueAt(row, 3)).compareTo(new Integer(6))== 0){ 
+         if(((Integer)table.getValueAt(row, 4)).compareTo(new Integer(6))== 0){ 
             campoTexto.setBackground(new Color(0x99CCFF)); 
             campoTexto.setOpaque(true); 
         } 
