@@ -42,6 +42,27 @@ public class PymesVo {
         private Integer tarifaPlana;
         private Integer SPP;
 		
+        private String fechaDocout;  
+        private String fechaMemo;  
+        private String fechaOrden;  
+        
+        private String agente;  
+        private String cvComercial;  
+       
+        private String pagado; 
+        private String pFenosa; 
+        private String tarifa; 
+        private String campaña; 
+        
+        private String perContacto;
+        private String explicacion; 
+        private String solucion; 
+        
+        private String cServicios;
+        
+        private double reactiva;
+        private double consumoElectWS;
+        
 	/**
 	 * @return the idContrato
 	 */
@@ -516,6 +537,57 @@ public class PymesVo {
 	public void setSPP(Integer SPP) {
 		this.SPP = SPP;
 	}
+        
+        /**
+	 * @return the fechaDocout
+	 */
+	public String getFechaDocout() {
+		return fechaDocout;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setFechaDocout(String fechaDocout) {
+		this.fechaDocout = fechaDocout;
+	}
+        
+        /**
+	 * @return the Consumo electrico reactiva
+	 */
+	public double getReactiva() {
+		return reactiva;
+	}
+	/**
+	 * @param consumoElect the orden to set
+	 */
+	public void setReactiva(double reactiva) {
+		this.reactiva = reactiva;
+	}
+        /*
+        + miPyme.getFechaDocout() + "', '"
+                                        + miPyme.getFechaMemo() + "', '"
+                                        
+                                        + miPyme.getFechaOrden() + "', '"
+                                       
+                                        + miPyme.getAgente() + "', '" 
+                                       
+                                        + miPyme.getCVComercial() + "', '" 
+                                      
+                                        + miPyme.getConsumoElectWS() + "', '"
+                                        + miPyme.getPagado() + "', '"
+                                        + miPyme.getPFenosa() + "', '"
+                                        + miPyme.getTarifa() + "', '"
+                                        + miPyme.getCampaña() + "', '"                                       
+                                       
+                                        + miPyme.getPerContacto() + "', '"
+                                        + miPyme.getExplicacion() + "', '"
+                                        + miPyme.getSolucion() + "', '"
+                                      
+                                        + miPyme.getCServicios() + "', '"
+                                        + miPyme.getReactiva() + "')" ;
+        
+        */
+        
 }
               
     
