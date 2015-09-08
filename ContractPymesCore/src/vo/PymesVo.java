@@ -63,6 +63,9 @@ public class PymesVo {
         private double reactiva;
         private double consumoElectWS;
         
+        private String empresaOrigen;
+        private String oferta;
+        
 	/**
 	 * @return the idContrato
 	 */
@@ -563,31 +566,199 @@ public class PymesVo {
 	public void setReactiva(double reactiva) {
 		this.reactiva = reactiva;
 	}
-        /*
-        + miPyme.getFechaDocout() + "', '"
-                                        + miPyme.getFechaMemo() + "', '"
-                                        
-                                        + miPyme.getFechaOrden() + "', '"
-                                       
-                                        + miPyme.getAgente() + "', '" 
-                                       
-                                        + miPyme.getCVComercial() + "', '" 
-                                      
-                                        + miPyme.getConsumoElectWS() + "', '"
-                                        + miPyme.getPagado() + "', '"
-                                        + miPyme.getPFenosa() + "', '"
-                                        + miPyme.getTarifa() + "', '"
-                                        + miPyme.getCampaña() + "', '"                                       
-                                       
-                                        + miPyme.getPerContacto() + "', '"
-                                        + miPyme.getExplicacion() + "', '"
-                                        + miPyme.getSolucion() + "', '"
-                                      
-                                        + miPyme.getCServicios() + "', '"
-                                        + miPyme.getReactiva() + "')" ;
+         /**
+	 * @return the fechaDocout
+	 */
+	public String getFechaMemo() {
+		return fechaMemo;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setFechaMemo(String fechaMemo) {
+		this.fechaMemo = fechaMemo;
+	}
         
-        */
+         /**
+	 * @return the fechaOrden
+	 */
+	public String getFechaOrden() {
+		return fechaOrden;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setFechaOrden(String fechaOrden) {
+		this.fechaOrden = fechaOrden;
+	}
         
+         /**
+	 * @return the agente
+	 */
+	public String getAgente() {
+		return agente;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setAgente(String agente) {
+		this.agente = agente;
+	}
+        
+         /**
+	 * @return the agente
+	 */
+	public String getCVComercial() {
+		return cvComercial;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setCVComercial(String cvComercial) {
+		this.cvComercial = cvComercial;
+	}
+        
+         /**
+	 * @return the consumoElectWS
+	 */
+	public double getConsumoElectWS(){
+		return consumoElectWS;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setConsumoElectWS(double consumoElectWS) {
+		this.consumoElectWS = consumoElectWS;
+	}
+        
+         /**
+	 * @return the pagado
+	 */
+	public String getPagado(){
+		return pagado;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setPagado(String pagado) {
+		this.pagado = pagado;
+	}
+        
+         /**
+	 * @return the pagado
+	 */
+	public String getPFenosa(){
+		return pFenosa;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setPFenosa(String pFenosa) {
+		this.pFenosa = pFenosa;
+	}
+        
+         /**
+	 * @return the tarifa
+	 */
+	public String getTarifa(){
+		return tarifa;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setTarifa(String tarifa) {
+		this.tarifa = tarifa;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getCampaña(){
+		return campaña;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setCampaña(String campaña) {
+		this.campaña = campaña;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getPerContacto(){
+		return perContacto;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setPerContacto(String perContacto) {
+		this.perContacto = perContacto;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getExplicacion(){
+		return explicacion;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setExplicacion(String explicacion) {
+		this.explicacion = explicacion;
+	}
+        
+         /**
+	 * @return the campaña
+	*/
+	public String getSolucion(){
+		return solucion;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setSolucion(String solucion) {
+		this.solucion = solucion;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getCServicios(){
+		return cServicios;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setCservicios(String cServicios) {
+		this.cServicios = cServicios;
+	}
+        
+        /**
+	 * @return the empresaOrigen
+	*/
+	public String getEmpresaOrigen(){
+		return empresaOrigen;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setEmpresaOrigen(String empresaOrigen) {
+		this.empresaOrigen = empresaOrigen;
+	}
+        /**
+	 * @return the oferta
+	*/
+	public String getOferta(){
+		return oferta;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setOFerta(String oferta) {
+		this.oferta = oferta;
+	}     
 }
               
     
