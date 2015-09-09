@@ -104,17 +104,19 @@
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="botonAbrir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonProcesar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonPuntear" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonGuardaExel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="botonConectar" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="login" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="passw" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="botonAbrir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonProcesar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonPuntear" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonGuardaExel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>

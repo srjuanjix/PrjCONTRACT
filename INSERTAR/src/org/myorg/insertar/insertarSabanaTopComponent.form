@@ -340,12 +340,14 @@
         <Component class="javax.swing.JComboBox" name="jComboBox10">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="7">
                 <StringItem index="0" value="Seleccionar tabla..."/>
-                <StringItem index="1" value="RESIDENCIAL"/>
-                <StringItem index="2" value="PYMES"/>
-                <StringItem index="3" value="LOCUCIONES"/>
+                <StringItem index="1" value="MAKRO RESIDENCIAL"/>
+                <StringItem index="2" value="MAKRO PYMES"/>
+                <StringItem index="3" value="LOCUCIONES RESIDENCIAL"/>
                 <StringItem index="4" value="CERTIFICACIONES"/>
+                <StringItem index="5" value="LOCUCIONES PYMES"/>
+                <StringItem index="6" value="CERTIFICACIONES GN"/>
               </StringArray>
             </Property>
           </Properties>

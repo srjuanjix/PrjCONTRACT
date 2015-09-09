@@ -49,7 +49,8 @@ public class PymesVo {
         private String agente;  
         private String cvComercial;  
        
-        private String pagado; 
+        private Double pagado; 
+        private Double pagadoFenosa ;
         private String pFenosa; 
         private String tarifa; 
         private String campaña; 
@@ -316,14 +317,14 @@ public class PymesVo {
          /**
 	 * @return the Oferta
 	 */
-	public Integer getSVG_1() {
-		return svgCompleto;
+	public String getOferta() {
+		return oferta;
 	}
 	/**
 	 * @param oferta the orden to set
 	 */
-	public void setSVG_1(Integer svgCompleto) {
-		this.svgCompleto = svgCompleto;
+	public void setOferta(String oferta) {
+		this.oferta = oferta;
 	}
          /**
 	 * @return the Oferta
@@ -634,14 +635,27 @@ public class PymesVo {
          /**
 	 * @return the pagado
 	 */
-	public String getPagado(){
+	public Double getPagado(){
 		return pagado;
 	}
         /**
 	 * @param fechaFirmaCliente the orden to set
 	 */
-	public void setPagado(String pagado) {
+	public void setPagado(Double pagado) {
 		this.pagado = pagado;
+	}
+        
+          /**
+	 * @return the pagado
+	 */
+	public Double getPagadoFenosa(){
+		return pagadoFenosa;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setPagadoFenosa(Double pagadoFenosa) {
+		this.pagadoFenosa = pagadoFenosa;
 	}
         
          /**
@@ -747,18 +761,7 @@ public class PymesVo {
 	public void setEmpresaOrigen(String empresaOrigen) {
 		this.empresaOrigen = empresaOrigen;
 	}
-        /**
-	 * @return the oferta
-	*/
-	public String getOferta(){
-		return oferta;
-	}
-        /**
-	 * @param fthe orden to set
-	 */
-	public void setOFerta(String oferta) {
-		this.oferta = oferta;
-	}     
+        
 }
               
     

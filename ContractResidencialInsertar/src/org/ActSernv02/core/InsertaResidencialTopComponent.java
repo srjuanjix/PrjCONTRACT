@@ -68,8 +68,8 @@ import vo.PymesVo;
         preferredID = "InsertaResidencialTopComponent"
 )
 @Messages({
-    "CTL_InsertaResidencialAction=InsertaResidencial",
-    "CTL_InsertaResidencialTopComponent=INSERTAR CTO RESIDENCIAL",
+    "CTL_InsertaResidencialAction=Inserta contratos Residencial",
+    "CTL_InsertaResidencialTopComponent=INSERTAR RESIDENCIAL",
     "HINT_InsertaResidencialTopComponent=Insertar contratos residencial"
 })
 public final class InsertaResidencialTopComponent extends TopComponent {
@@ -368,17 +368,18 @@ public final class InsertaResidencialTopComponent extends TopComponent {
                             .addComponent(jLabel39)
                             .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAbrir)
-                    .addComponent(botonProcesar)
-                    .addComponent(botonPuntear)
-                    .addComponent(botonGuardar)
-                    .addComponent(botonCancelar)
-                    .addComponent(botonGuardaExel)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botonConectar, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botonAbrir)
+                        .addComponent(botonProcesar)
+                        .addComponent(botonPuntear)
+                        .addComponent(botonGuardar)
+                        .addComponent(botonCancelar)
+                        .addComponent(botonGuardaExel)))
                 .addContainerGap())
         );
 

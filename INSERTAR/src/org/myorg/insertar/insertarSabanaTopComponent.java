@@ -53,9 +53,9 @@ import org.apache.poi.ss.usermodel.Row;
         preferredID = "insertarSabanaTopComponent"
 )
 @Messages({
-    "CTL_insertarSabanaAction=insertarSabana",
-    "CTL_insertarSabanaTopComponent=INSERTAR SABANAS",
-    "HINT_insertarSabanaTopComponent=Gestion de inserción de sabanas"
+    "CTL_insertarSabanaAction=Insertar tablas en BD",
+    "CTL_insertarSabanaTopComponent=INSERTAR DATOS",
+    "HINT_insertarSabanaTopComponent=Gestion de inserción de tablas directas"
 })
 public final class insertarSabanaTopComponent extends TopComponent {
 
@@ -182,7 +182,7 @@ public final class insertarSabanaTopComponent extends TopComponent {
 
         jTextField128.setText(org.openide.util.NbBundle.getMessage(insertarSabanaTopComponent.class, "insertarSabanaTopComponent.jTextField128.text")); // NOI18N
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar tabla...", "RESIDENCIAL", "PYMES", "LOCUCIONES", "CERTIFICACIONES" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar tabla...", "MAKRO RESIDENCIAL", "MAKRO PYMES", "LOCUCIONES RESIDENCIAL", "CERTIFICACIONES", "LOCUCIONES PYMES", "CERTIFICACIONES GN" }));
         jComboBox10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox10ActionPerformed(evt);
@@ -341,11 +341,13 @@ public final class insertarSabanaTopComponent extends TopComponent {
         str = jComboBox10.getSelectedItem().toString()  ;
         str = str.trim();
 
-     
-        if (str.equals("RESIDENCIAL"))           {   tabla.setText("t_makro_residencial"); }
-        if (str.equals("PYMES"))                 {   tabla.setText("t_makro_pymes"); }
-        if (str.equals("LOCUCIONES"))            {   tabla.setText("t_locuciones_residencial"); }
-        if (str.equals("CERTIFICACIONES"))       {   tabla.setText("t_certificaciones_gn"); }
+        if (str.equals("MAKRO RESIDENCIAL"))     {   tabla.setText("t_makro_residencial"); }
+        if (str.equals("MAKRO PYMES"))           {   tabla.setText("t_makro_pymes"); }
+        if (str.equals("LOCUCIONES RESIDENCIAL")){   tabla.setText("t_locuciones_residencial"); }
+        if (str.equals("CERTIFICACIONES"))       {   tabla.setText("t_certificaciones_nominal"); }
+        if (str.equals("LOCUCIONES PYMES"))      {   tabla.setText("t_locuciones_pymes"); }
+        if (str.equals("CERTIFICACIONES GN"))    {   tabla.setText("t_certificaciones_gn"); }
+  
     }//GEN-LAST:event_jComboBox10ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

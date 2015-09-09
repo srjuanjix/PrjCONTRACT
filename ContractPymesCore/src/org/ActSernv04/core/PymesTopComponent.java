@@ -61,8 +61,8 @@ import vo.PymesVo;
         preferredID = "PymesTopComponent"
 )
 @Messages({
-    "CTL_PymesAction=Pymes",
-    "CTL_PymesTopComponent=PYMES",
+    "CTL_PymesAction=Gestión de contratos Pymes",
+    "CTL_PymesTopComponent=GESTIÓN PYMES",
     "HINT_PymesTopComponent=Ventana de gestión de contratos PYMES"
 })
 public final class PymesTopComponent extends TopComponent {
@@ -164,6 +164,7 @@ public final class PymesTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_PymesTopComponent());
         setToolTipText(Bundle.HINT_PymesTopComponent());
+        
 
     }
     public static synchronized PymesTopComponent getDefault() {
@@ -217,15 +218,17 @@ public final class PymesTopComponent extends TopComponent {
         jTextField21 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jTextField24 = new javax.swing.JTextField();
-        jCheckBox31 = new javax.swing.JCheckBox();
         jCheckBox32 = new javax.swing.JCheckBox();
         botonBuscarID = new javax.swing.JButton();
         jTextField75 = new javax.swing.JTextField();
         jLabel107 = new javax.swing.JLabel();
-        jCheckBox35 = new javax.swing.JCheckBox();
         jPanel15 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jTextField17 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
         jPanel22 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
@@ -277,7 +280,8 @@ public final class PymesTopComponent extends TopComponent {
         botonBuscarTitular = new javax.swing.JButton();
         jTextField123 = new javax.swing.JTextField();
         jLabel130 = new javax.swing.JLabel();
-        jTextField125 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel26 = new javax.swing.JPanel();
         miBarraLocu = new javax.swing.JScrollPane();
@@ -299,6 +303,14 @@ public final class PymesTopComponent extends TopComponent {
         jLabel33 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        jTextField29 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jTextField30 = new javax.swing.JTextField();
+        jTextField31 = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         miBarra01 = new javax.swing.JScrollPane();
         miTabla01 = new javax.swing.JTable();
@@ -582,13 +594,6 @@ public final class PymesTopComponent extends TopComponent {
 
         jTextField24.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField24.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox31, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox31.text")); // NOI18N
-        jCheckBox31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox31ActionPerformed(evt);
-            }
-        });
-
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBox32, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox32.text")); // NOI18N
 
         botonBuscarID.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
@@ -601,8 +606,6 @@ public final class PymesTopComponent extends TopComponent {
         jLabel107.setForeground(new java.awt.Color(204, 204, 204));
         org.openide.awt.Mnemonics.setLocalizedText(jLabel107, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel107.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox35, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox35.text")); // NOI18N
-
         jPanel15.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -610,27 +613,51 @@ public final class PymesTopComponent extends TopComponent {
 
         jTextField1.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField1.text")); // NOI18N
 
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel44, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel44.text")); // NOI18N
+
+        jTextField17.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField17.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel43, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel43.text")); // NOI18N
+
+        jTextField9.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField9.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jLabel42)
-                .addGap(46, 46, 46))
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel42)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                            .addComponent(jTextField9))))
+                .addGap(29, 29, 29))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel42)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(176, 176, 176))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(125, 125, 125))
         );
 
         jPanel22.setBackground(new java.awt.Color(204, 204, 204));
@@ -882,7 +909,9 @@ public final class PymesTopComponent extends TopComponent {
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel130, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel130.text")); // NOI18N
 
-        jTextField125.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField125.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel35, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel35.text")); // NOI18N
+
+        jTextField8.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField8.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -936,21 +965,27 @@ public final class PymesTopComponent extends TopComponent {
                                         .addComponent(botonBuscarTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(botonBuscarNIF, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel130)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField125, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(28, 28, 28))))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(botonBuscarNIF, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel130))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61))))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel19)
@@ -958,7 +993,14 @@ public final class PymesTopComponent extends TopComponent {
                     .addComponent(botonBuscarTitular))
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel35))
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel20)
@@ -976,8 +1018,7 @@ public final class PymesTopComponent extends TopComponent {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18)
-                    .addComponent(jTextField125, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
@@ -1014,7 +1055,9 @@ public final class PymesTopComponent extends TopComponent {
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarraLocu, javax.swing.GroupLayout.DEFAULT_SIZE, 1158, Short.MAX_VALUE)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addComponent(miBarraLocu, javax.swing.GroupLayout.PREFERRED_SIZE, 1272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1043,7 +1086,7 @@ public final class PymesTopComponent extends TopComponent {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarraCer, javax.swing.GroupLayout.DEFAULT_SIZE, 1158, Short.MAX_VALUE)
+            .addComponent(miBarraCer, javax.swing.GroupLayout.DEFAULT_SIZE, 1283, Short.MAX_VALUE)
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1080,8 +1123,8 @@ public final class PymesTopComponent extends TopComponent {
                 .addContainerGap()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                                 .addComponent(jLabel23)
@@ -1142,7 +1185,65 @@ public final class PymesTopComponent extends TopComponent {
                     .addComponent(jLabel33)
                     .addComponent(jLabel34)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(153, 204, 255));
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel45, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel45.text")); // NOI18N
+
+        jTextField29.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField29.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel49, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel49.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel50, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel50.text")); // NOI18N
+
+        jTextField30.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField30.text")); // NOI18N
+
+        jTextField31.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField31.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel51, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel51.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField30)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel50))
+                        .addGap(110, 110, 110)))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -1150,28 +1251,56 @@ public final class PymesTopComponent extends TopComponent {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonBuscarID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(botonModificar)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(314, 314, 314)
+                                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(116, 116, 116))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonBuscarID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(botonModificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1185,40 +1314,15 @@ public final class PymesTopComponent extends TopComponent {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jCheckBox29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox32)
-                        .addGap(9, 9, 9))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGap(314, 314, 314)
-                                                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jTabbedPane2))))
+                        .addComponent(jCheckBox30)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCheckBox32)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonBuscarID)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1230,46 +1334,43 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonModificar)))
+                        .addComponent(botonModificar))
+                    .addComponent(jCheckBox32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel38)
+                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel107))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel47)
+                            .addComponent(jCheckBox28)
+                            .addComponent(jCheckBox29)
+                            .addComponent(jCheckBox30))
+                        .addGap(1, 1, 1)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel38)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel107))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel47)
-                                    .addComponent(jCheckBox28)
-                                    .addComponent(jCheckBox29)
-                                    .addComponent(jCheckBox30)
-                                    .addComponent(jCheckBox31)
-                                    .addComponent(jCheckBox35))
-                                .addGap(1, 1, 1)))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel41))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox32)
-                        .addContainerGap())))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1286,7 +1387,7 @@ public final class PymesTopComponent extends TopComponent {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 738, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
@@ -1445,7 +1546,7 @@ public final class PymesTopComponent extends TopComponent {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 1521, Short.MAX_VALUE)
+            .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 1670, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2357,7 +2458,7 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(jLabel77)
                         .addGap(18, 18, 18)
                         .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                         .addComponent(jLabel62))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2396,7 +2497,7 @@ public final class PymesTopComponent extends TopComponent {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2478,7 +2579,7 @@ public final class PymesTopComponent extends TopComponent {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 1521, Short.MAX_VALUE)
+            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 1670, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2609,7 +2710,7 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(numLineas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(1239, Short.MAX_VALUE))))
+                        .addContainerGap(1388, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2679,7 +2780,7 @@ public final class PymesTopComponent extends TopComponent {
                                 .addComponent(jLabel31)
                                 .addGap(3, 3, 3)
                                 .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2781,7 +2882,7 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(scrollPaneArea)
                         .addGap(302, 302, 302))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.DEFAULT_SIZE, 1201, Short.MAX_VALUE)
+                        .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE)
                         .addGap(310, 310, 310))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -2832,10 +2933,6 @@ public final class PymesTopComponent extends TopComponent {
     private void jCheckBox30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox30ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox30ActionPerformed
-
-    private void jCheckBox31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox31ActionPerformed
 
     private void botonBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarIDActionPerformed
         buscarID();
@@ -3097,9 +3194,7 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JCheckBox jCheckBox29;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox30;
-    private javax.swing.JCheckBox jCheckBox31;
     private javax.swing.JCheckBox jCheckBox32;
-    private javax.swing.JCheckBox jCheckBox35;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
@@ -3163,6 +3258,7 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -3171,10 +3267,16 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -3237,6 +3339,7 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -3272,7 +3375,6 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField122;
     private javax.swing.JTextField jTextField123;
     private javax.swing.JTextField jTextField124;
-    private javax.swing.JTextField jTextField125;
     private javax.swing.JTextField jTextField126;
     private javax.swing.JTextField jTextField127;
     private javax.swing.JTextField jTextField128;
@@ -3289,6 +3391,7 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
@@ -3301,7 +3404,10 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField40;
     private javax.swing.JTextField jTextField41;
@@ -3346,6 +3452,7 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField77;
     private javax.swing.JTextField jTextField78;
     private javax.swing.JTextField jTextField79;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField80;
     private javax.swing.JTextField jTextField81;
     private javax.swing.JTextField jTextField82;
@@ -3356,6 +3463,7 @@ public final class PymesTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField87;
     private javax.swing.JTextField jTextField88;
     private javax.swing.JTextField jTextField89;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextField90;
     private javax.swing.JTextField jTextField91;
     private javax.swing.JTextField jTextField92;
@@ -3461,38 +3569,45 @@ public final class PymesTopComponent extends TopComponent {
             
             }
           
-           this.tablaDatos[indice][4] = jTextField4.getText(); // cups electrico
-           this.tablaDatos[indice][3]= jTextField5.getText(); // cups gas
+           this.tablaDatos[indice][4] = jTextField4.getText();      // cups electrico
+           this.tablaDatos[indice][3]= jTextField5.getText();       // cups gas
          
-           this.tablaDatos[indice][17] = jTextField7.getText(); // agente
+           this.tablaDatos[indice][17] = jTextField7.getText();     // agente
          
-           this.tablaDatos[indice][5] = jTextField10.getText(); // codigo postal
-           this.tablaDatos[indice][6] = jTextField11.getText(); // municipio
-           this.tablaDatos[indice][7] = jTextField12.getText(); // provincia
-           this.tablaDatos[indice][8] = jTextField13.getText(); // direccion
-           this.tablaDatos[indice][9] = jTextField14.getText(); // titular
-           this.tablaDatos[indice][10] = jTextField15.getText(); // nif/cif
-           this.tablaDatos[indice][11] = jTextField16.getText(); // fecha firma cliente
+           this.tablaDatos[indice][5] = jTextField10.getText();     // codigo postal
+           this.tablaDatos[indice][6] = jTextField11.getText();     // municipio
+           this.tablaDatos[indice][7] = jTextField12.getText();     // provincia
+           this.tablaDatos[indice][8] = jTextField13.getText();     // direccion
+           this.tablaDatos[indice][9] = jTextField14.getText();     // titular
+           this.tablaDatos[indice][42] = jTextField8.getText();     // Empresa origen
+           this.tablaDatos[indice][10] = jTextField15.getText();    // nif/cif
+           this.tablaDatos[indice][11] = jTextField16.getText();    // fecha firma cliente
            
-           this.tablaDatos[indice][12] = jTextField18.getText(); // consumo kwha
+           this.tablaDatos[indice][12] = jTextField18.getText();    // consumo kwha
+           this.tablaDatos[indice][13] = jTextField3.getText();     // consumo kwha Web sale
+           this.tablaDatos[indice][14] = jTextField2.getText();     // consumo kwha GAS
          
-           this.tablaDatos[indice][16] =  jTextField22.getText(); // telefono
+           this.tablaDatos[indice][16] =  jTextField22.getText();   // telefono
            
-           this.tablaDatos[indice][15] = jTextArea1.getText(); // observaciones      
-           this.tablaDatos[indice][20] = jTextArea2.getText(); // incidencia  
-           this.tablaDatos[indice][21] = jTextArea3.getText(); // solucion      
+           this.tablaDatos[indice][15] = jTextArea1.getText();      // observaciones      
+           this.tablaDatos[indice][20] = jTextArea2.getText();      // incidencia  
+           this.tablaDatos[indice][21] = jTextArea3.getText();      // solucion      
            
-           this.tablaDatos[indice][13] = jTextField2.getText(); // consumo gas kwha
-         
-           this.tablaDatos[indice][2] = jTextField27.getText(); // Fecha de producción      
+           this.tablaDatos[indice][2] = jTextField27.getText();     // Fecha de producción      
            
-           this.tablaDatos[indice][28] = jTextField19.getText(); // Tarifa Gas    
-           this.tablaDatos[indice][29] = jTextField20.getText(); // Tarifa Elec   
+           this.tablaDatos[indice][28] = jTextField19.getText();    // Tarifa Elec     
+           this.tablaDatos[indice][29] = jTextField20.getText();    // Tarifa Gas 
            
-           this.tablaDatos[indice][41] = jTextField74.getText(); // Agente comercial  
+           this.tablaDatos[indice][41] = jTextField74.getText();    // Agente comercial  
            
-          this.tablaDatos[indice][39] = jTextField24.getText(); // Fecha Memo  
-           
+          this.tablaDatos[indice][39] = jTextField24.getText();     // Fecha doc out  
+          this.tablaDatos[indice][34] = jTextField9.getText();      // Oferta 
+          this.tablaDatos[indice][35] = jTextField9.getText();      // Campaña 
+          this.tablaDatos[indice][36] = jTextField23.getText();      // Persona de contacto 
+          this.tablaDatos[indice][37] = jTextField29.getText();      // Pagado
+          this.tablaDatos[indice][38] = jTextField30.getText();      // Pagado Fenosa texto
+          this.tablaDatos[indice][45] = jTextField31.getText();      // Pagado Fenosa total numero
+          
        }
      public void ActualizaRegistro(){
         int i,L,G,s1,s2,s3,s4,s5,D,s6,s7,s9;
@@ -3515,68 +3630,40 @@ public final class PymesTopComponent extends TopComponent {
                 System.out.println("Selecciona opción Afirmativa");
                 System.out.println("Voy a comenzar la inserción del registro i="+i+ " con id_m_c="+this.tablaDatos[i][30]);
                 
-                this.tablaDatos[i][2] = jTextField27.getText();     // fecha producción
-                System.out.println("i = "+i+" ->this.tablaDatos[i][2] ="+this.tablaDatos[i][2] ) ;
+                this.tablaDatos[i][2] = jTextField27.getText();                                    // fecha orden
+             
                 Fecha = dateToMySQLDate(this.tablaDatos[i][2]);
                 
-                 this.tablaDatos[i][11] = jTextField16.getText();    // fecha firma contrato.
+                this.tablaDatos[i][11] = jTextField16.getText();                                   // fecha firma contrato.
                 
                  
-                PymesDao miPymeDao = new PymesDao();
-                PymesVo miPymes = new PymesVo();
+                PymesDao miPymeDao  = new PymesDao();
+                PymesVo miPymes     = new PymesVo();
              
                         // ..............................................
                         
                         ind = jComboBox4.getSelectedIndex() ;
-                        this.tablaDatos[i][0] = Integer.toString(ind);  // estado
+                        this.tablaDatos[i][0] = Integer.toString(ind);                              // estado
                         ind = jComboBox3.getSelectedIndex() ;
-                        this.tablaDatos[i][1] = Integer.toString(ind); // incidencia
+                        this.tablaDatos[i][1] = Integer.toString(ind);                              // incidencia
                         
-                        this.tablaDatos[i][15] =jTextArea1.getText();   // observaciones
-                        this.tablaDatos[i][20] =jTextArea2.getText();   // incidencia
-                        this.tablaDatos[i][21] =jTextArea3.getText();   // solucion
+                        this.tablaDatos[i][15] =jTextArea1.getText();                               // observaciones
+                        this.tablaDatos[i][20] =jTextArea3.getText();                               // incidencia
+                        this.tablaDatos[i][21] =jTextArea2.getText();                               // solucion
                         
                         // ..............................................
-                       /*  
-                        if  (this.tablaDatos[i][4].equals("") ) L=0 ; else L = 1 ;
-           
-                        if  (this.tablaDatos[i][3].equals("") ) G=0; else G = 1 ;
-           
-                        if  (this.tablaDatos[i][3].equals("") && this.tablaDatos[i][4].equals("") ) {L=0; G = 0; D=0;} else D = 1 ;
-                        */
-                        
+                                              
                         this.tablaDatos[i][33] = "0" ;
-                        if (jCheckBox28.isSelected()) { G=1 ; this.tablaDatos[i][33] = "1";} else { G=0; }     //   Gas
-                        if (jCheckBox29.isSelected()) { L=1 ; this.tablaDatos[i][33] = "2";} else { L=0 ; }    //   Luz
-                        if (jCheckBox30.isSelected()) { D=1 ; this.tablaDatos[i][33] = "3";} else { D=0 ; }    //   Dual
+                        if (jCheckBox28.isSelected()) { G=1 ; this.tablaDatos[i][43] = "1";} else { G=0; }     //   Gas
+                        if (jCheckBox29.isSelected()) { L=1 ; this.tablaDatos[i][43] = "2";} else { L=0 ; }    //   Luz
+                        if (jCheckBox30.isSelected()) { D=1 ; this.tablaDatos[i][43] = "3";} else { D=0 ; }    //   Dual
                          
                         System.out.println(" TENEMOS UN CONTRATO CON L,G,D = ("+L+","+G+","+D+")") ;
                          
-                        
                         // ..............................................
                         
-                        
-                        if (jCheckBox31.isSelected()) {this.tablaDatos[i][43] = "1";} else {this.tablaDatos[i][43] = "0" ; }     // Tur Gas
                         if (jCheckBox32.isSelected()) {this.tablaDatos[i][44] = "1";} else {this.tablaDatos[i][44] = "0" ; }     // Punteado
-                        if (jCheckBox35.isSelected()) {this.tablaDatos[i][48] = "1";} else {this.tablaDatos[i][48] = "0" ; }     // Tarifa Plana
-                       
-              
-                        if (this.tablaDatos[i][34].equals("1") )  s1=1; else s1=0 ;         // SVGComplet
-        
-                        if (this.tablaDatos[i][35].equals("1") )  s2=1; else s2=0 ;          // SVGXpres
-        
-                        if (this.tablaDatos[i][36].equals("1") )   s3=1; else s3=0 ;         // SVG Básico
-        
-                        if (this.tablaDatos[i][37].equals("1") )   s4=1; else s4=0 ;         //SVELECTRIC XPRES
-        
-                        if (this.tablaDatos[i][38].equals("1") )   s5=1; else s5=0 ;  
-                        
-                        if (this.tablaDatos[i][45].equals("1") )   s6=1; else s6=0 ;  
-                         
-                        if (this.tablaDatos[i][46].equals("1") )   s7=1; else s7=0 ;  
-                        
-                        if (this.tablaDatos[i][51].equals("1") )   s9=1; else s9=0 ;        // SPP
-         
+                    
                         // ...........................................................................................
                         
                         System.out.println("Insertando registro i= "+i+ " - Incidencia= "+this.tablaDatos[i][1]);
@@ -3587,9 +3674,9 @@ public final class PymesTopComponent extends TopComponent {
                         miPymes.setIncidencia(Integer.parseInt(this.tablaDatos[i][1]));
                         
                         Fecha = dateToMySQLDate(this.tablaDatos[i][2]);                        
-                        miPymes.setFecha(Fecha);
+                        miPymes.setFechaOrden(Fecha);
                        
-                        miPymes.setComercial(this.tablaDatos[i][17]);
+                        miPymes.setAgente(this.tablaDatos[i][17]);
                         
                         miPymes.setSwg(G);
                         miPymes.setSwe(L);
@@ -3606,6 +3693,7 @@ public final class PymesTopComponent extends TopComponent {
                         miPymes.setProvincia(this.tablaDatos[i][7]);
                         miPymes.setDireccion(this.tablaDatos[i][8]);
                         miPymes.setTitular(this.tablaDatos[i][9]);
+                        miPymes.setEmpresaOrigen(this.tablaDatos[i][42]);
                         miPymes.setNifCif(this.tablaDatos[i][10]);
                         miPymes.setTelefonoCli(this.tablaDatos[i][16]);  
                         
@@ -3615,39 +3703,40 @@ public final class PymesTopComponent extends TopComponent {
                         
                          try {
                             miPymes.setConsumoElect(Double.parseDouble(this.tablaDatos[i][12]));
-                            miPymes.setConsumoGas(Double.parseDouble(this.tablaDatos[i][13]));
+                            miPymes.setConsumoElectWS(Double.parseDouble(this.tablaDatos[i][13]));
                             
                          } catch (NumberFormatException nfe){
                             miPymes.setConsumoElect(Double.parseDouble("0"));
+                            miPymes.setConsumoElectWS(Double.parseDouble("0"));
+                         }
+                         
+                         
+                         try {
+                           miPymes.setConsumoGas(Double.parseDouble(this.tablaDatos[i][14]));
+                            
+                         } catch (NumberFormatException nfe){
                             miPymes.setConsumoGas(Double.parseDouble("0"));
                          }
                        
-                         miPymes.setTarifaElec(this.tablaDatos[i][29]);
-                         miPymes.setTarifaGas(this.tablaDatos[i][28]);
-                         
-                        miPymes.setSVG_1(s1);
-                        miPymes.setSVG_2(s2);
-                        miPymes.setSVG_3(s3);
-                        miPymes.setSVG_4(s4);
-                        miPymes.setSVG_5(s5);
-                        miPymes.setSVG_6(s6);
-                        miPymes.setSVG_7(s7);
-                        
-                        miPymes.setSPP(s9);
+                         miPymes.setTarifa(this.tablaDatos[i][28]);
+                         miPymes.setTarifaGas(this.tablaDatos[i][29]);
+                                                       
+                        miPymes.setObservaciones(this.tablaDatos[i][15]); 
+                        miPymes.setsIncidencia(this.tablaDatos[i][20]);
+                        miPymes.setSolucion(this.tablaDatos[i][21]);
                        
-                        
-                              
-                        miPymes.setObservaciones(this.tablaDatos[i][15]);   
-                        
-                        miPymes.setsIncidencia(jTextArea2.getText());
-                        miPymes.setsExplicacion(jTextArea3.getText());
-                       
-                        miPymes.setTurGas(Integer.parseInt(this.tablaDatos[i][43]));
+                        miPymes.setCservicios(this.tablaDatos[i][43]);
                         
                         miPymes.setPunteado(Integer.parseInt(this.tablaDatos[i][44]));
-                        miPymes.setAgenteCom(this.tablaDatos[i][41]);
+                        miPymes.setCVComercial(this.tablaDatos[i][41]);
                         
-                        miPymes.setTarifaPlana(Integer.parseInt(this.tablaDatos[i][48]));
+                        miPymes.setOferta(this.tablaDatos[i][34]);  
+                        miPymes.setCampaña(this.tablaDatos[i][35]);  
+                        miPymes.setPerContacto(this.tablaDatos[i][36]);  
+                        
+                        miPymes.setPagado(Double.parseDouble(this.tablaDatos[i][37]));  
+                        miPymes.setPFenosa(this.tablaDatos[i][38]);  
+                        miPymes.setPagadoFenosa(Double.parseDouble(this.tablaDatos[i][45]));                        
                         
                         str = this.tablaDatos[i][39].trim();
                         if (! str.equals("")) {
@@ -3886,6 +3975,7 @@ public final class PymesTopComponent extends TopComponent {
            if (indice == -1) {
            
             actuaMunicipio.setVisible(false);
+           
             
             jTextField4.setText(" "); jTextField4.setBackground(Color.white);// cups electrico
             jTextField5.setText(" "); jTextField5.setBackground(Color.white);// cups gas
@@ -3897,6 +3987,7 @@ public final class PymesTopComponent extends TopComponent {
             jTextField12.setText(" "); jTextField12.setBackground(Color.white);// provincia
             jTextField13.setText(" "); jTextField13.setBackground(Color.white);// direccion
             jTextField14.setText(" "); jTextField14.setBackground(Color.white);// titular
+            jTextField8.setText(" "); jTextField14.setBackground(Color.white);// empresa origen
             jTextField15.setText(" "); jTextField15.setBackground(Color.white);// nif/cif
             jTextField16.setText(" "); jTextField16.setBackground(Color.white);// fecha firma cliente
          
@@ -3914,27 +4005,18 @@ public final class PymesTopComponent extends TopComponent {
             
             jTextField74.setText(" "); jTextField74.setBackground(Color.white);// Agente comercial
             jTextField75.setText(" "); jTextField75.setBackground(Color.white);// contador
+            jTextField9.setText(" "); jTextField9.setBackground(Color.white);// 
+            jTextField17.setText(" "); jTextField17.setBackground(Color.white);// CAMPAÑA
+            jTextField29.setText(" "); jTextField29.setBackground(Color.white); // PAGADO
             
             jTextField1.setText(" "); jTextField75.setBackground(Color.white);// Servicios extra contratados
                
             jLabel41.setVisible(false);  // Sugerencia de Municipio
             
-          
-            
-           
-            
             jCheckBox28.setSelected(false);
             jCheckBox29.setSelected(false);
             jCheckBox30.setSelected(false);
-            
-            jCheckBox31.setSelected(false);
             jCheckBox32.setSelected(false);
-            
-            jCheckBox35.setSelected(false);
-            
-         
-            
-          
             
            } else {
            
@@ -3954,14 +4036,14 @@ public final class PymesTopComponent extends TopComponent {
                 
                 if (indLoc == -1){
                    
-                    jCheckBox32.setSelected(false);                   
-                    jCheckBox35.setSelected(false);
-                    
+                    jCheckBox32.setSelected(false);  
+                   
+                                  
                 }
                 
                 
                 if (indice !=-1) {
-               
+                  
                     jTextArea1.setText(" "); jTextArea1.setBackground(Color.white);  
                     jTextArea2.setText(" "); jTextArea2.setBackground(Color.white);   
                     jTextArea3.setText(" "); jTextArea3.setBackground(Color.white); 
@@ -3987,23 +4069,32 @@ public final class PymesTopComponent extends TopComponent {
                     jTextField12.setText(this.tablaDatos[ireg][7]); // provincia
                     jTextField13.setText(this.tablaDatos[ireg][8]); // direccion
                     jTextField14.setText(this.tablaDatos[ireg][9]); // titular
+                    jTextField8.setText(this.tablaDatos[ireg][42]); // empresa origen
                     jTextField15.setText(this.tablaDatos[ireg][10]); // nif/cif
                     jTextField16.setText(this.tablaDatos[ireg][11]); // fecha firma cliente             
                     jTextField18.setText(this.tablaDatos[ireg][12]); // consumo kwha electrico
-                    jTextField2.setText(this.tablaDatos[ireg][13]); // consumo kwha gas
+                    jTextField3.setText(this.tablaDatos[ireg][13]); // consumo kwha electrico web sale
+                    jTextField2.setText(this.tablaDatos[ireg][14]); // consumo kwha gas
+                    jTextField9.setText(this.tablaDatos[ireg][34]); // Oferta
+                    jTextField17.setText(this.tablaDatos[ireg][35]); // Campaña
+                    jTextField23.setText(this.tablaDatos[ireg][36]); // Persona de Contacto
+                    jTextField29.setText(this.tablaDatos[ireg][37]); // Pagado
+                    jTextField6.setText(this.tablaDatos[ireg][46]);  // Reactiva
+                    jTextField30.setText(this.tablaDatos[ireg][38]);  // Pagado fenosa
+                    jTextField31.setText(this.tablaDatos[ireg][45]);  // Pagado total fenosa
                     
                     jTextField21.setText(this.tablaDatos[ireg][30]); // id_m_r      
                  
                   //  ind = Integer.parseInt(this.tablaDatos[ireg][14]) ; 
                   //  jComboBox2.setSelectedIndex(ind); 
                       
-                     if (this.tablaDatos[ireg][43].equals("1")) jCheckBox31.setSelected(true); else jCheckBox31.setSelected(false); // Tur GAS
+                    
                      if (this.tablaDatos[ireg][44].equals("1")) jCheckBox32.setSelected(true); else jCheckBox32.setSelected(false); // Punteado
-                     if (this.tablaDatos[ireg][48].equals("1")) jCheckBox35.setSelected(true); else jCheckBox35.setSelected(false); // Tarifa plana
+              
                  
                     jTextArea1.setText(this.tablaDatos[ireg][15]); // observaciones
-                    jTextArea2.setText(this.tablaDatos[ireg][20]); // incidencia
-                    jTextArea3.setText(this.tablaDatos[ireg][21]); // explicacion
+                    jTextArea3.setText(this.tablaDatos[ireg][20]); // incidencia
+                    jTextArea2.setText(this.tablaDatos[ireg][21]); // explicacion
                     
                     jTextField22.setText(this.tablaDatos[ireg][16]); // telefono   
                     
@@ -4076,7 +4167,8 @@ public final class PymesTopComponent extends TopComponent {
              jTextField20.setBackground(new Color(0xFE899B));// tarifa elec
             
              jTextField20.setBackground(new Color(0xFE899B));// id_m_r
-             jTextField24.setBackground(new Color(0xFE899B));// id_m_r
+             jTextField17.setBackground(new Color(0xFE899B));//
+             jTextField24.setBackground(new Color(0xFE899B));//
             
              jTextField74.setBackground(new Color(0xFE899B));// Agente comercial
            
@@ -4109,7 +4201,7 @@ public final class PymesTopComponent extends TopComponent {
              jTextField19.setBackground(Color.white);// tarifa gas
              jTextField20.setBackground(Color.white);// tarifa elec
             
-             jTextField20.setBackground(Color.white);// id_m_r
+             jTextField17.setBackground(Color.white);// id_m_r
              jTextField24.setBackground(Color.white);// id_m_r
             
              jTextField74.setBackground(Color.white);// Agente comercial
@@ -4163,7 +4255,7 @@ public final class PymesTopComponent extends TopComponent {
              jTextField19.setBackground(cResaltado);// tarifa gas
              jTextField20.setBackground(cResaltado);// tarifa elec
             
-             jTextField20.setBackground(cResaltado);// id_m_r
+             jTextField17.setBackground(cResaltado);// 
              jTextField24.setBackground(cResaltado);// id_m_r
             
              jTextField74.setBackground(cResaltado);// Agente comercial
@@ -4218,8 +4310,11 @@ public final class PymesTopComponent extends TopComponent {
                 model.addColumn("Solucion");
                 model.addColumn("Observaciones");
                 model.addColumn("Tarifa gas");
+                model.addColumn("Consumo gas");
                 model.addColumn("C_servicios");
                 model.addColumn("Reactiva kWha");
+                model.addColumn("iServicios");
+                model.addColumn("iPunteado");
                 
                 
 		miTabla01.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);

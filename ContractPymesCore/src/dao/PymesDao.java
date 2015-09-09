@@ -107,7 +107,7 @@ public class PymesDao {
                 int val;
                 String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
                         + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
-                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,C_servicios,Reactiva"
+                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,Consumo_gas_kwha,C_servicios,Reactiva,iServicios,iPunteado,P_Fenosa_Total,Empresa_Origen,Oferta"
                         + " FROM t_makro_pymes" ;
             //    filtroEstado = 3 ;
                 switch (filtroEstado){
@@ -280,13 +280,13 @@ public class PymesDao {
 
 			while (rs.next()) {
 				// es para obtener los datos y almacenar las filas
-				Object[] fila = new Object[31];
+				Object[] fila = new Object[34];
 				// para llenar cada columna con lo datos almacenados
-				for (int i = 0; i < 31; i++) 
+				for (int i = 0; i < 34; i++) 
 					fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                                        
                                         try {
-                                            fila[2]  = formatDateJava.format(rs.getDate("Fecha_docout")) ;      // fecha memo ; 
+                                            fila[2]  = formatDateJava.format(rs.getDate("Fecha_docout")) ;      // fecha docout ; 
                                             
                                         } catch (NullPointerException nfe){
                                             fila[2]  = ""; 
@@ -309,7 +309,7 @@ public class PymesDao {
                                       
                                         tablaDatos[cnt][30] = Integer.toString(rs.getInt("id_m_p")) ;      //  Id_m_p
                                         tablaDatos[cnt][32] = "-1" ;                                       // Id última Locucion
-                                        //........................................................... Aqui cargamos en la tabla de datos de formulario
+                                        //...........................................................        Aqui cargamos en la tabla de datos de formulario
                                         
                                         tablaDatos[cnt][0] = Integer.toString(rs.getInt("Estado"));         // System.out.println(cnt+"-Estado="+tablaDatos[cnt][0]+" ID_C="+tablaDatos[cnt][30] );
                                                                               
@@ -330,14 +330,8 @@ public class PymesDao {
                                         tablaDatos[cnt][12]= Integer.toString(rs.getInt("Consumo_elect_kwha")) ;              // consumo elec
                                         tablaDatos[cnt][13]= Integer.toString(rs.getInt("Consumo_elect_kwha_websale")) ;      // consumo elec websale                                                        
                                        
-                                        tablaDatos[cnt][14] = "0";
+                                        tablaDatos[cnt][14] = Integer.toString(rs.getInt("Consumo_gas_kwha")) ;             // Consumo Gas
                                        
-                                        tablaDatos[cnt][34] = "0" ;
-                                        tablaDatos[cnt][35] = "0" ;
-                                        tablaDatos[cnt][36] = "0" ;
-                                        tablaDatos[cnt][37] = "0" ;
-                                        tablaDatos[cnt][38] = "0" ;
-                                   
                                         tablaDatos[cnt][15]= rs.getString("Observaciones");                 // observaciones.toUpperCase();   
                                         tablaDatos[cnt][20]= rs.getString("Explicacion");                   // incidencia.toUpperCase();   
                                         tablaDatos[cnt][21]= rs.getString("Solucion");                      // solucion.toUpperCase();   
@@ -356,22 +350,22 @@ public class PymesDao {
                                             tablaDatos[cnt][39] = ""; 
                                         }
                                         tablaDatos[cnt][40] = "-1";                                             // ID certificación
-                                        tablaDatos[cnt][41] = rs.getString("CV") ;                                // Agente  Comercial
+                                        tablaDatos[cnt][41] = rs.getString("CV") ;                              // Agente  Comercial
+                                        tablaDatos[cnt][42] = rs.getString("Empresa_Origen") ;                  // Empresa origen
                                         System.out.println(" tablaDatos[cnt][41] ="+ tablaDatos[cnt][41] );
-                                        tablaDatos[cnt][43] = "0";  
-                                        tablaDatos[cnt][44] = "0"; 
+                                        tablaDatos[cnt][43] = Integer.toString(rs.getInt("iServicios"));        // iServicios 
+                                        tablaDatos[cnt][44] = Integer.toString(rs.getInt("iPunteado"));         // Punteado
                                                                       
                                         
-                                        tablaDatos[cnt][34]="0";
-                                        tablaDatos[cnt][35]="0";
-                                        tablaDatos[cnt][36]="0";
-                                        tablaDatos[cnt][37]="0";
-                                        tablaDatos[cnt][38]="0";
-                                        tablaDatos[cnt][45]="0"; // SWG Con Calef
-                                        tablaDatos[cnt][46]="0"; // SWG Sin Calef
-
+                                        tablaDatos[cnt][34]= rs.getString("Oferta") ;                           // Oferta
+                                        tablaDatos[cnt][35]= rs.getString("Campaña") ;                          // Campaña
+                                        tablaDatos[cnt][36]= rs.getString("Per_Contacto") ;                     // Persona de contacto
+                                        tablaDatos[cnt][37]= Double.toString(rs.getDouble("Pagado"));           // Pagado
+                                        tablaDatos[cnt][38]= rs.getString("P_Fenosa") ;                         // Pagado Fenosa
+                                        tablaDatos[cnt][45]= Double.toString(rs.getDouble("P_Fenosa_Total"));   // Pagado Fenosa número
+                                      
+                                        tablaDatos[cnt][46]= Double.toString(rs.getDouble("Reactiva"));         // Reactiva
                                         tablaDatos[cnt][43]="0"; // Tur GAS
-                                        tablaDatos[cnt][44]="0"; // Punteado
                                         tablaDatos[cnt][48]="0"; // Tarifa plana
                                         tablaDatos[cnt][51]="0"; // SPP
                                         
@@ -528,8 +522,8 @@ public class PymesDao {
                         sqlStr = "UPDATE  t_makro_pymes SET "					
                                     	+ "Estado = "+ miPyme.getEstado() + ", "
                                         + "Fecha_docout = "+ miPyme.getFechaDocout() + ", "
-                                        + "IdIncidencia = "+miPyme.getIncidencia() + ", "   
-                                        + "Orden = "+miPyme.getFechaOrden() + ", "  
+                                        + "Incidencia = "+miPyme.getIncidencia() + ", "   
+                                        + "Orden = '"+miPyme.getFechaOrden() + "', "  
                                         + "CUPS_Elect = '"+miPyme.getCupsE() + "', "
                                         + "CUPS_Gas='"+miPyme.getCupsG() + "', "
                                         + "Reactiva='"+miPyme.getReactiva() + "', "
@@ -557,8 +551,10 @@ public class PymesDao {
                                         + "Consumo_elect_kwha_websale ='"+miPyme.getConsumoElectWS() + "', "
                                         + "Pagado = '"+miPyme.getPagado() + "',"
                                         + "P_Fenosa = '"+miPyme.getPFenosa() + "',"
-                                        + "C_servicios = '"+miPyme.getCServicios()
-                                        + "WHERE id_m_p ="+miPyme.getIdContrato();
+                                        + "C_servicios = '"+miPyme.getCServicios()+ "',"
+                                        + "iPunteado = "+miPyme.getPunteado()+ ","
+                                        + "P_Fenosa_Total = "+miPyme.getPagadoFenosa()
+                                        + " WHERE id_m_p ="+miPyme.getIdContrato();
                         
 			System.out.println(sqlStr);
                         Statement estatuto = conex.getConnection().createStatement();

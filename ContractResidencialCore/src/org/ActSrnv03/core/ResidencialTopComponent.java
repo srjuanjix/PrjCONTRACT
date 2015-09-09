@@ -101,7 +101,7 @@ import org.openide.windows.WindowManager;
         preferredID = "ResidencialTopComponent"
 )
 @Messages({
-    "CTL_ResidencialAction=Residencial",
+    "CTL_ResidencialAction=Gestión contratos Residencial",
     "CTL_ResidencialTopComponent=GESTION RESIDENCIAL",
     "HINT_ResidencialTopComponent=Ventana administracion de contratos residencial"
 })
@@ -202,6 +202,7 @@ public final class ResidencialTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_ResidencialTopComponent());
         setToolTipText(Bundle.HINT_ResidencialTopComponent());
+        
 
     }
      public static synchronized ResidencialTopComponent getDefault() {
@@ -335,6 +336,7 @@ public final class ResidencialTopComponent extends TopComponent {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         miBarra01 = new javax.swing.JScrollPane();
         miTabla01 = new javax.swing.JTable();
@@ -1164,54 +1166,19 @@ public final class ResidencialTopComponent extends TopComponent {
                 .addGap(74, 74, 74))
         );
 
+        org.openide.awt.Mnemonics.setLocalizedText(jButton2, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jButton2.text")); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonBuscarID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(botonModificar)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel38)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel107)
-                        .addGap(129, 129, 129)
-                        .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox32)
-                        .addGap(9, 9, 9))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1231,7 +1198,50 @@ public final class ResidencialTopComponent extends TopComponent {
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTabbedPane2))))
+                            .addComponent(jTabbedPane2)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel107)
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(19, 19, 19))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonBuscarID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(botonModificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox32)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1243,49 +1253,46 @@ public final class ResidencialTopComponent extends TopComponent {
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7)
                         .addComponent(jLabel48)
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCheckBox32))
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(botonModificar)))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel38)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel107))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel47)
-                                    .addComponent(jCheckBox28)
-                                    .addComponent(jCheckBox29)
-                                    .addComponent(jCheckBox30)
-                                    .addComponent(jCheckBox31)
-                                    .addComponent(jCheckBox35))
-                                .addGap(1, 1, 1)))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel41)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel38)
+                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel107))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox32)
-                        .addContainerGap())))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel47)
+                            .addComponent(jCheckBox28)
+                            .addComponent(jCheckBox29)
+                            .addComponent(jCheckBox30)
+                            .addComponent(jCheckBox31)
+                            .addComponent(jCheckBox35)
+                            .addComponent(jButton2))
+                        .addGap(1, 1, 1)))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -3072,6 +3079,10 @@ public final class ResidencialTopComponent extends TopComponent {
          GenerarExelLiquida();   
     }//GEN-LAST:event_botonGeneraExelLiquidaActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        cargarDatosCertificaciones();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox FiltroIncidencia;
     private javax.swing.JComboBox ListaAgentes;
@@ -3100,6 +3111,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JButton botonRefrescar;
     private javax.swing.JButton generaExelMakro;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
@@ -4006,9 +4018,18 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
            
        }
        
-       private void actualizarFormulario(int indice) {
+      private void actualizarFormulario(int indice) {
            int ind,ireg, creg, indLoc=-1;
            this.indGen = indice ;
+           DefaultTableModel modelLoc;
+           DefaultTableModel modelCer;
+           String nif       = ""; 
+           String telefono  = "";
+           String direccion = "";
+           String titular   = "";
+           String cupsGas   = "";
+           String cupsEle   = "";
+                   
            MarcaColorOK() ;
            if (indice == -1) {
            
@@ -4045,9 +4066,14 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
             jTextField75.setText(" "); jTextField75.setBackground(Color.white);// contador
                
             jLabel41.setVisible(false);  // Sugerencia de Municipio
+           
+            jTextArea2.setText(" "); jTextArea2.setBackground(Color.white);   
+            jTextArea3.setText(" "); jTextArea3.setBackground(Color.white); 
             
-          
             
+            jComboBox3.setSelectedIndex(0);  
+            jComboBox4.setSelectedIndex(0); 
+               
             jCheckBox23.setSelected(false);
             jCheckBox24.setSelected(false);
             jCheckBox25.setSelected(false);
@@ -4065,7 +4091,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
             
             jCheckBox36.setSelected(false);
             
-          
+           
             
            } else {
            
@@ -4073,6 +4099,52 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
            if (this.nRegistros >0 ) {
                 
                 System.out.println("Indice pasado ="+indice+" y el Indice de tablaLocuciones ="+this.tablaDatos[indice][32]);
+                
+                // .........................................................
+                
+                DefaultTableModel model;
+		model = new DefaultTableModel();        // definimos el objeto tableModel
+               
+		miTablaLiquida = new JTable();                // creamos la instancia de la tabla
+		miTablaLiquida.setModel(model);
+                
+                model.addColumn("idColor");                        
+		model.addColumn("TUR");                
+		model.addColumn("CUPS GAS");
+		model.addColumn("CUPS ELECTRICIDAD");
+		model.addColumn("TITULAR");
+                model.addColumn("CIF/NIF");
+                model.addColumn("SVG C");
+                model.addColumn("SVG X");
+		model.addColumn("SVG B");
+                model.addColumn("SVE");
+                model.addColumn("SVH");
+                model.addColumn("SVGCC");
+                model.addColumn("SVGSC");
+                model.addColumn("SPP");
+                model.addColumn("T.PLANA");
+                model.addColumn("OBSERVACIONES");
+                model.addColumn("Nº DE PRODUCTOS");
+               
+                
+                
+		miTablaLiquida.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaLiquida.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn columna1 = miTablaLiquida.getColumn("CUPS GAS");
+                TableColumn columna2 = miTablaLiquida.getColumn("CUPS ELECTRICIDAD");
+                TableColumn columna3 = miTablaLiquida.getColumn("TITULAR");
+                TableColumn columna4 = miTablaLiquida.getColumn("OBSERVACIONES");
+               
+                columna1.setMinWidth(230);
+                columna2.setMinWidth(230);
+                columna3.setMinWidth(150);
+                columna4.setMinWidth(250);
+
+               
+              
+                
+                
                 ireg = indice ;
                 this.indGenReg = ireg ;
                
@@ -4084,6 +4156,15 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
               
                 
                 if (indLoc == -1){
+                    
+                   
+                    modelLoc = new DefaultTableModel();            // definimos el objeto tableModel
+                    modelCer = new DefaultTableModel();            // definimos el objeto tableModel
+               
+                    limpiaTablaLocuciones(modelLoc);
+                    miTablaLocu = new JTable();                // creamos la instancia de la tabla
+                    miTablaLocu.setModel(modelLoc);
+                    miBarraLocu.setViewportView(miTablaLocu);
                    
                     jCheckBox32.setSelected(false);
                     jCheckBox33.setSelected(false);
@@ -4095,6 +4176,8 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 
                 if (indice !=-1) {
                
+                    
+                    
                     jTextArea1.setText(" "); jTextArea1.setBackground(Color.white);  
                     jTextArea2.setText(" "); jTextArea2.setBackground(Color.white);   
                     jTextArea3.setText(" "); jTextArea3.setBackground(Color.white); 
@@ -4182,13 +4265,171 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                     if (this.tablaDatos[ireg][33].equals("2")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
                     if (this.tablaDatos[ireg][33].equals("3")) jCheckBox30.setSelected(true); else jCheckBox30.setSelected(false);
                    
+                  // .........................................................  
+                    
+                modelLoc = new DefaultTableModel();            // definimos el objeto tableModel
+               
+                limpiaTablaLocuciones(modelLoc);
+                miTablaLocu = new JTable();                // creamos la instancia de la tabla
+                miTablaLocu.setModel(modelLoc);
                   
                 
+                PymesDao miPymesDaoLoc = new PymesDao();
+                 
+                    
+                nif         = this.tablaDatos[ireg][10].trim(); 
+                telefono    = this.tablaDatos[ireg][16].trim();
+                direccion   = this.tablaDatos[ireg][8].trim();
+                titular     = this.tablaDatos[ireg][9].trim();
+                cupsGas     = this.tablaDatos[ireg][3].trim();
+                cupsEle     = this.tablaDatos[ireg][4].trim();
+                        
+	   
+                miPymesDaoLoc.compruebaLocucion(modelLoc,this.plogin,this.ppassword,nif,telefono,direccion,titular);
+               
+                miTablaLocu.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaLocu.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn colL0  = miTablaLocu.getColumn("ID");
+                TableColumn colL1  = miTablaLocu.getColumn("idt");
+                TableColumn colL2  = miTablaLocu.getColumn("Fecha");
+                TableColumn colL3  = miTablaLocu.getColumn("Titular");
+                TableColumn colL4  = miTablaLocu.getColumn("Verifica");
+                TableColumn colL5  = miTablaLocu.getColumn("Direccion");
+                TableColumn colL6  = miTablaLocu.getColumn("Contrato");
+                TableColumn colL7  = miTablaLocu.getColumn("Llam1");
+                TableColumn colL8  = miTablaLocu.getColumn("Llam2");
+                TableColumn colL9  = miTablaLocu.getColumn("Llam3");
+                TableColumn colL10 = miTablaLocu.getColumn("Llam4");
+                TableColumn colL11 = miTablaLocu.getColumn("Llam5");
+                TableColumn colL12 = miTablaLocu.getColumn("Llam6");
+                
+                colL0.setMinWidth(10);
+                colL1.setMinWidth(10);
+                colL2.setMinWidth(40);
+                colL3.setMinWidth(200);
+                colL4.setMinWidth(200);
+                colL5.setMinWidth(150);
+                colL6.setMinWidth(120);
+                colL7.setMinWidth(150);
+                colL8.setMinWidth(150);
+                colL9.setMinWidth(150);
+                colL7.setMinWidth(150);
+                colL8.setMinWidth(150);
+                colL9.setMinWidth(150);
+                colL10.setMinWidth(150);
+                colL11.setMinWidth(150);
+                colL12.setMinWidth(150);
+                
+                miBarraLocu.setViewportView(miTablaLocu);
+               // .........................................................
+                
+                modelCer = new DefaultTableModel();                         // definimos el objeto tableModel
+               
+                limpiaTablaCertificaciones(modelCer);
+                miTablaCer = new JTable();                                  // creamos la instancia de la tabla
+                miTablaCer.setModel(modelCer);
+              
+                
+                
+                miPymesDaoLoc.compruebaCertificacion(modelCer,this.plogin,this.ppassword,nif,direccion,cupsGas,cupsEle);
+                
+                miTablaCer.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaCer.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn col0 = miTablaCer.getColumn("IDp");
+                TableColumn col1 = miTablaCer.getColumn("Fecha");
+                TableColumn col2 = miTablaCer.getColumn("Fecha_Recep.");
+                TableColumn col3 = miTablaCer.getColumn("Concepto");
+                TableColumn col4 = miTablaCer.getColumn("Contrato");
+                TableColumn col5 = miTablaCer.getColumn("NIF");
+                TableColumn col6 = miTablaCer.getColumn("Calle");
+                TableColumn col7 = miTablaCer.getColumn("CUPS_Gas");
+                TableColumn col8 = miTablaCer.getColumn("CUPS_Elect");
+                TableColumn col9 = miTablaCer.getColumn("Producto");
+        /*       TableColumn col10 = miTablaCer.getColumn("IDp");
+                TableColumn col11 = miTablaCer.getColumn("Año.");
+                TableColumn col12 = miTablaCer.getColumn("Mes");
+                TableColumn col13 = miTablaCer.getColumn("NF");
+                TableColumn col14 = miTablaCer.getColumn("Escalera");
+                TableColumn col15 = miTablaCer.getColumn("Piso");
+                TableColumn col16 = miTablaCer.getColumn("Puerta");
+                TableColumn col17 = miTablaCer.getColumn("CodPost");
+          */     
+                col0.setMinWidth(10);
+                col1.setMinWidth(40);
+                col2.setMinWidth(40);
+                col3.setMinWidth(200);
+                col4.setMinWidth(50);
+                col5.setMinWidth(40);
+                col6.setMinWidth(120);
+                col7.setMinWidth(150);
+                col8.setMinWidth(150);
+                col9.setMinWidth(350);
+         /*     col10.setMinWidth(20);
+                col11.setMinWidth(20);
+                col12.setMinWidth(20);
+                col13.setMinWidth(20);
+                col14.setMinWidth(20);
+                col15.setMinWidth(20);
+                col16.setMinWidth(20);
+                col17.setMinWidth(30);
+            */    
+                
+                miBarraCer.setViewportView(miTablaCer);
+                
+                // .........................................................
+                     
+                    
+                   if (indLoc != -1) {
+                        System.out.println("this.tablaLocuciones["+indLoc+"][11]="+this.tablaLocuciones[indLoc][11]);
+
+                    // ...................................
+                    
+                    // ...................................
+                    
+                    
+                    if (this.locuciones[ireg]> 1  ){                                                           // Dia de la locución 2
+                        
+                        System.out.println("this.llamadasLocuciones[ireg][1]="+this.llamadasLocuciones[ireg][1]);
+                        
+                    } 
+                     
+                    if (this.locuciones[ireg]> 2) {                                                         // Dia de la locución 3
+                       
+                    }  
+                    
+                    
+                    
+                   
+                    
+                   }
+
+                } else {
+                   
+                   
+                    jTextField74.setText(" "); jTextField74.setBackground(Color.white);
+                    jTextArea2.setText(" "); jTextArea2.setBackground(Color.white);   
+                    jTextArea3.setText(" "); jTextArea3.setBackground(Color.white); 
+                   
+                    jCheckBox32.setSelected(false);
+                    jCheckBox33.setSelected(false);
+                    jCheckBox34.setSelected(false);
+                    jCheckBox35.setSelected(false);
+                    jCheckBox36.setSelected(false);
+
+                }
+                 if ( creg!= -1) {
+                                                            
+                 } else {
+                     
+                    
+                 }
 
            }
              
            }
-           }
+           
        }
        
        private void mostrarDatosConTableModel() {
@@ -6521,5 +6762,94 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
     }
     
     // -------------------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------------------
     
+    public void limpiaTablaLocuciones(DefaultTableModel modelLoc) {
+        
+                modelLoc.addColumn("ID");                
+		modelLoc.addColumn("idt");
+                modelLoc.addColumn("Fecha"); 
+                modelLoc.addColumn("Titular");
+                modelLoc.addColumn("Verifica");
+                modelLoc.addColumn("Direccion");
+                modelLoc.addColumn("Contrato");
+                modelLoc.addColumn("Llam1");
+                modelLoc.addColumn("Llam2");
+                modelLoc.addColumn("Llam3");
+                modelLoc.addColumn("Llam4");
+                modelLoc.addColumn("Llam5");
+                modelLoc.addColumn("Llam6");
+                modelLoc.addColumn("Telefono");
+                modelLoc.addColumn("FechaNac");
+                modelLoc.addColumn("ApoderadoPyme");
+                modelLoc.addColumn("Facturas");
+                modelLoc.addColumn("TratoAcre");
+                modelLoc.addColumn("Informado");
+                modelLoc.addColumn("Cuenta");
+                modelLoc.addColumn("Copia");
+                modelLoc.addColumn("Observaciones");
+                modelLoc.addColumn("comercial");
+                modelLoc.addColumn("hora");
+                modelLoc.addColumn("precios");
+                
+                
+        
+    }
+    
+    // -------------------------------------------------------------------------------------------------------------
+    
+    public void limpiaTablaCertificaciones(DefaultTableModel modelCer) {
+        
+               
+                                 
+		modelCer.addColumn("ID");   
+                modelCer.addColumn("IDp");  
+		modelCer.addColumn("Año");
+		modelCer.addColumn("Mes");
+		modelCer.addColumn("Periodo");
+                modelCer.addColumn("Fecha");
+                modelCer.addColumn("Fecha_Recep.");
+                modelCer.addColumn("Delegacion");
+		modelCer.addColumn("Concepto");
+                modelCer.addColumn("Contrato");
+                modelCer.addColumn("NIF");
+                modelCer.addColumn("Calle");
+                modelCer.addColumn("NF");
+                modelCer.addColumn("Escalera");
+                modelCer.addColumn("Piso");
+                modelCer.addColumn("Puerta");
+                modelCer.addColumn("CodPost");
+                modelCer.addColumn("Municipio");
+                modelCer.addColumn("Provincia");
+                modelCer.addColumn("CUPS_Gas");
+                modelCer.addColumn("CUPS_Elect");
+                modelCer.addColumn("Importe");
+                modelCer.addColumn("Producto");
+                
+              
+                
+                
+        
+    }
+    // -------------------------------------------------------------------------------------------------------------
+    
+    
+    public void cargarDatosCertificaciones(){
+            DefaultTableModel modelCer;
+          // .........................................................  
+                    
+                modelCer = new DefaultTableModel();            // definimos el objeto tableModel
+               
+                limpiaTablaCertificaciones(modelCer);
+                miTablaCer = new JTable();                // creamos la instancia de la tabla
+                miTablaCer.setModel(modelCer);
+                  
+                
+                PymesDao miPymesDaoCer= new PymesDao();
+                 
+              //  miPymesDaoCer.compruebaLocucion(modelCer,this.plogin,this.ppassword,nif,telefono,direccion,titular);
+                
+                miBarraLocu.setViewportView(miTablaCer);
+                // .........................................................
+    }
 }

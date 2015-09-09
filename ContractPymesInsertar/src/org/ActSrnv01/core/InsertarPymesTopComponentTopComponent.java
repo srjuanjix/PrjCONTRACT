@@ -35,9 +35,9 @@ import ventana.ClaseFrame;
         preferredID = "InsertarPymesTopComponentTopComponent"
 )
 @Messages({
-    "CTL_InsertarPymesTopComponentAction=InsertarPymesTopComponent",
-    "CTL_InsertarPymesTopComponentTopComponent=InsertarPymesTopComponent Window",
-    "HINT_InsertarPymesTopComponentTopComponent=This is a InsertarPymesTopComponent window"
+    "CTL_InsertarPymesTopComponentAction=Insertar contratos Pymes",
+    "CTL_InsertarPymesTopComponentTopComponent=INSERTAR PYMES",
+    "HINT_InsertarPymesTopComponentTopComponent=Gestión de inserción de Pymes"
 })
 public final class InsertarPymesTopComponentTopComponent extends TopComponent {
 

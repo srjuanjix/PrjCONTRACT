@@ -4915,7 +4915,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                             miPymes.setConsumoGas(Double.parseDouble("0"));
                          }
                        
-                        miPymes.setSVG_1(s1);
+                       
                         miPymes.setSVG_2(s2);
                         miPymes.setSVG_3(s3);
                         miPymes.setSVG_4(s4);
@@ -6568,7 +6568,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                          miPymes.setTarifaElec(this.tablaDatos[i][29]);
                          miPymes.setTarifaGas(this.tablaDatos[i][28]);
                          
-                        miPymes.setSVG_1(s1);
+                      
                         miPymes.setSVG_2(s2);
                         miPymes.setSVG_3(s3);
                         miPymes.setSVG_4(s4);
@@ -7182,7 +7182,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                          miPymes.setTarifaElec(this.tablaDatos[i][29]);
                          miPymes.setTarifaGas(this.tablaDatos[i][28]);
                          
-                        miPymes.setSVG_1(s1);
+                       
                         miPymes.setSVG_2(s2);
                         miPymes.setSVG_3(s3);
                         miPymes.setSVG_4(s4);
