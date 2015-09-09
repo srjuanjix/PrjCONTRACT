@@ -62,7 +62,7 @@ import vo.PymesVo;
 )
 @Messages({
     "CTL_PymesAction=Gestión de contratos Pymes",
-    "CTL_PymesTopComponent=GESTIÓN PYMES",
+    "CTL_PymesTopComponent=GESTION PYMES",
     "HINT_PymesTopComponent=Ventana de gestión de contratos PYMES"
 })
 public final class PymesTopComponent extends TopComponent {
