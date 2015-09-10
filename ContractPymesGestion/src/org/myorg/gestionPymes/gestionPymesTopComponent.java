@@ -3,10 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.ActSernv04.core;
+package org.myorg.gestionPymes;
+
+import org.netbeans.api.settings.ConvertAsProperties;
+import org.openide.awt.ActionID;
+import org.openide.awt.ActionReference;
+import org.openide.windows.TopComponent;
+import org.openide.util.NbBundle.Messages;
 
 import conexion.Conexion;
 import dao.PymesDao;
+import ventana.FormatoTabla;
+import ventana.FormatoTablaLiquida;
+import vo.PymesVo;
+
+
 import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,36 +47,32 @@ import org.openide.awt.ActionReference;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.windows.WindowManager;
-import ventana.ClaseFrame;
-import ventana.FormatoTabla;
-import ventana.FormatoTablaLiquida;
-import vo.PymesVo;
 
 /**
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//org.ActSernv04.core//Pymes//EN",
+        dtd = "-//org.myorg.gestionPymes//gestionPymes//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "PymesTopComponent",
+        preferredID = "gestionPymesTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_ALWAYS
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = true)
-@ActionID(category = "Window", id = "org.ActSernv04.core.PymesTopComponent")
+@ActionID(category = "Window", id = "org.myorg.gestionPymes.gestionPymesTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PymesAction",
-        preferredID = "PymesTopComponent"
+        displayName = "#CTL_gestionPymesAction",
+        preferredID = "gestionPymesTopComponent"
 )
 @Messages({
-    "CTL_PymesAction=Gestión de contratos Pymes",
-    "CTL_PymesTopComponent=GESTION PYMES",
-    "HINT_PymesTopComponent=Ventana de gestión de contratos PYMES"
+    "CTL_gestionPymesAction=Gestión de contratos Pymes",
+    "CTL_gestionPymesTopComponent=GESTION PYMES",
+    "HINT_gestionPymesTopComponent=Ventana de gestión de contratos PYMES"
 })
-public final class PymesTopComponent extends TopComponent {
+public final class gestionPymesTopComponent extends TopComponent {
 
     public int filtroEstadoSel = 0 ;
     public int filtroFechaSel = 0 ;
@@ -113,10 +120,7 @@ public final class PymesTopComponent extends TopComponent {
             
     public int idSelect=0;
     public int indTabla = 0 ;
-       
-    // .......................................................... 
-    public ClaseFrame miVentanaPrincipal;
-    
+        
     // ..........................................................
     
     public int fuente = 0 ;
@@ -153,43 +157,43 @@ public final class PymesTopComponent extends TopComponent {
     
      // ..........................................................
     
-    private static PymesTopComponent instance;
-    private static final String PREFERRED_ID = "PymesTopComponent"; 
+    private static gestionPymesTopComponent instance;
+    private static final String PREFERRED_ID = "gestionPymesTopComponent"; 
     
     // ..........................................................
     
     
-    
-    public PymesTopComponent() {
+    public gestionPymesTopComponent() {
         initComponents();
-        setName(Bundle.CTL_PymesTopComponent());
-        setToolTipText(Bundle.HINT_PymesTopComponent());
-        
+        setName(Bundle.CTL_gestionPymesTopComponent());
+        setToolTipText(Bundle.HINT_gestionPymesTopComponent());
 
     }
-    public static synchronized PymesTopComponent getDefault() {
+
+    public static synchronized gestionPymesTopComponent getDefault() {
         if (instance == null) {
-            instance = new PymesTopComponent();
+            instance = new gestionPymesTopComponent();
         }
         return instance;
     }
 
   
-    public static synchronized PymesTopComponent findInstance() {
+    public static synchronized gestionPymesTopComponent findInstance() {
         TopComponent win = WindowManager.getDefault().findTopComponent(PREFERRED_ID);
         if (win == null) {
-            Logger.getLogger(PymesTopComponent.class.getName()).warning(
+            Logger.getLogger(gestionPymesTopComponent.class.getName()).warning(
                     "Cannot find " + PREFERRED_ID + " component. It will not be located properly in the window system.");
             return getDefault();
         }
-        if (win instanceof PymesTopComponent) {
-            return (PymesTopComponent) win;
+        if (win instanceof gestionPymesTopComponent) {
+            return (gestionPymesTopComponent) win;
         }
-        Logger.getLogger(PymesTopComponent.class.getName()).warning(
+        Logger.getLogger(gestionPymesTopComponent.class.getName()).warning(
                 "There seem to be multiple components with the '" + PREFERRED_ID
                 + "' ID. That is a potential source of errors and unexpected behavior.");
         return getDefault();
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -546,39 +550,39 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel7.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel7.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel8.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel8.text")); // NOI18N
 
         botonModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(botonModificar, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonModificar.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonModificar, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonModificar.text")); // NOI18N
         botonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonModificarActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel38, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel38.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel38, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel38.text")); // NOI18N
 
-        jTextField27.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField27.text")); // NOI18N
+        jTextField27.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField27.text")); // NOI18N
 
         jLabel41.setForeground(new java.awt.Color(204, 102, 0));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel41, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel41.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel41, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel41.text")); // NOI18N
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "BLANCO", "AMARILLO", "NARANJA", "ROJO", "VERDE", "MORADO", "AZUL" }));
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "RESID CERTIFIC", "KO" }));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox28.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox28.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox29, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox29.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox29, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox29.text")); // NOI18N
         jCheckBox29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox29ActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox30, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox30.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox30, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox30.text")); // NOI18N
         jCheckBox30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox30ActionPerformed(evt);
@@ -586,15 +590,15 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel47, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel47.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel47, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel47.text")); // NOI18N
 
         jTextField21.setEditable(false);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel48, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel48.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel48, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel48.text")); // NOI18N
 
-        jTextField24.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField24.text")); // NOI18N
+        jTextField24.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField24.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox32, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox32.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox32, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox32.text")); // NOI18N
 
         botonBuscarID.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
         botonBuscarID.addActionListener(new java.awt.event.ActionListener() {
@@ -604,22 +608,22 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jLabel107.setForeground(new java.awt.Color(204, 204, 204));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel107, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel107.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel107, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel107.text")); // NOI18N
 
         jPanel15.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel42, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel42.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel42, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel42.text")); // NOI18N
 
-        jTextField1.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField1.text")); // NOI18N
+        jTextField1.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField1.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel44, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel44.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel44, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel44.text")); // NOI18N
 
-        jTextField17.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField17.text")); // NOI18N
+        jTextField17.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField17.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel43, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel43.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel43, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel43.text")); // NOI18N
 
-        jTextField9.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField9.text")); // NOI18N
+        jTextField9.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField9.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -662,9 +666,9 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel22.setBackground(new java.awt.Color(204, 204, 204));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel10.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel10.text")); // NOI18N
 
-        jTextField4.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField4.text")); // NOI18N
+        jTextField4.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField4.text")); // NOI18N
 
         botonBuscarCUPSe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
         botonBuscarCUPSe.addActionListener(new java.awt.event.ActionListener() {
@@ -673,9 +677,9 @@ public final class PymesTopComponent extends TopComponent {
             }
         });
 
-        jTextField5.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField5.text")); // NOI18N
+        jTextField5.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField5.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel11.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel11.text")); // NOI18N
 
         botonBuscarCUPSg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
         botonBuscarCUPSg.addActionListener(new java.awt.event.ActionListener() {
@@ -721,13 +725,13 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel24.setBackground(new java.awt.Color(204, 204, 255));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel17, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel17.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel17, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel17.text")); // NOI18N
 
-        jTextField12.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField12.text")); // NOI18N
+        jTextField12.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField12.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel27, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel27.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel27, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel27.text")); // NOI18N
 
-        jTextField22.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField22.text")); // NOI18N
+        jTextField22.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField22.text")); // NOI18N
 
         botonBuscarTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
         botonBuscarTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -736,35 +740,35 @@ public final class PymesTopComponent extends TopComponent {
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel15, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel15.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel15, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel15.text")); // NOI18N
 
-        jTextField10.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField10.text")); // NOI18N
+        jTextField10.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField10.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel39, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel39.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel39, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel39.text")); // NOI18N
 
-        jTextField19.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField19.text")); // NOI18N
+        jTextField19.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField19.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel46, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel46.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel46, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel46.text")); // NOI18N
 
-        jTextField20.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField20.text")); // NOI18N
+        jTextField20.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField20.text")); // NOI18N
 
-        jTextField2.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField2.text")); // NOI18N
+        jTextField2.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField2.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel12.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel12.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel9.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel9.text")); // NOI18N
 
-        jTextField18.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField18.text")); // NOI18N
+        jTextField18.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField18.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel24, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel24.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel24, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel24.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel25, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel25.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel25, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel25.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel26, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel26.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel26, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel26.text")); // NOI18N
 
-        jTextField3.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField3.text")); // NOI18N
+        jTextField3.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField3.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel32, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel32.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel32, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel32.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -853,30 +857,30 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel21.setBackground(new java.awt.Color(204, 204, 255));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel28, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel28.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel28, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel28.text")); // NOI18N
 
-        jTextField23.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField23.text")); // NOI18N
+        jTextField23.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField23.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel21, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel21.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel21, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel21.text")); // NOI18N
 
-        jTextField16.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField16.text")); // NOI18N
+        jTextField16.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField16.text")); // NOI18N
 
         jLabel108.setForeground(new java.awt.Color(204, 204, 204));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel108, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel108.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel108, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel108.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel13.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel13.text")); // NOI18N
 
-        jTextField7.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField7.text")); // NOI18N
+        jTextField7.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField7.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel20, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel20.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel20, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel20.text")); // NOI18N
 
-        jTextField15.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField15.text")); // NOI18N
+        jTextField15.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField15.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel18, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel18.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel18, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel18.text")); // NOI18N
 
-        jTextField13.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField13.text")); // NOI18N
+        jTextField13.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField13.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel16.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel16.text")); // NOI18N
 
         botonBuscarNIF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
         botonBuscarNIF.addActionListener(new java.awt.event.ActionListener() {
@@ -885,16 +889,16 @@ public final class PymesTopComponent extends TopComponent {
             }
         });
 
-        jTextField11.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField11.text")); // NOI18N
+        jTextField11.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField11.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(actuaMunicipio, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.actuaMunicipio.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(actuaMunicipio, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.actuaMunicipio.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel138, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel138.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel138, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel138.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel19, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel19.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel19, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel19.text")); // NOI18N
 
         jTextField14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jTextField14.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField14.text")); // NOI18N
+        jTextField14.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField14.text")); // NOI18N
 
         botonBuscarTitular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/IconoBusquedaPequeño_16x16.png"))); // NOI18N
         botonBuscarTitular.addActionListener(new java.awt.event.ActionListener() {
@@ -905,13 +909,13 @@ public final class PymesTopComponent extends TopComponent {
 
         jTextField123.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField123.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField123.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField123.text")); // NOI18N
+        jTextField123.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField123.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel130, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel130.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel130, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel130.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel35, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel35.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel35, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel35.text")); // NOI18N
 
-        jTextField8.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField8.text")); // NOI18N
+        jTextField8.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField8.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -1064,7 +1068,7 @@ public final class PymesTopComponent extends TopComponent {
             .addComponent(miBarraLocu, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel26.TabConstraints.tabTitle"), jPanel26); // NOI18N
+        jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel26.TabConstraints.tabTitle"), jPanel26); // NOI18N
 
         miBarraCer.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         miBarraCer.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -1093,7 +1097,7 @@ public final class PymesTopComponent extends TopComponent {
             .addComponent(miBarraCer, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel17.TabConstraints.tabTitle"), jPanel17); // NOI18N
+        jTabbedPane2.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel17.TabConstraints.tabTitle"), jPanel17); // NOI18N
 
         jPanel20.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -1101,19 +1105,19 @@ public final class PymesTopComponent extends TopComponent {
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel29, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel29.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel29, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel29.text")); // NOI18N
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane4.setViewportView(jTextArea3);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel22, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel22.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel22, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel22.text")); // NOI18N
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane3.setViewportView(jTextArea2);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel23, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel23.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel23, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel23.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1158,11 +1162,11 @@ public final class PymesTopComponent extends TopComponent {
                 .addGap(74, 74, 74))
         );
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel33, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel33.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel33, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel33.text")); // NOI18N
 
-        jTextField6.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField6.text")); // NOI18N
+        jTextField6.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField6.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel34, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel34.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel34, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel34.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1190,19 +1194,19 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel7.setBackground(new java.awt.Color(153, 204, 255));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel45, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel45.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel45, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel45.text")); // NOI18N
 
-        jTextField29.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField29.text")); // NOI18N
+        jTextField29.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField29.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel49, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel49.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel49, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel49.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel50, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel50.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel50, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel50.text")); // NOI18N
 
-        jTextField30.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField30.text")); // NOI18N
+        jTextField30.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField30.text")); // NOI18N
 
-        jTextField31.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField31.text")); // NOI18N
+        jTextField31.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField31.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel51, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel51.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel51, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel51.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1359,7 +1363,7 @@ public final class PymesTopComponent extends TopComponent {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel41))
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1390,7 +1394,7 @@ public final class PymesTopComponent extends TopComponent {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
 
         miTabla01.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1416,7 +1420,7 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel16.setBackground(new java.awt.Color(204, 204, 204));
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonRefrescar, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonRefrescar.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonRefrescar, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonRefrescar.text")); // NOI18N
         botonRefrescar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRefrescarActionPerformed(evt);
@@ -1459,18 +1463,18 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jLabel131.setForeground(new java.awt.Color(153, 153, 153));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel131, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel131.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel131, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel131.text")); // NOI18N
 
-        jTextField124.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField124.text")); // NOI18N
+        jTextField124.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField124.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(reduceFuente, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.reduceFuente.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(reduceFuente, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.reduceFuente.text")); // NOI18N
         reduceFuente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reduceFuenteActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(aumentaFuente, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.aumentaFuente.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(aumentaFuente, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.aumentaFuente.text")); // NOI18N
         aumentaFuente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aumentaFuenteActionPerformed(evt);
@@ -1484,7 +1488,7 @@ public final class PymesTopComponent extends TopComponent {
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(generaExelMakro, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.generaExelMakro.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(generaExelMakro, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.generaExelMakro.text")); // NOI18N
         generaExelMakro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generaExelMakroActionPerformed(evt);
@@ -1546,7 +1550,7 @@ public final class PymesTopComponent extends TopComponent {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 1670, Short.MAX_VALUE)
+            .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 1642, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1560,15 +1564,15 @@ public final class PymesTopComponent extends TopComponent {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel5.TabConstraints.tabTitle"), jPanel5); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel5.TabConstraints.tabTitle"), jPanel5); // NOI18N
 
-        jTextField40.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField40.text")); // NOI18N
+        jTextField40.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField40.text")); // NOI18N
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel60, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel60.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel60, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel60.text")); // NOI18N
 
         jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel61, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel61.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel61, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel61.text")); // NOI18N
 
         ListaComercialLiq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar...", "J & C Asesores", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "TODOS" }));
         ListaComercialLiq.addActionListener(new java.awt.event.ActionListener() {
@@ -1578,10 +1582,10 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jLabel62.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel62, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel62.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel62, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel62.text")); // NOI18N
 
         jLabel69.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel69, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel69.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel69, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel69.text")); // NOI18N
 
         miTablaLiquida.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1596,41 +1600,41 @@ public final class PymesTopComponent extends TopComponent {
         ));
         miBarra03.setViewportView(miTablaLiquida);
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonGeneraExelLiquida, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonGeneraExelLiquida.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonGeneraExelLiquida, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonGeneraExelLiquida.text")); // NOI18N
         botonGeneraExelLiquida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGeneraExelLiquidaActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonActualizarCalculos, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonActualizarCalculos.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonActualizarCalculos, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonActualizarCalculos.text")); // NOI18N
         botonActualizarCalculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActualizarCalculosActionPerformed(evt);
             }
         });
 
-        jTextField72.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField72.text")); // NOI18N
+        jTextField72.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField72.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel71, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel71.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel71, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel71.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel72, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel72.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel72, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel72.text")); // NOI18N
 
         jLabel73.setForeground(new java.awt.Color(153, 153, 153));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel73, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel73.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel73, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel73.text")); // NOI18N
 
         jLabel74.setForeground(new java.awt.Color(153, 153, 153));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel74, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel74.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel74, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel74.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel75, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel75.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel75, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel75.text")); // NOI18N
 
-        jTextField73.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField73.text")); // NOI18N
+        jTextField73.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField73.text")); // NOI18N
 
         jLabel76.setForeground(new java.awt.Color(153, 153, 153));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel76, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel76.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel76, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel76.text")); // NOI18N
 
         jLabel77.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel77, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel77.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel77, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel77.text")); // NOI18N
 
         ListaZonaLiq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir...", "CASTELLON", "VALENCIA", "OTRAS", "TODAS" }));
         ListaZonaLiq.addActionListener(new java.awt.event.ActionListener() {
@@ -1642,89 +1646,89 @@ public final class PymesTopComponent extends TopComponent {
         jPanel14.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel63.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel63, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel63.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel63, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel63.text")); // NOI18N
 
         jLabel64.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel64, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel64.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel64, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel64.text")); // NOI18N
 
         jLabel65.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel65, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel65.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel65, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel65.text")); // NOI18N
 
         jLabel67.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel67, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel67.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel67, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel67.text")); // NOI18N
 
-        jTextField42.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField42.text")); // NOI18N
+        jTextField42.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField42.text")); // NOI18N
         jTextField42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField42ActionPerformed(evt);
             }
         });
 
-        jTextField43.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField43.text")); // NOI18N
+        jTextField43.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField43.text")); // NOI18N
 
-        jTextField44.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField44.text")); // NOI18N
+        jTextField44.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField44.text")); // NOI18N
         jTextField44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField44ActionPerformed(evt);
             }
         });
 
-        jTextField46.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField46.text")); // NOI18N
+        jTextField46.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField46.text")); // NOI18N
 
-        jTextField47.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField47.text")); // NOI18N
+        jTextField47.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField47.text")); // NOI18N
 
-        jTextField48.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField48.text")); // NOI18N
+        jTextField48.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField48.text")); // NOI18N
 
-        jTextField49.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField49.text")); // NOI18N
+        jTextField49.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField49.text")); // NOI18N
 
-        jTextField50.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField50.text")); // NOI18N
+        jTextField50.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField50.text")); // NOI18N
         jTextField50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField50ActionPerformed(evt);
             }
         });
 
-        jTextField56.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField56.text")); // NOI18N
+        jTextField56.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField56.text")); // NOI18N
 
-        jTextField108.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField108.text")); // NOI18N
+        jTextField108.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField108.text")); // NOI18N
 
-        jTextField111.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField111.text")); // NOI18N
+        jTextField111.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField111.text")); // NOI18N
 
-        jTextField76.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField76.text")); // NOI18N
+        jTextField76.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField76.text")); // NOI18N
 
-        jTextField77.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField77.text")); // NOI18N
+        jTextField77.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField77.text")); // NOI18N
 
-        jTextField78.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField78.text")); // NOI18N
+        jTextField78.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField78.text")); // NOI18N
 
-        jTextField80.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField80.text")); // NOI18N
+        jTextField80.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField80.text")); // NOI18N
 
-        jTextField81.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField81.text")); // NOI18N
+        jTextField81.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField81.text")); // NOI18N
 
-        jTextField82.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField82.text")); // NOI18N
+        jTextField82.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField82.text")); // NOI18N
 
-        jTextField83.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField83.text")); // NOI18N
+        jTextField83.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField83.text")); // NOI18N
 
-        jTextField51.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField51.text")); // NOI18N
+        jTextField51.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField51.text")); // NOI18N
 
-        jTextField52.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField52.text")); // NOI18N
+        jTextField52.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField52.text")); // NOI18N
 
-        jTextField53.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField53.text")); // NOI18N
+        jTextField53.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField53.text")); // NOI18N
 
-        jTextField54.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField54.text")); // NOI18N
+        jTextField54.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField54.text")); // NOI18N
         jTextField54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField54ActionPerformed(evt);
             }
         });
 
-        jTextField55.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField55.text")); // NOI18N
+        jTextField55.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField55.text")); // NOI18N
 
-        jTextField57.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField57.text")); // NOI18N
+        jTextField57.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField57.text")); // NOI18N
 
-        jTextField107.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField107.text")); // NOI18N
+        jTextField107.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField107.text")); // NOI18N
         jTextField107.setPreferredSize(new java.awt.Dimension(146, 20));
 
-        jTextField112.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField112.text")); // NOI18N
+        jTextField112.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField112.text")); // NOI18N
         jTextField112.setMaximumSize(new java.awt.Dimension(146, 20));
         jTextField112.setMinimumSize(new java.awt.Dimension(146, 20));
         jTextField112.setPreferredSize(new java.awt.Dimension(146, 20));
@@ -1735,200 +1739,200 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jTextField79.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField79.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField79.text")); // NOI18N
+        jTextField79.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField79.text")); // NOI18N
 
         jTextField86.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField86.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField86.text")); // NOI18N
+        jTextField86.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField86.text")); // NOI18N
 
         jTextField89.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField89.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField89.text")); // NOI18N
+        jTextField89.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField89.text")); // NOI18N
 
         jTextField92.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField92.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField92.text")); // NOI18N
+        jTextField92.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField92.text")); // NOI18N
 
         jTextField93.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField93.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField93.text")); // NOI18N
+        jTextField93.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField93.text")); // NOI18N
 
         jTextField94.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField94.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField94.text")); // NOI18N
+        jTextField94.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField94.text")); // NOI18N
 
         jTextField95.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField95.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField95.text")); // NOI18N
+        jTextField95.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField95.text")); // NOI18N
 
-        jTextField58.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField58.text")); // NOI18N
+        jTextField58.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField58.text")); // NOI18N
 
-        jTextField59.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField59.text")); // NOI18N
+        jTextField59.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField59.text")); // NOI18N
 
-        jTextField60.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField60.text")); // NOI18N
+        jTextField60.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField60.text")); // NOI18N
 
-        jTextField61.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField61.text")); // NOI18N
+        jTextField61.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField61.text")); // NOI18N
 
-        jTextField62.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField62.text")); // NOI18N
+        jTextField62.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField62.text")); // NOI18N
 
-        jTextField63.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField63.text")); // NOI18N
+        jTextField63.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField63.text")); // NOI18N
 
-        jTextField109.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField109.text")); // NOI18N
+        jTextField109.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField109.text")); // NOI18N
 
-        jTextField113.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField113.text")); // NOI18N
+        jTextField113.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField113.text")); // NOI18N
 
         jTextField84.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField84.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField84.text")); // NOI18N
+        jTextField84.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField84.text")); // NOI18N
 
         jTextField87.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField87.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField87.text")); // NOI18N
+        jTextField87.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField87.text")); // NOI18N
 
         jTextField90.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField90.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField90.text")); // NOI18N
+        jTextField90.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField90.text")); // NOI18N
 
         jTextField96.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField96.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField96.text")); // NOI18N
+        jTextField96.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField96.text")); // NOI18N
 
         jTextField97.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField97.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField97.text")); // NOI18N
+        jTextField97.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField97.text")); // NOI18N
 
         jTextField99.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField99.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField99.text")); // NOI18N
+        jTextField99.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField99.text")); // NOI18N
 
         jTextField98.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField98.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField98.text")); // NOI18N
+        jTextField98.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField98.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel66, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel66.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel66, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel66.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel80, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel80.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel80, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel80.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel83, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel83.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel83, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel83.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel85, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel85.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel85, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel85.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel87, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel87.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel87, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel87.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel89, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel89.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel89, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel89.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel91, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel91.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel91, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel91.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel122, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel122.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel122, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel122.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel124, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel124.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel124, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel124.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel94, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel94.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel94, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel94.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel96, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel96.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel96, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel96.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel102, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel102.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel102, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel102.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel103, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel103.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel103, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel103.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel104, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel104.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel104, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel104.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel105, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel105.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel105, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel105.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel106, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel106.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel106, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel106.text")); // NOI18N
 
-        jTextField45.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField45.text")); // NOI18N
+        jTextField45.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField45.text")); // NOI18N
 
-        jTextField64.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField64.text")); // NOI18N
+        jTextField64.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField64.text")); // NOI18N
         jTextField64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField64ActionPerformed(evt);
             }
         });
 
-        jTextField65.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField65.text")); // NOI18N
+        jTextField65.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField65.text")); // NOI18N
 
-        jTextField66.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField66.text")); // NOI18N
+        jTextField66.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField66.text")); // NOI18N
 
-        jTextField67.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField67.text")); // NOI18N
+        jTextField67.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField67.text")); // NOI18N
 
-        jTextField68.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField68.text")); // NOI18N
+        jTextField68.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField68.text")); // NOI18N
 
-        jTextField69.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField69.text")); // NOI18N
+        jTextField69.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField69.text")); // NOI18N
 
-        jTextField110.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField110.text")); // NOI18N
+        jTextField110.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField110.text")); // NOI18N
 
-        jTextField114.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField114.text")); // NOI18N
+        jTextField114.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField114.text")); // NOI18N
 
         jTextField85.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField85.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField85.text")); // NOI18N
+        jTextField85.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField85.text")); // NOI18N
 
         jTextField88.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField88.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField88.text")); // NOI18N
+        jTextField88.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField88.text")); // NOI18N
 
         jTextField91.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField91.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField91.text")); // NOI18N
+        jTextField91.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField91.text")); // NOI18N
 
         jTextField100.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField100.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField100.text")); // NOI18N
+        jTextField100.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField100.text")); // NOI18N
 
         jTextField101.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField101.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField101.text")); // NOI18N
+        jTextField101.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField101.text")); // NOI18N
 
         jTextField102.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField102.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField102.text")); // NOI18N
+        jTextField102.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField102.text")); // NOI18N
 
         jTextField103.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField103.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField103.text")); // NOI18N
+        jTextField103.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField103.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel68, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel68.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel68, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel68.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel81, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel81.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel81, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel81.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel82, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel82.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel82, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel82.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel84, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel84.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel84, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel84.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel86, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel86.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel86, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel86.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel88, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel88.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel88, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel88.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel90, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel90.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel90, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel90.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel123, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel123.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel123, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel123.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel125, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel125.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel125, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel125.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel93, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel93.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel93, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel93.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel95, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel95.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel95, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel95.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel97, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel97.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel97, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel97.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel98, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel98.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel98, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel98.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel99, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel99.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel99, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel99.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel100, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel100.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel100, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel100.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel101, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel101.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel101, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel101.text")); // NOI18N
 
-        jTextField115.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField115.text")); // NOI18N
+        jTextField115.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField115.text")); // NOI18N
 
         jTextField116.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField116.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField116.text")); // NOI18N
+        jTextField116.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField116.text")); // NOI18N
 
         jTextField117.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField117.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField117.text")); // NOI18N
+        jTextField117.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField117.text")); // NOI18N
 
         jTextField118.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField118.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField118.text")); // NOI18N
+        jTextField118.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField118.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel126, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel126.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel126, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel126.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel127, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel127.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel127, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel127.text")); // NOI18N
 
-        jTextField119.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField119.text")); // NOI18N
+        jTextField119.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField119.text")); // NOI18N
 
         jTextField120.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField120.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField120.text")); // NOI18N
+        jTextField120.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField120.text")); // NOI18N
 
         jTextField121.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField121.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField121.text")); // NOI18N
+        jTextField121.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField121.text")); // NOI18N
 
         jTextField122.setForeground(new java.awt.Color(204, 0, 0));
-        jTextField122.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField122.text")); // NOI18N
+        jTextField122.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField122.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel128, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel128.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel128, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel128.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel129, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel129.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel129, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel129.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -2277,50 +2281,50 @@ public final class PymesTopComponent extends TopComponent {
                         .addGap(46, 46, 46))))
         );
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jButton1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jButton1.text")); // NOI18N
         jButton1.setEnabled(false);
 
         jPanel18.setBackground(new java.awt.Color(204, 204, 255));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel132, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel132.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel132, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel132.text")); // NOI18N
 
-        jTextField126.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField126.text")); // NOI18N
+        jTextField126.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField126.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel133, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel133.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel133, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel133.text")); // NOI18N
 
-        jTextField127.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField127.text")); // NOI18N
+        jTextField127.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField127.text")); // NOI18N
 
-        jTextField128.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField128.text")); // NOI18N
+        jTextField128.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField128.text")); // NOI18N
         jTextField128.setMinimumSize(new java.awt.Dimension(236, 20));
         jTextField128.setPreferredSize(new java.awt.Dimension(123, 20));
 
-        jTextField129.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField129.text")); // NOI18N
+        jTextField129.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField129.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel134, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel134.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel134, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel134.text")); // NOI18N
 
-        jTextField130.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField130.text")); // NOI18N
+        jTextField130.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField130.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel135, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel135.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel135, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel135.text")); // NOI18N
 
-        jTextField131.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField131.text")); // NOI18N
+        jTextField131.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField131.text")); // NOI18N
 
-        jTextField132.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField132.text")); // NOI18N
+        jTextField132.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField132.text")); // NOI18N
         jTextField132.setMinimumSize(new java.awt.Dimension(236, 20));
 
-        jTextField133.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField133.text")); // NOI18N
+        jTextField133.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField133.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel136, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel136.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel136, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel136.text")); // NOI18N
 
-        jTextField134.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField134.text")); // NOI18N
+        jTextField134.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField134.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel137, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel137.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel137, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel137.text")); // NOI18N
 
-        jTextField135.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField135.text")); // NOI18N
+        jTextField135.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField135.text")); // NOI18N
 
-        jTextField136.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField136.text")); // NOI18N
+        jTextField136.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField136.text")); // NOI18N
         jTextField136.setMinimumSize(new java.awt.Dimension(236, 20));
 
-        jTextField137.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField137.text")); // NOI18N
+        jTextField137.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField137.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2398,14 +2402,14 @@ public final class PymesTopComponent extends TopComponent {
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 204));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel92, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel92.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel92, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel92.text")); // NOI18N
 
-        jTextField71.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField71.text")); // NOI18N
+        jTextField71.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField71.text")); // NOI18N
 
         jLabel70.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel70, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel70.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel70, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel70.text")); // NOI18N
 
-        jTextField70.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField70.text")); // NOI18N
+        jTextField70.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField70.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2458,7 +2462,7 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(jLabel77)
                         .addGap(18, 18, 18)
                         .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                         .addComponent(jLabel62))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2497,7 +2501,7 @@ public final class PymesTopComponent extends TopComponent {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2560,7 +2564,7 @@ public final class PymesTopComponent extends TopComponent {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
 
         miTabla02.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2579,33 +2583,33 @@ public final class PymesTopComponent extends TopComponent {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 1670, Short.MAX_VALUE)
+            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 1642, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel1.text")); // NOI18N
 
-        numLineas.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.numLineas.text")); // NOI18N
+        numLineas.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.numLineas.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel2.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel2.text")); // NOI18N
 
-        nComienzo.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.nComienzo.text")); // NOI18N
+        nComienzo.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.nComienzo.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel36, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel36.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel36, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel36.text")); // NOI18N
 
         jCheckBox1.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox1, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox1, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox1.text")); // NOI18N
 
         jCheckBox2.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox2, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox2.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox2, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox2.text")); // NOI18N
 
         jCheckBox3.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox3, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox3.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox3, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox3.text")); // NOI18N
         jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox3ActionPerformed(evt);
@@ -2613,10 +2617,10 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jCheckBox4.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox4, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox4.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox4, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox4.text")); // NOI18N
 
         jCheckBox5.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox5, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox5.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox5, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox5.text")); // NOI18N
         jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox5ActionPerformed(evt);
@@ -2624,76 +2628,76 @@ public final class PymesTopComponent extends TopComponent {
         });
 
         jCheckBox6.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox6, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox6.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox6, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox6.text")); // NOI18N
 
         jCheckBox7.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox7, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox7.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox7, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox7.text")); // NOI18N
 
         jCheckBox8.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox8, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox8.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox8, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox8.text")); // NOI18N
 
         jCheckBox9.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox9, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox9.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox9, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox9.text")); // NOI18N
 
         jCheckBox10.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox10, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox10.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox10, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox10.text")); // NOI18N
 
         jCheckBox11.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox11, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox11.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox11, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox11.text")); // NOI18N
 
         jCheckBox12.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox12, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox12.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox12, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox12.text")); // NOI18N
 
         jCheckBox13.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox13, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox13.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox13, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox13.text")); // NOI18N
 
         jCheckBox14.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox14, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox14.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox14, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox14.text")); // NOI18N
 
         jCheckBox15.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox15, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox15.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox15, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox15.text")); // NOI18N
 
         jCheckBox16.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox16, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jCheckBox16.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox16, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jCheckBox16.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel4.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel4.text")); // NOI18N
 
-        jTextField25.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField25.text")); // NOI18N
+        jTextField25.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField25.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel5.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel5.text")); // NOI18N
 
-        jTextField26.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField26.text")); // NOI18N
+        jTextField26.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField26.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonGuardaConf, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonGuardaConf.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonGuardaConf, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonGuardaConf.text")); // NOI18N
 
-        jTextField28.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jTextField28.text")); // NOI18N
+        jTextField28.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jTextField28.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonCalendario, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonCalendario.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonCalendario, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonCalendario.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonActualizaFecha, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.botonActualizaFecha.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(botonActualizaFecha, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.botonActualizaFecha.text")); // NOI18N
         botonActualizaFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonActualizaFechaActionPerformed(evt);
             }
         });
 
-        login.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.login.text")); // NOI18N
+        login.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.login.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel30, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel30.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel30, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel30.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel31, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel31.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel31, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel31.text")); // NOI18N
 
-        passw.setText(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.passw.text")); // NOI18N
+        passw.setText(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.passw.text")); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel14.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel14.text")); // NOI18N
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventana/logo.JPG"))); // NOI18N
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel40, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel40.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel40, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel40.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel78, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel78.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel78, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel78.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -2710,7 +2714,7 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(numLineas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(1388, Short.MAX_VALUE))))
+                        .addContainerGap(1361, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2780,7 +2784,7 @@ public final class PymesTopComponent extends TopComponent {
                                 .addComponent(jLabel31)
                                 .addGap(3, 3, 3)
                                 .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2859,7 +2863,7 @@ public final class PymesTopComponent extends TopComponent {
                 .addGap(77, 77, 77))
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
 
         areaDeTexto.setColumns(20);
         areaDeTexto.setRows(5);
@@ -2869,7 +2873,7 @@ public final class PymesTopComponent extends TopComponent {
         areaDeTextoProcesado.setRows(5);
         scrollPaneAreaProceso.setViewportView(areaDeTextoProcesado);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jLabel6.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jLabel6.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2882,7 +2886,7 @@ public final class PymesTopComponent extends TopComponent {
                         .addComponent(scrollPaneArea)
                         .addGap(302, 302, 302))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.DEFAULT_SIZE, 1350, Short.MAX_VALUE)
+                        .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.DEFAULT_SIZE, 1322, Short.MAX_VALUE)
                         .addGap(310, 310, 310))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -2900,13 +2904,13 @@ public final class PymesTopComponent extends TopComponent {
                 .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PymesTopComponent.class, "PymesTopComponent.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
+        jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(gestionPymesTopComponent.class, "gestionPymesTopComponent.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1647, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3513,7 +3517,7 @@ public final class PymesTopComponent extends TopComponent {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
-    // .......................................................................
+      // .......................................................................
         public void conectarConBD(){
 
                      String Str1 = login.getText();

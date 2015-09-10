@@ -122,15 +122,15 @@ public final class ResidencialTopComponent extends TopComponent {
     String archivo = null;  
     public ProgressMonitor progressMonitor;
     // .......................................................... 
-    public String tablaDatos[][]            = new String[10000][55];  
-    public String tablaDatosIncpl[][]       = new String[10000][55];
-    public String tablaDatosCmpl[][]        = new String[10000][55];
-    public Integer tablaErrores[][]         = new Integer[10000][55];
-    public String tablaErrorCod[][]         = new String[10000][55];
-    public String tablaLocuciones[][]       = new String[10000][25];
-    public String tablaCertificaciones[][]  = new String[10000][60];
-    public Integer locuciones[]             = new Integer[10000];
-    public Integer llamadasLocuciones[][]   = new Integer[10000][15];
+    public String tablaDatos[][]            = new String[5000][55];  
+    public String tablaDatosIncpl[][]       = new String[5000][55];
+    public String tablaDatosCmpl[][]        = new String[5000][55];
+    public Integer tablaErrores[][]         = new Integer[5000][55];
+    public String tablaErrorCod[][]         = new String[5000][55];
+    public String tablaLocuciones[][]       = new String[5000][25];
+    public String tablaCertificaciones[][]  = new String[5000][60];
+    public Integer locuciones[]             = new Integer[5000];
+    public Integer llamadasLocuciones[][]   = new Integer[5000][15];
     
     public Integer tablaConfiguracion[] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1} ;
     

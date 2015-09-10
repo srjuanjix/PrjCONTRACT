@@ -17,7 +17,6 @@ import vo.PymesVo;
 
 import conexion.Conexion;
 import java.text.SimpleDateFormat;
-import javax.swing.table.TableColumn;
 
 /**
  * Clase que permite el acceso a la base de datos
@@ -38,46 +37,48 @@ public class PymesDao {
         public int nLiquida = 0;
     
 	public int registrarContrato(PymesVo miPyme,String str1,String str2) {
-		 
+            
+            System.out.println("str1,str2="+str1+" - "+str2);
             Conexion conex = new Conexion(str1,str2);
             int estadoInsert = 0 ;
             String sqlStr;
 
 		try {
-			
-                        
-                        sqlStr = "INSERT INTO t_makro_residencial (Estado,IdIncidencia,Fecha,Comercial,Swg,Swe,DualFuel,CUPS_Elect,"
-                                        + "CUPS_Gas,CodPostal,Municipio,Provincia,Direccion,Titular,NIF_CIF,telefono,Fecha_Firma_Cliente,"
-                                        + "Consumo_elect_kwha,Consumo_gas_kwha,"
-                                        + "SVGCompleto,SVGXpres,SVGBasico,SVelectricXpres,Servihogar,SPP,"
-                                        + "Observaciones) VALUES ('"					
+			                        
+                        sqlStr = "INSERT INTO t_makro_pymes (Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
+                                        + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
+                                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,C_servicios,Reactiva)"
+                                        + " VALUES ('"					
 					+ miPyme.getEstado() + "', '"
+                                        + miPyme.getFechaDocout() + "', '"
+                                        + miPyme.getFechaMemo() + "', '"
                                         + miPyme.getIncidencia() + "', '"    
-					+ miPyme.getFecha() + "', '"
-		 			+ miPyme.getComercial() + "', '"  
-                                        + miPyme.getSwg() + "', '"
-                                        + miPyme.getSwe() + "', '"
-                                        + miPyme.getDualFuel() + "', '"
+					+ miPyme.getFechaOrden() + "', '"
                                         + miPyme.getCupsE() + "', '"
                                         + miPyme.getCupsG() + "', '"
-                                        + miPyme.getCodPostal() + "', '"
+                                        + miPyme.getAgente() + "', '" 
+		 			+ miPyme.getCodPostal() + "', '"
                                         + miPyme.getMunicipio() + "', '"
                                         + miPyme.getProvincia() + "', '"
                                         + miPyme.getDireccion() + "', '"
                                         + miPyme.getTitular() + "', '"
-                                        + miPyme.getNifCif() + "', '"
-                                        + miPyme.getTelefonoCli() + "', '"
+                                        + miPyme.getNifCif() + "', '" 
                                         + miPyme.getFechaFirma() + "', '"
+                                        + miPyme.getCVComercial() + "', '" 
                                         + miPyme.getConsumoElect() + "', '"
-                                        + miPyme.getConsumoGas() + "', '"
-                                        + miPyme.getSVG_1() + "', '"
-                                        + miPyme.getSVG_2() + "', '"
-                                        + miPyme.getSVG_3() + "', '"
-                                        + miPyme.getSVG_4() + "', '"
-                                        + miPyme.getSVG_5() + "', '"    
-                                        + miPyme.getTurGas() + "', '"
-                                        + miPyme.getSPP() + "', '"
-                                        + miPyme.getObservaciones() + "')" ;
+                                        + miPyme.getConsumoElectWS() + "', '"
+                                        + miPyme.getPagado() + "', '"
+                                        + miPyme.getPFenosa() + "', '"
+                                        + miPyme.getTarifa() + "', '"
+                                        + miPyme.getCampaña() + "', '"                                       
+                                        + miPyme.getTelefonoCli() + "', '"
+                                        + miPyme.getPerContacto() + "', '"
+                                        + miPyme.getExplicacion() + "', '"
+                                        + miPyme.getSolucion() + "', '"
+                                        + miPyme.getObservaciones() + "', '"
+                                        + miPyme.getTarifaGas() + "', '"
+                                        + miPyme.getCServicios() + "', '"
+                                        + miPyme.getReactiva() + "')" ;
                         
 			System.out.println(sqlStr);
                         Statement estatuto = conex.getConnection().createStatement();
@@ -104,18 +105,32 @@ public class PymesDao {
 	public void buscarContratos(DefaultTableModel model,String str1,String str2,int filtroEstado,int filtroFecha,int filtroProvincia,int filtroAgente, int filtroMakro,int filtroIncidencia,String fProd) {
                 String str;
                 int val;
-                String strquery = "SELECT * FROM t_makro_residencial" ;
-            //    filtroEstado = 3 ;
+                String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
+                        + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
+                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,Consumo_gas_kwha,C_servicios,Reactiva,iServicios,iPunteado,P_Fenosa_Total,Empresa_Origen,Oferta"
+                        + " FROM t_makro_pymes" ;
+          /*
+        if (str.equals("PENDIENTE"))   this.filtroEstadoSel = 0 ;
+        if (str.equals("RESID"))       this.filtroEstadoSel = 1 ;
+        if (str.equals("CERTIFICADO")) this.filtroEstadoSel = 2 ;
+        if (str.equals("TODOS"))        this.filtroEstadoSel = 3 ;
+        if (str.equals("KOs"))          this.filtroEstadoSel = 4 ;
+        if (str.equals("PUNTEADOS"))    this.filtroEstadoSel = 5 ;
+        if (str.equals("NO PUNTEADOS")) this.filtroEstadoSel = 6 ;
+        if (str.equals("VALIDADOS"))    this.filtroEstadoSel = 7 ;
+        if (str.equals("ERROR WEB SALES")) this.filtroEstadoSel = 8 ;
+                
+                */
                 switch (filtroEstado){
                     
                     case 0:
                         strquery = strquery + " WHERE Estado = 0" ;
                         break;
                     case 1:
-                        strquery = strquery + " WHERE Estado = 1" ;
+                        strquery = strquery + " WHERE Estado = 2" ;
                         break;
                     case 2:
-                        strquery = strquery + " WHERE Estado = 2" ;            
+                        strquery = strquery + " WHERE Estado = 1" ;            
                         break;       
                     case 3:
                         strquery = strquery + " WHERE Estado <= 6" ; 
@@ -124,41 +139,34 @@ public class PymesDao {
                         strquery = strquery + " WHERE Estado = 3" ; 
                         break; 
                     case 5:
-                        strquery = strquery + " WHERE Punteado = 1" ; 
+                        strquery = strquery + " WHERE iPunteado = 1" ; 
                         break; 
                     case 6:
-                        strquery = strquery + " WHERE Punteado = 0" ; 
+                        strquery = strquery + " WHERE iPunteado = 0" ; 
                         break; 
-                    case 7:
-                        strquery = strquery + " WHERE Estado = 4" ; 
-                        break; 
-                    case 8:
-                        strquery = strquery + " WHERE Estado = 5" ; 
-                        break;      
-                         
                 }        
                   switch (filtroIncidencia){
                     
                     case 0:
-                        strquery = strquery + " AND IdIncidencia = 0" ;
+                        strquery = strquery + " AND Incidencia = 0" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND IdIncidencia = 1 " ;
+                        strquery = strquery + " AND Incidencia = 1 " ;
                         break;
                     case 2:
-                        strquery = strquery + " AND IdIncidencia = 2 " ;
+                        strquery = strquery + " AND Incidencia = 2 " ;
                         break;
                     case 3:
-                        strquery = strquery + " AND IdIncidencia = 3 " ;
+                        strquery = strquery + " AND Incidencia = 3 " ;
                         break;
                     case 4:
-                        strquery = strquery + " AND IdIncidencia = 4 " ;
+                        strquery = strquery + " AND Incidencia = 4 " ;
                          break;
                     case 5:
-                        strquery = strquery + " AND IdIncidencia = 5 " ;
+                        strquery = strquery + " AND Incidencia = 5 " ;
                         break;
                     case 6:
-                        strquery = strquery + " AND IdIncidencia = 6 " ;
+                        strquery = strquery + " AND Incidencia = 6 " ;
                         break;
                     case 7:
                         strquery = strquery + "" ;
@@ -169,37 +177,37 @@ public class PymesDao {
                 switch (filtroFecha){
                     
                     case 0:
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 5 DAY) <= Fecha" ;
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 5 DAY) <= Orden" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 30 DAY) <= Fecha" ;
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 30 DAY) <= Orden" ;
                         break;
                     case 2:
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 60 DAY) <= Fecha" ;            
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 60 DAY) <= Orden" ;            
                         break;  
                     case 3:
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 90 DAY) <= Fecha" ;            
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 90 DAY) <= Orden" ;            
                         break;  
                     case 4:
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 180 DAY) <= Fecha" ;            
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 180 DAY) <= Orden" ;            
                         break; 
                     case 5:                       
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 365 DAY) <= Fecha" ;            
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 365 DAY) <= Orden" ;            
                         break;       
                     case 6:                       
                         strquery = strquery + "" ;            
                         break;
                     case 7:                       
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 10 DAY) <= Fecha" ;            
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 10 DAY) <= Orden" ;            
                         break; 
                     case 8:                       
-                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= Fecha" ;            
+                        strquery = strquery + " AND  DATE_SUB(CURDATE(),INTERVAL 15 DAY) <= Orden" ;            
                         break; 
                              
                    
                 }   
                 } else {
-                      strquery = strquery + " AND  Fecha LIKE '"+fProd+" 00:00:00' ";                    
+                      strquery = strquery + " AND  Orden LIKE '"+fProd+" 00:00:00' ";                    
                 }
                 switch (filtroProvincia){
                     
@@ -216,7 +224,7 @@ public class PymesDao {
                         strquery = strquery + " AND  Provincia LIKE 'ALICANTE'" ;            
                         break;  
                     case 4:
-                        strquery = strquery + " AND  Provincia NOT LIKE 'VALENCIA' AND Provincia NOT LIKE 'CASTELL%' AND Provincia NOT LIKE 'ALICANTE'  " ;            
+                        strquery = strquery + " AND  Provincia NOT LIKE 'VALENCIA' AND Provincia NOT LIKE 'CASTELL%' " ;            
                         break;  
                    
                 }     
@@ -226,7 +234,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND (Comercial LIKE 'JOSE' OR Comercial LIKE 'J & C') " ;
+                        strquery = strquery + " AND (Comercial LIKE 'JOSE' OR Comercial LIKE 'J&C') " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Comercial LIKE 'ETP' " ;
@@ -235,7 +243,7 @@ public class PymesDao {
                         strquery = strquery + " AND Comercial LIKE 'NADINE' " ;
                         break;
                     case 4:
-                        strquery = strquery + " AND Comercial LIKE 'EMILIO-RAQUEL' " ;
+                        strquery = strquery + " AND Comercial LIKE 'ELANTY' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Comercial LIKE 'SERNOVEN' " ;
@@ -246,15 +254,12 @@ public class PymesDao {
                     case 7:
                         strquery = strquery + " AND Comercial LIKE 'SHEILA' " ;
                         break;
-                    case 8:
-                        strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
-                    break;
                  }
                  
                 switch (filtroMakro){
                     
                     case 0:
-                        strquery = strquery + " ORDER BY id_m_r ASC" ;
+                        strquery = strquery + " ORDER BY id_m_p ASC" ;
                         break;
                     case 1:
                         strquery = strquery + " ORDER BY Titular " ;
@@ -263,7 +268,7 @@ public class PymesDao {
                         strquery = strquery + " ORDER BY Municipio " ;            
                         break;  
                     case 3:
-                        strquery = strquery + " ORDER BY id_m_r DESC" ;            
+                        strquery = strquery + " ORDER BY id_m_p DESC" ;            
                         break;  
                     case 4:
                         strquery = strquery + " ORDER BY NIF_CIF DESC" ;            
@@ -273,7 +278,8 @@ public class PymesDao {
                 }     
                 
                 System.out.println("La cadena de la consulta ="+strquery);
-		 Conexion conex = new Conexion(str1,str2);
+                System.out.println("str1,str2="+str1+" - "+str2);
+		Conexion conex = new Conexion(str1,str2);
                  int cnt =0;
                  
                //converting date to string dd/MM/yyyy format for example "14/09/2011"
@@ -285,95 +291,95 @@ public class PymesDao {
 
 			while (rs.next()) {
 				// es para obtener los datos y almacenar las filas
-				Object[] fila = new Object[41];
+				Object[] fila = new Object[34];
 				// para llenar cada columna con lo datos almacenados
-				for (int i = 0; i < 41; i++) 
+				for (int i = 0; i < 34; i++) 
 					fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                                        
                                         try {
-                                            fila[2]  = formatDateJava.format(rs.getDate(3)) ;      // fecha memo ; 
+                                            fila[2]  = formatDateJava.format(rs.getDate("Fecha_docout")) ;      // fecha docout ; 
                                             
                                         } catch (NullPointerException nfe){
                                             fila[2]  = ""; 
                                         }
-                              
-                                        fila[4]  = formatDateJava.format(rs.getDate(5)) ; 
-                                        fila[19] = formatDateJava.format(rs.getDate(20)) ; 
-                                        
+                                        try {
+                                            fila[5]  = formatDateJava.format(rs.getDate("Orden")) ; 
+                                            
+                                        } catch (NullPointerException nfe){
+                                            fila[5]  = ""; 
+                                        }
+                                        try {
+                                             fila[15] = formatDateJava.format(rs.getDate("Fecha_Firma_Cliente")) ;  
+                                            
+                                        } catch (NullPointerException nfe){
+                                             fila[15]  = ""; 
+                                        }
+                                       
+                                     
                                         //...........................................................
                                       
-                                        tablaDatos[cnt][30] = Integer.toString(rs.getInt(1)) ;      //  Id_m_r
-                                        tablaDatos[cnt][32] = "-1" ;                                // Id última Locucion
-                                        //........................................................... Aqui cargamos en la tabla de datos de formulario
-                                        tablaDatos[cnt][0] = Integer.toString(rs.getInt(2)); // System.out.println(cnt+"-Estado="+tablaDatos[cnt][0]+" ID_C="+tablaDatos[cnt][30] );
+                                        tablaDatos[cnt][30] = Integer.toString(rs.getInt("id_m_p")) ;      //  Id_m_p
+                                        tablaDatos[cnt][32] = "-1" ;                                       // Id última Locucion
+                                        //...........................................................        Aqui cargamos en la tabla de datos de formulario
+                                        
+                                        tablaDatos[cnt][0] = Integer.toString(rs.getInt("Estado"));         // System.out.println(cnt+"-Estado="+tablaDatos[cnt][0]+" ID_C="+tablaDatos[cnt][30] );
                                                                               
-                                        tablaDatos[cnt][1] = Integer.toString(rs.getInt(4)); 
-                                        tablaDatos[cnt][2] = formatDateJava.format(rs.getDate(5)) ;  
+                                        tablaDatos[cnt][1] = Integer.toString(rs.getInt("Incidencia"));     // Incidencia
+                                        tablaDatos[cnt][2] = formatDateJava.format(rs.getDate("Orden")) ;   // Fecha de orden
                                       
-                                       
+                                        tablaDatos[cnt][3] = rs.getString("CUPS_Gas") ;                     // CUPS gas
+                                        tablaDatos[cnt][4] = rs.getString("CUPS_Elect") ;                   // CUPS electrico
                                         
-                                        tablaDatos[cnt][3] = rs.getString(11) ;  // CUPS gas
-                                        tablaDatos[cnt][4] = rs.getString(12) ;  // CUPS electrico
-                                        
-                                        tablaDatos[cnt][5] = Integer.toString(rs.getInt(13)) ;   // cod_postal ;
-                                        tablaDatos[cnt][6] = rs.getString(14);   // municipio.toUpperCase() ;
-                                        tablaDatos[cnt][7] = rs.getString(15);   //provincia.toUpperCase();
-                                        tablaDatos[cnt][8] = rs.getString(16);   // direccion.toUpperCase();
-                                        tablaDatos[cnt][9] = rs.getString(17);   // titular.toUpperCase();
-                                        tablaDatos[cnt][10]= rs.getString(18);    // nif_cif.toUpperCase();
-                                        tablaDatos[cnt][16]= rs.getString(19);   // telefono;     
-                                        tablaDatos[cnt][11]= formatDateJava.format(rs.getDate(20));      // fecha_firma ; 
-                                        tablaDatos[cnt][12]= Integer.toString(rs.getInt(21)) ;      // consumo elec
-                                        tablaDatos[cnt][13]= Integer.toString(rs.getInt(22)) ;      // consumo gas                                                        
+                                        tablaDatos[cnt][5] = Integer.toString(rs.getInt("CodPostal")) ;     // cod_postal ;
+                                        tablaDatos[cnt][6] = rs.getString("Municipio");                     // municipio.toUpperCase() ;
+                                        tablaDatos[cnt][7] = rs.getString("Provincia");                     //provincia.toUpperCase();
+                                        tablaDatos[cnt][8] = rs.getString("Direccion");                     // direccion.toUpperCase();
+                                        tablaDatos[cnt][9] = rs.getString("Titular");                       // titular.toUpperCase();
+                                        tablaDatos[cnt][10]= rs.getString("NIF_CIF");                       // nif_cif.toUpperCase();
+                                        tablaDatos[cnt][16]= rs.getString("Telefono_Cli");                  // telefono;     
+                                        tablaDatos[cnt][11]= formatDateJava.format(rs.getDate("Fecha_Firma_Cliente"));         // fecha_firma ; 
+                                        tablaDatos[cnt][12]= Integer.toString(rs.getInt("Consumo_elect_kwha")) ;              // consumo elec
+                                        tablaDatos[cnt][13]= Integer.toString(rs.getInt("Consumo_elect_kwha_websale")) ;      // consumo elec websale                                                        
                                        
-                                        tablaDatos[cnt][14] = "0";
+                                        tablaDatos[cnt][14] = Integer.toString(rs.getInt("Consumo_gas_kwha")) ;             // Consumo Gas
                                        
-                                        val = rs.getInt(23); if ( val==1 ) {tablaDatos[cnt][34] = "1" ; }  else tablaDatos[cnt][34] = "0" ;
-                                        val = rs.getInt(24); if ( val==1 ) {tablaDatos[cnt][35] = "1" ; }  else tablaDatos[cnt][35] = "0" ;
-                                        val = rs.getInt(25); if ( val==1 ) {tablaDatos[cnt][36] = "1" ; }  else tablaDatos[cnt][36] = "0" ;
-                                        val = rs.getInt(26); if ( val==1 ) {tablaDatos[cnt][37] = "1" ; }  else tablaDatos[cnt][37] = "0" ;
-                                        val = rs.getInt(27); if ( val==1 ) {tablaDatos[cnt][38] = "1" ; }  else tablaDatos[cnt][38] = "0" ;
-                                        
-                             //           System.out.println("VAl1 ="+rs.getInt(23)+" VAl2 ="+rs.getInt(24)+" VAl3 ="+rs.getInt(25)+" VAl4 ="+rs.getInt(26)+" VAl5 ="+rs.getInt(27)+" para Titular = "+ tablaDatos[cnt][9]);
-                   
-                
-                                        tablaDatos[cnt][15]= rs.getString(32); // observaciones.toUpperCase();   
-                                        tablaDatos[cnt][20]= rs.getString(29); // incidencia.toUpperCase();   
-                                        tablaDatos[cnt][21]= rs.getString(30); // solucion.toUpperCase();   
+                                        tablaDatos[cnt][15]= rs.getString("Observaciones");                 // observaciones.toUpperCase();   
+                                        tablaDatos[cnt][20]= rs.getString("Explicacion");                   // incidencia.toUpperCase();   
+                                        tablaDatos[cnt][21]= rs.getString("Solucion");                      // solucion.toUpperCase();   
 
-                                        tablaDatos[cnt][17] = rs.getString(6) ; //  agente.toUpperCase() ;
+                                        tablaDatos[cnt][17] = rs.getString("Agente") ;                      //  agente.toUpperCase() ;
                                         
-                                        tablaDatos[cnt][28] = rs.getString(33) ; //  tarifa gas
-                                        tablaDatos[cnt][29] = rs.getString(34) ; //  tarifa electrica
+                                        tablaDatos[cnt][29] = rs.getString("Tarifa_gas") ;                  //  tarifa gas
+                                        tablaDatos[cnt][28] = rs.getString("Tarifa") ;                      //  tarifa electrica
                                         
-                                        tablaDatos[cnt][33] = "0";
-                                        val = rs.getInt(8); if ( val==1 ) {tablaDatos[cnt][33] = "1" ; }        // Contrato Swg
-                                        val = rs.getInt(9); if ( val==1 ) {tablaDatos[cnt][33] = "2" ; }        // Contrato Swe
-                                        val = rs.getInt(10); if ( val==1 ) {tablaDatos[cnt][33] = "3" ; }        // Contrato DualFuel
-                                                                                                                                                         
+                                        tablaDatos[cnt][33] = rs.getString("C_servicios");
+                                                                                                                                                                                                
                                         try {
-                                            tablaDatos[cnt][39] = formatDateJava.format(rs.getDate(3));      // fecha memo ; 
+                                            tablaDatos[cnt][39] = formatDateJava.format(rs.getDate("Fecha_docout"));      // fecha docout ; 
                                             
                                         } catch (NullPointerException nfe){
                                             tablaDatos[cnt][39] = ""; 
                                         }
                                         tablaDatos[cnt][40] = "-1";                                             // ID certificación
-                                        tablaDatos[cnt][41] = rs.getString(35) ;                                // Agente  Comercial
+                                        tablaDatos[cnt][41] = rs.getString("CV") ;                              // Agente  Comercial
+                                        tablaDatos[cnt][42] = rs.getString("Empresa_Origen") ;                  // Empresa origen
                                         System.out.println(" tablaDatos[cnt][41] ="+ tablaDatos[cnt][41] );
-                                        tablaDatos[cnt][43] = "0";  
-                                        tablaDatos[cnt][44] = "0"; 
-                                       
-                                        val = rs.getInt(36); if ( val==1 ) {tablaDatos[cnt][43] = "1" ; }        // Tur Gas
-                                        val = rs.getInt(37); if ( val==1 ) {tablaDatos[cnt][44] = "1" ; }        // Punteado
-                                        tablaDatos[cnt][45] = "0" ;
-                                        tablaDatos[cnt][46] = "0" ;
-                                        val = rs.getInt(38); if ( val==1 ) {tablaDatos[cnt][45] = "1" ; }        // SVG Con Calefaccion
-                                        val = rs.getInt(39); if ( val==1 ) {tablaDatos[cnt][46] = "1" ; }        // SVG Sin Calefacción
-                                        tablaDatos[cnt][47] = "1";
-                                        tablaDatos[cnt][48] = "0" ;
-                                        val = rs.getInt(40); if ( val==1 ) {tablaDatos[cnt][48] = "1" ; }        // Tarifa Plana
-                                        tablaDatos[cnt][51] = "0" ;
-                                        val = rs.getInt(41); if ( val==1 ) {tablaDatos[cnt][51] = "1" ; }        // SPP
+                                        tablaDatos[cnt][43] = Integer.toString(rs.getInt("iServicios"));        // iServicios 
+                                        tablaDatos[cnt][44] = Integer.toString(rs.getInt("iPunteado"));         // Punteado
+                                                                      
+                                        
+                                        tablaDatos[cnt][34]= rs.getString("Oferta") ;                           // Oferta
+                                        tablaDatos[cnt][35]= rs.getString("Campaña") ;                          // Campaña
+                                        tablaDatos[cnt][36]= rs.getString("Per_Contacto") ;                     // Persona de contacto
+                                        tablaDatos[cnt][37]= Double.toString(rs.getDouble("Pagado"));           // Pagado
+                                        tablaDatos[cnt][38]= rs.getString("P_Fenosa") ;                         // Pagado Fenosa
+                                        tablaDatos[cnt][45]= Double.toString(rs.getDouble("P_Fenosa_Total"));   // Pagado Fenosa número
+                                      
+                                        tablaDatos[cnt][46]= Double.toString(rs.getDouble("Reactiva"));         // Reactiva
+                                        tablaDatos[cnt][43]="0"; // Tur GAS
+                                        tablaDatos[cnt][48]="0"; // Tarifa plana
+                                        tablaDatos[cnt][51]="0"; // SPP
+                                        
                                         
                                 cnt ++;
                                 
@@ -513,57 +519,53 @@ public class PymesDao {
             Conexion conex = new Conexion(str1,str2);
             int estadoInsert = 0 ;
             String sqlStr, strMemo="";
-
+/*
             if (miPyme.getMemo().equals("NULL") || miPyme.getMemo().equals("")) { 
                 strMemo = "Memo = NULL "  ; 
                 
             } else {
                  strMemo = "Memo ='"+miPyme.getMemo() + "' " ;
             }
-                   
+  */                 
             
 		try {
-			
-                        
-                        sqlStr = "UPDATE  t_makro_residencial SET "					
-					+ "Estado = "+ miPyme.getEstado() + ", "
-                                        + "IdIncidencia = "+miPyme.getIncidencia() + ", "    
-					+ "Fecha = '"+miPyme.getFecha() + "',"
-		 			+ "Comercial = '"+miPyme.getComercial() + "', "  
-                                        + "Swg = "+miPyme.getSwg() + ", "
-                                        + "Swe = "+miPyme.getSwe() + ", "
-                                        + "DualFuel = "+miPyme.getDualFuel() + ", "
+			                        
+                        sqlStr = "UPDATE  t_makro_pymes SET "					
+                                    	+ "Estado = "+ miPyme.getEstado() + ", "
+                                        + "Fecha_docout = '"+ miPyme.getFechaDocout() + "', "
+                                        + "Incidencia = "+miPyme.getIncidencia() + ", "   
+                                        + "Orden = '"+miPyme.getFechaOrden() + "', "  
                                         + "CUPS_Elect = '"+miPyme.getCupsE() + "', "
                                         + "CUPS_Gas='"+miPyme.getCupsG() + "', "
+                                        + "Reactiva='"+miPyme.getReactiva() + "', "
+                                        + "Agente='"+miPyme.getAgente() + "', " 
+                                        + "Empresa_Origen='"+miPyme.getEmpresaOrigen() + "', " 
                                         + "CodPostal = "+miPyme.getCodPostal() + ", "
                                         + "Municipio='"+miPyme.getMunicipio() + "', "
                                         + "Provincia='"+miPyme.getProvincia() + "', "
                                         + "Direccion='"+miPyme.getDireccion() + "', "
                                         + "Titular='"+miPyme.getTitular() + "', "
                                         + "NIF_CIF='"+miPyme.getNifCif() + "', "
-                                        + "telefono='"+miPyme.getTelefonoCli() + "', "
-                                        + "Fecha_Firma_Cliente='"+miPyme.getFechaFirma() + "', "
                                         + "Consumo_elect_kwha="+miPyme.getConsumoElect() + ", "
                                         + "Consumo_gas_kwha="+miPyme.getConsumoGas() + ", "
-                                        + "SVGCompleto ="+miPyme.getSVG_1() + ", "
-                                        + "SVGXpres = "+miPyme.getSVG_2() + ", "
-                                        + "SVGBasico = "+miPyme.getSVG_3() + ", "
-                                        + "SVelectricXpres = "+miPyme.getSVG_4() + ", "
-                                        + "Servihogar = "+miPyme.getSVG_5() + ", "                                       
+                                        + "Fecha_Firma_Cliente='"+miPyme.getFechaFirma() + "', "
+                                        + "Oferta ='"+miPyme.getOferta() + "', "  
+                                        + "Tarifa ='"+miPyme.getTarifa() + "', "   
+                                        + "Campaña = '"+miPyme.getCampaña() + "',"
+                                        + "Telefono_Cli='"+miPyme.getTelefonoCli() + "', "
+                                        + "Per_Contacto = '"+miPyme.getPerContacto() + "', " 
                                         + "Observaciones ='"+miPyme.getObservaciones() + "', " 
-                                        + "Incidencia ='"+miPyme.getsIncidencia() + "', " 
-                                        + "Explicacion ='"+miPyme.getsExplicacion() + "', "
                                         + "Tarifa_Gas ='"+miPyme.getTarifaGas() + "', " 
-                                        + "Tarifa_Elec ='"+miPyme.getTarifaElec() + "', "    
-                                        + "TurGas ='"+miPyme.getTurGas() + "', "  
-                                        + "Punteado ='"+miPyme.getPunteado() + "', "  
-                                        + "AgenteComercial ='"+miPyme.getAgenteCom() + "', "  
-                                        + "SVGCompletoConCalef ='"+miPyme.getSVG_6()+ "', "  
-                                        + "SVGCompletoSinCalef ='"+miPyme.getSVG_7() + "', "  
-                                        + "TarifaPlana ='"+miPyme.getTarifaPlana() + "', " 
-                                        + "SPP ='"+miPyme.getSPP() + "', " 
-                                        + strMemo 
-                                        + "WHERE id_m_r ="+miPyme.getIdContrato();
+                                        + "Explicacion ='"+miPyme.getsExplicacion() + "', "
+                                        + "Solucion ='"+miPyme.getsIncidencia() + "', "
+                                        + "CV ='"+miPyme.getCVComercial() + "', "
+                                        + "Consumo_elect_kwha_websale ='"+miPyme.getConsumoElectWS() + "', "
+                                        + "Pagado = '"+miPyme.getPagado() + "',"
+                                        + "P_Fenosa = '"+miPyme.getPFenosa() + "',"
+                                        + "C_servicios = '"+miPyme.getCServicios()+ "',"
+                                        + "iPunteado = "+miPyme.getPunteado()+ ","
+                                        + "P_Fenosa_Total = "+miPyme.getPagadoFenosa()
+                                        + " WHERE id_m_p ="+miPyme.getIdContrato();
                         
 			System.out.println(sqlStr);
                         Statement estatuto = conex.getConnection().createStatement();
@@ -803,7 +805,7 @@ public class PymesDao {
                         strquery = strquery + " AND Comercial LIKE 'NADINE' " ;
                         break;
                     case 4:
-                        strquery = strquery + " AND Comercial LIKE 'EMILIO-RAQUEL' " ;
+                        strquery = strquery + " AND Comercial LIKE 'ELANTY' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Comercial LIKE 'SERNOVEN' " ;
@@ -814,10 +816,6 @@ public class PymesDao {
                     case 7:
                         strquery = strquery + " AND Comercial LIKE 'SHEILA' " ;
                         break;
-                    case 8:
-                        strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
-                    break;
-                    
                         
                  }
                 
@@ -976,7 +974,7 @@ public class PymesDao {
                         strquery = strquery + " AND Comercial LIKE 'NADINE' " ;
                         break;
                      case 4:
-                        strquery = strquery + " AND Comercial LIKE 'EMILIO-RAQUEL' " ;
+                        strquery = strquery + " AND Comercial LIKE 'ELANTY' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Comercial LIKE 'SERNOVEN' " ;
@@ -987,9 +985,6 @@ public class PymesDao {
                     case 7:
                         strquery = strquery + " AND Comercial LIKE 'SHEILA' " ;
                         break;
-                    case 8:
-                        strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
-                    break;
                     
                  }
                 
@@ -1101,7 +1096,7 @@ public class PymesDao {
                         strquery = strquery + " AND Comercial LIKE 'NADINE' " ;
                         break;
                      case 4:
-                        strquery = strquery + " AND Comercial LIKE 'EMILIO-RAQUEL' " ;
+                        strquery = strquery + " AND Comercial LIKE 'ELANTY' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Comercial LIKE 'SERNOVEN' " ;
@@ -1112,9 +1107,6 @@ public class PymesDao {
                     case 7:
                         strquery = strquery + " AND Comercial LIKE 'SHEILA' " ;
                         break;
-                    case 8:
-                        strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
-                    break;
                  }
                 
                   strquery = strquery + " ORDER BY id_m_r DESC";
@@ -1145,199 +1137,5 @@ public class PymesDao {
         }
         return pTotal;
     }
-   // ---------------------------------------------------------------------------------------------------------------------------------------
-   
-   public int compruebaLocucion(DefaultTableModel model,String str1,String str2,String nif,String telefono,String direccion,String titular) {
-
-                String sqlStr;
-                int res = 0 ;
-                SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
-                
-                sqlStr  = "SELECT * FROM t_locuciones_residencial  WHERE ";
-                sqlStr += "titular LIKE '%"+nif+"%'" ;
-                if (!telefono.equals("") )
-                sqlStr +="OR telefono LIKE '%"+telefono+"%'" ;
-                
-                sqlStr += "OR direccion LIKE '%"+direccion+"%' OR titular LIKE '%"+titular+"%'" ;
-                sqlStr += "ORDER BY id DESC" ;
-                
-                 System.out.println("sqlstr="+sqlStr);
-                
-		 Conexion conex = new Conexion(str1,str2);
-		try {
-			Statement estatuto = conex.getConnection().createStatement();
-			ResultSet rs = estatuto.executeQuery(sqlStr);
-                        
-                         int contador = 0;
-
-                        while (rs.next()) {
-
-                            contador++;
-
-                        }
-                         System.out.println("Busco LOCUCIONES, resultado contador ="+contador);
-                         int cnt = 0 ;
-                         int marca = 0 ;
-                        if (contador >0){
-                                                       
-                            rs.beforeFirst();
-                           
-                            while (rs.next()) {
-
-                                    Object[] fila = new Object[25];
-                              
-                                         // para llenar cada columna con lo datos almacenados
-                                  
-                                            fila[0] = rs.getObject("id");                                    // ID
-                                            fila[1] = rs.getObject("id_tipo");                               // IDT
-                                            
-                                            try {
-                                                fila[2]  = formatDateJava.format(rs.getDate("fecha")) ;      // fecha  ; 
-
-                                            } catch (NullPointerException nfe){
-                                                fila[2]  = ""; 
-                                            }
-
-                                            fila[3]  = rs.getObject("titular");               // TITULAR
-                                            fila[4]  = rs.getObject("verifica");              // Verifica
-                                            fila[5]  = rs.getObject("direccion");             // Direccion
-                                            fila[6]  = rs.getObject("contrato");              // Contrato
-                                            fila[7]  = rs.getObject("llam1");                 // Llamada 1
-                                            fila[8]  = rs.getObject("llam2");                 // Llamada 2
-                                            fila[9]  = rs.getObject("llam3");                 // Llamada 3
-                                            fila[10] = rs.getObject("llam4");                 // Llamada 4
-                                            fila[11] = rs.getObject("llam5");                 // Llamada 5
-                                            fila[12] = rs.getObject("llam6");                 // Llamada 6                                                                                   
-                                            fila[13] = rs.getObject("telefono");              // telefono  
-                                            fila[14] = rs.getObject("fechaNac");              // fechaNac     
-                                            fila[15] = rs.getObject("apoderadoPyme");         // ApoderadoPyme     
-                                            fila[16] = rs.getObject("facturas");              // Facturas     
-                                            fila[17] = rs.getObject("tratoAcre");              // TratoAcre     
-                                            fila[18] = rs.getObject("informado");              // Informado    
-                                            fila[19] = rs.getObject("cuenta");                // Cuenta    
-                                            fila[20] = rs.getObject("copia");                 // Copia    
-                                            fila[21] = rs.getObject("observaciones");         // observaciones    
-                                            fila[22] = rs.getObject("comercial");             // comercial    
-                                            fila[23] = rs.getObject("hora");                  // hora
-                                            fila[24] = rs.getObject("precios");               // precios
-                                            
-                                    model.addRow(fila);
-                                    cnt++;
-                            }
-                        } else {
-                             System.out.println("No he encontrado ninguna locucion");
-                             res = 1 ;
-                            
-                        }
-			rs.close();
-			estatuto.close();
-			conex.desconectar();
-                       
-                            if (res == 0) {
-                                if (marca == 1) {
-                                    res = 0 ;        
-                                   
-                                } else {
-                                    System.out.println("No he encontrado nada");
-                                    res = 2;
-                                }
-                            }
-                       
-                        
-
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-                         res = 2;
-                        //                JOptionPane.showMessageDialog(null, "Error al consultar", "Error",JOptionPane.ERROR_MESSAGE);
-
-		}
-                return res;
-}
-   // ---------------------------------------------------------------------------------------------------------------------------------------
-
-   public int compruebaCertificacion(DefaultTableModel model,String str1,String str2,String nif,String direccion,String cupsGas,String cupsEle) {
-
-                String sqlStr;
-                int res = 0 ;
-                SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
-                
-                sqlStr  = "SELECT * FROM t_tabla_certificaciones_nominal  WHERE ";
-                sqlStr += "nif LIKE '%"+nif+"%' " ;
-                sqlStr += "OR calle LIKE '%"+direccion+"%' ";
-                
-                if ( !cupsGas.equals(""))  sqlStr += "OR CUPS_Gas LIKE '%"+cupsGas+"%' ";                
-                if ( !cupsEle.equals(""))  sqlStr += "OR CUPS_Elect LIKE '%"+cupsEle+"%'" ;
-                
-                sqlStr += "ORDER BY id DESC" ;
-                
-                 System.out.println("sqlstr="+sqlStr);
-                
-		 Conexion conex = new Conexion(str1,str2);
-		try {
-			Statement estatuto = conex.getConnection().createStatement();
-			ResultSet rs = estatuto.executeQuery(sqlStr);
-                        
-                         int contador = 0;
-
-                        while (rs.next()) {
-
-                            contador++;
-
-                        }
-                         System.out.println("Busco CERTIFICACIONES, resultado contador ="+contador);
-                         int cnt = 0 ;
-                         int marca = 0 ;
-                         if (contador >0){
-                                                       
-                            rs.beforeFirst();
-                           
-                            while (rs.next()) {
-
-                                    Object[] fila = new Object[23];
-                                    // para llenar cada columna con lo datos almacenados
-                                    for (int i = 0; i < 23; i++) 
-                                            fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
-
-                                            try {
-                                                fila[5]  = formatDateJava.format(rs.getDate(6)) ;      // fecha  ; 
-                                                fila[6]  = formatDateJava.format(rs.getDate(7)) ;      // fecha recepción ; 
-
-                                            } catch (NullPointerException nfe){
-                                                fila[5]  = ""; 
-                                                fila[6]  = ""; 
-                                            }
-
-                                    model.addRow(fila);
-                                    cnt++;
-                            }
-                        } else {
-                             System.out.println("No he encontrado ninguna CERTIFICACIÓN");
-                             res = 1 ;
-                            
-                        }
-			rs.close();
-			estatuto.close();
-			conex.desconectar();
-                       
-                            if (res == 0) {
-                                if (marca == 1) {
-                                    res = 0 ;        
-                                   
-                                } else {
-                                    System.out.println("No he encontrado nada");
-                                    res = 2;
-                                }
-                            }
-                       
-                        
-
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-                         res = 2;
-                        //                JOptionPane.showMessageDialog(null, "Error al consultar", "Error",JOptionPane.ERROR_MESSAGE);
-
-		}
-                return res;
-}
 }
 
