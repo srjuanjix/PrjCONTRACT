@@ -4140,9 +4140,6 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 columna2.setMinWidth(230);
                 columna3.setMinWidth(150);
                 columna4.setMinWidth(250);
-
-               
-              
                 
                 
                 ireg = indice ;

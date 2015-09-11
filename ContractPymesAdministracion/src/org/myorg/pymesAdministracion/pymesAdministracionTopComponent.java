@@ -3991,6 +3991,10 @@ public final class pymesAdministracionTopComponent extends TopComponent {
        private void actualizarFormulario(int indice) {
            int ind,ireg, creg, indLoc=-1;
            this.indGen = indice ;
+           DefaultTableModel modelLoc;
+           DefaultTableModel modelCer;
+           
+           
            MarcaColorOK() ;
            if (indice == -1) {
            
@@ -4044,6 +4048,46 @@ public final class pymesAdministracionTopComponent extends TopComponent {
            if (this.nRegistros >0 ) {
                 
                 System.out.println("Indice pasado ="+indice+" y el Indice de tablaLocuciones ="+this.tablaDatos[indice][32]);
+               
+                 // .........................................................
+                
+                DefaultTableModel model;
+		model = new DefaultTableModel();        // definimos el objeto tableModel
+               
+		miTablaLiquida = new JTable();                // creamos la instancia de la tabla
+		miTablaLiquida.setModel(model);
+                
+                model.addColumn("idColor");                        
+		model.addColumn("TUR");                
+		model.addColumn("CUPS GAS");
+		model.addColumn("CUPS ELECTRICIDAD");
+		model.addColumn("TITULAR");
+                model.addColumn("CIF/NIF");
+                model.addColumn("SVG C");
+                model.addColumn("SVG X");
+		model.addColumn("SVG B");
+                model.addColumn("SVE");
+                model.addColumn("SVH");
+                model.addColumn("SVGCC");
+                model.addColumn("SVGSC");
+                model.addColumn("SPP");
+                model.addColumn("T.PLANA");
+                model.addColumn("OBSERVACIONES");
+                model.addColumn("Nº DE PRODUCTOS");
+               
+		miTablaLiquida.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaLiquida.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn columna1 = miTablaLiquida.getColumn("CUPS GAS");
+                TableColumn columna2 = miTablaLiquida.getColumn("CUPS ELECTRICIDAD");
+                TableColumn columna3 = miTablaLiquida.getColumn("TITULAR");
+                TableColumn columna4 = miTablaLiquida.getColumn("OBSERVACIONES");
+               
+                columna1.setMinWidth(230);
+                columna2.setMinWidth(230);
+                columna3.setMinWidth(150);
+                columna4.setMinWidth(250);
+
                 ireg = indice ;
                 this.indGenReg = ireg ;
                
@@ -4054,7 +4098,16 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 System.out.println("Indice de tabla certificaciones CREG ="+this.tablaDatos[indice][40]+" y indLoc = "+indLoc) ;
               
                 
+                
                 if (indLoc == -1){
+                    
+                    modelLoc = new DefaultTableModel();            // definimos el objeto tableModel
+                    modelCer = new DefaultTableModel();            // definimos el objeto tableModel
+               
+                    limpiaTablaLocuciones(modelLoc);
+                    miTablaLocu = new JTable();                // creamos la instancia de la tabla
+                    miTablaLocu.setModel(modelLoc);
+                    miBarraLocu.setViewportView(miTablaLocu);
                    
                     jCheckBox32.setSelected(false);  
                    
@@ -4676,7 +4729,6 @@ public final class pymesAdministracionTopComponent extends TopComponent {
           if (this.tablaDatos[j][38].equals("1") )  celda.setCellValue("X"); else 
                                                         celda.setCellValue("");          i++;         //SVGHOGAR
                                                         
-                                                        
           celda = fila.createCell(i);  
           if (this.tablaDatos[j][45].equals("1") )  celda.setCellValue("X"); else 
                                                     celda.setCellValue("");          i++;         //SVG C CON CALEFACCIÓN                                                       
@@ -5146,4 +5198,94 @@ public final class pymesAdministracionTopComponent extends TopComponent {
            
            
        } 
+        // -------------------------------------------------------------------------------------------------------------
+    
+    public void limpiaTablaLocuciones(DefaultTableModel modelLoc) {
+        
+                modelLoc.addColumn("ID");                
+		modelLoc.addColumn("idt");
+                modelLoc.addColumn("Fecha"); 
+                modelLoc.addColumn("Titular");
+                modelLoc.addColumn("Verifica");
+                modelLoc.addColumn("Direccion");
+                modelLoc.addColumn("Contrato");
+                modelLoc.addColumn("Llam1");
+                modelLoc.addColumn("Llam2");
+                modelLoc.addColumn("Llam3");
+                modelLoc.addColumn("Llam4");
+                modelLoc.addColumn("Llam5");
+                modelLoc.addColumn("Llam6");
+                modelLoc.addColumn("Telefono");
+                modelLoc.addColumn("FechaNac");
+                modelLoc.addColumn("ApoderadoPyme");
+                modelLoc.addColumn("Facturas");
+                modelLoc.addColumn("TratoAcre");
+                modelLoc.addColumn("Informado");
+                modelLoc.addColumn("Cuenta");
+                modelLoc.addColumn("Copia");
+                modelLoc.addColumn("Observaciones");
+                modelLoc.addColumn("comercial");
+                modelLoc.addColumn("hora");
+                modelLoc.addColumn("precios");
+                
+                
+        
+    }
+    
+    // -------------------------------------------------------------------------------------------------------------
+    
+    public void limpiaTablaCertificaciones(DefaultTableModel modelCer) {
+        
+               
+                                 
+		modelCer.addColumn("ID");   
+                modelCer.addColumn("IDp");  
+		modelCer.addColumn("Año");
+		modelCer.addColumn("Mes");
+		modelCer.addColumn("Periodo");
+                modelCer.addColumn("Fecha");
+                modelCer.addColumn("Fecha_Recep.");
+                modelCer.addColumn("Delegacion");
+		modelCer.addColumn("Concepto");
+                modelCer.addColumn("Contrato");
+                modelCer.addColumn("NIF");
+                modelCer.addColumn("Calle");
+                modelCer.addColumn("NF");
+                modelCer.addColumn("Escalera");
+                modelCer.addColumn("Piso");
+                modelCer.addColumn("Puerta");
+                modelCer.addColumn("CodPost");
+                modelCer.addColumn("Municipio");
+                modelCer.addColumn("Provincia");
+                modelCer.addColumn("CUPS_Gas");
+                modelCer.addColumn("CUPS_Elect");
+                modelCer.addColumn("Importe");
+                modelCer.addColumn("Producto");
+                
+              
+                
+                
+        
+    }
+    // -------------------------------------------------------------------------------------------------------------
+    
+    
+    public void cargarDatosCertificaciones(){
+            DefaultTableModel modelCer;
+          // .........................................................  
+                    
+                modelCer = new DefaultTableModel();            // definimos el objeto tableModel
+               
+                limpiaTablaCertificaciones(modelCer);
+                miTablaCer = new JTable();                // creamos la instancia de la tabla
+                miTablaCer.setModel(modelCer);
+                  
+                
+                PymesDao miPymesDaoCer= new PymesDao();
+                 
+              //  miPymesDaoCer.compruebaLocucion(modelCer,this.plogin,this.ppassword,nif,telefono,direccion,titular);
+                
+                miBarraLocu.setViewportView(miTablaCer);
+                // .........................................................
+    }
 }

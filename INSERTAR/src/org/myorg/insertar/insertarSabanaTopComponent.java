@@ -182,7 +182,7 @@ public final class insertarSabanaTopComponent extends TopComponent {
 
         jTextField128.setText(org.openide.util.NbBundle.getMessage(insertarSabanaTopComponent.class, "insertarSabanaTopComponent.jTextField128.text")); // NOI18N
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar tabla...", "MAKRO RESIDENCIAL", "MAKRO PYMES", "LOCUCIONES RESIDENCIAL", "CERTIFICACIONES", "LOCUCIONES PYMES", "CERTIFICACIONES GN" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar tabla...", "MAKRO RESIDENCIAL", "MAKRO PYMES", "LOCUCIONES RESIDENCIAL", "LOCUCIONES PYMES", "CERTIFICACIONES RESIDENCIAL", "CERTIFICACIONES PYMES" }));
         jComboBox10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox10ActionPerformed(evt);
@@ -343,10 +343,10 @@ public final class insertarSabanaTopComponent extends TopComponent {
 
         if (str.equals("MAKRO RESIDENCIAL"))     {   tabla.setText("t_makro_residencial"); }
         if (str.equals("MAKRO PYMES"))           {   tabla.setText("t_makro_pymes"); }
-        if (str.equals("LOCUCIONES RESIDENCIAL")){   tabla.setText("t_locuciones_residencial"); }
-        if (str.equals("CERTIFICACIONES"))       {   tabla.setText("t_certificaciones_nominal"); }
+        if (str.equals("LOCUCIONES RESIDENCIAL")){   tabla.setText("t_locuciones_residencial"); }        
         if (str.equals("LOCUCIONES PYMES"))      {   tabla.setText("t_locuciones_pymes"); }
-        if (str.equals("CERTIFICACIONES GN"))    {   tabla.setText("t_certificaciones_gn"); }
+        if (str.equals("CERTIFICACIONES RESIDENCIAL"))    {   tabla.setText("t_tabla_certificaciones_nominal"); }
+        if (str.equals("CERTIFICACIONES PYMES"))    {   tabla.setText("t_tabla_certificaciones_nominal_pymes"); }
   
     }//GEN-LAST:event_jComboBox10ActionPerformed
 
@@ -504,6 +504,7 @@ public void leerArchivoExel() throws IOException {
 	        // Iterates the data and print it out to the console.
 	        //
                 int cnt=0;
+                int fProblema = 0 ;
                 SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
               
                 HSSFRichTextString richTextString ;
@@ -566,26 +567,52 @@ public void leerArchivoExel() throws IOException {
                             // ............................................................                                           
                             if (this.tipos[j].equals("4.0")) {                                                       // es un tipo fecha
                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                this.tablaDatos[cnt-2][j] = String.valueOf(sdf.format(cell.getDateCellValue()));
-                                      
+                                
+                                try {
+                                    this.tablaDatos[cnt-2][j] = String.valueOf(sdf.format(cell.getDateCellValue()));
+                                }
+                                catch (IllegalStateException e) {
+                                     this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO FECHA EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                     fProblema = 1 ;
+                                }
                             
                             } else {
                             // ............................................................
                             if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 
-                                this.tablaDatos[cnt-2][j] = Double.toString(cell.getNumericCellValue());                            
-
+                                
+                                try {
+                                     this.tablaDatos[cnt-2][j] = Double.toString(cell.getNumericCellValue());    
+                                }
+                                catch (IllegalStateException e) {
+                                    this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO NUMERICO EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                    fProblema = 1 ;
+                                   
+                                }
+                             
                             } else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
                             // ............................................................
-                               richTextString = (HSSFRichTextString) cell.getRichStringCellValue();
-
-                       
-                                this.tablaDatos[cnt-2][j] =  richTextString.getString();                                                        
+                                try {
+                                      richTextString = (HSSFRichTextString) cell.getRichStringCellValue();
+                                      this.tablaDatos[cnt-2][j] =  richTextString.getString();       
+                                }
+                                catch (IllegalStateException e) {
+                                    this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO TEXTO EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                    fProblema = 1 ;
+                                   
+                                }
+                                                                                  
 
                             } else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
                             // ............................................................
-
-                                 this.tablaDatos[cnt-2][j] = Boolean.toString(cell.getBooleanCellValue());
+                                try {
+                                       this.tablaDatos[cnt-2][j] = Boolean.toString(cell.getBooleanCellValue());    
+                                }
+                                catch (IllegalStateException e) {
+                                    this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO BOOLEANO EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                    fProblema = 1 ;
+                                }
+                                
 
                             } else if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
                             // ............................................................
