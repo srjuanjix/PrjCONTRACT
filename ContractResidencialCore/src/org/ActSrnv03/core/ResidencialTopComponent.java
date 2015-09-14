@@ -515,7 +515,111 @@ public final class ResidencialTopComponent extends TopComponent {
         jTextField70 = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         miBarra02 = new javax.swing.JScrollPane();
-        miTabla02 = new javax.swing.JTable();
+        miTablaCertifica = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel109 = new javax.swing.JLabel();
+        jTextField104 = new javax.swing.JTextField();
+        jLabel110 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
+        jTextField105 = new javax.swing.JTextField();
+        jLabel112 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        jTextField106 = new javax.swing.JTextField();
+        jLabel114 = new javax.swing.JLabel();
+        botonActualizarCalculos1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        jTextField138 = new javax.swing.JTextField();
+        jTextField139 = new javax.swing.JTextField();
+        jTextField140 = new javax.swing.JTextField();
+        jTextField141 = new javax.swing.JTextField();
+        jTextField142 = new javax.swing.JTextField();
+        jTextField143 = new javax.swing.JTextField();
+        jTextField144 = new javax.swing.JTextField();
+        jTextField145 = new javax.swing.JTextField();
+        jTextField146 = new javax.swing.JTextField();
+        jTextField147 = new javax.swing.JTextField();
+        jTextField148 = new javax.swing.JTextField();
+        jTextField156 = new javax.swing.JTextField();
+        jTextField157 = new javax.swing.JTextField();
+        jTextField158 = new javax.swing.JTextField();
+        jTextField159 = new javax.swing.JTextField();
+        jTextField160 = new javax.swing.JTextField();
+        jTextField161 = new javax.swing.JTextField();
+        jTextField162 = new javax.swing.JTextField();
+        jTextField163 = new javax.swing.JTextField();
+        jTextField171 = new javax.swing.JTextField();
+        jTextField172 = new javax.swing.JTextField();
+        jTextField173 = new javax.swing.JTextField();
+        jTextField174 = new javax.swing.JTextField();
+        jTextField175 = new javax.swing.JTextField();
+        jTextField176 = new javax.swing.JTextField();
+        jTextField177 = new javax.swing.JTextField();
+        jTextField178 = new javax.swing.JTextField();
+        jLabel119 = new javax.swing.JLabel();
+        jLabel120 = new javax.swing.JLabel();
+        jLabel121 = new javax.swing.JLabel();
+        jLabel139 = new javax.swing.JLabel();
+        jLabel140 = new javax.swing.JLabel();
+        jLabel141 = new javax.swing.JLabel();
+        jLabel142 = new javax.swing.JLabel();
+        jLabel143 = new javax.swing.JLabel();
+        jLabel144 = new javax.swing.JLabel();
+        jTextField186 = new javax.swing.JTextField();
+        jTextField187 = new javax.swing.JTextField();
+        jTextField188 = new javax.swing.JTextField();
+        jTextField189 = new javax.swing.JTextField();
+        jTextField190 = new javax.swing.JTextField();
+        jTextField191 = new javax.swing.JTextField();
+        jTextField192 = new javax.swing.JTextField();
+        jTextField193 = new javax.swing.JTextField();
+        jTextField194 = new javax.swing.JTextField();
+        jLabel152 = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
+        jLabel154 = new javax.swing.JLabel();
+        jLabel155 = new javax.swing.JLabel();
+        jLabel156 = new javax.swing.JLabel();
+        jLabel157 = new javax.swing.JLabel();
+        jLabel158 = new javax.swing.JLabel();
+        jLabel159 = new javax.swing.JLabel();
+        jLabel160 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel145 = new javax.swing.JLabel();
+        jTextField149 = new javax.swing.JTextField();
+        jLabel146 = new javax.swing.JLabel();
+        jTextField150 = new javax.swing.JTextField();
+        jTextField151 = new javax.swing.JTextField();
+        jTextField152 = new javax.swing.JTextField();
+        jLabel147 = new javax.swing.JLabel();
+        jTextField153 = new javax.swing.JTextField();
+        jLabel148 = new javax.swing.JLabel();
+        jTextField154 = new javax.swing.JTextField();
+        jTextField155 = new javax.swing.JTextField();
+        jTextField164 = new javax.swing.JTextField();
+        jLabel149 = new javax.swing.JLabel();
+        jTextField165 = new javax.swing.JTextField();
+        jLabel150 = new javax.swing.JLabel();
+        jTextField166 = new javax.swing.JTextField();
+        jTextField167 = new javax.swing.JTextField();
+        jTextField168 = new javax.swing.JTextField();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel151 = new javax.swing.JLabel();
+        jTextField169 = new javax.swing.JTextField();
+        jLabel161 = new javax.swing.JLabel();
+        jTextField170 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         numLineas = new javax.swing.JTextField();
@@ -593,7 +697,7 @@ public final class ResidencialTopComponent extends TopComponent {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "BLANCO", "AMARILLO", "NARANJA", "ROJO", "VERDE", "MORADO", "AZUL" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "DOCOUT", "CERTIFICADO", "-     KO      -", "VALIDADO", "ERROR WEBSALES" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "DOCOUT", "CERTIFICADO", "-     KO      -", "VALIDADO", "ERROR WEBSALES", "DECOMISIONADO" }));
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jCheckBox28.text")); // NOI18N
 
@@ -1352,7 +1456,7 @@ public final class ResidencialTopComponent extends TopComponent {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTES", "DOCOUT", "CERTIFICADOS", "TODOS", "KOs", "PUNTEADOS", "NO PUNTEADOS", "VALIDADOS", "ERROR WEB SALES", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTES", "DOCOUT", "CERTIFICADOS", "TODOS", "KOs", "PUNTEADOS", "NO PUNTEADOS", "VALIDADOS", "ERROR WEB SALES", "DECOMISIONADO", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -1468,7 +1572,7 @@ public final class ResidencialTopComponent extends TopComponent {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 1563, Short.MAX_VALUE)
+            .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 1796, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2380,7 +2484,7 @@ public final class ResidencialTopComponent extends TopComponent {
                         .addComponent(jLabel77)
                         .addGap(18, 18, 18)
                         .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                         .addComponent(jLabel62))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2419,7 +2523,7 @@ public final class ResidencialTopComponent extends TopComponent {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2484,7 +2588,7 @@ public final class ResidencialTopComponent extends TopComponent {
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
 
-        miTabla02.setModel(new javax.swing.table.DefaultTableModel(
+        miTablaCertifica.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -2495,17 +2599,678 @@ public final class ResidencialTopComponent extends TopComponent {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        miBarra02.setViewportView(miTabla02);
+        miBarra02.setViewportView(miTablaCertifica);
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel109, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel109.text")); // NOI18N
+
+        jTextField104.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField104.text")); // NOI18N
+
+        jLabel110.setForeground(new java.awt.Color(153, 153, 153));
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel110, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel110.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel111, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel111.text")); // NOI18N
+
+        jTextField105.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField105.text")); // NOI18N
+
+        jLabel112.setForeground(new java.awt.Color(153, 153, 153));
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel112, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel112.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel113, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel113.text")); // NOI18N
+
+        jTextField106.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField106.text")); // NOI18N
+
+        jLabel114.setForeground(new java.awt.Color(153, 153, 153));
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel114, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel114.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(botonActualizarCalculos1, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.botonActualizarCalculos1.text")); // NOI18N
+        botonActualizarCalculos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarCalculos1ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField1.text")); // NOI18N
+
+        jTextField3.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField3.text")); // NOI18N
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField6.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel25, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel25.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel26, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel26.text")); // NOI18N
+
+        jTextField8.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField8.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel32, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel32.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel33, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel33.text")); // NOI18N
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel24, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel24.text")); // NOI18N
+
+        jLabel79.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel79, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel79.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel109)
+                                    .addComponent(jLabel111)
+                                    .addComponent(jLabel113))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jTextField104, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel110))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField105, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField106, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel112)
+                                            .addComponent(jLabel114))))
+                                .addGap(100, 100, 100)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel25)
+                                .addGap(20, 20, 20)))
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel79)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonActualizarCalculos1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel33)))))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botonActualizarCalculos1)
+                        .addComponent(jLabel25)
+                        .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel26))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField104, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel109)
+                    .addComponent(jLabel110)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField105, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel111)
+                    .addComponent(jLabel112)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel113)
+                    .addComponent(jTextField106, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel114)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jLabel24))
+        );
+
+        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel115.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel115, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel115.text")); // NOI18N
+
+        jLabel116.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel116, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel116.text")); // NOI18N
+
+        jLabel117.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel117, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel117.text")); // NOI18N
+
+        jLabel118.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel118, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel118.text")); // NOI18N
+
+        jTextField138.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField138.text")); // NOI18N
+        jTextField138.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField138ActionPerformed(evt);
+            }
+        });
+
+        jTextField139.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField139.text")); // NOI18N
+
+        jTextField140.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField140.text")); // NOI18N
+        jTextField140.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField140ActionPerformed(evt);
+            }
+        });
+
+        jTextField141.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField141.text")); // NOI18N
+
+        jTextField142.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField142.text")); // NOI18N
+
+        jTextField143.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField143.text")); // NOI18N
+
+        jTextField144.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField144.text")); // NOI18N
+
+        jTextField145.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField145.text")); // NOI18N
+        jTextField145.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField145ActionPerformed(evt);
+            }
+        });
+
+        jTextField146.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField146.text")); // NOI18N
+
+        jTextField147.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField147.text")); // NOI18N
+
+        jTextField148.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField148.text")); // NOI18N
+
+        jTextField156.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField156.text")); // NOI18N
+
+        jTextField157.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField157.text")); // NOI18N
+
+        jTextField158.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField158.text")); // NOI18N
+
+        jTextField159.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField159.text")); // NOI18N
+        jTextField159.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField159ActionPerformed(evt);
+            }
+        });
+
+        jTextField160.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField160.text")); // NOI18N
+
+        jTextField161.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField161.text")); // NOI18N
+
+        jTextField162.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField162.text")); // NOI18N
+        jTextField162.setPreferredSize(new java.awt.Dimension(146, 20));
+
+        jTextField163.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField163.text")); // NOI18N
+        jTextField163.setMaximumSize(new java.awt.Dimension(146, 20));
+        jTextField163.setMinimumSize(new java.awt.Dimension(146, 20));
+        jTextField163.setPreferredSize(new java.awt.Dimension(146, 20));
+        jTextField163.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField163ActionPerformed(evt);
+            }
+        });
+
+        jTextField171.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField171.text")); // NOI18N
+
+        jTextField172.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField172.text")); // NOI18N
+
+        jTextField173.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField173.text")); // NOI18N
+
+        jTextField174.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField174.text")); // NOI18N
+
+        jTextField175.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField175.text")); // NOI18N
+
+        jTextField176.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField176.text")); // NOI18N
+
+        jTextField177.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField177.text")); // NOI18N
+
+        jTextField178.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField178.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel119, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel119.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel120, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel120.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel121, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel121.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel139, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel139.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel140, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel140.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel141, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel141.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel142, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel142.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel143, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel143.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel144, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel144.text")); // NOI18N
+
+        jTextField186.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField186.text")); // NOI18N
+
+        jTextField187.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField187.text")); // NOI18N
+        jTextField187.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField187ActionPerformed(evt);
+            }
+        });
+
+        jTextField188.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField188.text")); // NOI18N
+
+        jTextField189.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField189.text")); // NOI18N
+
+        jTextField190.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField190.text")); // NOI18N
+
+        jTextField191.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField191.text")); // NOI18N
+
+        jTextField192.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField192.text")); // NOI18N
+
+        jTextField193.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField193.text")); // NOI18N
+
+        jTextField194.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField194.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel152, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel152.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel153, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel153.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel154, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel154.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel155, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel155.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel156, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel156.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel157, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel157.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel158, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel158.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel159, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel159.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel160, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel160.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField142)
+                    .addComponent(jTextField141, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField138, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                    .addComponent(jLabel115, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField143, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField147, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField145, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField146, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField144, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField148, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(jLabel116)
+                        .addGap(275, 275, 275)
+                        .addComponent(jLabel117)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField163, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField139)
+                            .addComponent(jTextField156, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField162, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField161, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField160, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField159, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField158, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField157))
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField140)
+                            .addComponent(jTextField171)
+                            .addComponent(jTextField172)
+                            .addComponent(jTextField173)
+                            .addComponent(jTextField174)
+                            .addComponent(jTextField175)
+                            .addComponent(jTextField176)
+                            .addComponent(jTextField177)
+                            .addComponent(jTextField178, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel118))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel121)
+                                .addComponent(jLabel120)
+                                .addComponent(jLabel139)
+                                .addComponent(jLabel140)
+                                .addComponent(jLabel141)
+                                .addComponent(jLabel142))
+                            .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel143, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel144, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextField194, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField193, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField192, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField191, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField190, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField189, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField188, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField187, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField186, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel152)
+                            .addComponent(jLabel153)
+                            .addComponent(jLabel154)
+                            .addComponent(jLabel155)
+                            .addComponent(jLabel156)
+                            .addComponent(jLabel157)
+                            .addComponent(jLabel158)
+                            .addComponent(jLabel159, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel160, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1))))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel116)
+                            .addComponent(jLabel115)
+                            .addComponent(jLabel117)
+                            .addComponent(jLabel118))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField138, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField139, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField140, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel119)
+                            .addComponent(jTextField186, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel152))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField141, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField156, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField171, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField187, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel120)
+                            .addComponent(jLabel153))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextField142, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField172, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField188, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel154)
+                                .addComponent(jLabel121))
+                            .addComponent(jTextField157, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField143, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField158, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField173, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField189, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel155)
+                            .addComponent(jLabel139))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField174, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField190, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel156)
+                            .addComponent(jLabel140)
+                            .addComponent(jTextField159, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jTextField144, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField145, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField160, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField175, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField191, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel157)
+                    .addComponent(jLabel141))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField146, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField161, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField176, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField192, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel158)
+                    .addComponent(jLabel142))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField162, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField147, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField177, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField193, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel143)
+                    .addComponent(jLabel159))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField148, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField163, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField178, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField194, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel144)
+                    .addComponent(jLabel160))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel25.setBackground(new java.awt.Color(204, 204, 255));
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel145, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel145.text")); // NOI18N
+
+        jTextField149.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField149.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel146, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel146.text")); // NOI18N
+
+        jTextField150.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField150.text")); // NOI18N
+
+        jTextField151.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField151.text")); // NOI18N
+        jTextField151.setMinimumSize(new java.awt.Dimension(236, 20));
+        jTextField151.setPreferredSize(new java.awt.Dimension(123, 20));
+
+        jTextField152.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField152.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel147, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel147.text")); // NOI18N
+
+        jTextField153.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField153.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel148, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel148.text")); // NOI18N
+
+        jTextField154.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField154.text")); // NOI18N
+
+        jTextField155.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField155.text")); // NOI18N
+        jTextField155.setMinimumSize(new java.awt.Dimension(236, 20));
+
+        jTextField164.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField164.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel149, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel149.text")); // NOI18N
+
+        jTextField165.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField165.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel150, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel150.text")); // NOI18N
+
+        jTextField166.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField166.text")); // NOI18N
+
+        jTextField167.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField167.text")); // NOI18N
+        jTextField167.setMinimumSize(new java.awt.Dimension(236, 20));
+
+        jTextField168.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField168.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField152, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+                    .addComponent(jTextField164)
+                    .addComponent(jTextField168))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField151, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField155, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                    .addComponent(jTextField167, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jTextField166)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jTextField150, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel146, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jTextField154)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel148, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jTextField165)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel149, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jTextField149, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel145, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                        .addComponent(jTextField153)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel147, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel145)
+                    .addComponent(jTextField149, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel146)
+                    .addComponent(jTextField150, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField151, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField152, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel147)
+                    .addComponent(jTextField153, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel148)
+                    .addComponent(jTextField154, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField155, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField164, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel149)
+                    .addComponent(jTextField165, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel150)
+                    .addComponent(jTextField166, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField167, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField168, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
+        );
+
+        jPanel27.setBackground(new java.awt.Color(204, 204, 204));
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel151, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel151.text")); // NOI18N
+
+        jTextField169.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField169.text")); // NOI18N
+
+        jLabel161.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel161, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel161.text")); // NOI18N
+
+        jTextField170.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField170.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jTextField170, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 429, Short.MAX_VALUE)
+                .addComponent(jTextField169, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel151, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel27Layout.createSequentialGroup()
+                    .addContainerGap(341, Short.MAX_VALUE)
+                    .addComponent(jLabel161)
+                    .addGap(256, 256, 256)))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel151)
+                    .addComponent(jTextField169, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField170, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel27Layout.createSequentialGroup()
+                    .addGap(17, 17, 17)
+                    .addComponent(jLabel161)
+                    .addContainerGap(15, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 1563, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(miBarra02)
+                        .addGap(10, 10, 10))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(153, 153, 153))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(miBarra02))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(284, 284, 284))
         );
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
@@ -2632,7 +3397,7 @@ public final class ResidencialTopComponent extends TopComponent {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(numLineas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(1272, Short.MAX_VALUE))))
+                        .addContainerGap(1514, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2702,7 +3467,7 @@ public final class ResidencialTopComponent extends TopComponent {
                                 .addComponent(jLabel31)
                                 .addGap(3, 3, 3)
                                 .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2804,7 +3569,7 @@ public final class ResidencialTopComponent extends TopComponent {
                         .addComponent(scrollPaneArea)
                         .addGap(302, 302, 302))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.DEFAULT_SIZE, 1243, Short.MAX_VALUE)
+                        .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.DEFAULT_SIZE, 1476, Short.MAX_VALUE)
                         .addGap(310, 310, 310))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -2899,6 +3664,8 @@ public final class ResidencialTopComponent extends TopComponent {
         if (str.equals("NO PUNTEADOS")) this.filtroEstadoSel = 6 ;
         if (str.equals("VALIDADOS"))    this.filtroEstadoSel = 7 ;
         if (str.equals("ERROR WEB SALES")) this.filtroEstadoSel = 8 ;
+        if (str.equals("DECOMISIONADO")) this.filtroEstadoSel = 9 ;
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void ListaProvinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaProvinciasActionPerformed
@@ -2978,6 +3745,9 @@ public final class ResidencialTopComponent extends TopComponent {
         if (str.equals("MIGUEL"))               this.filtroComercial = 6 ;
         if (str.equals("SHEILA"))               this.filtroComercial = 7 ;
         if (str.equals("MARIO SORIA"))          this.filtroComercial = 8 ;
+        
+        if (this.filtroComercial == 0)  actualizarTablaComisiones(1); else
+        actualizarTablaComisiones(this.filtroComercial);
     }//GEN-LAST:event_ListaComercialLiqActionPerformed
 
     private void ListaZonaLiqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaZonaLiqActionPerformed
@@ -3083,6 +3853,38 @@ public final class ResidencialTopComponent extends TopComponent {
         cargarDatosCertificaciones();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void botonActualizarCalculos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarCalculos1ActionPerformed
+        actualizarCalculosCertificaciones();
+    }//GEN-LAST:event_botonActualizarCalculos1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField187ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField187ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField187ActionPerformed
+
+    private void jTextField163ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField163ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField163ActionPerformed
+
+    private void jTextField159ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField159ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField159ActionPerformed
+
+    private void jTextField145ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField145ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField145ActionPerformed
+
+    private void jTextField140ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField140ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField140ActionPerformed
+
+    private void jTextField138ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField138ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField138ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox FiltroIncidencia;
     private javax.swing.JComboBox ListaAgentes;
@@ -3098,6 +3900,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JButton aumentaFuente;
     private javax.swing.JButton botonActualizaFecha;
     private javax.swing.JButton botonActualizarCalculos;
+    private javax.swing.JButton botonActualizarCalculos1;
     private javax.swing.JButton botonBuscarCUPSe;
     private javax.swing.JButton botonBuscarCUPSg;
     private javax.swing.JButton botonBuscarID;
@@ -3156,8 +3959,21 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
@@ -3176,9 +3992,32 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
+    private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel156;
+    private javax.swing.JLabel jLabel157;
+    private javax.swing.JLabel jLabel158;
+    private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel160;
+    private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -3187,12 +4026,17 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -3226,6 +4070,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
@@ -3261,11 +4106,15 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -3275,11 +4124,15 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField100;
     private javax.swing.JTextField jTextField101;
     private javax.swing.JTextField jTextField102;
     private javax.swing.JTextField jTextField103;
+    private javax.swing.JTextField jTextField104;
+    private javax.swing.JTextField jTextField105;
+    private javax.swing.JTextField jTextField106;
     private javax.swing.JTextField jTextField107;
     private javax.swing.JTextField jTextField108;
     private javax.swing.JTextField jTextField109;
@@ -3314,11 +4167,61 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField135;
     private javax.swing.JTextField jTextField136;
     private javax.swing.JTextField jTextField137;
+    private javax.swing.JTextField jTextField138;
+    private javax.swing.JTextField jTextField139;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField140;
+    private javax.swing.JTextField jTextField141;
+    private javax.swing.JTextField jTextField142;
+    private javax.swing.JTextField jTextField143;
+    private javax.swing.JTextField jTextField144;
+    private javax.swing.JTextField jTextField145;
+    private javax.swing.JTextField jTextField146;
+    private javax.swing.JTextField jTextField147;
+    private javax.swing.JTextField jTextField148;
+    private javax.swing.JTextField jTextField149;
     private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField150;
+    private javax.swing.JTextField jTextField151;
+    private javax.swing.JTextField jTextField152;
+    private javax.swing.JTextField jTextField153;
+    private javax.swing.JTextField jTextField154;
+    private javax.swing.JTextField jTextField155;
+    private javax.swing.JTextField jTextField156;
+    private javax.swing.JTextField jTextField157;
+    private javax.swing.JTextField jTextField158;
+    private javax.swing.JTextField jTextField159;
     private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField160;
+    private javax.swing.JTextField jTextField161;
+    private javax.swing.JTextField jTextField162;
+    private javax.swing.JTextField jTextField163;
+    private javax.swing.JTextField jTextField164;
+    private javax.swing.JTextField jTextField165;
+    private javax.swing.JTextField jTextField166;
+    private javax.swing.JTextField jTextField167;
+    private javax.swing.JTextField jTextField168;
+    private javax.swing.JTextField jTextField169;
+    private javax.swing.JTextField jTextField170;
+    private javax.swing.JTextField jTextField171;
+    private javax.swing.JTextField jTextField172;
+    private javax.swing.JTextField jTextField173;
+    private javax.swing.JTextField jTextField174;
+    private javax.swing.JTextField jTextField175;
+    private javax.swing.JTextField jTextField176;
+    private javax.swing.JTextField jTextField177;
+    private javax.swing.JTextField jTextField178;
     private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField186;
+    private javax.swing.JTextField jTextField187;
+    private javax.swing.JTextField jTextField188;
+    private javax.swing.JTextField jTextField189;
     private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField190;
+    private javax.swing.JTextField jTextField191;
+    private javax.swing.JTextField jTextField192;
+    private javax.swing.JTextField jTextField193;
+    private javax.swing.JTextField jTextField194;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
@@ -3329,6 +4232,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField40;
     private javax.swing.JTextField jTextField41;
@@ -3351,6 +4255,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField57;
     private javax.swing.JTextField jTextField58;
     private javax.swing.JTextField jTextField59;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField60;
     private javax.swing.JTextField jTextField61;
     private javax.swing.JTextField jTextField62;
@@ -3372,6 +4277,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField77;
     private javax.swing.JTextField jTextField78;
     private javax.swing.JTextField jTextField79;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField80;
     private javax.swing.JTextField jTextField81;
     private javax.swing.JTextField jTextField82;
@@ -3399,8 +4305,8 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JScrollPane miBarraCer;
     private javax.swing.JScrollPane miBarraLocu;
     private javax.swing.JTable miTabla01;
-    private javax.swing.JTable miTabla02;
     private javax.swing.JTable miTablaCer;
+    private javax.swing.JTable miTablaCertifica;
     private javax.swing.JTable miTablaLiquida;
     private javax.swing.JTable miTablaLocu;
     private javax.swing.JTextField nComienzo;
@@ -3449,6 +4355,8 @@ public final class ResidencialTopComponent extends TopComponent {
      conectarConBD();  
      modificarArbolNuevos();
      CuentaTitularesRepetidos();
+     actualizarTablaComisiones(1) ; // Iniciamos tabla liquidacines con precios de comercial generico
+     actualizarTablaIngresos() ;    // Cargamos las comisiones de las cerficaciones
      
  }
     
@@ -5643,8 +6551,8 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 DefaultTableModel model;
 		model = new DefaultTableModel();        // definimos el objeto tableModel
                
-		miTabla02 = new JTable();                // creamos la instancia de la tabla
-		miTabla02.setModel(model);
+		miTablaCertifica = new JTable();                // creamos la instancia de la tabla
+		miTablaCertifica.setModel(model);
                 
                                  
 		model.addColumn("Año");
@@ -5679,8 +6587,8 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                               
                
                 
-		miTabla02.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		miTabla02.getTableHeader().setReorderingAllowed(false);
+		miTablaCertifica.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaCertifica.getTableHeader().setReorderingAllowed(false);
 
 		Object[] fila = new Object[33];
                 // para llenar cada columna con lo datos almacenados
@@ -5705,7 +6613,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
               //  miTabla02.setDefaultRenderer(Integer.class, formato);
               //  miTabla02.setDefaultRenderer(Object.class, formato);
                 
-		miBarra02.setViewportView(miTabla02);
+		miBarra02.setViewportView(miTablaCertifica);
 
 	}
       // --------------------------------------------------------------------------------------------------------------
@@ -6477,8 +7385,8 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 v5 = p6 * Double.parseDouble(jTextField61.getText());   jTextField67.setText(String.valueOf(v5));
                 v6 = p7 * Double.parseDouble(jTextField62.getText());   jTextField68.setText(String.valueOf(v6));
                 v7 = p8 * Double.parseDouble(jTextField63.getText());   jTextField69.setText(String.valueOf(v7));
-                v8 = (p9-p8) * Double.parseDouble(jTextField109.getText());  jTextField110.setText(String.valueOf(v8));
-                v9 = p10 * Double.parseDouble(jTextField113.getText());  jTextField114.setText(String.valueOf(v9));
+                v8 = (p9-p8-p11) * Double.parseDouble(jTextField109.getText());  jTextField110.setText(String.valueOf(v8));
+                v9 = (p10-p12) * Double.parseDouble(jTextField113.getText());  jTextField114.setText(String.valueOf(v9));
                 
                 v11 = p11 * Double.parseDouble(jTextField127.getText());  jTextField126.setText(String.valueOf(v11));
                 v12 = p12 * Double.parseDouble(jTextField131.getText());  jTextField130.setText(String.valueOf(v12));
@@ -6849,4 +7757,246 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 miBarraLocu.setViewportView(miTablaCer);
                 // .........................................................
     }
+    
+    public void actualizarTablaComisiones(int idComercial) {
+        int r=0;
+         // .......................................................................
+            
+            PymesDao miTCom = new PymesDao();
+            
+         // .......................................................................
+        
+        r = miTCom.consultaTablaComisionesResidencial(this.plogin,this.ppassword,idComercial) ;
+        
+        jTextField43.setText(miTCom.tablaComisionesAgente[0][1]); jTextField44.setText(miTCom.tablaComisionesAgente[0][2]); 
+        jTextField51.setText(miTCom.tablaComisionesAgente[1][1]); jTextField58.setText(miTCom.tablaComisionesAgente[1][2]); 
+        jTextField52.setText(miTCom.tablaComisionesAgente[2][1]); jTextField59.setText(miTCom.tablaComisionesAgente[2][2]);     
+        jTextField53.setText(miTCom.tablaComisionesAgente[3][1]); jTextField60.setText(miTCom.tablaComisionesAgente[3][2]);  
+        jTextField54.setText(miTCom.tablaComisionesAgente[4][1]); jTextField61.setText(miTCom.tablaComisionesAgente[4][2]); 
+        jTextField55.setText(miTCom.tablaComisionesAgente[5][1]); jTextField62.setText(miTCom.tablaComisionesAgente[5][2]);  
+        jTextField57.setText(miTCom.tablaComisionesAgente[6][1]); jTextField63.setText(miTCom.tablaComisionesAgente[6][2]);   
+        jTextField107.setText(miTCom.tablaComisionesAgente[7][1]); jTextField109.setText(miTCom.tablaComisionesAgente[7][2]);   
+        jTextField112.setText(miTCom.tablaComisionesAgente[8][1]); jTextField113.setText(miTCom.tablaComisionesAgente[8][2]);   
+        jTextField128.setText(miTCom.tablaComisionesAgente[9][1]); jTextField127.setText(miTCom.tablaComisionesAgente[9][2]);   
+        jTextField132.setText(miTCom.tablaComisionesAgente[10][1]); jTextField131.setText(miTCom.tablaComisionesAgente[10][2]);   
+        jTextField136.setText(miTCom.tablaComisionesAgente[11][1]); jTextField135.setText(miTCom.tablaComisionesAgente[11][2]);   
+        
+    }
+     public void actualizarTablaIngresos() {
+        int r=0;
+         // .......................................................................
+            
+            PymesDao miTIng = new PymesDao();
+            
+         // .......................................................................
+        
+        r = miTIng.consultaTablaIngresosResidencial(this.plogin,this.ppassword) ;
+        
+        jTextField139.setText(miTIng.tablaComisionesAgente[0][1]); jTextField140.setText(miTIng.tablaComisionesAgente[0][2]); 
+        jTextField156.setText(miTIng.tablaComisionesAgente[1][1]); jTextField171.setText(miTIng.tablaComisionesAgente[1][2]); 
+        jTextField157.setText(miTIng.tablaComisionesAgente[2][1]); jTextField172.setText(miTIng.tablaComisionesAgente[2][2]);     
+        jTextField158.setText(miTIng.tablaComisionesAgente[3][1]); jTextField173.setText(miTIng.tablaComisionesAgente[3][2]);  
+        jTextField159.setText(miTIng.tablaComisionesAgente[4][1]); jTextField174.setText(miTIng.tablaComisionesAgente[4][2]); 
+        jTextField160.setText(miTIng.tablaComisionesAgente[5][1]); jTextField175.setText(miTIng.tablaComisionesAgente[5][2]);  
+        jTextField161.setText(miTIng.tablaComisionesAgente[6][1]); jTextField176.setText(miTIng.tablaComisionesAgente[6][2]);   
+        jTextField162.setText(miTIng.tablaComisionesAgente[7][1]); jTextField177.setText(miTIng.tablaComisionesAgente[7][2]);   
+        jTextField163.setText(miTIng.tablaComisionesAgente[8][1]); jTextField178.setText(miTIng.tablaComisionesAgente[8][2]);   
+        jTextField159.setText(miTIng.tablaComisionesAgente[9][1]); jTextField150.setText(miTIng.tablaComisionesAgente[9][2]);   
+        jTextField155.setText(miTIng.tablaComisionesAgente[10][1]); jTextField154.setText(miTIng.tablaComisionesAgente[10][2]);   
+        jTextField167.setText(miTIng.tablaComisionesAgente[11][1]); jTextField166.setText(miTIng.tablaComisionesAgente[11][2]);   
+        
+    }
+     // -------------------------------------------------------------------------------------------------
+       public void actualizarCalculosCertificaciones() {
+           
+                int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,ptot,nReg;
+                int pn1,pn2,pn3,pn4,pn5,pn6,pn7,pn8,pn9,pn10,pntot;
+                double v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,vtot,val,v11,v12,v13;
+                double vn1,vn2,vn3,vn4,vn5,vn6,vn7,vn8,vn9,vn10,vntot;
+                
+           
+                String dd = jTextField104.getText() ;
+                String mm = jTextField105.getText() ;
+                String aa = jTextField106.getText() ;
+                
+                String dd2 = jTextField1.getText() ;
+                String mm2 = jTextField3.getText() ;
+                String aa2 = jTextField6.getText() ;
+                
+                String fechaSelDesde = aa+"-"+mm+"-"+dd+" 00:00:00" ;
+                String fechaSelHasta = aa2+"-"+mm2+"-"+dd2+" 00:00:00" ;
+                
+                System.out.println("----COMIENZO EL FORMATEO TABLA CERTIFICACIONES --- Fecha = "+fechaSelDesde);
+                
+                
+                DefaultTableModel modelCer;
+		modelCer = new DefaultTableModel();        // definimos el objeto tableModel
+               
+		miTablaCertifica = new JTable();                // creamos la instancia de la tabla
+		miTablaCertifica.setModel(modelCer);
+                
+                modelCer.addColumn("idColor");                        
+		modelCer.addColumn("TUR");                
+		modelCer.addColumn("CUPS GAS");
+		modelCer.addColumn("CUPS ELECTRICIDAD");
+		modelCer.addColumn("TITULAR");
+                modelCer.addColumn("CIF/NIF");
+                modelCer.addColumn("SVG C");
+                modelCer.addColumn("SVG X");
+		modelCer.addColumn("SVG B");
+                modelCer.addColumn("SVE");
+                modelCer.addColumn("SVH");
+                modelCer.addColumn("SVGCC");
+                modelCer.addColumn("SVGSC");
+                modelCer.addColumn("SPP");
+                modelCer.addColumn("T.PLANA");
+                modelCer.addColumn("OBSERVACIONES");
+                modelCer.addColumn("Nº DE PRODUCTOS");
+               
+                
+		miTablaCertifica.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaCertifica.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn columna1 = miTablaCertifica.getColumn("CUPS GAS");
+                TableColumn columna2 = miTablaCertifica.getColumn("CUPS ELECTRICIDAD");
+                TableColumn columna3 = miTablaCertifica.getColumn("TITULAR");
+                TableColumn columna4 = miTablaCertifica.getColumn("OBSERVACIONES");
+               
+                columna1.setMinWidth(230);
+                columna2.setMinWidth(230);
+                columna3.setMinWidth(150);
+                columna4.setMinWidth(250);
+
+		PymesDao miPymesDao3 = new PymesDao();
+		 
+                
+		nReg=miPymesDao3.tablaCertificaciones(modelCer,this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta);
+                this.nCertificaciones = nReg;
+                
+                // ................................................................................................................................
+                
+                p1 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta,0);
+                p2 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 1);
+                p3 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 2);
+                p4 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 3); 
+                p5 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 4);
+                p6 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 5);
+                p7 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 6); 
+                p8 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 7);
+                
+                p9 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 8);
+                p10 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 9);
+                
+                p11 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 10);
+                p12 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 11);
+                p13 = miPymesDao3.contarProductosCertificaciones(this.plogin,this.ppassword,fechaSelDesde,fechaSelHasta, 12);
+               
+                // ................................................................................................................................
+               
+                jTextField138.setText(String.valueOf(p5));           // Servihogar
+                jTextField141.setText(String.valueOf(p4));           // Servielectric
+                jTextField142.setText(String.valueOf(p1));           // Servigas complet
+                jTextField143.setText(String.valueOf(p2+p3));        // Servigas basic + express
+                jTextField144.setText(String.valueOf(p6));           // Servigas con calefaccion
+                jTextField145.setText(String.valueOf(p7));           // Servigas sin calefaccion
+                jTextField146.setText(String.valueOf(p8));           // TUR
+                jTextField147.setText(String.valueOf(p9-p8-p11));    // SWITCHING GAS
+                jTextField148.setText(String.valueOf(p10-p12));      // SWITCHING ELECTRICO
+                jTextField152.setText(String.valueOf(p11));          // SWITCHING GAS CON TARIFA PLANA
+                jTextField164.setText(String.valueOf(p12));          // SWITCHING ELECTRICO CON TARIFA PLANA
+                jTextField168.setText(String.valueOf(p13));          // SPP PLAN DE PROTECCION DE PAGOS
+                     
+                // ................................................................................................................................
+                
+                val = Double.parseDouble(jTextField138.getText()) ;
+                
+                v1 = p5 * Double.parseDouble(jTextField140.getText());      jTextField186.setText(String.valueOf(v1)); System.out.println("----------------------- V1="+v1);
+                v2 = p4 * Double.parseDouble(jTextField171.getText());      jTextField187.setText(String.valueOf(v2));
+                v3 = p1 * Double.parseDouble(jTextField172.getText());      jTextField188.setText(String.valueOf(v3));
+                v4 = (p2+p3) * Double.parseDouble(jTextField173.getText()); jTextField189.setText(String.valueOf(v4));
+                v5 = p6 * Double.parseDouble(jTextField174.getText());      jTextField190.setText(String.valueOf(v5));
+                v6 = p7 * Double.parseDouble(jTextField175.getText());      jTextField191.setText(String.valueOf(v6));
+                v7 = p8 * Double.parseDouble(jTextField176.getText());      jTextField192.setText(String.valueOf(v7));
+                v8 = (p9-p8-p11) * Double.parseDouble(jTextField177.getText()); jTextField193.setText(String.valueOf(v8));
+                v9 = (p10-p12) * Double.parseDouble(jTextField178.getText());     jTextField194.setText(String.valueOf(v9));
+                
+                v11 = p11 * Double.parseDouble(jTextField150.getText());    jTextField149.setText(String.valueOf(v11));
+                v12 = p12 * Double.parseDouble(jTextField154.getText());    jTextField153.setText(String.valueOf(v12));
+                v13 = p13 * Double.parseDouble(jTextField166.getText());    jTextField165.setText(String.valueOf(v13)); 
+                  
+                // ................................................................................................................................
+                 /*    
+                pn1 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,0);
+                pn2 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,1);
+                pn3 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,2);
+                pn4 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,3); 
+                pn5 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,4);
+                pn6 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,5);
+                pn7 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,6); 
+                pn8 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,7);
+                
+                pn9 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,8);
+                pn10= miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,9);
+               
+                 // ................................................................................................................................
+               
+                jTextField76.setText(String.valueOf(pn5));           // Servihogar
+                jTextField77.setText(String.valueOf(pn4));           // Servielectric
+                jTextField78.setText(String.valueOf(pn1));           // Servigas complet
+                jTextField80.setText(String.valueOf(pn2+pn3));        // Servigas basic + express
+                jTextField81.setText(String.valueOf(pn6));           // Servigas con calefaccion
+                jTextField82.setText(String.valueOf(pn7));           // Servigas sin calefaccion
+                
+                jTextField83.setText(String.valueOf(pn8));           // TUR
+                
+                jTextField115.setText(String.valueOf(pn9-pn8));        // SWITCHING GAS
+                jTextField119.setText(String.valueOf(pn10));          // SWITCHING ELECTRICO
+                
+                // ................................................................................................................................
+                
+                vn1 = pn5 * Double.parseDouble(jTextField84.getText());  jTextField85.setText(String.valueOf(vn1));
+                vn2 = pn4 * Double.parseDouble(jTextField87.getText());  jTextField88.setText(String.valueOf(vn2));
+                vn3 = pn1 * Double.parseDouble(jTextField90.getText());  jTextField91.setText(String.valueOf(vn3));
+                vn4 = (pn2+pn3) * Double.parseDouble(jTextField96.getText());  jTextField100.setText(String.valueOf(vn4));
+                vn5 = pn6 * Double.parseDouble(jTextField97.getText());  jTextField101.setText(String.valueOf(vn5));
+                vn6 = pn7 * Double.parseDouble(jTextField99.getText());  jTextField102.setText(String.valueOf(vn6));
+                vn7 = pn8 * Double.parseDouble(jTextField98.getText());  jTextField103.setText(String.valueOf(vn7));
+                vn8 = (pn9-pn8) * Double.parseDouble(jTextField117.getText());  jTextField118.setText(String.valueOf(vn8));
+                vn9 = pn10 * Double.parseDouble(jTextField121.getText());  jTextField122.setText(String.valueOf(vn9));
+                */
+                // ................................................................................................................................
+                
+                ptot = p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p13  ;  
+                
+                jTextField170.setText(String.valueOf(ptot));
+                
+                vtot = v1+v2+v3+v4+v5+v6+v7+v8+v9+v11+v12+v13 ; 
+                
+                jTextField169.setText(String.valueOf(vtot));
+                jTextField8.setText(String.valueOf(vtot));
+              
+                // ................................................................................................................................
+                
+                 //Nueva instancia de la clase que contiene el formato
+                FormatoTablaLiquida formato = new FormatoTablaLiquida();
+                
+                formato.fuente = this.fuente ;
+                
+                        
+                //Se obtiene la tabla y se establece el formato para cada tipo de dato
+                
+                miTablaCertifica.setDefaultRenderer(Double.class, formato); 
+                miTablaCertifica.setDefaultRenderer(String.class, formato); 
+                miTablaCertifica.setDefaultRenderer(Integer.class, formato);
+                miTablaCertifica.setDefaultRenderer(Object.class, formato);
+                
+                         
+		miBarra02.setViewportView(miTablaCertifica);
+                
+        
+                
+                
+           
+           
+       } 
 }

@@ -16,7 +16,9 @@ import javax.swing.table.DefaultTableModel;
 import vo.PymesVo;
 
 import conexion.Conexion;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import javax.swing.table.TableColumn;
 
 /**
@@ -32,8 +34,9 @@ public class PymesDao {
 	 * @param miPyme
 	 */
     
-        public String tablaDatos[][] = new String[5000][55] ;    // Tabla  con los datos a procesar.
-        public String tablaLiquidaciones[][] = new String[5000][15] ;    // Tabla  con los datos de la liquidación
+        public String tablaDatos[][] = new String[5000][55] ;               // Tabla  con los datos a procesar.
+        public String tablaLiquidaciones[][] = new String[5000][15] ;       // Tabla  con los datos de la liquidación
+        public String tablaComisionesAgente[][] = new String[15][3] ;               // Tabla  con las comisiones de residencial
         public int nRegistros = 0;
         public int nLiquida = 0;
     
@@ -134,7 +137,10 @@ public class PymesDao {
                         break; 
                     case 8:
                         strquery = strquery + " WHERE Estado = 5" ; 
-                        break;      
+                        break;    
+                    case 9:
+                        strquery = strquery + " WHERE Estado = 7" ;                 // decomisionado
+                        break;        
                          
                 }        
                   switch (filtroIncidencia){
@@ -764,10 +770,10 @@ public class PymesDao {
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
                 int nReg=0;
                 
-                String strquery = "SELECT idIncidencia,TurGas,CUPS_gas,CUPS_Elect,Titular,NIF_CIF,SVGCompleto,SVGXpres,SVGBasico,SVelectricXpres,Servihogar,SVGCompletoConCalef,SVGCompletoSinCalef,SPP,TarifaPlana,Observaciones FROM t_makro_residencial  WHERE (Estado=0 OR ESTADO=1 OR Estado=3) " ;
+                String strquery = "SELECT idIncidencia,TurGas,CUPS_gas,CUPS_Elect,Titular,NIF_CIF,SVGCompleto,SVGXpres,SVGBasico,SVelectricXpres,Servihogar,SVGCompletoConCalef,SVGCompletoSinCalef,SPP,TarifaPlana,Observaciones FROM t_makro_residencial  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6) " ;
             //    filtroEstado = 3 ;
                  
-                strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  OR idIncidencia=5 OR idIncidencia=3 OR idIncidencia=1 OR idIncidencia=2) AND  Fecha LIKE '"+fechaSel+"'" ;
+                strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  OR idIncidencia=5 OR idIncidencia=3 OR idIncidencia=1 OR idIncidencia=2 ) AND  Fecha LIKE '"+fechaSel+"'" ;
                   
                 switch (filtroProvincia){
                     
@@ -1059,9 +1065,9 @@ public class PymesDao {
                   }
                  String strquery = "";
                 if (producto ==8 || producto==9) {
-                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado <> 3 AND "+prod+" LIKE '%0%'" ;
+                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado = 7 AND "+prod+" LIKE '%0%'" ;
                 } else {
-                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado <> 3 AND "+prod+"=1" ;
+                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado = 7 AND "+prod+"=1" ;
                 }
             //    filtroEstado = 3 ;
                  
@@ -1339,5 +1345,277 @@ public class PymesDao {
 		}
                 return res;
 }
+   // ------------------------------------------------------------------------------------------------------------------
+  	public int consultaTablaComisionesResidencial(String str1,String str2,int idcomercial) {
+		 
+            Conexion conex = new Conexion(str1,str2);
+            int estadoInsert = 0, ntot=0;
+            
+            String sqlStr ="SELECT id_producto,comision,descripcion";
+                   sqlStr +=" FROM v_lista_comisiones_agente_producto WHERE id_comercial="+idcomercial+"  ORDER BY id_producto ASC";
+       //      System.out.println("sqlstr ="+sqlStr); 
+            
+            try {
+			Statement estatuto = conex.getConnection().createStatement();
+			ResultSet rs = estatuto.executeQuery(sqlStr);
+
+                         int contador = 0;
+
+                        while (rs.next()) {
+
+                            contador++;
+
+                        }
+                        ntot = contador ;
+                                                
+                        if (contador >0){
+                           
+                            rs.beforeFirst();
+                            contador = 0;
+                            while (rs.next()) {
+                                   
+                                    // para llenar cada columna con lo datos almacenados
+                                      
+                                        this.tablaComisionesAgente[contador][0] = String.valueOf(rs.getInt("id_producto"));
+                                        this.tablaComisionesAgente[contador][1] = rs.getString("descripcion");
+                                        this.tablaComisionesAgente[contador][2] = String.valueOf(redondear(rs.getDouble("comision"),2));  
+                                        
+                                    contador++;
+                                   
+                            }
+                        } 
+			rs.close();
+			estatuto.close();
+			conex.desconectar();
+                        System.out.println("He cargado "+contador+" datos del comisiones");             
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+                        //                JOptionPane.showMessageDialog(null, "Error al consultar", "Error",JOptionPane.ERROR_MESSAGE);
+
+		}
+                return ntot;
+		
+	}
+        // ------------------------------------------------------------------------------------------------------------------
+  	public int consultaTablaIngresosResidencial(String str1,String str2) {
+		 
+            Conexion conex = new Conexion(str1,str2);
+            int estadoInsert = 0, ntot=0;
+            
+            String sqlStr ="SELECT id_producto,comision,descripcion";
+                   sqlStr +=" FROM v_lista_ingresos_producto ORDER BY id_producto ASC";
+       //      System.out.println("sqlstr ="+sqlStr); 
+            
+            try {
+			Statement estatuto = conex.getConnection().createStatement();
+			ResultSet rs = estatuto.executeQuery(sqlStr);
+
+                         int contador = 0;
+
+                        while (rs.next()) {
+
+                            contador++;
+
+                        }
+                        ntot = contador ;
+                                                
+                        if (contador >0){
+                           
+                            rs.beforeFirst();
+                            contador = 0;
+                            while (rs.next()) {
+                                   
+                                    // para llenar cada columna con lo datos almacenados
+                                      
+                                        this.tablaComisionesAgente[contador][0] = String.valueOf(rs.getInt("id_producto"));
+                                        this.tablaComisionesAgente[contador][1] = rs.getString("descripcion");
+                                        this.tablaComisionesAgente[contador][2] = String.valueOf(redondear(rs.getDouble("comision"),2));  
+                                        
+                                        System.out.println("Descripción:"+this.tablaComisionesAgente[contador][1]+" comision="+this.tablaComisionesAgente[contador][2]);
+                                        
+                                    contador++;
+                                   
+                            }
+                        } 
+			rs.close();
+			estatuto.close();
+			conex.desconectar();
+                        System.out.println("He cargado "+contador+" datos de ingresos por certificaciones");             
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+                        //                JOptionPane.showMessageDialog(null, "Error al consultar", "Error",JOptionPane.ERROR_MESSAGE);
+
+		}
+                return ntot;
+		
+	}
+        // -----------------------------------------------------------------------------------
+        
+        public double redondear( double numero, int decimales ) {
+         return Math.round(numero*Math.pow(10,decimales))/Math.pow(10,decimales);
+       }
+         // -------------------------------------------------------------------------------------------------------------------------------------------------
+        public int tablaCertificaciones(DefaultTableModel model,String str1,String str2,String fechaSelDesde,String fechaSelHasta) {
+                String str;
+                int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
+                int nReg=0;
+                
+                String strquery = "SELECT idIncidencia,TurGas,CUPS_gas,CUPS_Elect,Titular,NIF_CIF,SVGCompleto,SVGXpres,SVGBasico,SVelectricXpres,Servihogar,SVGCompletoConCalef,SVGCompletoSinCalef,SPP,TarifaPlana,Observaciones FROM t_makro_residencial  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6) " ;
+            //    filtroEstado = 3 ;
+                 
+                strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  OR idIncidencia=5 OR idIncidencia=3 OR idIncidencia=1 OR idIncidencia=2 ) AND  Fecha >= '"+fechaSelDesde+"' AND  Fecha <= '"+fechaSelHasta+"'" ;
+                  
+                strquery = strquery + " ORDER BY idIncidencia,id_m_r ASC";
+                
+                System.out.println("La cadena de la consulta ="+strquery);
+         Conexion conex = new Conexion(str1,str2);
+                 int cnt =0;
+                 
+               //converting date to string dd/MM/yyyy format for example "14/09/2011"
+                SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
+              
+        try {
+            Statement estatuto = conex.getConnection().createStatement();
+            ResultSet rs = estatuto.executeQuery(strquery);
+
+            while (rs.next()) {
+                 
+                 // es para obtener los datos y almacenar las filas
+                 Object[] fila = new Object[17];
+                
+                 p1 = rs.getInt(7);
+                 p2 = rs.getInt(8);
+                 p3 = rs.getInt(9);
+                 p4 = rs.getInt(10);
+                 p5 = rs.getInt(11);
+                 p6 = rs.getInt(12);
+                 p7 = rs.getInt(13);
+               
+                
+                 pTotal = p1+p2+p3+p4+p5+p6+p7 ;
+                
+                // para llenar cada columna con lo datos almacenados
+                for (int i = 0; i < 16; i++) 
+                    
+                    fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
+                  
+                fila[16] = pTotal ;
+                model.addRow(fila);
+                nReg++;
+
+            }
+                     
+                        System.out.println("Hemos introducido "+nReg+" registros en tablaDatos");
+            rs.close();
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al consultar", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+
+        }
+        return nReg;
+    }
+         // -------------------------------------------------------------------------------------------------------------------------------------------------
+   public int contarProductosCertificaciones(String str1,String str2,String fechaSelDesde,String fechaSelHasta,int producto) {
+                String str,prod="";
+                int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
+                  switch (producto){
+                       case 0:
+                           prod = "SVGCompleto";
+                           break;
+                       case 1:
+                           prod = "SVGXpres";
+                           break;
+                       case 2:
+                           prod = "SVGBasico";
+                           break;
+                       case 3:
+                           prod = "SVelectricXpres";
+                           break;     
+                       case 4:
+                           prod = "Servihogar";
+                           break; 
+                       case 5:
+                           prod = "SVGCompletoConCalef";
+                           break;
+                       case 6:
+                           prod = "SVGCompletoSinCalef";
+                           break;
+                       case 7:
+                           prod = "TurGas";
+                           break;
+                       case 8:
+                           prod = "CUPS_gas";
+                           break;
+                       case 9:
+                           prod = "CUPS_Elect";
+                           break;
+                       case 10:
+                           prod = "TarifaPlana";
+                           break;
+                       case 11:
+                           prod = "TarifaPlana";
+                           break;
+                        case 12:
+                           prod = "SPP";
+                           break;
+                  }
+                 String strquery = "";
+                if (producto ==8 || producto==9) {
+                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 ) AND "+prod+" LIKE '%0%'" ;
+                } else { 
+                    if (producto <8) {
+                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE (Estado = 0 OR Estado= 1 OR Estado=2) AND "+prod+"=1" ;
+                    } else {
+                    if (producto ==10 ){
+                      strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE (Estado = 0 OR Estado= 1 OR Estado=2) AND "+prod+"=1 AND CUPS_gas LIKE '%0%'"  ;   
+                    }    
+                    if (producto ==11 ){
+                      strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE (Estado = 0 OR Estado= 1 OR Estado=2) AND "+prod+"=1 AND CUPS_Elect LIKE '%0%'"  ;     
+                    }  
+                    if (producto ==12 ){
+                      strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE (Estado = 0 OR Estado= 1 OR Estado=2) AND "+prod+"=1" ;  
+                    }  
+                        
+                    }
+                } 
+            //    filtroEstado = 3 ;
+                 
+                strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  ) AND  Fecha >= '"+fechaSelDesde+"'  AND  Fecha <= '"+fechaSelHasta+"'" ;
+                  
+                strquery = strquery + " ORDER BY id_m_r DESC";
+                
+                System.out.println("La cadena de la consulta ="+strquery);
+                Conexion conex = new Conexion(str1,str2);
+                 int cnt =0;
+                 
+             
+              
+        try {
+            Statement estatuto = conex.getConnection().createStatement();
+            ResultSet rs = estatuto.executeQuery(strquery);
+
+            rs.next();
+            pTotal = rs.getInt(1);
+                    
+            System.out.println("Producto "+prod+" --> "+pTotal+" registros en certificacion");
+            rs.close();
+            estatuto.close();
+            conex.desconectar();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al consultar", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+
+        }
+        return pTotal;
+    }
+       // ------------------------------------------------------------------------------------------------------------------------
 }
 
