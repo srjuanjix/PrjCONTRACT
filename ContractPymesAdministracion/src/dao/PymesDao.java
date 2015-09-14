@@ -1137,5 +1137,201 @@ public class PymesDao {
         }
         return pTotal;
     }
+   // ---------------------------------------------------------------------------------------------------------------------------------------
+
+   public int compruebaCertificacion(DefaultTableModel model,String str1,String str2,String nif,String direccion,String cupsGas,String cupsEle) {
+
+                String sqlStr;
+                int res = 0 ;
+                SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
+                
+                sqlStr  = "SELECT * FROM t_tabla_certificaciones_nominal_pymes  WHERE ";
+                sqlStr += "nif LIKE '%"+nif+"%' " ;
+                sqlStr += "OR calle LIKE '%"+direccion+"%' ";
+                
+                if ( !cupsGas.equals(""))  sqlStr += "OR CUPS_Gas LIKE '%"+cupsGas+"%' ";                
+                if ( !cupsEle.equals(""))  sqlStr += "OR CUPS_Elect LIKE '%"+cupsEle+"%'" ;
+                
+                sqlStr += "ORDER BY id DESC" ;
+                
+                 System.out.println("sqlstr="+sqlStr);
+                
+		 Conexion conex = new Conexion(str1,str2);
+		try {
+			Statement estatuto = conex.getConnection().createStatement();
+			ResultSet rs = estatuto.executeQuery(sqlStr);
+                        
+                         int contador = 0;
+
+                        while (rs.next()) {
+
+                            contador++;
+
+                        }
+                         System.out.println("Busco CERTIFICACIONES, resultado contador ="+contador);
+                         int cnt = 0 ;
+                         int marca = 0 ;
+                         if (contador >0){
+                                                       
+                            rs.beforeFirst();
+                           
+                            while (rs.next()) {
+
+                                    Object[] fila = new Object[23];
+                                    // para llenar cada columna con lo datos almacenados
+                                    for (int i = 0; i < 23; i++) 
+                                            fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
+
+                                            try {
+                                                fila[5]  = formatDateJava.format(rs.getDate(6)) ;      // fecha  ; 
+                                                fila[6]  = formatDateJava.format(rs.getDate(7)) ;      // fecha recepción ; 
+
+                                            } catch (NullPointerException nfe){
+                                                fila[5]  = ""; 
+                                                fila[6]  = ""; 
+                                            }
+
+                                    model.addRow(fila);
+                                    cnt++;
+                            }
+                        } else {
+                             System.out.println("No he encontrado ninguna CERTIFICACIÓN pymes");
+                             res = 1 ;
+                            
+                        }
+			rs.close();
+			estatuto.close();
+			conex.desconectar();
+                       
+                            if (res == 0) {
+                                if (marca == 1) {
+                                    res = 0 ;        
+                                   
+                                } else {
+                                    System.out.println("No he encontrado nada");
+                                    res = 2;
+                                }
+                            }
+                       
+                        
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+                         res = 2;
+                        //                JOptionPane.showMessageDialog(null, "Error al consultar", "Error",JOptionPane.ERROR_MESSAGE);
+
+		}
+                return res;
+}
+   // ---------------------------------------------------------------------------------------------------------------------------------------
+   
+   public int compruebaLocucion(DefaultTableModel model,String str1,String str2,String nif,String telefono,String direccion,String titular) {
+
+                String sqlStr;
+                int res = 0 ;
+                SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
+                
+                sqlStr  = "SELECT * FROM t_locuciones_pymes  WHERE ";
+                sqlStr += "titular LIKE '%"+nif+"%'" ;
+                if (!telefono.equals("") )
+                sqlStr +="OR telefono LIKE '%"+telefono+"%'" ;
+                
+                sqlStr += "OR direccion LIKE '%"+direccion+"%' OR titular LIKE '%"+titular+"%'" ;
+                sqlStr += "ORDER BY id DESC" ;
+                
+                 System.out.println("sqlstr="+sqlStr);
+                
+		 Conexion conex = new Conexion(str1,str2);
+		try {
+			Statement estatuto = conex.getConnection().createStatement();
+			ResultSet rs = estatuto.executeQuery(sqlStr);
+                        
+                         int contador = 0;
+
+                        while (rs.next()) {
+
+                            contador++;
+
+                        }
+                         System.out.println("Busco LOCUCIONES, resultado contador ="+contador);
+                         int cnt = 0 ;
+                         int marca = 0 ;
+                        if (contador >0){
+                                                       
+                            rs.beforeFirst();
+                           
+                            while (rs.next()) {
+
+                                    Object[] fila = new Object[25];
+                              
+                                         // para llenar cada columna con lo datos almacenados
+                                  
+                                            fila[0] = rs.getObject("id");                                    // ID
+                                            fila[1] = rs.getObject("id_tipo");                               // IDT
+                                            
+                                            try {
+                                                fila[2]  = formatDateJava.format(rs.getDate("fecha")) ;      // fecha  ; 
+
+                                            } catch (NullPointerException nfe){
+                                                fila[2]  = ""; 
+                                            }
+
+                                            fila[3]  = rs.getObject("titular");               // TITULAR
+                                            fila[4]  = rs.getObject("verifica");              // Verifica
+                                            fila[5]  = rs.getObject("direccion");             // Direccion
+                                            fila[6]  = rs.getObject("contrato");              // Contrato
+                                            fila[7]  = rs.getObject("llam1");                 // Llamada 1
+                                            fila[8]  = rs.getObject("llam2");                 // Llamada 2
+                                            fila[9]  = rs.getObject("llam3");                 // Llamada 3
+                                            fila[10] = rs.getObject("llam4");                 // Llamada 4
+                                            fila[11] = rs.getObject("llam5");                 // Llamada 5
+                                            fila[12] = rs.getObject("llam6");                 // Llamada 6                                                                                   
+                                            fila[13] = rs.getObject("telefono");              // telefono  
+                                            fila[14] = rs.getObject("fechaNac");              // fechaNac     
+                                            fila[15] = rs.getObject("apoderadoPyme");         // ApoderadoPyme     
+                                            fila[16] = rs.getObject("facturas");              // Facturas     
+                                            fila[17] = rs.getObject("tratoAcre");              // TratoAcre     
+                                            fila[18] = rs.getObject("informado");              // Informado    
+                                            fila[19] = rs.getObject("cuenta");                // Cuenta    
+                                            fila[20] = rs.getObject("copia");                 // Copia    
+                                            fila[21] = rs.getObject("observaciones");         // observaciones    
+                                            fila[22] = rs.getObject("comercial");             // comercial    
+                                            fila[23] = rs.getObject("hora");                  // hora
+                                            fila[24] = rs.getObject("precios");               // precios
+                                            
+                                    model.addRow(fila);
+                                    cnt++;
+                            }
+                        } else {
+                             System.out.println("No he encontrado ninguna locucion");
+                             res = 1 ;
+                            
+                        }
+			rs.close();
+			estatuto.close();
+			conex.desconectar();
+                       
+                            if (res == 0) {
+                                if (marca == 1) {
+                                    res = 0 ;        
+                                   
+                                } else {
+                                    System.out.println("No he encontrado nada");
+                                    res = 2;
+                                }
+                            }
+                       
+                        
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+                         res = 2;
+                        //                JOptionPane.showMessageDialog(null, "Error al consultar", "Error",JOptionPane.ERROR_MESSAGE);
+
+		}
+                return res;
+}
+   // ------------------------------------------------------------------------------------------------------------------
+   
 }
 

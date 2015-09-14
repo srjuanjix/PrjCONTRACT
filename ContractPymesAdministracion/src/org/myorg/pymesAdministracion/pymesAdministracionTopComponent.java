@@ -3993,6 +3993,12 @@ public final class pymesAdministracionTopComponent extends TopComponent {
            this.indGen = indice ;
            DefaultTableModel modelLoc;
            DefaultTableModel modelCer;
+           String nif       = ""; 
+           String telefono  = "";
+           String direccion = "";
+           String titular   = "";
+           String cupsGas   = "";
+           String cupsEle   = "";
            
            
            MarcaColorOK() ;
@@ -4049,45 +4055,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 
                 System.out.println("Indice pasado ="+indice+" y el Indice de tablaLocuciones ="+this.tablaDatos[indice][32]);
                
-                 // .........................................................
                 
-                DefaultTableModel model;
-		model = new DefaultTableModel();        // definimos el objeto tableModel
-               
-		miTablaLiquida = new JTable();                // creamos la instancia de la tabla
-		miTablaLiquida.setModel(model);
-                
-                model.addColumn("idColor");                        
-		model.addColumn("TUR");                
-		model.addColumn("CUPS GAS");
-		model.addColumn("CUPS ELECTRICIDAD");
-		model.addColumn("TITULAR");
-                model.addColumn("CIF/NIF");
-                model.addColumn("SVG C");
-                model.addColumn("SVG X");
-		model.addColumn("SVG B");
-                model.addColumn("SVE");
-                model.addColumn("SVH");
-                model.addColumn("SVGCC");
-                model.addColumn("SVGSC");
-                model.addColumn("SPP");
-                model.addColumn("T.PLANA");
-                model.addColumn("OBSERVACIONES");
-                model.addColumn("Nº DE PRODUCTOS");
-               
-		miTablaLiquida.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		miTablaLiquida.getTableHeader().setReorderingAllowed(false);
-                
-                TableColumn columna1 = miTablaLiquida.getColumn("CUPS GAS");
-                TableColumn columna2 = miTablaLiquida.getColumn("CUPS ELECTRICIDAD");
-                TableColumn columna3 = miTablaLiquida.getColumn("TITULAR");
-                TableColumn columna4 = miTablaLiquida.getColumn("OBSERVACIONES");
-               
-                columna1.setMinWidth(230);
-                columna2.setMinWidth(230);
-                columna3.setMinWidth(150);
-                columna4.setMinWidth(250);
-
                 ireg = indice ;
                 this.indGenReg = ireg ;
                
@@ -4206,6 +4174,102 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     if (this.tablaDatos[ireg][33].equals("2")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
                     if (this.tablaDatos[ireg][33].equals("3")) jCheckBox30.setSelected(true); else jCheckBox30.setSelected(false);
                  
+                   // .........................................................  
+                    
+                modelLoc = new DefaultTableModel();            // definimos el objeto tableModel
+               
+                limpiaTablaLocuciones(modelLoc);
+                miTablaLocu = new JTable();                // creamos la instancia de la tabla
+                miTablaLocu.setModel(modelLoc);
+                  
+                
+                PymesDao miPymesDaoLoc = new PymesDao();
+                 
+                    
+                nif         = this.tablaDatos[ireg][10].trim(); 
+                telefono    = this.tablaDatos[ireg][16].trim();
+                direccion   = this.tablaDatos[ireg][8].trim();
+                titular     = this.tablaDatos[ireg][9].trim();
+                cupsGas     = this.tablaDatos[ireg][3].trim();
+                cupsEle     = this.tablaDatos[ireg][4].trim();
+                        
+	   
+                miPymesDaoLoc.compruebaLocucion(modelLoc,this.plogin,this.ppassword,nif,telefono,direccion,titular);
+               
+                miTablaLocu.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaLocu.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn colL0  = miTablaLocu.getColumn("ID");
+                TableColumn colL1  = miTablaLocu.getColumn("idt");
+                TableColumn colL2  = miTablaLocu.getColumn("Fecha");
+                TableColumn colL3  = miTablaLocu.getColumn("Titular");
+                TableColumn colL4  = miTablaLocu.getColumn("Verifica");
+                TableColumn colL5  = miTablaLocu.getColumn("Direccion");
+                TableColumn colL6  = miTablaLocu.getColumn("Contrato");
+                TableColumn colL7  = miTablaLocu.getColumn("Llam1");
+                TableColumn colL8  = miTablaLocu.getColumn("Llam2");
+                TableColumn colL9  = miTablaLocu.getColumn("Llam3");
+                TableColumn colL10 = miTablaLocu.getColumn("Llam4");
+                TableColumn colL11 = miTablaLocu.getColumn("Llam5");
+                TableColumn colL12 = miTablaLocu.getColumn("Llam6");
+                
+                colL0.setMinWidth(10);
+                colL1.setMinWidth(10);
+                colL2.setMinWidth(40);
+                colL3.setMinWidth(200);
+                colL4.setMinWidth(200);
+                colL5.setMinWidth(150);
+                colL6.setMinWidth(120);
+                colL7.setMinWidth(150);
+                colL8.setMinWidth(150);
+                colL9.setMinWidth(150);
+                colL7.setMinWidth(150);
+                colL8.setMinWidth(150);
+                colL9.setMinWidth(150);
+                colL10.setMinWidth(150);
+                colL11.setMinWidth(150);
+                colL12.setMinWidth(150);
+                
+                miBarraLocu.setViewportView(miTablaLocu);
+               // .........................................................
+                
+                modelCer = new DefaultTableModel();                         // definimos el objeto tableModel
+               
+                limpiaTablaCertificaciones(modelCer);
+                miTablaCer = new JTable();                                  // creamos la instancia de la tabla
+                miTablaCer.setModel(modelCer);
+              
+                miPymesDaoLoc.compruebaCertificacion(modelCer,this.plogin,this.ppassword,nif,direccion,cupsGas,cupsEle);
+                
+                miTablaCer.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTablaCer.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn col0 = miTablaCer.getColumn("IDp");
+                TableColumn col1 = miTablaCer.getColumn("Fecha");
+                TableColumn col2 = miTablaCer.getColumn("Fecha_Recep.");
+                TableColumn col3 = miTablaCer.getColumn("Concepto");
+                TableColumn col4 = miTablaCer.getColumn("Contrato");
+                TableColumn col5 = miTablaCer.getColumn("NIF");
+                TableColumn col6 = miTablaCer.getColumn("Calle");
+                TableColumn col7 = miTablaCer.getColumn("CUPS_Gas");
+                TableColumn col8 = miTablaCer.getColumn("CUPS_Elect");
+                TableColumn col9 = miTablaCer.getColumn("Producto");
+           
+                col0.setMinWidth(10);
+                col1.setMinWidth(40);
+                col2.setMinWidth(40);
+                col3.setMinWidth(200);
+                col4.setMinWidth(50);
+                col5.setMinWidth(40);
+                col6.setMinWidth(120);
+                col7.setMinWidth(150);
+                col8.setMinWidth(150);
+                col9.setMinWidth(350);
+                miBarraCer.setViewportView(miTablaCer);
+                
+                // .........................................................  
+                    
+                    
            }
              
            }
