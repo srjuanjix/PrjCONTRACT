@@ -61,7 +61,7 @@ public final class insertarSabanaTopComponent extends TopComponent {
 
     // ..........................................................
     
-     public String tablaDatos[][]            = new String[20000][50];  
+     public String tablaDatos[][]            = new String[2000][50];  
      public String nombres[]                 = new String[50];  
      public String tipos[]                   = new String[50];  
     
@@ -572,22 +572,19 @@ public void leerArchivoExel() throws IOException {
                                     this.tablaDatos[cnt-2][j] = String.valueOf(sdf.format(cell.getDateCellValue()));
                                 }
                                 catch (IllegalStateException e) {
-                                     this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO FECHA EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                     this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") -> HAY UN PROBLEMA EL TIPO FECHA EN EL CAMPO: "+this.nombres[j]+"\n" ;
                                      fProblema = 1 ;
                                 }
                             
                             } else {
                             // ............................................................
-                            if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-
-                                
+                            if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {     
                                 try {
                                      this.tablaDatos[cnt-2][j] = Double.toString(cell.getNumericCellValue());    
                                 }
                                 catch (IllegalStateException e) {
-                                    this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO NUMERICO EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                    this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") -> HAY UN PROBLEMA EL TIPO DE DATO NUMERICO EN EL CAMPO: "+this.nombres[j]+"\n" ;
                                     fProblema = 1 ;
-                                   
                                 }
                              
                             } else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
@@ -597,7 +594,7 @@ public void leerArchivoExel() throws IOException {
                                       this.tablaDatos[cnt-2][j] =  richTextString.getString();       
                                 }
                                 catch (IllegalStateException e) {
-                                    this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO TEXTO EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                    this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") ->HAY UN PROBLEMA EL TIPO DE DATO TEXTO EN EL CAMPO: "+this.nombres[j]+"\n" ;
                                     fProblema = 1 ;
                                    
                                 }
@@ -609,7 +606,7 @@ public void leerArchivoExel() throws IOException {
                                        this.tablaDatos[cnt-2][j] = Boolean.toString(cell.getBooleanCellValue());    
                                 }
                                 catch (IllegalStateException e) {
-                                    this.sLogTxt +="AVISO:HAY UN PROBLEMA EL TIPO DE DATO BOOLEANO EN EL CAMPO: "+this.nombres[j]+"\n" ;
+                                    this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") ->HAY UN PROBLEMA EL TIPO DE DATO BOOLEANO EN EL CAMPO: "+this.nombres[j]+"\n" ;
                                     fProblema = 1 ;
                                 }
                                 
@@ -634,9 +631,15 @@ public void leerArchivoExel() throws IOException {
                 System.out.println("----------- HE CARGADO "+this.nDatos+" REGISTROS ------------");       
                 this.sLogTxt +="----------- HE CARGADO "+this.nDatos+" REGISTROS  ------------"+"\n" ;
                 logAcciones.setText(this.sLogTxt);   
-                JOptionPane.showMessageDialog(null,
-                "\nHE CARGADO:"+this.nDatos+" REGISTROS",
-                "INFORMACIÓN",JOptionPane.WARNING_MESSAGE);
+                if ( fProblema == 0) {
+                    JOptionPane.showMessageDialog(null,
+                    "\nHE CARGADO:"+this.nDatos+" REGISTROS",
+                    "INFORMACIÓN",JOptionPane.WARNING_MESSAGE);
+                } else {
+                     JOptionPane.showMessageDialog(null,
+                    "\nSE HAN DETECTADO PROBLEMAS, SE CANCELA LA CARGA DE ARCHIVO EXEL",
+                    "AVISO",JOptionPane.WARNING_MESSAGE);
+                }
   }
    // -------------------------------------------------------------------------------------------------------------
         
@@ -663,7 +666,7 @@ public void leerArchivoExel() throws IOException {
 		miTabla2e.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		miTabla2e.getTableHeader().setReorderingAllowed(false);
 
-		Object[] fila = new Object[33];
+		Object[] fila = new Object[this.nColumnas];
                 // para llenar cada columna con lo datos almacenados
 		for ( i = 0; i < this.nDatos; i++) {
                     for (j=0; j<this.nColumnas; j++){

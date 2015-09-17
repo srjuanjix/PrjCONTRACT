@@ -653,8 +653,18 @@ public final class InsertaResidencialTopComponent extends TopComponent {
         );
 
         org.openide.awt.Mnemonics.setLocalizedText(botonNuevo, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.botonNuevo.text")); // NOI18N
+        botonNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonNuevoActionPerformed(evt);
+            }
+        });
 
         org.openide.awt.Mnemonics.setLocalizedText(botonModificar, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.botonModificar.text")); // NOI18N
+        botonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarActionPerformed(evt);
+            }
+        });
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -1280,6 +1290,16 @@ public final class InsertaResidencialTopComponent extends TopComponent {
          String Str2 = passw.getText();
          conectarBD(Str1,Str2);
     }//GEN-LAST:event_botonConectarActionPerformed
+
+    private void botonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoActionPerformed
+           insertarNuevo();
+           modificarArbolNuevos();   
+    }//GEN-LAST:event_botonNuevoActionPerformed
+
+    private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
+          System.out.println("Acabo de capturar el evento boton Modificar!!!");       
+          ActualizarTablaFormulario();
+    }//GEN-LAST:event_botonModificarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ListaTiempo;

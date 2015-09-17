@@ -2761,14 +2761,15 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                                 .addComponent(jLabel94)
                                 .addComponent(jTextField141, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField86, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel96)
-                            .addComponent(jTextField142, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField158, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel139))
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextField86, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel96)
+                                .addComponent(jTextField142, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField158, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel139)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3807,14 +3808,15 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                                 .addComponent(jLabel115)
                                 .addComponent(jTextField223, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField168, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField180, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField193, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel116)
-                            .addComponent(jTextField224, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField251, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel172))
+                            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextField180, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField193, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel116)
+                                .addComponent(jTextField224, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField251, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel172)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField169, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4294,18 +4296,15 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel61)
-                                    .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel77)
-                                    .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel62)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel61)
+                                .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel77)
+                                .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
@@ -7153,7 +7152,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     // -------------------------------------------------------------------------------------------------
        public void actualizarCalculosLiquidaciones() {
            
-                int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,ptot,nReg;
+                int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,ptot,nReg;
                 int pn1,pn2,pn3,pn4,pn5,pn6,pn7,pn8,pn9,pn10,pntot;
                 double v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,vtot,val,v11,v12,v13;
                 double vn1,vn2,vn3,vn4,vn5,vn6,vn7,vn8,vn9,vn10,vntot;
@@ -7220,27 +7219,31 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 p13 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,13,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
                 p14 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,14,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
                
+                p15 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,15,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
+                p16 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,16,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
+                
+                // ................................................................................................................................
+                ptot = p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14 ; 
                 // ................................................................................................................................
                
-         //     jTextField42.setText(String.valueOf(p5));          // Servihogar
-                jTextField46.setText(String.valueOf(p4));            // Servielectric
-         //     jTextField47.setText(String.valueOf(p1));         // Servigas complet
-                jTextField48.setText(String.valueOf(p2+p3));         // Servigas basic + express
-                jTextField49.setText(String.valueOf(p6));            // Servigas con calefaccion
-                jTextField50.setText(String.valueOf(p7));            // Servigas sin calefaccion
+                jTextField46.setText(String.valueOf(p1));               //
+                jTextField106.setText(String.valueOf(p2));               // 
+                jTextField125.setText(String.valueOf(p3));               // 
+                jTextField138.setText(String.valueOf(p4));              // 
+                jTextField139.setText(String.valueOf(p5));               // 
+                jTextField140.setText(String.valueOf(p6));               // 
+                jTextField141.setText(String.valueOf(p7));               // 
+                jTextField77.setText(String.valueOf(p8));               // 
+                jTextField143.setText(String.valueOf(p9));             // 
+                jTextField144.setText(String.valueOf(p10));             // 
+                jTextField145.setText(String.valueOf(p11));             // 
+                jTextField146.setText(String.valueOf(p12));             // 
+                jTextField147.setText(String.valueOf(p13));             //
+                jTextField115.setText(String.valueOf(p14));             // 
+                jTextField133.setText(String.valueOf(p15));             // 
+                jTextField137.setText(String.valueOf(p16));             // 
+                jTextField70.setText(String.valueOf(ptot));             // 
                 
-         //     jTextField56.setText(String.valueOf(p8));           // TUR
-                
-             // jTextField108.setText(String.valueOf(p9-p8));        // SWITCHING GAS
-             // jTextField111.setText(String.valueOf(p10));        // SWITCHING ELECTRICO
-                
-                
-                jTextField108.setText(String.valueOf(p9-p8-p11));        // SWITCHING GAS
-                jTextField111.setText(String.valueOf(p10-p12));          // SWITCHING ELECTRICO
-                
-                jTextField129.setText(String.valueOf(p11));          // SWITCHING GAS CON TARIFA PLANA
-                jTextField133.setText(String.valueOf(p12));          // SWITCHING ELECTRICO CON TARIFA PLANA
-                jTextField137.setText(String.valueOf(p13));          // SPP PLAN DE PROTECCION DE PAGOS
                           
                 // ................................................................................................................................
                 

@@ -5,15 +5,26 @@
  */
 package org.ActSrnv01.core;
 
+import conexion.Conexion;
+import dao.PymesDao;
+import java.awt.Color;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTree;
 import javax.swing.ProgressMonitor;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
-import ventana.ClaseFrame;
+import vo.PymesVo;
 
 /**
  * Top component which displays something.
@@ -72,12 +83,26 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     
     
     // .......................................................... 
-    public ClaseFrame miVentanaPrincipal;
+   
     
     public InsertarPymesTopComponentTopComponent() {
         initComponents();
         setName(Bundle.CTL_InsertarPymesTopComponentTopComponent());
         setToolTipText(Bundle.HINT_InsertarPymesTopComponentTopComponent());
+        
+        // ............................................
+         
+           this.plogin      = "admin02";
+           this.ppassword   = "admin02";
+           
+          mostrarDatosConTableModel(); 
+           
+       Conexion conex = new Conexion(this.plogin  ,this.ppassword );
+       
+       crearArbol();
+       actualizarFormulario(-1);
+      
+        // ............................................
 
     }
 
@@ -104,10 +129,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jLabel41 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox();
         jComboBox4 = new javax.swing.JComboBox();
-        jCheckBox28 = new javax.swing.JCheckBox();
-        jCheckBox29 = new javax.swing.JCheckBox();
-        jCheckBox30 = new javax.swing.JCheckBox();
-        jLabel47 = new javax.swing.JLabel();
         jTextField21 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jTextField24 = new javax.swing.JTextField();
@@ -121,6 +142,9 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jTextField17 = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
+        jComboBox5 = new javax.swing.JComboBox();
+        jCheckBox28 = new javax.swing.JCheckBox();
+        jCheckBox29 = new javax.swing.JCheckBox();
         jPanel22 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
@@ -193,6 +217,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jTextField31 = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         scrollPaneArea = new javax.swing.JScrollPane();
         areaDeTexto = new javax.swing.JTextArea();
@@ -247,6 +272,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         org.openide.awt.Mnemonics.setLocalizedText(botonModificar, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.botonModificar.text")); // NOI18N
+        botonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarActionPerformed(evt);
+            }
+        });
 
         jPanel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -272,25 +302,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "BLANCO", "AMARILLO", "NARANJA", "ROJO", "VERDE", "MORADO", "AZUL" }));
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "KO", "RESID CERTIFIC", "VALIDADO", "ERROR WEBSALES", "DECOMISADO" }));
-
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jCheckBox28.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox29, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jCheckBox29.text")); // NOI18N
-        jCheckBox29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox29ActionPerformed(evt);
-            }
-        });
-
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox30, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jCheckBox30.text")); // NOI18N
-        jCheckBox30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox30ActionPerformed(evt);
-            }
-        });
-
-        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel47, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel47.text")); // NOI18N
 
         jTextField21.setEditable(false);
 
@@ -322,6 +333,17 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
 
         jTextField9.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField9.text")); // NOI18N
 
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PLANES", "DIRECTRIZ" }));
+
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jCheckBox28.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox29, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jCheckBox29.text")); // NOI18N
+        jCheckBox29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox29ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -329,25 +351,35 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel42)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addComponent(jCheckBox28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox29)
+                        .addContainerGap(194, Short.MAX_VALUE))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel43))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                            .addComponent(jTextField9))))
-                .addGap(29, 29, 29))
+                            .addComponent(jTextField1)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel42)
+                                .addGap(29, 29, 29)
+                                .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel43))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                                    .addComponent(jTextField9))))
+                        .addGap(29, 29, 29))))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel42)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -358,7 +390,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(125, 125, 125))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox28)
+                    .addComponent(jCheckBox29))
+                .addGap(95, 95, 95))
         );
 
         jPanel22.setBackground(new java.awt.Color(204, 204, 204));
@@ -384,7 +420,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -624,7 +660,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                                         .addGap(22, 22, 22)
                                         .addComponent(actuaMunicipio))
                                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 44, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel21Layout.createSequentialGroup()
@@ -776,12 +812,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
                     .addComponent(jLabel34)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel7.setBackground(new java.awt.Color(153, 204, 255));
@@ -893,27 +928,19 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                         .addGap(47, 47, 47)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel52))
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel107)
-                        .addGap(129, 129, 129)
-                        .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox30)))
+                        .addComponent(jLabel107)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel52)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -934,21 +961,14 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                         .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(botonModificar1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel38)
-                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel107))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel47)
-                            .addComponent(jCheckBox28)
-                            .addComponent(jCheckBox29)
-                            .addComponent(jCheckBox30))
-                        .addGap(1, 1, 1)))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel107))
+                .addGap(4, 4, 4)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -985,7 +1005,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(569, Short.MAX_VALUE)
                 .addComponent(botonModificar)
                 .addGap(147, 147, 147))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,22 +1015,36 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                     .addContainerGap(214, Short.MAX_VALUE)))
         );
 
+        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jButton1.text")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1314,6 +1348,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(botonNuevo, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.botonNuevo.text")); // NOI18N
+        botonNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonNuevoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -1383,20 +1422,30 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void botonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificar1ActionPerformed
-     
+       System.out.println("Acabo de capturar el evento boton Modificar!!!");       
+       ActualizarTablaFormulario();
     }//GEN-LAST:event_botonModificar1ActionPerformed
 
     private void jCheckBox29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox29ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox29ActionPerformed
 
-    private void jCheckBox30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox30ActionPerformed
-
     private void botonBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarIDActionPerformed
      
     }//GEN-LAST:event_botonBuscarIDActionPerformed
+
+    private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModificarActionPerformed
+
+    private void botonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoActionPerformed
+           insertarNuevo();
+           modificarArbolNuevos();   
+    }//GEN-LAST:event_botonNuevoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         guardarArchivo();   
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ListaTiempo;
@@ -1410,6 +1459,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JButton botonModificar1;
     private javax.swing.JButton botonNuevo;
     private javax.swing.JButton botonRefrescar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
@@ -1422,7 +1472,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JCheckBox jCheckBox28;
     private javax.swing.JCheckBox jCheckBox29;
     private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox30;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
@@ -1433,6 +1482,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel107;
@@ -1473,7 +1523,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
@@ -1566,4 +1615,739 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
+     // -------------------------------------------------------------------------------------------------------------------------
+       public void ActualizarTablaFormulario() {
+           
+           int indice, ind;
+           indice = this.idt ;
+           System.out.println("Actualizo campos tabla  ="+indice);
+           
+           ind = jComboBox4.getSelectedIndex() ;
+           this.tablaDatos[indice][0] = Integer.toString(ind);  // estado
+           ind = jComboBox3.getSelectedIndex() ;
+           this.tablaDatos[indice][1] = Integer.toString(ind); // incidencia
+          
+           this.tablaDatos[indice][2]  =  jTextField27.getText();   // fecha orden
+           this.tablaDatos[indice][4]  =  jTextField4.getText();    // cups electrico
+           this.tablaDatos[indice][3]  =  jTextField5.getText();    // cups gas
+           this.tablaDatos[indice][5]  =  jTextField7.getText();    // agente
+           this.tablaDatos[indice][6]  =  jTextField10.getText();    // CP
+           this.tablaDatos[indice][7]  =  jTextField10.getText();   // municipio 
+           this.tablaDatos[indice][8]  =  jTextField11.getText();   // provincia
+           this.tablaDatos[indice][9]  =  jTextField12.getText();   // direccion
+           this.tablaDatos[indice][10] =  jTextField13.getText();   // titular
+           this.tablaDatos[indice][11] =  jTextField14.getText();   // nif/cif
+           this.tablaDatos[indice][12] =  jTextField15.getText();   // fecha_firma_cliente
+           this.tablaDatos[indice][13] =  jTextField16.getText();   // consumo elect kwha
+           this.tablaDatos[indice][14] =  jTextField18.getText();   // consumo kwha websales electrico
+           this.tablaDatos[indice][15] =  jTextField2.getText();    // telefono
+       
+           this.tablaDatos[indice][16] =  jTextField1.getText();    // tarifa gas
+           this.tablaDatos[indice][17] =  jTextField3.getText();    // tarifa electrica
+            
+           this.tablaDatos[indice][18] = jTextArea1.getText();      // observaciones
+           this.tablaDatos[indice][19] = jTextArea2.getText();      // incidencia
+           this.tablaDatos[indice][20] = jTextArea3.getText();      // solucion
+           this.tablaDatos[indice][21] = jTextField22.getText();    // cv comercial
+           
+            this.tablaDatos[indice][22] =  jTextField24.getText();    // fecha_memo_out
+            this.tablaDatos[indice][23] =  jTextField8.getText();    // empresa origen
+            this.tablaDatos[indice][24] =  jTextField9.getText();   // oferta 
+            this.tablaDatos[indice][25] =  jTextField17.getText();   // campaña
+            this.tablaDatos[indice][26] =  jTextField23.getText();   // persona de contacto
+            this.tablaDatos[indice][27] =  jTextField29.getText();   // pagado
+            this.tablaDatos[indice][28] =  jTextField30.getText();   // P_Fenosa
+            this.tablaDatos[indice][29] =  jTextField24.getText();   // Fecha docout
+            this.tablaDatos[indice][30] =  jTextField31.getText();   // Pagado Fenosa Numero
+            this.tablaDatos[indice][31] =  jTextField6.getText();   // reactiva
+            this.tablaDatos[indice][32] =  jTextField2.getText();   // consumo kwha gas
+           
+       }
+      // -------------------------------------------------------------------------------------------------------------------------
+        public final void modificarArbolNuevos() {
+           int i,cnt,nCUPS;
+           String CUPS ="";
+           
+           cnt = this.nRegistros ; 
+                      
+           System.out.println("Voy a modificar el arbol nuevo ");
+           System.out.println("El numero de registro es="+cnt);
+           
+           DefaultMutableTreeNode carpetaRaiz = new DefaultMutableTreeNode("REGISTROS");
+           /**Definimos el modelo donde se agregaran los nodos*/
+           DefaultTreeModel modelo2;
+           modelo2 = new DefaultTreeModel(carpetaRaiz);
+           /**agregamos el modelo al arbol, donde previamente establecimos la raiz*/
+           
+           arbol = new JTree(modelo2);
+           jScrollPane1.setViewportView(arbol);
+           
+           /**Definimos mas nodos del arbol y se lo agregamos al modelo*/
+           DefaultMutableTreeNode carpeta2 = new DefaultMutableTreeNode("NUEVOS ("+cnt+")");       
+           DefaultMutableTreeNode carpeta3 = new DefaultMutableTreeNode("INCOMPLETOS (0)");             
+           DefaultMutableTreeNode carpeta4 = new DefaultMutableTreeNode("PUNTEADOS (0)");
+          
+           modelo2.insertNodeInto(carpeta2, carpetaRaiz, 0);
+           modelo2.insertNodeInto(carpeta3, carpetaRaiz, 1);
+           modelo2.insertNodeInto(carpeta4, carpetaRaiz, 2);
+           
+           for (i=0; i<cnt; i++){
+               CUPS = this.tablaDatos[i][4] ;                           // Insertamos primero el CUPS de electricidad
+               CUPS = CUPS.trim();
+               nCUPS = CUPS.length();
+               if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i+" "+this.tablaDatos[i][4]);
+                    modelo2.insertNodeInto(archivo, carpeta2, i);       
+               } else {                                                 // Si no hay cups electrico, probamos a poner el de gas
+                   CUPS = this.tablaDatos[i][3] ;
+                   CUPS = CUPS.trim();
+                   nCUPS = CUPS.length();
+                   if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i+" "+this.tablaDatos[i][3]);
+                    modelo2.insertNodeInto(archivo, carpeta2, i);      
+                   } else {
+                        DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i+" -");
+                        modelo2.insertNodeInto(archivo, carpeta2, i); 
+                   }                
+              }
+           }    
+           
+            // ................................................................................
+           
+            arbol.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+           
+            public void valueChanged(TreeSelectionEvent e) {
+                // se obtiene el nodo seleccionado
+                DefaultMutableTreeNode nseleccionado = (DefaultMutableTreeNode) arbol.getLastSelectedPathComponent();
+    
+                int nivel = nseleccionado.getDepth() ;
+                System.out.println("El nivel de campo es ="+nivel);
+                
+                if ( nivel == 0) {
+                    
+                    String nodo         = nseleccionado.getUserObject().toString() ;
+                    String [] campos    = nodo.split("\\s+");
+                    int indice          = Integer.parseInt(campos[0]);
+                    
+                    System.out.println("El indice de campo es ="+indice);
+                    actualizarFormulario(indice);
+                }
+            }
+            }); 
+            
+            // ................................................................................
+           
+       }
+    // -------------------------------------------------------------------------------------------------------------------------
+    private void actualizarFormulario(int indice) {
+           
+           this.indGen = indice ;
+           
+           if (indice == -1) {
+            
+            actuaMunicipio.setVisible(false);
+            
+            jTextField4.setText(""); jTextField4.setBackground(Color.white);        // cups electrico
+            jTextField5.setText(""); jTextField5.setBackground(Color.white);        // cups gas
+            jTextField6.setText(""); jTextField6.setBackground(Color.white);        // 
+            jTextField7.setText(""); jTextField7.setBackground(Color.white);        // 
+          
+          
+            jTextField10.setText(""); jTextField10.setBackground(Color.white);      // 
+            jTextField11.setText(""); jTextField11.setBackground(Color.white);      // 
+            jTextField12.setText(""); jTextField12.setBackground(Color.white);      // 
+            jTextField13.setText(""); jTextField13.setBackground(Color.white);      // 
+            jTextField14.setText(""); jTextField14.setBackground(Color.white);      // 
+            jTextField15.setText(""); jTextField15.setBackground(Color.white);      // 
+            jTextField16.setText(""); jTextField16.setBackground(Color.white);      // 
+         
+            jTextField18.setText(""); jTextField18.setBackground(Color.white);      // 
+        
+            jTextField22.setText(""); jTextField22.setBackground(Color.white);      // 
+            jTextField23.setText(""); jTextField23.setBackground(Color.white);      // 
+            
+            jTextArea1.setText("");   jTextArea1.setBackground(Color.white);        // 
+            jTextArea2.setText("");   jTextArea2.setBackground(Color.white);        // 
+            jTextArea3.setText("");   jTextArea3.setBackground(Color.white);        // 
+            
+            jTextField2.setText(""); jTextField2.setBackground(Color.white);        // 
+            
+            jTextField1.setText(""); jTextField1.setBackground(Color.white);        // 
+            jTextField3.setText(""); jTextField3.setBackground(Color.white);        // 
+            
+            jTextField24.setText(""); jTextField24.setBackground(Color.white);        // 
+            jTextField29.setText(""); jTextField29.setBackground(Color.white);        // 
+            jTextField30.setText(""); jTextField30.setBackground(Color.white);        // 
+            jTextField31.setText(""); jTextField31.setBackground(Color.white);        // 
+            jTextField74.setText(""); jTextField74.setBackground(Color.white);        // 
+           
+            // .............................................................................
+            jCheckBox28.setSelected(false);
+            jCheckBox29.setSelected(false);
+             // .............................................................................
+               
+               
+            jLabel41.setVisible(false);  // Sugerencia de Municipio
+               
+           } else {
+           int ind;
+           
+            ind = Integer.parseInt(this.tablaDatos[indice][0]) ;        // estado      
+            jComboBox4.setSelectedIndex(ind); 
+             
+            ind = Integer.parseInt(this.tablaDatos[indice][1]) ;        // incidencia      
+            jComboBox3.setSelectedIndex(ind);               
+          
+            jTextField27.setText(this.tablaDatos[indice][2]);           // fecha orden
+     
+            jTextField4.setText(this.tablaDatos[indice][4]);            // cups electrico
+            jTextField5.setText(this.tablaDatos[indice][3]);            // cups gas
+       
+            jTextField7.setText(this.tablaDatos[indice][5]);           // agente
+            jTextField10.setText(this.tablaDatos[indice][6]);           // CP
+       
+            jTextField10.setText(this.tablaDatos[indice][7]);           // municipio
+            jTextField11.setText(this.tablaDatos[indice][8]);           // provincia
+            jTextField12.setText(this.tablaDatos[indice][9]);           // direccion
+            jTextField13.setText(this.tablaDatos[indice][10]);           // titular
+            jTextField14.setText(this.tablaDatos[indice][11]);           // nif/cif
+            jTextField15.setText(this.tablaDatos[indice][12]);          // fecha firma cliente
+            jTextField16.setText(this.tablaDatos[indice][13]);          // consumo kwha electrico
+            jTextField18.setText(this.tablaDatos[indice][14]);          // consumo kwha electrico websales
+            
+            
+            jTextField22.setText(this.tablaDatos[indice][15]);           // Telefono
+            
+            jTextField1.setText(this.tablaDatos[indice][16]);           // tarifa gas
+            jTextField3.setText(this.tablaDatos[indice][17]);           // tarifa electrica
+            
+            jTextArea1.setText(this.tablaDatos[indice][18]);           // observaciones
+            jTextArea2.setText(this.tablaDatos[indice][19]);           // incidencia
+            jTextArea3.setText(this.tablaDatos[indice][20]);           // solucion
+            jTextField2.setText(this.tablaDatos[indice][21]);          // cv comercial
+            
+            jTextField24.setText(this.tablaDatos[indice][22]);           // fecha_memo_out
+            jTextField8.setText(this.tablaDatos[indice][23]);           // empresa origen
+            jTextField9.setText(this.tablaDatos[indice][24]);           // oferta
+            jTextField17.setText(this.tablaDatos[indice][25]);          // campaña
+            jTextField23.setText(this.tablaDatos[indice][26]);          // persona de contacto
+            jTextField29.setText(this.tablaDatos[indice][27]);          // pagado
+            jTextField30.setText(this.tablaDatos[indice][28]);          // P_Fenosa
+            jTextField24.setText(this.tablaDatos[indice][29]);         // Fecha docout
+            jTextField31.setText(this.tablaDatos[indice][30]);          // Pagado Fenosa Numero 
+            jTextField6.setText(this.tablaDatos[indice][31]);            // reactiva
+            jTextField2.setText(this.tablaDatos[indice][32]);            // consumo kwha gas
+             jTextField1.setText(this.tablaDatos[indice][33]);          // C servicios
+                
+            
+            ind = Integer.parseInt(this.tablaDatos[indice][14]) ;            
+            jComboBox2.setSelectedIndex(ind); 
+                       
+            // .............................................................................
+            
+           
+             if (this.tablaDatos[indice][45].equals("1")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
+            
+            // .............................................................................
+            
+            
+             if (this.tablaDatos[indice][44].equals("1")) jCheckBox28.setSelected(true); else jCheckBox28.setSelected(false);
+                    
+            // .............................................................................
+                       
+            this.idt = indice ;
+            
+            System.out.println("tablaErrores["+indice+"][8] =  "+this.tablaErrores[indice][8] );
+            System.out.println("tablaErrores["+indice+"][4] =  "+this.tablaErrores[indice][4] );
+            System.out.println("tablaErrores["+indice+"][0] =  "+this.tablaErrores[indice][0] );
+            
+           
+            if (this.tablaErrores[indice][4] == 1) {  jTextField4.setBackground(Color.red);} else {
+                                                      jTextField4.setBackground(Color.white);
+            }
+         
+          
+            if (this.tablaErrores[indice][5] == 1) {    jTextField10.setBackground(Color.red);} else {
+                                                        jTextField10.setBackground(Color.white);
+            }
+             if (this.tablaErrores[indice][6] == 1) {    jTextField11.setBackground(Color.red);                                                         
+                                                        jLabel41.setText(this.tablaErrorCod[indice][0]);
+                                                        System.out.println("Error en municipio dato indice("+indice+") ="+this.tablaErrorCod[indice][28]);
+                                                        jLabel41.setVisible(true);
+                                                        actuaMunicipio.setVisible(true);} 
+            else {
+                                                        jTextField11.setBackground(Color.white); jLabel41.setVisible(false);
+            }
+            if (this.tablaErrores[indice][9] == 1) {    jTextField12.setBackground(Color.red);} else {
+                                                        jTextField12.setBackground(Color.white);
+            }
+            if (this.tablaErrores[indice][10] == 1) {    jTextField15.setBackground(Color.red);} else {
+                                                        jTextField15.setBackground(Color.white);
+            }
+            if (this.tablaErrores[indice][11] == 1) {    jTextField14.setBackground(Color.red);} else {
+                                                        jTextField14.setBackground(Color.white);
+            }
+            
+             if (this.tablaErrores[indice][11] == 1) {    jTextField16.setBackground(Color.red);} else {
+                                                        jTextField16.setBackground(Color.white);
+            }
+           
+            if (this.tablaErrores[indice][15] == 1) {    jTextField18.setBackground(Color.red);} else {
+                                                        jTextField18.setBackground(Color.white);
+            }
+           
+           
+           
+            if (this.tablaErrores[indice][16] == 1) {    jTextField22.setBackground(Color.red);} else {
+                                                        jTextField22.setBackground(Color.white);
+            }
+            if (this.tablaErrores[indice][20] == 1) {    jTextField23.setBackground(Color.red);} else {
+                                                        jTextField23.setBackground(Color.white);
+            }
+            if (this.tablaErrores[indice][21] == 1) {    jTextArea1.setBackground(Color.red);} else {
+                                                        jTextArea1.setBackground(Color.white);
+            }
+            if (this.tablaErrores[indice][3] == 1) {    jTextField5.setBackground(Color.red);} else {
+                                                        jTextField5.setBackground(Color.white);
+            }
+            if (this.tablaErrores[indice][24] == 1) {    jTextField2.setBackground(Color.red);} else {
+                                                        jTextField2.setBackground(Color.white);
+            }
+           
+             
+           }
+           
+       }
+       // -------------------------------------------------------------------------------------------------------------------------
+        
+    public void insertarNuevo() {
+           int indice,j;
+           
+          int resp=JOptionPane.showConfirmDialog(null,"¿Insertar nuevo registro en la tabla Temporal?");
+        
+         
+         if (JOptionPane.OK_OPTION == resp){
+            
+            // .......................................................................
+            indice = this.nRegistros  ;
+            // ....................................................................... 
+            this.tablaDatos[indice][0]  ="0" ;                         // estado      
+            this.tablaDatos[indice][1]  ="0" ;                        // incidencia  
+            this.tablaDatos[indice][2]  =  jTextField27.getText();   // fecha orden
+            this.tablaDatos[indice][4]  =  jTextField4.getText();    // cups electrico
+            this.tablaDatos[indice][3]  =  jTextField5.getText();    // cups gas
+            this.tablaDatos[indice][5]  =  jTextField7.getText();    // agente
+            this.tablaDatos[indice][6]  =  jTextField10.getText();    // CP
+            this.tablaDatos[indice][7]  =  jTextField10.getText();   // municipio 
+            this.tablaDatos[indice][8]  =  jTextField11.getText();   // provincia
+            this.tablaDatos[indice][9]  =  jTextField12.getText();   // direccion
+            this.tablaDatos[indice][10] =  jTextField13.getText();   // titular
+            this.tablaDatos[indice][11] =  jTextField14.getText();   // nif/cif
+            this.tablaDatos[indice][12] =  jTextField15.getText();   // fecha_firma_cliente
+            this.tablaDatos[indice][13] =  jTextField16.getText();   // consumo elect kwha
+            this.tablaDatos[indice][14] =  jTextField18.getText();   // consumo kwha websales electrico
+            this.tablaDatos[indice][15] =  jTextField22.getText();    // telefono
+       
+            this.tablaDatos[indice][16] =  jTextField20.getText();    // tarifa gas
+            this.tablaDatos[indice][17] =  jTextField19.getText();    // tarifa electrica
+            
+            this.tablaDatos[indice][18] = jTextArea1.getText();      // observaciones
+            this.tablaDatos[indice][19] = jTextArea2.getText();      // incidencia
+            this.tablaDatos[indice][20] = jTextArea3.getText();      // solucion
+            this.tablaDatos[indice][21] = jTextField74.getText();    // cv comercial
+            
+            this.tablaDatos[indice][22] =  jTextField24.getText();    // fecha_memo_out
+            this.tablaDatos[indice][23] =  jTextField8.getText();    // empresa origen
+            this.tablaDatos[indice][24] =  jTextField9.getText();   // oferta 
+            this.tablaDatos[indice][25] =  jTextField17.getText();   // campaña
+            this.tablaDatos[indice][26] =  jTextField23.getText();   // persona de contacto
+            this.tablaDatos[indice][27] =  jTextField29.getText();   // pagado
+            this.tablaDatos[indice][28] =  jTextField30.getText();   // P_Fenosa
+            this.tablaDatos[indice][29] =  jTextField24.getText();   // Fecha docout
+            this.tablaDatos[indice][30] =  jTextField31.getText();   // Pagado Fenosa Numero
+            this.tablaDatos[indice][31] =  jTextField6.getText();   // reactiva
+            this.tablaDatos[indice][32] =  jTextField2.getText();   // consumo kwha gas
+            this.tablaDatos[indice][33] =  jTextField1.getText();   // C servicios
+           
+            // ....................................................................... 
+            
+           
+            if (jCheckBox28.isSelected()) {  this.tablaDatos[indice][32] = "1";} else { this.tablaDatos[indice][32] = "0"; }    //   SWG
+            if (jCheckBox29.isSelected()) {  this.tablaDatos[indice][33] = "1";} else { this.tablaDatos[indice][33] = "0"; }    //   SWE
+       
+            // ..............................................
+           
+            int sel = jComboBox2.getSelectedIndex()   ;
+            this.tablaDatos[indice][34] = String.valueOf(sel);       // Planes / Directriz
+            
+            // ..............................................
+            
+            for ( j=0; j<50; j++) 
+                 this.tablaErrores[indice][j] = 0 ;                  // inicializamos
+             
+            this.tablaDatos[indice][35] = String.valueOf(indice) ;
+            this.nRegistros ++;
+         }
+          
+    }
+    // ----------------------------------------------------------------------------------------------------------------------------------
+    private void guardarArchivo() 
+    {
+        int i, nStr,estadoInsert,nFecha=0;
+        int L,G,D,s1,s2,s3,s4,s5,s6,s7,s9,tg,tp,cnt=0 ;
+        String str,sFecha="";
+       
+        estadoInsert = 0 ;
+            
+            PymesDao miPymeDao = new PymesDao();
+            
+        //    try {
+                      System.out.println("Voy a comenzar la inserción ");
+                PymesVo miPymes = new PymesVo();
+                 Conexion conex = new Conexion(this.plogin,this.ppassword);
+                for (i=0 ; i < this.nRegistros; i++){
+                    
+                        // ..............................................
+                        
+                        this.tablaDatos[i][0] = "0" ;                                   // Fijamos el estado como pendiente
+                        this.tablaDatos[i][1] = "0" ;                                   // incidencia
+                        // ..............................................
+                        
+                        this.tablaDatos[i][15] =jTextArea1.getText();                               // observaciones
+                        this.tablaDatos[i][20] =jTextArea3.getText();                               // incidencia
+                        this.tablaDatos[i][21] =jTextArea2.getText();                               // solucion
+                        
+                        // ..............................................
+                         
+                        if (jCheckBox28.isSelected()) { G=1 ; this.tablaDatos[i][43] = "1";} else { G=0; }     //   Gas
+                        if (jCheckBox29.isSelected()) { L=1 ; this.tablaDatos[i][43] = "2";} else { L=0 ; }    //   Luz
+                        
+                        // ...........................................................................................
+                        
+                        System.out.println("Insertando registro i= "+i+ " - Incidencia= "+this.tablaDatos[i][1]);
+                         
+                        miPymes.setEstado(Integer.parseInt(this.tablaDatos[i][0]));
+                        miPymes.setIncidencia(Integer.parseInt(this.tablaDatos[i][1]));
+                        
+                       
+                        str = this.tablaDatos[i][2].trim();
+                         if (!str.equals("")) {
+                             sFecha = dateToMySQLDate(this.tablaDatos[i][2]);   
+                             miPymes.setFechaOrden(sFecha);
+                         } else {
+                             miPymes.setFechaOrden("NULL");
+                         }
+                       
+                        miPymes.setAgente(this.tablaDatos[i][5]);
+                        miPymes.setSwg(G);
+                        miPymes.setSwe(L);
+                                                 
+                        miPymes.setCupsE(this.tablaDatos[i][4]);
+                        miPymes.setCupsG(this.tablaDatos[i][3]);   
+                        
+                        try {                      
+                            miPymes.setCodPostal(Integer.parseInt(this.tablaDatos[i][6]));
+                        } catch (NumberFormatException nfe){
+                            miPymes.setCodPostal(Integer.parseInt("0"));
+                        }
+                        
+                        miPymes.setMunicipio(this.tablaDatos[i][7]);
+                        miPymes.setProvincia(this.tablaDatos[i][8]);
+                        miPymes.setDireccion(this.tablaDatos[i][9]);
+                        miPymes.setTitular(this.tablaDatos[i][10]);
+                        miPymes.setEmpresaOrigen(this.tablaDatos[i][23]);
+                        miPymes.setNifCif(this.tablaDatos[i][11]);
+                        miPymes.setTelefonoCli(this.tablaDatos[i][15]);  
+                        
+                       
+                        sFecha = dateToMySQLDate(this.tablaDatos[i][12]);
+                        miPymes.setFechaFirma(sFecha);
+                        
+                         try {
+                            miPymes.setConsumoElect(Double.parseDouble(this.tablaDatos[i][13]));
+                            miPymes.setConsumoElectWS(Double.parseDouble(this.tablaDatos[i][14]));
+                            
+                         } catch (NumberFormatException nfe){
+                            miPymes.setConsumoElect(Double.parseDouble("0"));
+                            miPymes.setConsumoElectWS(Double.parseDouble("0"));
+                         }
+                         
+                         
+                         try {
+                           miPymes.setConsumoGas(Double.parseDouble(this.tablaDatos[i][32]));
+                            
+                         } catch (NumberFormatException nfe){
+                            miPymes.setConsumoGas(Double.parseDouble("0"));
+                         }
+                       
+                         miPymes.setTarifa(this.tablaDatos[i][17]);
+                         miPymes.setTarifaGas(this.tablaDatos[i][16]);
+                                                       
+                        miPymes.setObservaciones(jTextArea1.getText()); 
+                        miPymes.setsIncidencia(jTextArea3.getText());
+                        miPymes.setsExplicacion(jTextArea2.getText());
+                       
+                        miPymes.setCservicios(this.tablaDatos[i][33]);
+                        miPymes.setCVComercial(this.tablaDatos[i][21]);
+                        
+                        miPymes.setOferta(this.tablaDatos[i][24]);  
+                        miPymes.setCampaña(this.tablaDatos[i][25]);  
+                        miPymes.setPerContacto(this.tablaDatos[i][26]);  
+                        
+                        miPymes.setPagado(Double.parseDouble(this.tablaDatos[i][27]));  
+                        miPymes.setPFenosa(this.tablaDatos[i][28]);  
+                        miPymes.setPagadoFenosa(Double.parseDouble(this.tablaDatos[i][30]));       
+                        
+                        miPymes.setReactiva(Double.parseDouble(this.tablaDatos[i][31]));  
+                        
+                        str = this.tablaDatos[i][22].trim();
+                        if (!str.equals("")) {
+                             sFecha = dateToMySQLDate(str);
+                             miPymes.setFechaDocout(sFecha);
+                        } else {
+                             miPymes.setFechaDocout("NULL"); System.out.println("------ VOY A BORRAR LA FECHA DOC OUT");
+                        }
+                        
+                      
+                        System.out.println("Registro insertado ");
+                        
+                        estadoInsert = miPymeDao.registrarContrato(miPymes,conex);
+                        System.out.println("Registro insertado ");
+                        
+                        if (estadoInsert == 0 ) cnt++ ;
+                        
+                }
+                
+                conex.desconectar();
+                 if (estadoInsert == 0) {
+                    
+                                         JOptionPane.showMessageDialog(null,
+					"Se ha registrado Exitosamente ("+cnt+") contratos", "Información",
+					JOptionPane.INFORMATION_MESSAGE);
+                    
+                } else { if (estadoInsert == 2) {
+                                        JOptionPane.showMessageDialog(null,
+					"No se Registro algún apunte, verifique la consola para ver el error",
+					"Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }  
+        
+}
+       // -------------------------------------------------------------------------------------------------------------------------
+     public String dateToMySQLDate(String fecha)
+    {
+        String df,y,m,d;
+        
+        fecha = fecha.trim();
+        
+        System.out.println("Fecha = :"+fecha+":");
+        
+        d = fecha.substring(0, 2) ; System.out.println("dia ="+d);
+        m = fecha.substring(3,5) ;  System.out.println("mes ="+m);
+        y = fecha.substring(6,8) ;  System.out.println("año ="+y);
+        
+        df = y+"-"+m+"-"+d+ " 00:00:00";
+       
+        return df;
+        
+       
+    }
+     // -------------------------------------------------------------------------------------------------------------------------
+       private void mostrarDatosConTableModel() {
+		
+                System.out.println("----COMIENZO EL FORMATEO ---");
+           
+                DefaultTableModel model;
+		model = new DefaultTableModel();        // definimos el objeto tableModel
+               
+		miTabla01 = new JTable();                // creamos la instancia de la tabla
+		miTabla01.setModel(model);
+                
+                                 
+		model.addColumn("ID_C");
+		model.addColumn("Estado");
+		
+                               
+                
+		miTabla01.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		miTabla01.getTableHeader().setReorderingAllowed(false);
+
+		PymesDao miPymesDao1 = new PymesDao();
+		/*
+		 * enviamos el objeto TableModel, como mandamos el objeto podemos
+		 * manipularlo desde el metodo
+		 */
+		// miPymesDao1.buscarContratos(model,this.plogin,this.ppassword,this.filtroEstadoSel,this.filtroFechaSel);
+                
+                 //Nueva instancia de la clase que contiene el formato
+               
+                System.out.println("----HE DEFINIDO FORMATO Y PASO A ASIGNAR---");
+                //Se obtiene la tabla y se establece el formato para cada tipo de dato
+                                          
+		miBarra01.setViewportView(miTabla01);
+
+	}
+       // -------------------------------------------------------------------------------------------------------------------------
+       public final void crearArbol() {
+           
+               System.out.println("Voy a crear el arbol (si puedo) ");
+             
+            /**Construimos los nodos del arbol que seran ramas u hojas*/
+            /**Definimos cual será el directorio principal o la raiz de nuestro arbol*/
+              DefaultMutableTreeNode carpetaRaiz = new DefaultMutableTreeNode("REGISTROS");
+             /**Definimos el modelo donde se agregaran los nodos*/
+              DefaultTreeModel modelo2;
+              modelo2 = new DefaultTreeModel(carpetaRaiz);
+             /**agregamos el modelo al arbol, donde previamente establecimos la raiz*/
+             arbol = new JTree(modelo2);
+             jScrollPane1.setViewportView(arbol);
+             
+             /**definimos los eventos*/
+            // arbol.getSelectionModel().addTreeSelectionListener((TreeSelectionListener) this); 
+           
+        
+             /**Definimos mas nodos del arbol y se lo agregamos al modelo*/
+         
+             DefaultMutableTreeNode carpeta2 = new DefaultMutableTreeNode("NUEVOS (0)");             
+             DefaultMutableTreeNode carpeta3 = new DefaultMutableTreeNode("INCOMPLETOS (0)");             
+             DefaultMutableTreeNode carpeta4 = new DefaultMutableTreeNode("PUNTEADOS (0)");
+       
+             /**Definimos donde se agrega el nodo, dentro de que rama y que posicion*/          
+             
+             modelo2.insertNodeInto(carpeta2, carpetaRaiz, 0);
+             modelo2.insertNodeInto(carpeta3, carpetaRaiz, 1);
+             modelo2.insertNodeInto(carpeta4, carpetaRaiz, 2);          
+                         
+}
+      
+       public final void modificarArbol() {
+           int i,cnt,nCUPS,ind;
+           String CUPS="";
+          
+           System.out.println("Voy a modificar el arbol (si puedo) ");
+           
+           DefaultMutableTreeNode carpetaRaiz = new DefaultMutableTreeNode("REGISTROS");
+           /**Definimos el modelo donde se agregaran los nodos*/
+           DefaultTreeModel modelo2;
+           modelo2 = new DefaultTreeModel(carpetaRaiz);
+           /**agregamos el modelo al arbol, donde previamente establecimos la raiz*/
+           
+           arbol = new JTree(modelo2);
+           jScrollPane1.setViewportView(arbol);
+           
+           /**Definimos mas nodos del arbol y se lo agregamos al modelo*/
+           DefaultMutableTreeNode carpeta2 = new DefaultMutableTreeNode("NUEVOS ("+this.nRegistros+")");       
+           DefaultMutableTreeNode carpeta3 = new DefaultMutableTreeNode("INCOMPLETOS ("+this.Incompletos+")");             
+           DefaultMutableTreeNode carpeta4 = new DefaultMutableTreeNode("PUNTEADOS ("+this.Completos+")");
+          
+           modelo2.insertNodeInto(carpeta2, carpetaRaiz, 0);
+           modelo2.insertNodeInto(carpeta3, carpetaRaiz, 1);
+           modelo2.insertNodeInto(carpeta4, carpetaRaiz, 2);
+           
+           cnt = this.nRegistros ;
+           
+            for (i=0; i<cnt; i++){
+               CUPS = this.tablaDatos[i][4] ;                           // Insertamos primero el CUPS de electricidad
+               CUPS = CUPS.trim();
+               nCUPS = CUPS.length();
+               if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i+" "+this.tablaDatos[i][4]);
+                    modelo2.insertNodeInto(archivo, carpeta2, i);       
+               } else {                                                 // Si no hay cups electrico, probamos a poner el de gas
+                   CUPS = this.tablaDatos[i][3] ;
+                   CUPS = CUPS.trim();
+                   nCUPS = CUPS.length();
+                   if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i+" "+this.tablaDatos[i][3]);
+                    modelo2.insertNodeInto(archivo, carpeta2, i);      
+                   } else {
+                        DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i);
+                        modelo2.insertNodeInto(archivo, carpeta2, i); 
+                   }                
+              }
+           }   
+             
+           
+           cnt = this.Incompletos ;
+           
+           
+            for (i=0; i<cnt; i++){
+                
+               ind = Integer.parseInt(this.tablaDatosIncpl[i][29]);
+                
+               CUPS = this.tablaDatosIncpl[i][4] ;                           // Insertamos primero el CUPS de electricidad
+               CUPS = CUPS.trim();
+               nCUPS = CUPS.length();
+               if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(ind+" "+this.tablaDatosIncpl[i][4]);
+                    modelo2.insertNodeInto(archivo, carpeta3, i);       
+               } else {                                                 // Si no hay cups electrico, probamos a poner el de gas
+                   CUPS = this.tablaDatosIncpl[i][3] ;
+                   CUPS = CUPS.trim();
+                   nCUPS = CUPS.length();
+                   if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(ind+" "+this.tablaDatosIncpl[i][3]);
+                    modelo2.insertNodeInto(archivo, carpeta3, i);      
+                   } else {
+                        DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(i);
+                        modelo2.insertNodeInto(archivo, carpeta3, i);  // ind
+                   }                
+              }
+           }   
+                    
+           cnt = this.Completos ;
+           
+           for (i=0; i<cnt; i++){
+               
+                ind = Integer.parseInt(this.tablaDatosCmpl[i][29]);
+               
+               CUPS = this.tablaDatosCmpl[i][4] ;                           // Insertamos primero el CUPS de electricidad
+               CUPS = CUPS.trim();
+               nCUPS = CUPS.length();
+               if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(ind+" "+this.tablaDatosCmpl[i][4]);
+                    modelo2.insertNodeInto(archivo, carpeta4, i);       
+               } else {                                                 // Si no hay cups electrico, probamos a poner el de gas
+                   CUPS = this.tablaDatosCmpl[i][3] ;
+                   CUPS = CUPS.trim();
+                   nCUPS = CUPS.length();
+                   if ( nCUPS>0){
+                    DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(ind+" "+this.tablaDatosCmpl[i][3]);
+                    modelo2.insertNodeInto(archivo, carpeta4, i);      
+                   } else {
+                        DefaultMutableTreeNode archivo = new DefaultMutableTreeNode(ind);
+                        modelo2.insertNodeInto(archivo, carpeta4, i); 
+                   }                
+              }
+           }   
+         
+            // ................................................................................
+           
+            arbol.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+           
+            public void valueChanged(TreeSelectionEvent e) {
+                // se obtiene el nodo seleccionado
+                DefaultMutableTreeNode nseleccionado = (DefaultMutableTreeNode) arbol.getLastSelectedPathComponent();
+    
+                int nivel = nseleccionado.getDepth() ;
+                System.out.println("El nivel de campo es ="+nivel);
+                
+                if ( nivel == 0) {
+                    
+                    String nodo         = nseleccionado.getUserObject().toString() ;
+                    String [] campos    = nodo.split("\\s+");
+                    int indice          = Integer.parseInt(campos[0]);
+                    
+                    System.out.println("El indice de campo es ="+indice);
+                    actualizarFormulario(indice);
+                    
+                }
+            }
+            }); 
+            
+            // ................................................................................
+           
+       }
 }

@@ -38,45 +38,40 @@ public class PymesDao {
 		try {
 			
                         
-                        sqlStr = "INSERT INTO t_makro_residencial (Estado,IdIncidencia,Fecha,Comercial,Swg,Swe,DualFuel,CUPS_Elect,"
-                                        + "CUPS_Gas,CodPostal,Municipio,Provincia,Direccion,Titular,NIF_CIF,telefono,Fecha_Firma_Cliente,"
-                                        + "Consumo_elect_kwha,Consumo_gas_kwha,"
-                                        + "SVGCompleto,SVGXpres,SVGBasico,SVelectricXpres,Servihogar,"
-                                        + "Tarifa_Gas,Tarifa_Elec,AgenteComercial,SVGCompletoConCalef,SVGCompletoSinCalef,SPP,TurGas,TarifaPlana,Punteado,Observaciones) VALUES ('"					
+                        sqlStr = "INSERT INTO t_makro_pymes (Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
+                                        + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
+                                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,C_servicios,Reactiva)"
+                                        + " VALUES ('"					
 					+ miPyme.getEstado() + "', '"
+                                        + miPyme.getFechaDocout() + "', '"
+                                        + miPyme.getFechaMemo() + "', '"
                                         + miPyme.getIncidencia() + "', '"    
-					+ miPyme.getFecha() + "', '"
-		 			+ miPyme.getComercial() + "', '"  
-                                        + miPyme.getSwg() + "', '"
-                                        + miPyme.getSwe() + "', '"
-                                        + miPyme.getDualFuel() + "', '"
+					+ miPyme.getFechaOrden() + "', '"
                                         + miPyme.getCupsE() + "', '"
                                         + miPyme.getCupsG() + "', '"
-                                        + miPyme.getCodPostal() + "', '"
+                                        + miPyme.getAgente() + "', '" 
+		 			+ miPyme.getCodPostal() + "', '"
                                         + miPyme.getMunicipio() + "', '"
                                         + miPyme.getProvincia() + "', '"
                                         + miPyme.getDireccion() + "', '"
                                         + miPyme.getTitular() + "', '"
-                                        + miPyme.getNifCif() + "', '"
-                                        + miPyme.getTelefonoCli() + "', '"
+                                        + miPyme.getNifCif() + "', '" 
                                         + miPyme.getFechaFirma() + "', '"
+                                        + miPyme.getCVComercial() + "', '" 
                                         + miPyme.getConsumoElect() + "', '"
-                                        + miPyme.getConsumoGas() + "', '"
-                                        + miPyme.getSVG_1() + "', '"
-                                        + miPyme.getSVG_2() + "', '"
-                                        + miPyme.getSVG_3() + "', '"
-                                        + miPyme.getSVG_4() + "', '"
-                                        + miPyme.getSVG_5() + "', '"   
-                                        + miPyme.getTarifaGas() + "', '"   
-                                        + miPyme.getTarifaElec() + "', '"   
-                                        + miPyme.getAgenteComercial() + "', '" 
-                                        + miPyme.getSVG_6() + "', '"
-                                        + miPyme.getSVG_7() + "', '"
-                                        + miPyme.getSVG_9() + "', '"
-                                        + miPyme.getTurGas() + "', '"
-                                        + miPyme.getTarifaPlana() + "', '"
-                                        + miPyme.getPunteado() + "', '"
-                                        + miPyme.getObservaciones() + "')" ;
+                                        + miPyme.getConsumoElectWS() + "', '"
+                                        + miPyme.getPagado() + "', '"
+                                        + miPyme.getPFenosa() + "', '"
+                                        + miPyme.getTarifa() + "', '"
+                                        + miPyme.getCampaña() + "', '"                                       
+                                        + miPyme.getTelefonoCli() + "', '"
+                                        + miPyme.getPerContacto() + "', '"
+                                        + miPyme.getExplicacion() + "', '"
+                                        + miPyme.getSolucion() + "', '"
+                                        + miPyme.getObservaciones() + "', '"
+                                        + miPyme.getTarifaGas() + "', '"
+                                        + miPyme.getCServicios() + "', '"
+                                        + miPyme.getReactiva() + "')" ;
                         
 			System.out.println(sqlStr);
                         Statement estatuto = conex.getConnection().createStatement();
@@ -102,7 +97,7 @@ public class PymesDao {
 	 */
 	public void buscarContratos(DefaultTableModel model,String str1,String str2,int filtroEstado,int filtroFecha) {
 
-                String strquery = "SELECT * FROM T_MAKRO_RESIDENCIAL" ;
+                String strquery = "SELECT * FROM t_makro_pymes" ;
                 
                 switch (filtroEstado){
                     
@@ -265,43 +260,6 @@ public class PymesDao {
 		}
                 return res;
 }
-	/**
-	 * Retorna una lista con los datos de la BD, para luego ser 
-	 * recorrida y almacenada en la tabla por medio de la Matriz
-	 * @return
-	 */
-        /*
-	public ArrayList<PersonaVo> buscarUsuariosConMatriz(String str1,String str2) {
-
-		Conexion conex = new Conexion(str1,str2);
-		ArrayList<PersonaVo> miLista = new ArrayList<PersonaVo>();
-		PersonaVo persona;
-		try {
-			Statement estatuto = conex.getConnection().createStatement();
-			ResultSet rs = estatuto.executeQuery("SELECT * FROM persona ");
-
-			while (rs.next()) {
-				persona = new PersonaVo();
-				persona.setIdPersona(Integer.parseInt(rs.getString("id")));
-				persona.setNombrePersona(rs.getString("nombre"));
-				persona.setEdadPersona(Integer.parseInt(rs.getString("edad")));
-				persona.setProfesionPersona(rs.getString("profesion"));
-				persona.setTelefonoPersona(Integer.parseInt(rs
-						.getString("telefono")));
-				miLista.add(persona);
-			}
-			rs.close();
-			estatuto.close();
-			conex.desconectar();
-
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(null, "Error al consultar", "Error",
-					JOptionPane.ERROR_MESSAGE);
-
-		}
-		return miLista;
-	}
-        */
+	
 }
 

@@ -900,6 +900,9 @@
                       <ResourceString bundle="org/ActSernv02/core/Bundle.properties" key="InsertaResidencialTopComponent.botonNuevo.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonNuevoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="botonModificar">
                   <Properties>
@@ -907,6 +910,9 @@
                       <ResourceString bundle="org/ActSernv02/core/Bundle.properties" key="InsertaResidencialTopComponent.botonModificar.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModificarActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel7">
                   <Properties>

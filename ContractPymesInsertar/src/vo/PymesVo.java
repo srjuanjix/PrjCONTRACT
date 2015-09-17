@@ -30,17 +30,43 @@ public class PymesVo {
         private Integer svgBasico; 
         private Integer svgElectricXpres; 
         private Integer servihogar; 
-        private String tarifaGas;  
-        private String tarifaElec;  
-        private String AgenteComercial;
+        private String tarifaElec;
+        private String tarifaGas;
+        private String sIncidencia;
+        private String sExplicacion;
+        private Integer TurGas;
+        private Integer Punteado;
+        private String AgenteCom;
         private Integer svgConCalef; 
         private Integer svgSinCalef; 
-         private Integer TurGas;
-        private Integer Punteado;
-       private Integer tarifaPlana;
-       private Integer SPP;
-       
+        private Integer tarifaPlana;
+        private Integer SPP;
 		
+        private String fechaDocout;  
+        private String fechaMemo;  
+        private String fechaOrden;  
+        
+        private String agente;  
+        private String cvComercial;  
+       
+        private Double pagado; 
+        private Double pagadoFenosa ;
+        private String pFenosa; 
+        private String tarifa; 
+        private String campaña; 
+        
+        private String perContacto;
+        private String explicacion; 
+        private String solucion; 
+        
+        private String cServicios;
+        
+        private double reactiva;
+        private double consumoElectWS;
+        
+        private String empresaOrigen;
+        private String oferta;
+        
 	/**
 	 * @return the idContrato
 	 */
@@ -291,14 +317,14 @@ public class PymesVo {
          /**
 	 * @return the Oferta
 	 */
-	public Integer getSVG_1() {
-		return svgCompleto;
+	public String getOferta() {
+		return oferta;
 	}
 	/**
 	 * @param oferta the orden to set
 	 */
-	public void setSVG_1(Integer svgCompleto) {
-		this.svgCompleto = svgCompleto;
+	public void setOferta(String oferta) {
+		this.oferta = oferta;
 	}
          /**
 	 * @return the Oferta
@@ -375,71 +401,55 @@ public class PymesVo {
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
-         /**
-	 * @return the 
-        */
-	public String getTarifaGas() {
-		return tarifaGas;
-	}
-	/**
-	 * @param  the Persona de contacto to set
-	 */
-	public void setTarifaGas(String tarifaGas) {
-		this.tarifaGas = tarifaGas;
-	}
           /**
-	 * @return the 
+	 * @return the tarifa electrica
         */
 	public String getTarifaElec() {
 		return tarifaElec;
 	}
 	/**
-	 * @param  the Persona de contacto to set
+	 * @param tarifaElec the Persona de contacto to set
 	 */
 	public void setTarifaElec(String tarifaElec) {
 		this.tarifaElec = tarifaElec;
 	}
            /**
-	 * @return the 
+	 * @return the tarifa gas
         */
-	public String getAgenteComercial() {
-		return AgenteComercial;
+	public String getTarifaGas() {
+		return tarifaGas;
 	}
 	/**
-	 * @param  the Persona de contacto to set
+	 * @param tarifaElec the Persona de contacto to set
 	 */
-	public void setAgenteComercial(String AgenteComercial) {
-		this.AgenteComercial = AgenteComercial;
+	public void setTarifaGas(String tarifaGas) {
+		this.tarifaGas = tarifaGas;
+	}
+            /**
+	 * @return 
+        */
+	public String getsIncidencia() {
+		return sIncidencia;
+	}
+	/**
+	 * @param sIncidencia the Persona de contacto to set
+	 */
+	public void setsIncidencia(String sIncidencia) {
+		this.sIncidencia = sIncidencia;
+	}
+            /**
+	 * @return 
+        */
+	public String getsExplicacion() {
+		return sExplicacion;
+	}
+	/**
+	 * @param sIncidencia the Persona de contacto to set
+	 */
+	public void setsExplicacion(String sExplicacion) {
+		this.sExplicacion = sExplicacion;
 	}
           /**
-	 * @param 
-	 */
-
-        /**
-         *
-         * @param svgConCalef
-         */
-         public void setSVG_6(Integer svgConCalef) {
-		this.svgConCalef = svgConCalef;
-	}
-	/**
-	 * @return the swg
-	 */
-	public Integer getSVG_6() {
-		return svgConCalef;
-	}
-           /**
-     * @param svgSinCalef	 */
-	public void setSVG_7(Integer svgSinCalef) {
-		this.svgSinCalef = svgSinCalef;
-	}
-	/**
-	 * @return the swg
-	 */
-	public Integer getSVG_7() {
-		return svgSinCalef;
-	}
-             /**
 	 * @param swg the fecha to set
 	 */
 	public void setTurGas(Integer TurGas) {
@@ -464,7 +474,43 @@ public class PymesVo {
 		return Punteado;
 	}
              /**
-        * @param svgSinCalef	 */
+	 * @return 
+        */
+	public String getAgenteCom() {
+		return AgenteCom;
+	}
+	/**
+	 * 
+	 */
+	public void setAgenteCom(String AgenteCom) {
+		this.AgenteCom = AgenteCom;
+	}
+        /**
+         *
+         * @param svgConCalef
+         */
+         public void setSVG_6(Integer svgConCalef) {
+		this.svgConCalef = svgConCalef;
+	}
+	/**
+	 * @return the swg
+	 */
+	public Integer getSVG_6() {
+		return svgConCalef;
+	}
+           /**
+     * @param svgSinCalef	 */
+	public void setSVG_7(Integer svgSinCalef) {
+		this.svgSinCalef = svgSinCalef;
+	}
+	/**
+	 * @return the swg
+	 */
+	public Integer getSVG_7() {
+		return svgSinCalef;
+	}
+            /**
+     * @param svgSinCalef	 */
 	public void setTarifaPlana(Integer tarifaPlana) {
 		this.tarifaPlana = tarifaPlana;
 	}
@@ -474,15 +520,248 @@ public class PymesVo {
 	public Integer getTarifaPlana() {
 		return tarifaPlana;
 	}
-        public void setSVG_9(Integer SPP) {
-		this.SPP = SPP;
+          /**
+	 * @return the Fecha Memo
+	 */
+	public String getMemo() {
+		return memo;
 	}
 	/**
-	 * @return the swg
+	 * @param fecha Memo the orden to set
 	 */
-	public Integer getSVG_9() {
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+        public Integer getSPP() {
 		return SPP;
 	}
+	/**
+	 * @param oferta the orden to set
+	 */
+	public void setSPP(Integer SPP) {
+		this.SPP = SPP;
+	}
+        
+        /**
+	 * @return the fechaDocout
+	 */
+	public String getFechaDocout() {
+		return fechaDocout;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setFechaDocout(String fechaDocout) {
+		this.fechaDocout = fechaDocout;
+	}
+        
+        /**
+	 * @return the Consumo electrico reactiva
+	 */
+	public double getReactiva() {
+		return reactiva;
+	}
+	/**
+	 * @param consumoElect the orden to set
+	 */
+	public void setReactiva(double reactiva) {
+		this.reactiva = reactiva;
+	}
+         /**
+	 * @return the fechaDocout
+	 */
+	public String getFechaMemo() {
+		return fechaMemo;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setFechaMemo(String fechaMemo) {
+		this.fechaMemo = fechaMemo;
+	}
+        
+         /**
+	 * @return the fechaOrden
+	 */
+	public String getFechaOrden() {
+		return fechaOrden;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setFechaOrden(String fechaOrden) {
+		this.fechaOrden = fechaOrden;
+	}
+        
+         /**
+	 * @return the agente
+	 */
+	public String getAgente() {
+		return agente;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setAgente(String agente) {
+		this.agente = agente;
+	}
+        
+         /**
+	 * @return the agente
+	 */
+	public String getCVComercial() {
+		return cvComercial;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setCVComercial(String cvComercial) {
+		this.cvComercial = cvComercial;
+	}
+        
+         /**
+	 * @return the consumoElectWS
+	 */
+	public double getConsumoElectWS(){
+		return consumoElectWS;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setConsumoElectWS(double consumoElectWS) {
+		this.consumoElectWS = consumoElectWS;
+	}
+        
+         /**
+	 * @return the pagado
+	 */
+	public Double getPagado(){
+		return pagado;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setPagado(Double pagado) {
+		this.pagado = pagado;
+	}
+        
+          /**
+	 * @return the pagado
+	 */
+	public Double getPagadoFenosa(){
+		return pagadoFenosa;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setPagadoFenosa(Double pagadoFenosa) {
+		this.pagadoFenosa = pagadoFenosa;
+	}
+        
+         /**
+	 * @return the pagado
+	 */
+	public String getPFenosa(){
+		return pFenosa;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setPFenosa(String pFenosa) {
+		this.pFenosa = pFenosa;
+	}
+        
+         /**
+	 * @return the tarifa
+	 */
+	public String getTarifa(){
+		return tarifa;
+	}
+        /**
+	 * @param fechaFirmaCliente the orden to set
+	 */
+	public void setTarifa(String tarifa) {
+		this.tarifa = tarifa;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getCampaña(){
+		return campaña;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setCampaña(String campaña) {
+		this.campaña = campaña;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getPerContacto(){
+		return perContacto;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setPerContacto(String perContacto) {
+		this.perContacto = perContacto;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getExplicacion(){
+		return explicacion;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setExplicacion(String explicacion) {
+		this.explicacion = explicacion;
+	}
+        
+         /**
+	 * @return the campaña
+	*/
+	public String getSolucion(){
+		return solucion;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setSolucion(String solucion) {
+		this.solucion = solucion;
+	}
+        
+        /**
+	 * @return the campaña
+	*/
+	public String getCServicios(){
+		return cServicios;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setCservicios(String cServicios) {
+		this.cServicios = cServicios;
+	}
+        
+        /**
+	 * @return the empresaOrigen
+	*/
+	public String getEmpresaOrigen(){
+		return empresaOrigen;
+	}
+        /**
+	 * @param fthe orden to set
+	 */
+	public void setEmpresaOrigen(String empresaOrigen) {
+		this.empresaOrigen = empresaOrigen;
+	}
+        
 }
               
     
