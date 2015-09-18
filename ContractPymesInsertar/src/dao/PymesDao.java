@@ -29,9 +29,9 @@ public class PymesDao {
 	 * @param miPyme
 	 */
 //	public int registrarContrato(PymesVo miPyme,String str1,String str2) {
-    public int registrarContrato(PymesVo miPyme,Conexion conex) {
+    public int registrarContrato(PymesVo miPyme) {
 		 
-     //       Conexion conex = new Conexion(str1,str2);
+            Conexion conex = new Conexion("","");
             int estadoInsert = 0 ;
             String sqlStr;
 
@@ -75,7 +75,7 @@ public class PymesDao {
                         
 			System.out.println(sqlStr);
                         Statement estatuto = conex.getConnection().createStatement();
-			estatuto.executeUpdate(sqlStr);
+		//	estatuto.executeUpdate(sqlStr);
 			estatuto.close();
 		//	conex.desconectar();
                        

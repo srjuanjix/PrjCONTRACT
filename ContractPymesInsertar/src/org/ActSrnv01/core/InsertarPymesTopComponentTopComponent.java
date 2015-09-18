@@ -123,17 +123,13 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        botonModificar1 = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
         jTextField27 = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox();
         jComboBox4 = new javax.swing.JComboBox();
-        jTextField21 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jTextField24 = new javax.swing.JTextField();
-        botonBuscarID = new javax.swing.JButton();
-        jTextField75 = new javax.swing.JTextField();
         jLabel107 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
@@ -190,8 +186,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jLabel138 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jTextField14 = new javax.swing.JTextField();
-        jTextField123 = new javax.swing.JTextField();
-        jLabel130 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jPanel20 = new javax.swing.JPanel();
@@ -284,14 +278,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel8.text")); // NOI18N
 
-        botonModificar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(botonModificar1, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.botonModificar1.text")); // NOI18N
-        botonModificar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonModificar1ActionPerformed(evt);
-            }
-        });
-
         org.openide.awt.Mnemonics.setLocalizedText(jLabel38, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel38.text")); // NOI18N
 
         jTextField27.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField27.text")); // NOI18N
@@ -303,17 +289,9 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "KO", "RESID CERTIFIC", "VALIDADO", "ERROR WEBSALES", "DECOMISADO" }));
 
-        jTextField21.setEditable(false);
-
         org.openide.awt.Mnemonics.setLocalizedText(jLabel48, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel48.text")); // NOI18N
 
         jTextField24.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField24.text")); // NOI18N
-
-        botonBuscarID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscarIDActionPerformed(evt);
-            }
-        });
 
         jLabel107.setForeground(new java.awt.Color(204, 204, 204));
         org.openide.awt.Mnemonics.setLocalizedText(jLabel107, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel107.text")); // NOI18N
@@ -355,7 +333,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                         .addComponent(jCheckBox28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jCheckBox29)
-                        .addContainerGap(194, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1)
@@ -477,6 +455,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         org.openide.awt.Mnemonics.setLocalizedText(jLabel32, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel32.text")); // NOI18N
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir...", "2.0A", "2.0DHA", "2.1A", "2.1DHA", "3.0A", "3.1A", " " }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -500,8 +483,8 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                     .addComponent(jTextField12)
                     .addComponent(jTextField10)
                     .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel24Layout.createSequentialGroup()
@@ -603,12 +586,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jTextField14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField14.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField14.text")); // NOI18N
 
-        jTextField123.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField123.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField123.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField123.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel130, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel130.text")); // NOI18N
-
         org.openide.awt.Mnemonics.setLocalizedText(jLabel35, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jLabel35.text")); // NOI18N
 
         jTextField8.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField8.text")); // NOI18N
@@ -663,16 +640,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
-                                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(64, 64, 64)
-                                        .addComponent(jLabel130))
+                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel21Layout.createSequentialGroup()
                                         .addGap(2, 2, 2)
                                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61))))
+                                .addGap(61, 124, Short.MAX_VALUE))))
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addComponent(jLabel35)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -680,29 +652,22 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel35))
-                            .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel20)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel130)))
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel35))
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(13, 13, 13)
+                        .addGap(3, 3, 3)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -914,14 +879,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonBuscarID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonModificar1)
-                        .addGap(18, 18, 18)
+                        .addGap(301, 301, 301)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -947,7 +905,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonBuscarID)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7)
@@ -956,10 +913,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                         .addComponent(jLabel52))
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonModificar1)))
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
@@ -1421,18 +1375,9 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
-    private void botonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificar1ActionPerformed
-       System.out.println("Acabo de capturar el evento boton Modificar!!!");       
-       ActualizarTablaFormulario();
-    }//GEN-LAST:event_botonModificar1ActionPerformed
-
     private void jCheckBox29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox29ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox29ActionPerformed
-
-    private void botonBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarIDActionPerformed
-     
-    }//GEN-LAST:event_botonBuscarIDActionPerformed
 
     private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
         // TODO add your handling code here:
@@ -1447,16 +1392,21 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
          guardarArchivo();   
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        String str;
+        str = jComboBox2.getSelectedItem().toString()  ;
+        str = str.trim();
+        jTextField19.setText(str);
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ListaTiempo;
     private javax.swing.JButton actuaMunicipio;
     private javax.swing.JTree arbol;
     private javax.swing.JTextArea areaDeTexto;
     private javax.swing.JTextArea areaDeTextoProcesado;
-    private javax.swing.JButton botonBuscarID;
     private javax.swing.JButton botonGuardaConf;
     private javax.swing.JButton botonModificar;
-    private javax.swing.JButton botonModificar1;
     private javax.swing.JButton botonNuevo;
     private javax.swing.JButton botonRefrescar;
     private javax.swing.JButton jButton1;
@@ -1490,7 +1440,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1558,7 +1507,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField123;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
@@ -1568,7 +1516,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
@@ -1584,7 +1531,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField74;
-    private javax.swing.JTextField jTextField75;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JScrollPane miBarra01;
@@ -1781,6 +1727,12 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             jTextField30.setText(""); jTextField30.setBackground(Color.white);        // 
             jTextField31.setText(""); jTextField31.setBackground(Color.white);        // 
             jTextField74.setText(""); jTextField74.setBackground(Color.white);        // 
+            
+            jTextField8.setText(""); jTextField8.setBackground(Color.white);        // 
+            jTextField19.setText(""); jTextField19.setBackground(Color.white);        // 
+            jTextField20.setText(""); jTextField20.setBackground(Color.white);        // 
+            jTextField9.setText(""); jTextField9.setBackground(Color.white);        // 
+            jTextField17.setText(""); jTextField17.setBackground(Color.white);        // 
            
             // .............................................................................
             jCheckBox28.setSelected(false);
@@ -1842,17 +1794,17 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                 
             
             ind = Integer.parseInt(this.tablaDatos[indice][14]) ;            
-            jComboBox2.setSelectedIndex(ind); 
+            
                        
             // .............................................................................
             
            
-             if (this.tablaDatos[indice][45].equals("1")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
+             if (this.tablaDatos[indice][34].equals("1")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
             
             // .............................................................................
             
             
-             if (this.tablaDatos[indice][44].equals("1")) jCheckBox28.setSelected(true); else jCheckBox28.setSelected(false);
+             if (this.tablaDatos[indice][35].equals("1")) jCheckBox28.setSelected(true); else jCheckBox28.setSelected(false);
                     
             // .............................................................................
                        
@@ -1973,20 +1925,20 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             // ....................................................................... 
             
            
-            if (jCheckBox28.isSelected()) {  this.tablaDatos[indice][32] = "1";} else { this.tablaDatos[indice][32] = "0"; }    //   SWG
-            if (jCheckBox29.isSelected()) {  this.tablaDatos[indice][33] = "1";} else { this.tablaDatos[indice][33] = "0"; }    //   SWE
+            if (jCheckBox28.isSelected()) {  this.tablaDatos[indice][34] = "1";} else { this.tablaDatos[indice][34] = "0"; }    //   SWG
+            if (jCheckBox29.isSelected()) {  this.tablaDatos[indice][35] = "1";} else { this.tablaDatos[indice][35] = "0"; }    //   SWE
        
             // ..............................................
            
-            int sel = jComboBox2.getSelectedIndex()   ;
-            this.tablaDatos[indice][34] = String.valueOf(sel);       // Planes / Directriz
+            int sel = jComboBox5.getSelectedIndex()   ;
+            this.tablaDatos[indice][36] = String.valueOf(sel);       // Planes / Directriz
             
             // ..............................................
             
             for ( j=0; j<50; j++) 
                  this.tablaErrores[indice][j] = 0 ;                  // inicializamos
              
-            this.tablaDatos[indice][35] = String.valueOf(indice) ;
+            this.tablaDatos[indice][37] = String.valueOf(indice) ;
             this.nRegistros ++;
          }
           
@@ -2005,7 +1957,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
         //    try {
                       System.out.println("Voy a comenzar la inserción ");
                 PymesVo miPymes = new PymesVo();
-                 Conexion conex = new Conexion(this.plogin,this.ppassword);
+                 
                 for (i=0 ; i < this.nRegistros; i++){
                     
                         // ..............................................
@@ -2112,14 +2064,14 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                       
                         System.out.println("Registro insertado ");
                         
-                        estadoInsert = miPymeDao.registrarContrato(miPymes,conex);
+                        estadoInsert = miPymeDao.registrarContrato(miPymes);
                         System.out.println("Registro insertado ");
                         
                         if (estadoInsert == 0 ) cnt++ ;
                         
                 }
                 
-                conex.desconectar();
+             
                  if (estadoInsert == 0) {
                     
                                          JOptionPane.showMessageDialog(null,

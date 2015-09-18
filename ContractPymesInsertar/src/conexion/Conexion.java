@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
    static String bd = "sernovenDB"; 
-   static String login = "";
-   static String password = "";
-   static String url = "jdbc:mysql://192.168.1.103/"+bd;
+   static String login = "admin02";
+   static String password = "admin02";
+   static String url = "jdbc:mysql://192.168.1.111/"+bd;
 
    Connection conn = null;
 
@@ -21,15 +21,13 @@ public class Conexion {
    public Conexion(String Str1,String Str2) {
 
       try{            
-          
-         login      =  Str1;
-         password   =  Str2;
-          
+             
          //obtenemos el driver de para mysql
          Class.forName("com.mysql.jdbc.Driver");
          //obtenemos la conexión
-         conn = DriverManager.getConnection(url,login,password);
+         conn = DriverManager.getConnection(url,this.login,this.password);
 
+        System.out.println("La base de datos se ha conectado exitosamente");
      /*    if (conn!=null){
             JOptionPane.showMessageDialog(null,
 		 "La base de datos se ha conectado exitosamente",
