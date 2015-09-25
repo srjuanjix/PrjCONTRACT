@@ -81,11 +81,11 @@ public final class InsertaResidencialTopComponent extends TopComponent {
     String archivo = null;  
     public ProgressMonitor progressMonitor;
     // .......................................................... 
-    public String tablaDatos[][]        = new String[2500][50];  
-    public String tablaDatosIncpl[][]   = new String[2500][50];
-    public String tablaDatosCmpl[][]    = new String[2500][50];
-    public Integer tablaErrores[][]     = new Integer[2500][50];
-    public String tablaErrorCod[][]    = new String[2500][50];
+    public String tablaDatos[][]        = new String[500][50];  
+    public String tablaDatosIncpl[][]   = new String[500][50];
+    public String tablaDatosCmpl[][]    = new String[500][50];
+    public Integer tablaErrores[][]     = new Integer[500][50];
+    public String tablaErrorCod[][]    = new String[500][50];
     
     public Integer tablaConfiguracion[] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1} ;
     
@@ -108,7 +108,17 @@ public final class InsertaResidencialTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_InsertaResidencialTopComponent());
         setToolTipText(Bundle.HINT_InsertaResidencialTopComponent());
-
+        int i,j ;
+        for (i=0; i<500; i++ ){
+            for (j =0; j<50; j++)  {
+                this.tablaErrores[i][j] =0 ;
+                this.tablaErrorCod[i][j] = "0" ;
+            }
+        }
+        
+        System.setProperty("netbeans.buildnumber", "2.0.1");
+        
+        System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
     }
     // ..........................................................
     /**
@@ -129,10 +139,6 @@ public final class InsertaResidencialTopComponent extends TopComponent {
         botonPuntear = new javax.swing.JButton();
         botonGuardar = new javax.swing.JButton();
         botonGuardaExel = new javax.swing.JButton();
-        botonCancelar = new javax.swing.JButton();
-        login = new javax.swing.JTextField();
-        passw = new javax.swing.JPasswordField();
-        botonConectar = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -302,19 +308,6 @@ public final class InsertaResidencialTopComponent extends TopComponent {
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(botonCancelar, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.botonCancelar.text")); // NOI18N
-
-        login.setText(org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.login.text")); // NOI18N
-
-        passw.setText(org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.passw.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(botonConectar, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.botonConectar.text")); // NOI18N
-        botonConectar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonConectarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -337,21 +330,13 @@ public final class InsertaResidencialTopComponent extends TopComponent {
                         .addComponent(botonCalendario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonActualizaFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(860, 860, 860))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonGuardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonGuardaExel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonCancelar)))
-                .addGap(18, 18, 18)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(passw)
-                .addGap(45, 45, 45)
-                .addComponent(botonConectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(405, 405, 405))
+                        .addGap(899, 899, 899))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,18 +353,12 @@ public final class InsertaResidencialTopComponent extends TopComponent {
                             .addComponent(jLabel39)
                             .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botonConectar, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botonAbrir)
-                        .addComponent(botonProcesar)
-                        .addComponent(botonPuntear)
-                        .addComponent(botonGuardar)
-                        .addComponent(botonCancelar)
-                        .addComponent(botonGuardaExel)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAbrir)
+                    .addComponent(botonProcesar)
+                    .addComponent(botonPuntear)
+                    .addComponent(botonGuardar)
+                    .addComponent(botonGuardaExel))
                 .addContainerGap())
         );
 
@@ -439,6 +418,11 @@ public final class InsertaResidencialTopComponent extends TopComponent {
         org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.jLabel16.text")); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(actuaMunicipio, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.actuaMunicipio.text")); // NOI18N
+        actuaMunicipio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actuaMunicipioActionPerformed(evt);
+            }
+        });
 
         jLabel41.setForeground(new java.awt.Color(204, 102, 0));
         org.openide.awt.Mnemonics.setLocalizedText(jLabel41, org.openide.util.NbBundle.getMessage(InsertaResidencialTopComponent.class, "InsertaResidencialTopComponent.jLabel41.text")); // NOI18N
@@ -1276,20 +1260,13 @@ public final class InsertaResidencialTopComponent extends TopComponent {
     }//GEN-LAST:event_botonPuntearActionPerformed
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
-            comprobarRegistros();
-            modificarArbol();
+            guardarArchivo();
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     private void botonGuardaExelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardaExelActionPerformed
          GuardarArchivoExelResultados();   
          GuardarArchivoExelDevueltos();
     }//GEN-LAST:event_botonGuardaExelActionPerformed
-
-    private void botonConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConectarActionPerformed
-         String Str1 = login.getText();
-         String Str2 = passw.getText();
-         conectarBD(Str1,Str2);
-    }//GEN-LAST:event_botonConectarActionPerformed
 
     private void botonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoActionPerformed
            insertarNuevo();
@@ -1301,6 +1278,10 @@ public final class InsertaResidencialTopComponent extends TopComponent {
           ActualizarTablaFormulario();
     }//GEN-LAST:event_botonModificarActionPerformed
 
+    private void actuaMunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuaMunicipioActionPerformed
+         cambiaMunicipio();
+    }//GEN-LAST:event_actuaMunicipioActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ListaTiempo;
     private javax.swing.JButton actuaMunicipio;
@@ -1310,8 +1291,6 @@ public final class InsertaResidencialTopComponent extends TopComponent {
     private javax.swing.JButton botonAbrir;
     private javax.swing.JButton botonActualizaFecha;
     private javax.swing.JButton botonCalendario;
-    private javax.swing.JButton botonCancelar;
-    private javax.swing.JButton botonConectar;
     private javax.swing.JButton botonGuardaConf;
     private javax.swing.JButton botonGuardaExel;
     private javax.swing.JButton botonGuardar;
@@ -1421,12 +1400,10 @@ public final class InsertaResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField login;
     private javax.swing.JScrollPane miBarra01;
     private javax.swing.JTable miTabla01;
     private javax.swing.JTextField nComienzo;
     private javax.swing.JTextField numLineas;
-    private javax.swing.JPasswordField passw;
     private javax.swing.JScrollPane scrollPaneArea;
     private javax.swing.JScrollPane scrollPaneAreaProceso;
     // End of variables declaration//GEN-END:variables
@@ -1540,8 +1517,8 @@ private void comprobarRegistros() {
  // .......................................................................
 private void conectarConBD(){
     
-             String Str1 = login.getText();
-             String Str2 = passw.getText();
+             String Str1 = "admin02";
+             String Str2 = "admin02";
              conectarBD(Str1,Str2);    
 }
 
@@ -2139,11 +2116,11 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
             System.out.println("tablaErrores["+indice+"][4] =  "+this.tablaErrores[indice][4] );
             System.out.println("tablaErrores["+indice+"][0] =  "+this.tablaErrores[indice][0] );
             
-           
+           /*
             if (this.tablaErrores[indice][4] == 1) {  jTextField4.setBackground(Color.red);} else {
                                                       jTextField4.setBackground(Color.white);
             }
-         
+           */
           
             if (this.tablaErrores[indice][5] == 1) {    jTextField10.setBackground(Color.red);} else {
                                                         jTextField10.setBackground(Color.white);
@@ -2300,6 +2277,10 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
          
            this.tablaDatos[indice][2] = jTextField27.getText(); // Fecha de producción      
            this.tablaDatos[indice][39] = jTextField6.getText(); // Comercial   
+           
+            JOptionPane.showMessageDialog(null,
+            "\nRegistro actualizado",
+	    "AVISO",JOptionPane.WARNING_MESSAGE);
            
        }
       // -------------------------------------------------------------------------------------------------------------------------

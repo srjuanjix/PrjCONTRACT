@@ -202,7 +202,7 @@ public final class ResidencialTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_ResidencialTopComponent());
         setToolTipText(Bundle.HINT_ResidencialTopComponent());
-        System.setProperty("netbeans.buildnumber", "2.0.0");
+        System.setProperty("netbeans.buildnumber", "2.0.1");
         
         System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
 

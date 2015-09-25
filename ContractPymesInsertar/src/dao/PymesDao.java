@@ -75,7 +75,7 @@ public class PymesDao {
                         
 			System.out.println(sqlStr);
                         Statement estatuto = conex.getConnection().createStatement();
-		//	estatuto.executeUpdate(sqlStr);
+			estatuto.executeUpdate(sqlStr);
 			estatuto.close();
 		//	conex.desconectar();
                        

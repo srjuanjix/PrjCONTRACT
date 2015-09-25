@@ -22,8 +22,8 @@ public class Conexion {
 
       try{            
           
-         login      =  Str1;
-         password   =  Str2;
+         login      =  "admin02";
+         password   =  "admin02";
           
          //obtenemos el driver de para mysql
          Class.forName("com.mysql.jdbc.Driver");

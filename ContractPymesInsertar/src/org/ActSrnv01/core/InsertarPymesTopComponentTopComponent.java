@@ -101,6 +101,10 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
        
        crearArbol();
        actualizarFormulario(-1);
+       
+        System.setProperty("netbeans.buildnumber", "2.0.1");
+        
+        System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
       
         // ............................................
 

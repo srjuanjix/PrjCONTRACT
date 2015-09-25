@@ -88,6 +88,9 @@ public final class insertarSabanaTopComponent extends TopComponent {
         setName(Bundle.CTL_insertarSabanaTopComponent());
         setToolTipText(Bundle.HINT_insertarSabanaTopComponent());
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
+        System.setProperty("netbeans.buildnumber", "2.0.1");
+        
+        System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
 
     }
 
@@ -396,7 +399,7 @@ public final class insertarSabanaTopComponent extends TopComponent {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
-         // ------------------------------------------------------------------------------------------------------------
+         // ------------------------------------------------------------------------------------------------------
 
 public void leerArchivoExel() throws IOException {
          
@@ -776,14 +779,12 @@ public void leerArchivoExel() throws IOException {
                 
          
 } 
-       // ----------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------
           public class t implements Runnable {
                     
                  public t(String nombres[],String tablaDatos[][],String plogin,String ppassword,String bdStr,String urlStr) {
                      
                  }
-                    
-                    
                     
                  //Implementamos el método run()
                 @Override
@@ -866,5 +867,5 @@ public void leerArchivoExel() throws IOException {
                       }
                       
                     }
-                  }
+    }
 }

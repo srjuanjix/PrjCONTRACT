@@ -158,12 +158,18 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_pymesAdministracionTopComponent());
         setToolTipText(Bundle.HINT_pymesAdministracionTopComponent());
+        System.setProperty("netbeans.buildnumber", "2.0.1");
+        
+        System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
 
     }
     public static synchronized pymesAdministracionTopComponent getDefault() {
         if (instance == null) {
             instance = new pymesAdministracionTopComponent();
         }
+        
+       
+        
         return instance;
     }
 
