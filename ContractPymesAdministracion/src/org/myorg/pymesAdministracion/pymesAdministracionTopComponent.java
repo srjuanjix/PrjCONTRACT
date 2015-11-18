@@ -158,7 +158,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_pymesAdministracionTopComponent());
         setToolTipText(Bundle.HINT_pymesAdministracionTopComponent());
-        System.setProperty("netbeans.buildnumber", "2.0.1");
+        System.setProperty("netbeans.buildnumber", "2.0.5");
         
         System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
 
@@ -167,8 +167,6 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         if (instance == null) {
             instance = new pymesAdministracionTopComponent();
         }
-        
-       
         
         return instance;
     }
@@ -750,6 +748,12 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         jTextField71 = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         jTextField70 = new javax.swing.JTextField();
+        jTextField297 = new javax.swing.JTextField();
+        jTextField294 = new javax.swing.JTextField();
+        jTextField295 = new javax.swing.JTextField();
+        jTextField296 = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel204 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         miBarra02 = new javax.swing.JScrollPane();
         miTabla02 = new javax.swing.JTable();
@@ -830,7 +834,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "BLANCO", "AMARILLO", "NARANJA", "ROJO", "VERDE", "MORADO", "AZUL" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "KO", "RESID CERTIFIC", "VALIDADO", "ERROR WEBSALES", "DECOMISADO" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "KO", "RESID CERTIFIC", "DOC_OUT", "ERROR WEBSALES", "DECOMISADO" }));
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jCheckBox28.text")); // NOI18N
 
@@ -1050,33 +1054,35 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         .addComponent(jLabel15)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField12)
-                    .addComponent(jTextField10)
-                    .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField20, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel25))
-                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonBuscarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel24)
-                                    .addComponent(jLabel32))))
-                        .addGap(0, 15, Short.MAX_VALUE))))
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel24Layout.createSequentialGroup()
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel25))
+                                .addGroup(jPanel24Layout.createSequentialGroup()
+                                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(botonBuscarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel24Layout.createSequentialGroup()
+                                    .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel24)
+                                        .addComponent(jLabel32)))
+                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1197,19 +1203,20 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel35))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel21Layout.createSequentialGroup()
                                         .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(24, 24, 24)
-                                        .addComponent(jLabel108))
-                                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel138, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel108)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel138, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel13)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField74)
@@ -1220,70 +1227,56 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                                 .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(47, 47, 47))
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
-                                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(22, 22, 22)
-                                        .addComponent(actuaMunicipio))
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
-                                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(20, 20, 20)
-                                        .addComponent(botonBuscarTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(actuaMunicipio))
                             .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
-                                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(20, 20, 20)
-                                        .addComponent(botonBuscarNIF, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel130))
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61))))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(jLabel35)
+                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(botonBuscarTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(botonBuscarNIF, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel130)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel19)
                         .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(botonBuscarTitular))
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel35))
-                            .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel20)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(botonBuscarNIF)
-                            .addComponent(jLabel130)))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel20)
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonBuscarNIF)
+                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel130)
                         .addComponent(jTextField123, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(13, 13, 13)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1301,10 +1294,10 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addComponent(jLabel138))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel13)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35))
                 .addGap(17, 17, 17))
         );
 
@@ -1718,7 +1711,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "KOs", "RESID CERTIFIC", "TODOS", "PUNTEADOS", "NO PUNTEADOS", "VALIDADOS", "ERROR WEB SALES", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "CERTIFICADO", "RESID", "KOs", "RESID CERTIFIC", "TODOS", "PUNTEADOS", "NO PUNTEADOS", "DOC_OUT", "ERROR WEB SALES", "DECOMISIONADO", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -1732,7 +1725,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             }
         });
 
-        ListaAgentes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TODOS AGENTES", "J & C", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA" }));
+        ListaAgentes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TODOS AGENTES", "J & C", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "ALBERTO", "AGENTE 01", "AGENTE 02", "AGENTE 03", "AGENTE 04" }));
         ListaAgentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListaAgentesActionPerformed(evt);
@@ -1858,7 +1851,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         org.openide.awt.Mnemonics.setLocalizedText(jLabel61, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jLabel61.text")); // NOI18N
 
-        ListaComercialLiq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar...", "J & C Asesores", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "TODOS" }));
+        ListaComercialLiq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar...", "J & C Asesores", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "ALBERTO", "AGENTE 01", "AGENTE 02", "AGENTE 03", "AGENTE 04", "TODOS" }));
         ListaComercialLiq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListaComercialLiqActionPerformed(evt);
@@ -3011,7 +3004,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addComponent(jTextField264, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel183)
                     .addComponent(jLabel188))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4063,7 +4056,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addComponent(jTextField284, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel193)
                     .addComponent(jLabel198))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField270, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField275, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4116,17 +4109,15 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField288, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                     .addComponent(jTextField292, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(28, 28, 28)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                        .addComponent(jTextField291, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel203, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                        .addComponent(jTextField287)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 30, Short.MAX_VALUE)
+                    .addComponent(jTextField287, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jTextField291))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel203, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField286, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                     .addComponent(jTextField290))
@@ -4197,13 +4188,17 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 
         jTextField70.setText(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jTextField70.text")); // NOI18N
 
+        jTextField297.setText(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jTextField297.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jTextField70, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jTextField70, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField297, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField71, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -4221,7 +4216,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel92)
                     .addComponent(jTextField71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField297, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel19Layout.createSequentialGroup()
@@ -4229,6 +4225,16 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addComponent(jLabel70)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
+
+        jTextField294.setText(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jTextField294.text")); // NOI18N
+
+        jTextField295.setText(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jTextField295.text")); // NOI18N
+
+        jTextField296.setText(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jTextField296.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel63, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jLabel63.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel204, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jLabel204.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -4240,8 +4246,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel60)
-                                .addGap(122, 122, 122)
+                                .addComponent(jLabel63)
+                                .addGap(207, 207, 207)
                                 .addComponent(jLabel61)
                                 .addGap(18, 18, 18)
                                 .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4249,7 +4255,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                                 .addComponent(jLabel77)
                                 .addGap(18, 18, 18)
                                 .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                                 .addComponent(jLabel62))
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4261,19 +4267,22 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                                             .addComponent(jLabel75))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(20, 20, 20)
-                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel74)
-                                                    .addComponent(jLabel76)))
+                                                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                                .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel74))
+                                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel76)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel73)))
-                                        .addGap(66, 66, 66)
+                                                .addComponent(jTextField296, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(74, 74, 74)
                                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(botonActualizarCalculos, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(botonGeneraExelLiquida, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -4286,12 +4295,23 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                                                 .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel11Layout.createSequentialGroup()
                                         .addGap(21, 21, 21)
-                                        .addComponent(jLabel69)))
+                                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jTextField294, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel69))
+                                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                                .addGap(127, 127, 127)
+                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel204)
+                                                    .addComponent(jTextField295, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(miBarra03)
-                        .addGap(18, 18, 18)))
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel60)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -4302,41 +4322,47 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel61)
-                                .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel77)
-                                .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel61)
+                                        .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel77)
+                                        .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel63)
+                                        .addComponent(jLabel204))
+                                    .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(3, 3, 3)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel71)
+                                    .addComponent(jLabel73)
+                                    .addComponent(jTextField294, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel72)
+                                    .addComponent(jLabel74)
+                                    .addComponent(jTextField295, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel75)
+                                    .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel76)
+                                    .addComponent(jTextField296, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(botonActualizarCalculos)
                                     .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(botonGeneraExelLiquida)
-                                    .addComponent(jButton1)))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel71)
-                                    .addComponent(jLabel73))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel72)
-                                    .addComponent(jLabel74))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel75)
-                                    .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel76))))
+                                    .addComponent(jButton1))))
                         .addGap(27, 27, 27)
                         .addComponent(jLabel69)
                         .addGap(28, 28, 28)
@@ -4792,8 +4818,9 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         if (str.equals("KOs"))          this.filtroEstadoSel = 4 ;
         if (str.equals("PUNTEADOS"))    this.filtroEstadoSel = 5 ;
         if (str.equals("NO PUNTEADOS")) this.filtroEstadoSel = 6 ;
-        if (str.equals("VALIDADOS"))    this.filtroEstadoSel = 7 ;
+        if (str.equals("DOC_OUT"))      this.filtroEstadoSel = 7 ;
         if (str.equals("ERROR WEB SALES")) this.filtroEstadoSel = 8 ;
+        if (str.equals("DECOMISIONADO")) this.filtroEstadoSel = 9 ;
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -4826,6 +4853,11 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         if (str.equals("MIGUEL"))            this.filtroAgente = 6 ;
         if (str.equals("SHEILA"))            this.filtroAgente = 7 ;
         if (str.equals("MARIO SORIA"))       this.filtroAgente = 8 ;
+        if (str.equals("ALBERTO"))           this.filtroAgente = 9 ;
+        if (str.equals("AGENTE 01"))         this.filtroAgente = 10 ;
+        if (str.equals("AGENTE 02"))         this.filtroAgente = 11 ;
+        if (str.equals("AGENTE 03"))         this.filtroAgente = 12 ;
+        if (str.equals("AGENTE 04"))         this.filtroAgente = 13 ;
        
     }//GEN-LAST:event_ListaAgentesActionPerformed
 
@@ -4892,6 +4924,12 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         if (str.equals("MIGUEL"))               this.filtroComercial = 6 ;
         if (str.equals("SHEILA"))               this.filtroComercial = 7 ;
         if (str.equals("MARIO SORIA"))          this.filtroComercial = 8 ;
+        if (str.equals("ALBERTO"))              this.filtroComercial = 9 ;
+        if (str.equals("AGENTE 01"))            this.filtroComercial = 10 ;
+        if (str.equals("AGENTE 02"))            this.filtroComercial = 11 ;
+        if (str.equals("AGENTE 03"))            this.filtroComercial = 12 ;
+        if (str.equals("AGENTE 04"))            this.filtroComercial = 13 ;
+        
         
     }//GEN-LAST:event_ListaComercialLiqActionPerformed
 
@@ -5163,6 +5201,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel201;
     private javax.swing.JLabel jLabel202;
     private javax.swing.JLabel jLabel203;
+    private javax.swing.JLabel jLabel204;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -5209,6 +5248,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
@@ -5501,6 +5541,10 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField291;
     private javax.swing.JTextField jTextField292;
     private javax.swing.JTextField jTextField293;
+    private javax.swing.JTextField jTextField294;
+    private javax.swing.JTextField jTextField295;
+    private javax.swing.JTextField jTextField296;
+    private javax.swing.JTextField jTextField297;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
@@ -5705,7 +5749,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
            this.tablaDatos[indice][29] = jTextField20.getText();    // Tarifa Gas 
            
            this.tablaDatos[indice][41] = jTextField74.getText();    // Agente comercial  
-           this.tablaDatos[indice][43] = jTextField1.getText();    // C SERVICIOS  
+           this.tablaDatos[indice][33] = jTextField1.getText();    // C SERVICIOS  
            
           this.tablaDatos[indice][39] = jTextField24.getText();     // Fecha doc out  
           this.tablaDatos[indice][34] = jTextField9.getText();      // Oferta 
@@ -5715,7 +5759,18 @@ public final class pymesAdministracionTopComponent extends TopComponent {
           this.tablaDatos[indice][38] = jTextField30.getText();      // Pagado Fenosa texto
           this.tablaDatos[indice][45] = jTextField31.getText();      // Pagado Fenosa total numero
           this.tablaDatos[indice][46] = jTextField6.getText();      //  Reactiva
+          
+          if (this.tablaDatos[indice][43] == "1" ) jCheckBox28.setSelected(true);    //   Gas
+          if (this.tablaDatos[indice][43] == "2" ) jCheckBox29.setSelected(true);    //   Luz
+          if (this.tablaDatos[indice][43] == "3" ) jCheckBox30.setSelected(true);    //   Dual
+                       
+          
+          
        }
+     
+     
+     
+     
      public void ActualizaRegistro(){
         int i,L,G,s1,s2,s3,s4,s5,D,s6,s7,s9;
         int resp=JOptionPane.showConfirmDialog(null,"¿Actualizar registro en Base de Datos?");
@@ -5760,7 +5815,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         
                         // ..............................................
                                               
-                        this.tablaDatos[i][33] = "0" ;
+                        this.tablaDatos[i][43] = "0" ;
                         if (jCheckBox28.isSelected()) { G=1 ; this.tablaDatos[i][43] = "1";} else { G=0; }     //   Gas
                         if (jCheckBox29.isSelected()) { L=1 ; this.tablaDatos[i][43] = "2";} else { L=0 ; }    //   Luz
                         if (jCheckBox30.isSelected()) { D=1 ; this.tablaDatos[i][43] = "3";} else { D=0 ; }    //   Dual
@@ -6259,9 +6314,9 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     
                     // ..........................................................
                     
-                    if (this.tablaDatos[ireg][33].equals("1")) jCheckBox28.setSelected(true); else jCheckBox28.setSelected(false);
-                    if (this.tablaDatos[ireg][33].equals("2")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
-                    if (this.tablaDatos[ireg][33].equals("3")) jCheckBox30.setSelected(true); else jCheckBox30.setSelected(false);
+                    if (this.tablaDatos[ireg][43].equals("1")) jCheckBox28.setSelected(true); else jCheckBox28.setSelected(false);
+                    if (this.tablaDatos[ireg][43].equals("2")) jCheckBox29.setSelected(true); else jCheckBox29.setSelected(false);
+                    if (this.tablaDatos[ireg][43].equals("3")) jCheckBox30.setSelected(true); else jCheckBox30.setSelected(false);
                  
                    // .........................................................  
                     
@@ -6343,17 +6398,30 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 TableColumn col7 = miTablaCer.getColumn("CUPS_Gas");
                 TableColumn col8 = miTablaCer.getColumn("CUPS_Elect");
                 TableColumn col9 = miTablaCer.getColumn("Producto");
-           
-                col0.setMinWidth(10);
+                TableColumn col10 = miTablaCer.getColumn("Grupo_comision");
+                TableColumn col11 = miTablaCer.getColumn("Grupo_consumo");
+                TableColumn col12 = miTablaCer.getColumn("Año");
+                TableColumn col13 = miTablaCer.getColumn("Mes");
+                TableColumn col14 = miTablaCer.getColumn("Periodo");
+                TableColumn col15 = miTablaCer.getColumn("ID");
+                
+                col15.setMinWidth(35);
+                col0.setMinWidth(25);
                 col1.setMinWidth(40);
                 col2.setMinWidth(40);
                 col3.setMinWidth(200);
                 col4.setMinWidth(50);
                 col5.setMinWidth(40);
                 col6.setMinWidth(120);
-                col7.setMinWidth(150);
-                col8.setMinWidth(150);
+                col7.setMinWidth(140);
+                col8.setMinWidth(140);
                 col9.setMinWidth(350);
+                col10.setMinWidth(170);
+                col11.setMinWidth(170);
+                col12.setMaxWidth(30);
+                col13.setMaxWidth(35);
+                col14.setMaxWidth(35);
+              
                 miBarraCer.setViewportView(miTablaCer);
                 
                 // .........................................................  
@@ -7015,10 +7083,9 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             Cell celda;
 
 
-            String[] titulos = { "idColor","TurGas","CUPS Gas","CUPS Electricidad","TITULAR","CIF/NIF",
-                                 "SVGC","SVGX","SVG B","SVE","SVGH",
-                                 "SVG con Calef","SVG Sin Calef","SPP","T.PLANA","OBSERVACIONES","Nº DE PRODUCTOS" };                                                                   // 13 CAMPOS
-
+            String[] titulos = { "idColor","CUPSELEC","TITULAR","CIF/NIF",
+                                 "CONSUMO kwh","SVG","SVE","TARIFA","OFERTA",
+                                 "OBSERVACIONES","PLANES","DIRECTRIZ" };                                                                  
            
            
             // Creamos el encabezado
@@ -7041,76 +7108,34 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 
                
                col1 = String.valueOf(miTablaLiquida.getValueAt(j, 0)) ;     //idcolor
-               col2 = String.valueOf(miTablaLiquida.getValueAt(j, 1)) ;     // tur
-               col3 = (String) miTablaLiquida.getValueAt(j, 2);             // cups gas
-               col4 = (String) miTablaLiquida.getValueAt(j, 3);             // cups elect
-               col5 = (String) miTablaLiquida.getValueAt(j, 4);             // Titular
-               col6 = (String) miTablaLiquida.getValueAt(j, 5);             // cifnif
-               
-               col7 = String.valueOf(miTablaLiquida.getValueAt(j, 6)) ;     //p1
-               col8 = String.valueOf(miTablaLiquida.getValueAt(j, 7)) ;     //p2
-               col9 = String.valueOf(miTablaLiquida.getValueAt(j, 8)) ;     //p3
-               col10 = String.valueOf(miTablaLiquida.getValueAt(j, 9)) ;    //p4
-               col11 = String.valueOf(miTablaLiquida.getValueAt(j, 10)) ;   //p5
-               col12 = String.valueOf(miTablaLiquida.getValueAt(j, 11)) ;   //p6
-               col13 = String.valueOf(miTablaLiquida.getValueAt(j, 12)) ;   //p7
-               col14 = String.valueOf(miTablaLiquida.getValueAt(j, 13)) ;   //p8
-               col17 = String.valueOf(miTablaLiquida.getValueAt(j, 14)) ;   //p9
-               col15 = (String) miTablaLiquida.getValueAt(j, 15);             // observaciones
-               
-               col16 = String.valueOf(miTablaLiquida.getValueAt(j, 15)) ;     //nº total productos
-               
+               col2 = (String) miTablaLiquida.getValueAt(j, 1);             // cups gas
+               col3 = (String) miTablaLiquida.getValueAt(j, 2);             // Titular
+               col4 = (String) miTablaLiquida.getValueAt(j, 3);             // cifnif
+               col5 = String.valueOf(miTablaLiquida.getValueAt(j, 4)) ;     // consumo
+               col6 = String.valueOf(miTablaLiquida.getValueAt(j, 5)) ;     // svg
+               col7 = String.valueOf(miTablaLiquida.getValueAt(j, 6)) ;     // sve
+               col8 = (String) miTablaLiquida.getValueAt(j, 7);             // tarifa
+               col9 = (String) miTablaLiquida.getValueAt(j, 8);             // oferta
+               col10 = (String) miTablaLiquida.getValueAt(j, 9);             // observaciones
+               col11 = String.valueOf(miTablaLiquida.getValueAt(j, 10));             // Planes
+               col12 = String.valueOf(miTablaLiquida.getValueAt(j, 11));             // Directriz
+                             
                // ....................................................................................
                
                celda = fila.createCell(i);  celda.setCellValue(col1);      i++;        // 
                
-               celda = fila.createCell(i);    
-               if (col2.equals("1") )  celda.setCellValue("X"); else 
-                                                             celda.setCellValue("");              i++;        // Tur Gas
-               
-               
+               celda = fila.createCell(i);  celda.setCellValue(col2);      i++;   
                celda = fila.createCell(i);  celda.setCellValue(col3);      i++;        // 
                celda = fila.createCell(i);  celda.setCellValue(col4);      i++;        // 
                celda = fila.createCell(i);  celda.setCellValue(col5);      i++;        // 
                celda = fila.createCell(i);  celda.setCellValue(col6);      i++;        //
-
-               celda = fila.createCell(i);  
-               if (col7.equals("1") )  celda.setCellValue("X"); else 
-                                                             celda.setCellValue("");              i++;        // SVGComplet
-
-               celda = fila.createCell(i);  
-               if (col8.equals("1") )  celda.setCellValue("X"); else 
-                                                             celda.setCellValue("");              i++;        // SVGXpres
-
-               celda = fila.createCell(i);  
-               if (col9.equals("1") )  celda.setCellValue("X"); else 
-                                                             celda.setCellValue("");              i++;        // SVG Básico
-
-              celda = fila.createCell(i);  
-              if (col10.equals("1") )   celda.setCellValue("X"); else 
-                                                             celda.setCellValue("");              i++;        //SVELECTRIC XPRES
-
-              celda = fila.createCell(i);  
-              if (col11.equals("1") )  celda.setCellValue("X"); else 
-                                                            celda.setCellValue("");               i++;         //SVGHOGAR
-                                                            
-              celda = fila.createCell(i);  
-              if (col12.equals("1") )  celda.setCellValue("X"); else 
-                                                            celda.setCellValue("");               i++;         //
-              celda = fila.createCell(i);  
-              if (col13.equals("1") )  celda.setCellValue("X"); else 
-                                                            celda.setCellValue("");               i++;         //    
-               celda = fila.createCell(i);  
-              if (col14.equals("1") )  celda.setCellValue("X"); else 
-                                                            celda.setCellValue("");               i++;         //    SPP
-                                                              celda = fila.createCell(i);  
-              if (col17.equals("1") )  celda.setCellValue("X"); else 
-                                                            celda.setCellValue("");               i++;         //    TARIFA PLANA
-                    
-                                                            
-              celda = fila.createCell(i);  celda.setCellValue(col15);      i++;             // observaciones
-              celda = fila.createCell(i);  celda.setCellValue(col16);      i++;             // n total productos 
-
+               celda = fila.createCell(i);  celda.setCellValue(col7);      i++;        //      
+               celda = fila.createCell(i);  celda.setCellValue(col8);      i++;        //
+               celda = fila.createCell(i);  celda.setCellValue(col9);      i++;        // 
+               celda = fila.createCell(i);  celda.setCellValue(col10);      i++;        //
+               celda = fila.createCell(i);  celda.setCellValue(col11);      i++;        //
+               celda = fila.createCell(i);  celda.setCellValue(col12);      i++;        //
+                  
             }
 
 
@@ -7158,16 +7183,31 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     // -------------------------------------------------------------------------------------------------
        public void actualizarCalculosLiquidaciones() {
            
-                int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,ptot,nReg;
-                int pn1,pn2,pn3,pn4,pn5,pn6,pn7,pn8,pn9,pn10,pntot;
-                double v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,vtot,val,v11,v12,v13;
-                double vn1,vn2,vn3,vn4,vn5,vn6,vn7,vn8,vn9,vn10,vntot;
+                int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,ptot,nReg;
+                int pn1,pn2,pn3,pn4,pn5,pn6,pn7,pn8,pn9,pn10,pn11,pn12,pn13,pn14,pn15,pn16,pn17,pn18,pn19,pn20,pn21,pntot;
+                int pdn1,pdn2,pdn3,pdn4,pdn5,pdn6,pdn7,pdn8,pdn9,pdn10,pdn11,pdn12,pdn13,pdn14;
+                int pd1,pd2,pd3,pd4,pd5,pd6,pd7,pd8,pd9,pd10,pd11,pd12,pd13,pd14,pd15,pd16,pdtot;
+                double v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,vtot,val,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21;
+                double vd1,vd2,vd3,vd4,vd5,vd6,vd7,vd8,vd9,vd10,vdtot,vald,vd11,vd12,vd13,vd14;
+                double vn1,vn2,vn3,vn4,vn5,vn6,vn7,vn8,vn9,vn10,vn11,vn12,vn13,vn14,vn15,vn16,vn17,vn18,vn19,vn20,vn21,vntot;
+                double vdn1,vdn2,vdn3,vdn4,vdn5,vdn6,vdn7,vdn8,vdn9,vdn10,vdn11,vdn12,vdn13,vdn14 ;
+                String fechaSel2 ="";
                 
                 String dd = jTextField40.getText() ;
                 String mm = jTextField72.getText() ;
                 String aa = jTextField73.getText() ;
                 
-                String fechaSel = aa+"-"+mm+"-"+dd+" 00:00:00" ;
+                String dd2 = jTextField294.getText() ;
+                String mm2 = jTextField295.getText() ;
+                String aa2 = jTextField296.getText() ;
+                
+                    String fechaSel = aa+"-"+mm+"-"+dd+" 00:00:00" ;
+                
+                if (!dd2.equals("00") && !mm2.equals("00")){
+                     fechaSel2 = aa2+"-"+mm2+"-"+dd2+" 00:00:00" ;
+                }
+                
+                
                 
                 System.out.println("----COMIENZO EL FORMATEO TABLA LIQUIDACIONES --- Fecha = "+fechaSel);
                 
@@ -7187,7 +7227,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 model.addColumn("TARIFA");
                 model.addColumn("OFERTA");
                 model.addColumn("OBSERVACIONES");
-                model.addColumn("Nº DE PRODUCTOS");
+                model.addColumn("PLANES");
+                model.addColumn("DIRECTRIZ");
                
 		miTablaLiquida.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		miTablaLiquida.getTableHeader().setReorderingAllowed(false);
@@ -7206,117 +7247,304 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 		 * enviamos el objeto TableModel, como mandamos el objeto podemos
 		 * manipularlo desde el metodo
 		 */
-		nReg=miPymesDao2.tablaLiquidacionesPymes(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial);
+		nReg=miPymesDao2.tablaLiquidacionesPymes(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,fechaSel2);
                 this.nLiquidaciones = nReg;
                 // ................................................................................................................................
                 
-                p1 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,1,0,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,0);
-                p2 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,2,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,1);
-                p3 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,3,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,2);
-                p4 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,4,10000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,3); 
-                p5 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,5,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,4);
-                p6 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,6,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,5);
-                p7 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,7,10000,15000,fechaSel, this.filtroZonaLiq,this.filtroComercial,6); 
-                p8 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,8,15000,20000,fechaSel, this.filtroZonaLiq,this.filtroComercial,7);
-                p9 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,9,20000,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,8);
-                p10 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,10,50000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,9);
-                p11 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,11,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,10);
-                p12 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,12,250000,350000,fechaSel, this.filtroZonaLiq,this.filtroComercial,11);
-                p13 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,13,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
-                p14 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,14,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
+                p1 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,1,0,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2,0);
+                p2 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,2,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,1,fechaSel2,0);
+                p3 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,3,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,2,fechaSel2,0);
+                p4 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,4,10000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,3,fechaSel2,0); 
+                p5 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,5,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,4,fechaSel2,0);
+                p6 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,6,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,5,fechaSel2,0);
+                p7 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,7,10000,15000,fechaSel, this.filtroZonaLiq,this.filtroComercial,6,fechaSel2,0); 
+                p8 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,8,15000,20000,fechaSel, this.filtroZonaLiq,this.filtroComercial,7,fechaSel2,0);
+                p9 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,9,20000,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,8,fechaSel2,0);
+                p10 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,10,50000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,9,fechaSel2,0);
+                p11 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,11,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,10,fechaSel2,0);
+                p12 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,12,250000,350000,fechaSel, this.filtroZonaLiq,this.filtroComercial,11,fechaSel2,0);
+                p13 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,13,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,0);
+                p14 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,14,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,0);
                
-                p15 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,15,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
-                p16 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,16,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
+                p15 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,15,0,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2,3);
+                p16 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,16,0,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
                 
-                // ................................................................................................................................
-                ptot = p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14 ; 
+                p17 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,17,0,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                p18 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,18,50000,75000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                p19 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,19,0,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                p20 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,20,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                p21 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,21,250000,500000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                
+// ................................................................................................................................
+                ptot = p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p11+p12+p13+p14+p17+p18+p19+p20+p21 ; 
                 // ................................................................................................................................
                
-                jTextField46.setText(String.valueOf(p1));               //
-                jTextField106.setText(String.valueOf(p2));               // 
-                jTextField125.setText(String.valueOf(p3));               // 
-                jTextField138.setText(String.valueOf(p4));              // 
-                jTextField139.setText(String.valueOf(p5));               // 
-                jTextField140.setText(String.valueOf(p6));               // 
-                jTextField141.setText(String.valueOf(p7));               // 
-                jTextField77.setText(String.valueOf(p8));               // 
-                jTextField143.setText(String.valueOf(p9));             // 
-                jTextField144.setText(String.valueOf(p10));             // 
-                jTextField145.setText(String.valueOf(p11));             // 
-                jTextField146.setText(String.valueOf(p12));             // 
-                jTextField147.setText(String.valueOf(p13));             //
-                jTextField115.setText(String.valueOf(p14));             // 
-                jTextField133.setText(String.valueOf(p15));             // 
-                jTextField137.setText(String.valueOf(p16));             // 
-                jTextField70.setText(String.valueOf(ptot));             // 
+                jTextField106.setText(String.valueOf(p2));              //  Tarifa 2.1 -2.1 DHA --- 0 - 5,000 kWh/año
+                jTextField125.setText(String.valueOf(p3));              //  Tarifa 2.1 -2.1 DHA --- 5,000 - 10,000 kWh/año
+                jTextField138.setText(String.valueOf(p4));              //  Tarifa 2.1 -2.1 DHA --- 10,000 - 100,000 kWh/año
                 
-                          
+                jTextField139.setText(String.valueOf(p5));              //  Tarifa 3.0A - 3.1A --- 0 - 5,000 kWh/año
+                jTextField140.setText(String.valueOf(p6));              //  Tarifa 3.0A - 3.1A --- 5,000 - 10,000 kWh/año 
+                jTextField141.setText(String.valueOf(p7));              //  Tarifa 3.0A - 3.1A --- 10,000 - 15,000 kWh/año
+                jTextField77.setText(String.valueOf(p8));               //  Tarifa 3.0A - 3.1A --- 15,000 - 20,000 kWh/año
+                jTextField143.setText(String.valueOf(p9));              //  Tarifa 3.0A - 3.1A --- 20,000 - 50,000 kWh/año
+                jTextField144.setText(String.valueOf(p10));             //  Tarifa 3.0A - 3.1A --- 50,000 - 100,000 kWh/año
+                jTextField145.setText(String.valueOf(p11));             //  Tarifa 3.0A - 3.1A --- 100,000 - 250,000 kWh/año
+                jTextField146.setText(String.valueOf(p12));             //  Tarifa 3.0A - 3.1A --- 250,000 - 350,000 kWh/año
+                jTextField147.setText(String.valueOf(p13));             //  Tarifa 3.0A - 3.1A --- 350,000 - 450,000 kWh/año
+                jTextField115.setText(String.valueOf(p14));             //  Tarifa 3.0A - 3.1A --- 450,000 kWh/año - 
+               
+                jTextField137.setText(String.valueOf(p15));             //    sve
+                jTextField133.setText(String.valueOf(p16));             //    svg
+                
+                jTextField32.setText(String.valueOf(p17));             //    Gas  (3.3) 50.000 kwha  
+                jTextField33.setText(String.valueOf(p18));             //    Gas  (3.3) 75.000 kwha 
+                jTextField34.setText(String.valueOf(p19));             //    Gas  (3.4) 100.000 kwha 
+                jTextField35.setText(String.valueOf(p20));             //    Gas  (3.4) 250.000 kwha 
+                jTextField36.setText(String.valueOf(p21));             //    Gas  (3.4) 500.000 kwha 
+                
+                jTextField70.setText(String.valueOf(ptot));             // Total
+                            
+                // ................................................................................................................................
+                //                                              PLANES
                 // ................................................................................................................................
                 
-         //      val = Double.parseDouble(jTextField42.getText()) ;
+                v1  = p1 * Double.parseDouble(jTextField58.getText());          jTextField149.setText(String.valueOf(v1)); //  Tarifa 2.0 -2.0 DHA 
             
-                v2 = p4 * Double.parseDouble(jTextField58.getText());   jTextField64.setText(String.valueOf(v2));
+                v2  = p2 * Double.parseDouble(jTextField60.getText());          jTextField66.setText(String.valueOf(v2)); //  Tarifa 2.1 -2.1 DHA --- 0 - 5,000 kWh/año
+                v3  = p3 * Double.parseDouble(jTextField61.getText());          jTextField67.setText(String.valueOf(v3)); //  Tarifa 2.1 -2.1 DHA --- 5,000 - 10,000 kWh/año
+                v4  = p4 * Double.parseDouble(jTextField62.getText());          jTextField68.setText(String.valueOf(v4)); //  Tarifa 2.1 -2.1 DHA --- 10,000 - 100,000 kWh/año 
+                
+                v5  = p5 * Double.parseDouble(jTextField122.getText());         jTextField110.setText(String.valueOf(v5)); //  Tarifa 3.0A - 3.1A --- 0 - 5,000 kWh/año
+                v6  = p6 * Double.parseDouble(jTextField156.getText());         jTextField114.setText(String.valueOf(v6)); //  Tarifa 3.0A - 3.1A --- 5,000 - 10,000 kWh/año 
+                v7  = p7 * Double.parseDouble(jTextField157.getText());         jTextField85.setText(String.valueOf(v7));//  Tarifa 3.0A - 3.1A --- 10,000 - 15,000 kWh/año
+                v8  = p8 * Double.parseDouble(jTextField158.getText());         jTextField88.setText(String.valueOf(v8)); //  Tarifa 3.0A - 3.1A --- 15,000 - 20,000 kWh/año
+                v9  = p9 * Double.parseDouble(jTextField159.getText());         jTextField91.setText(String.valueOf(v9)); //  Tarifa 3.0A - 3.1A --- 20,000 - 50,000 kWh/año
+                v10 = p10 * Double.parseDouble(jTextField160.getText());        jTextField100.setText(String.valueOf(v10)); //  Tarifa 3.0A - 3.1A --- 50,000 - 100,000 kWh/año
+                v11 = p11 * Double.parseDouble(jTextField161.getText());        jTextField101.setText(String.valueOf(v11)); //  Tarifa 3.0A - 3.1A --- 100,000 - 250,000 kWh/año
+                v12 = p12 * Double.parseDouble(jTextField162.getText());        jTextField102.setText(String.valueOf(v12)); //  Tarifa 3.0A - 3.1A --- 250,000 - 350,000 kWh/año
+                v13 = p13 * Double.parseDouble(jTextField163.getText());        jTextField103.setText(String.valueOf(v13)); //  Tarifa 3.0A - 3.1A --- 350,000 - 450,000 kWh/año  
+                v14 = p14 * Double.parseDouble(jTextField164.getText());        jTextField118.setText(String.valueOf(v14)); //  Tarifa 3.0A - 3.1A --- 450,000 kWh/año -
+                
+                v15 = p15 * Double.parseDouble(jTextField135.getText());        jTextField134.setText(String.valueOf(v15)); //  sve
+                v16 = p16 * Double.parseDouble(jTextField131.getText());        jTextField130.setText(String.valueOf(v16)); //  svg
+                
+                v17 = p17 * Double.parseDouble(jTextField44.getText());         jTextField261.setText(String.valueOf(v17)); //  Gas  (3.3) 50.000 kwha  
+                v18 = p18 * Double.parseDouble(jTextField45.getText());         jTextField262.setText(String.valueOf(v18)); //  Gas  (3.3) 75.000 kwha  
+                v19 = p19 * Double.parseDouble(jTextField258.getText());        jTextField263.setText(String.valueOf(v19)); //  Gas  (3.4) 100.000 kwha   
+                v20 = p20 * Double.parseDouble(jTextField259.getText());        jTextField264.setText(String.valueOf(v20)); //  Gas  (3.4) 250.000 kwha   
+                v21 = p21 * Double.parseDouble(jTextField260.getText());        jTextField265.setText(String.valueOf(v21)); //  Gas  (3.4) 500.000 kwha    
+                
+                
+                // ................................................................................................................................
+                //                                              DIRECTRIZ
+                // ................................................................................................................................
+                
+                pd1 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,1,0,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2,1);
+                pd2 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,2,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,1,fechaSel2,1);
+                pd3 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,3,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,2,fechaSel2,1);
+                pd4 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,4,10000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,3,fechaSel2,1); 
+                pd5 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,5,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,4,fechaSel2,1);
+                pd6 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,6,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,5,fechaSel2,1);
+                pd7 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,7,10000,15000,fechaSel, this.filtroZonaLiq,this.filtroComercial,6,fechaSel2,1); 
+                pd8 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,8,15000,20000,fechaSel, this.filtroZonaLiq,this.filtroComercial,7,fechaSel2,1);
+                pd9 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,9,20000,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,8,fechaSel2,1);
+                pd10 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,10,50000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,9,fechaSel2,1);
+                pd11 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,11,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,10,fechaSel2,1);
+                pd12 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,12,250000,350000,fechaSel, this.filtroZonaLiq,this.filtroComercial,11,fechaSel2,1);
+                pd13 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,13,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,1);
+                pd14 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,14,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,1);
+               
+              //  p15 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,15,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2);
+              //  p16 = miPymesDao2.contarProductosLiquidacionesPymes(model,this.plogin,this.ppassword,16,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2);
+                
+                // ................................................................................................................................
+                pdtot = pd1+pd2+pd3+pd4+pd5+pd6+pd7+pd8+pd9+pd10+pd11+pd12+pd13+pd14 ; 
+                 
+                // ................................................................................................................................
               
-                v4 = (p2+p3) * Double.parseDouble(jTextField60.getText());  jTextField66.setText(String.valueOf(v4));
-                v5 = p6 * Double.parseDouble(jTextField61.getText());   jTextField67.setText(String.valueOf(v5));
-                v6 = p7 * Double.parseDouble(jTextField62.getText());   jTextField68.setText(String.valueOf(v6));
-                v7 = p8 * Double.parseDouble(jTextField63.getText());   jTextField69.setText(String.valueOf(v7));
-                v8 = (p9-p8) * Double.parseDouble(jTextField109.getText());  jTextField110.setText(String.valueOf(v8));
-                v9 = p10 * Double.parseDouble(jTextField113.getText());  jTextField114.setText(String.valueOf(v9));
-                
-                v11 = p11 * Double.parseDouble(jTextField127.getText());  jTextField126.setText(String.valueOf(v11));
-                v12 = p12 * Double.parseDouble(jTextField131.getText());  jTextField130.setText(String.valueOf(v12));
-                v13 = p13 * Double.parseDouble(jTextField135.getText());  jTextField134.setText(String.valueOf(v13)); 
-                  
-                // ................................................................................................................................
-                
-                pn1 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,0);
-                pn2 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,1);
-                pn3 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,2);
-                pn4 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,3); 
-                pn5 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,4);
-                pn6 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,5);
-                pn7 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,6); 
-                pn8 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,7);
-                
-                pn9 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,8);
-                pn10= miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,9);
+                jTextField46.setText(String.valueOf(pd1));               //  Tarifa 2.0 -2.0 DHA
                
-                 // ................................................................................................................................
+                jTextField48.setText(String.valueOf(pd2));              //  Tarifa 2.1 -2.1 DHA --- 0 - 5,000 kWh/año
+                jTextField49.setText(String.valueOf(pd3));              //  Tarifa 2.1 -2.1 DHA --- 5,000 - 10,000 kWh/año
+                jTextField50.setText(String.valueOf(pd4));              //  Tarifa 2.1 -2.1 DHA --- 10,000 - 100,000 kWh/año
+                
+                jTextField108.setText(String.valueOf(pd5));              //  Tarifa 3.0A - 3.1A --- 0 - 5,000 kWh/año
+                jTextField111.setText(String.valueOf(pd6));              //  Tarifa 3.0A - 3.1A --- 5,000 - 10,000 kWh/año 
+                jTextField76.setText(String.valueOf(pd7));              //  Tarifa 3.0A - 3.1A --- 10,000 - 15,000 kWh/año
+                jTextField142.setText(String.valueOf(pd8));               //  Tarifa 3.0A - 3.1A --- 15,000 - 20,000 kWh/año
+                jTextField78.setText(String.valueOf(pd9));              //  Tarifa 3.0A - 3.1A --- 20,000 - 50,000 kWh/año
+                jTextField80.setText(String.valueOf(pd10));             //  Tarifa 3.0A - 3.1A --- 50,000 - 100,000 kWh/año
+                jTextField81.setText(String.valueOf(pd11));             //  Tarifa 3.0A - 3.1A --- 100,000 - 250,000 kWh/año
+                jTextField82.setText(String.valueOf(pd12));             //  Tarifa 3.0A - 3.1A --- 250,000 - 350,000 kWh/año
+                jTextField83.setText(String.valueOf(pd13));             //  Tarifa 3.0A - 3.1A --- 350,000 - 450,000 kWh/año
+                jTextField148.setText(String.valueOf(pd14));             //  Tarifa 3.0A - 3.1A --- 450,000 kWh/año - 
                
-                jTextField76.setText(String.valueOf(pn5));           // Servihogar
-                jTextField77.setText(String.valueOf(pn4));           // Servielectric
-                jTextField78.setText(String.valueOf(pn1));           // Servigas complet
-                jTextField80.setText(String.valueOf(pn2+pn3));        // Servigas basic + express
-                jTextField81.setText(String.valueOf(pn6));           // Servigas con calefaccion
-                jTextField82.setText(String.valueOf(pn7));           // Servigas sin calefaccion
+                jTextField297.setText(String.valueOf(pdtot));             // Total
                 
-                jTextField83.setText(String.valueOf(pn8));           // TUR
+                // ................................................................................................................................
+             
+                vd1 = pd1 * Double.parseDouble(jTextField104.getText()) ;         jTextField64.setText(String.valueOf(vd1));   //  Tarifa 2.0 -2.0 DHA               
+              
+                vd2  = pd2 * Double.parseDouble(jTextField63.getText());          jTextField119.setText(String.valueOf(vd2)); //  Tarifa 2.1 -2.1 DHA --- 0 - 5,000 kWh/año
+                vd3  = pd3 * Double.parseDouble(jTextField65.getText());          jTextField120.setText(String.valueOf(vd3)); //  Tarifa 2.1 -2.1 DHA --- 5,000 - 10,000 kWh/año
+                vd4  = pd4 * Double.parseDouble(jTextField69.getText());          jTextField121.setText(String.valueOf(vd4)); //  Tarifa 2.1 -2.1 DHA --- 10,000 - 100,000 kWh/año 
                 
-                jTextField115.setText(String.valueOf(pn9-pn8));        // SWITCHING GAS
-                jTextField119.setText(String.valueOf(pn10));          // SWITCHING ELECTRICO
+                vd5  = pd5 * Double.parseDouble(jTextField109.getText());         jTextField126.setText(String.valueOf(vd5)); //  Tarifa 3.0A - 3.1A --- 0 - 5,000 kWh/año
+                vd6  = pd6 * Double.parseDouble(jTextField113.getText());         jTextField127.setText(String.valueOf(vd6)); //  Tarifa 3.0A - 3.1A --- 5,000 - 10,000 kWh/año 
+                vd7  = pd7 * Double.parseDouble(jTextField84.getText());          jTextField128.setText(String.valueOf(vd7));//  Tarifa 3.0A - 3.1A --- 10,000 - 15,000 kWh/año
+                vd8  = pd8 * Double.parseDouble(jTextField87.getText());          jTextField129.setText(String.valueOf(vd8)); //  Tarifa 3.0A - 3.1A --- 15,000 - 20,000 kWh/año
+                vd9  = pd9 * Double.parseDouble(jTextField90.getText());          jTextField150.setText(String.valueOf(vd9)); //  Tarifa 3.0A - 3.1A --- 20,000 - 50,000 kWh/año
+                vd10 = pd10 * Double.parseDouble(jTextField96.getText());         jTextField151.setText(String.valueOf(vd10)); //  Tarifa 3.0A - 3.1A --- 50,000 - 100,000 kWh/año
+                vd11 = pd11 * Double.parseDouble(jTextField97.getText());         jTextField152.setText(String.valueOf(vd11)); //  Tarifa 3.0A - 3.1A --- 100,000 - 250,000 kWh/año
+                vd12 = pd12 * Double.parseDouble(jTextField99.getText());         jTextField153.setText(String.valueOf(vd12)); //  Tarifa 3.0A - 3.1A --- 250,000 - 350,000 kWh/año
+                vd13 = pd13 * Double.parseDouble(jTextField98.getText());         jTextField154.setText(String.valueOf(vd13)); //  Tarifa 3.0A - 3.1A --- 350,000 - 450,000 kWh/año  
+                vd14 = pd14 * Double.parseDouble(jTextField117.getText());        jTextField155.setText(String.valueOf(vd14)); //  Tarifa 3.0A - 3.1A --- 450,000 kWh/año -
+                
+                // ................................................................................................................................
+                // PLANES DECOMISIONADOS
+                
+                pn1 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,1,0,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2,0);
+                pn2 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,2,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,1,fechaSel2,0);
+                pn3 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,3,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,2,fechaSel2,0);
+                pn4 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,4,10000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,3,fechaSel2,0); 
+                pn5 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,5,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,4,fechaSel2,0);
+                pn6 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,6,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,5,fechaSel2,0);
+                pn7 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,7,10000,15000,fechaSel, this.filtroZonaLiq,this.filtroComercial,6,fechaSel2,0); 
+                pn8 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,8,15000,20000,fechaSel, this.filtroZonaLiq,this.filtroComercial,7,fechaSel2,0);
+                pn9 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,9,20000,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,8,fechaSel2,0);
+                pn10 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,10,50000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,9,fechaSel2,0);
+                pn11 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,11,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,10,fechaSel2,0);
+                pn12 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,12,250000,350000,fechaSel, this.filtroZonaLiq,this.filtroComercial,11,fechaSel2,0);
+                pn13 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,13,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,0);
+                pn14 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,14,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,0);
+               
+                pn15 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,15,0,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2,3);
+                pn16 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,16,0,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                
+                pn17 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,17,0,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                pn18 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,18,50000,75000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                pn19 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,19,0,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                pn20 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,20,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                pn21 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,21,250000,500000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,3);
+                 
+                // ................................................................................................................................
+               
+                jTextField47.setText(String.valueOf(pn1));          
+                jTextField218.setText(String.valueOf(pn2));           
+                jTextField219.setText(String.valueOf(pn3));           
+                jTextField220.setText(String.valueOf(pn4));        
+                jTextField221.setText(String.valueOf(pn5));           
+                jTextField222.setText(String.valueOf(pn6)); 
+                jTextField223.setText(String.valueOf(pn7));  
+                jTextField168.setText(String.valueOf(pn8));        
+                jTextField225.setText(String.valueOf(pn9)); 
+                jTextField226.setText(String.valueOf(pn10)); 
+                jTextField227.setText(String.valueOf(pn11)); 
+                jTextField228.setText(String.valueOf(pn12)); 
+                jTextField229.setText(String.valueOf(pn13)); 
+                jTextField212.setText(String.valueOf(pn14)); 
+                jTextField266.setText(String.valueOf(pn15)); 
+                jTextField267.setText(String.valueOf(pn16)); 
+                jTextField268.setText(String.valueOf(pn17)); 
+                jTextField269.setText(String.valueOf(pn18)); 
+                jTextField270.setText(String.valueOf(pn19)); 
+                jTextField289.setText(String.valueOf(pn20)); 
+                jTextField293.setText(String.valueOf(pn21)); 
                 
                 // ................................................................................................................................
                 
-                vn1 = pn5 * Double.parseDouble(jTextField84.getText());         jTextField85.setText(String.valueOf(vn1));
-                vn2 = pn4 * Double.parseDouble(jTextField87.getText());         jTextField88.setText(String.valueOf(vn2));
-                vn3 = pn1 * Double.parseDouble(jTextField90.getText());         jTextField91.setText(String.valueOf(vn3));
-                vn4 = (pn2+pn3) * Double.parseDouble(jTextField96.getText());   jTextField100.setText(String.valueOf(vn4));
-                vn5 = pn6 * Double.parseDouble(jTextField97.getText());         jTextField101.setText(String.valueOf(vn5));
-                vn6 = pn7 * Double.parseDouble(jTextField99.getText());         jTextField102.setText(String.valueOf(vn6));
-                vn7 = pn8 * Double.parseDouble(jTextField98.getText());         jTextField103.setText(String.valueOf(vn7));
-                vn8 = (pn9-pn8) * Double.parseDouble(jTextField117.getText());  jTextField118.setText(String.valueOf(vn8));
-                vn9 = pn10 * Double.parseDouble(jTextField121.getText());       jTextField122.setText(String.valueOf(vn9));
+                vn1  = pn1 * Double.parseDouble(jTextField186.getText());       jTextField231.setText(String.valueOf(vn1));
+                vn2  = pn2 * Double.parseDouble(jTextField187.getText());       jTextField200.setText(String.valueOf(vn2));   
+                vn3  = pn3 * Double.parseDouble(jTextField188.getText());       jTextField201.setText(String.valueOf(vn3));  
+                vn4  = pn4 * Double.parseDouble(jTextField189.getText());       jTextField202.setText(String.valueOf(vn4));  
+                vn5  = pn5 * Double.parseDouble(jTextField238.getText());       jTextField203.setText(String.valueOf(vn5));  
+                vn6  = pn6 * Double.parseDouble(jTextField249.getText());       jTextField204.setText(String.valueOf(vn6));  
+                vn7  = pn7 * Double.parseDouble(jTextField250.getText());       jTextField205.setText(String.valueOf(vn7)); 
+                vn8  = pn8 * Double.parseDouble(jTextField251.getText());       jTextField206.setText(String.valueOf(vn8));  
+                vn9  = pn9 * Double.parseDouble(jTextField252.getText());       jTextField207.setText(String.valueOf(vn9));  
+                vn10 = pn10 * Double.parseDouble(jTextField253.getText());      jTextField208.setText(String.valueOf(vn10));  
+                vn11 = pn11 * Double.parseDouble(jTextField254.getText());      jTextField209.setText(String.valueOf(vn11));  
+                vn12 = pn12 * Double.parseDouble(jTextField255.getText());      jTextField210.setText(String.valueOf(vn12));  
+                vn13 = pn13 * Double.parseDouble(jTextField256.getText());      jTextField211.setText(String.valueOf(vn13));  
+                vn14 = pn14 * Double.parseDouble(jTextField257.getText());      jTextField215.setText(String.valueOf(vn14));  
+                vn15 = pn15 * Double.parseDouble(jTextField276.getText());      jTextField281.setText(String.valueOf(vn15));  
+                vn16 = pn16 * Double.parseDouble(jTextField277.getText());      jTextField282.setText(String.valueOf(vn16));  
+                vn17 = pn17 * Double.parseDouble(jTextField278.getText());      jTextField283.setText(String.valueOf(vn17));  
+                vn18 = pn18 * Double.parseDouble(jTextField279.getText());      jTextField284.setText(String.valueOf(vn18));  
+                vn19 = pn19 * Double.parseDouble(jTextField280.getText());      jTextField285.setText(String.valueOf(vn19));  
+                vn20 = pn20 * Double.parseDouble(jTextField287.getText());      jTextField286.setText(String.valueOf(vn20));  
+                vn21 = pn21 * Double.parseDouble(jTextField291.getText());      jTextField290.setText(String.valueOf(vn21));  
                 
                 // ................................................................................................................................
                 
-                ptot = p1+p2+p3+p4+p5+p6+p7+p8+p9+p10+p13+pn1+pn2+pn3+pn4+pn5+pn6+pn7+pn8+pn9+pn10  ;  
+               
+                // DIRECTRICES DECOMISIONADOS
                 
-                jTextField70.setText(String.valueOf(ptot));
+                pdn1 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,1,0,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2,1);
+                pdn2 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,2,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,1,fechaSel2,1);
+                pdn3 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,3,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,2,fechaSel2,1);
+                pdn4 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,4,10000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,3,fechaSel2,1); 
+                pdn5 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,5,0,5000,fechaSel, this.filtroZonaLiq,this.filtroComercial,4,fechaSel2,1);
+                pdn6 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,6,5000,10000,fechaSel, this.filtroZonaLiq,this.filtroComercial,5,fechaSel2,1);
+                pdn7 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,7,10000,15000,fechaSel, this.filtroZonaLiq,this.filtroComercial,6,fechaSel2,1); 
+                pdn8 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,8,15000,20000,fechaSel, this.filtroZonaLiq,this.filtroComercial,7,fechaSel2,1);
+                pdn9 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,9,20000,50000,fechaSel, this.filtroZonaLiq,this.filtroComercial,8,fechaSel2,1);
+                pdn10 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,10,50000,100000,fechaSel, this.filtroZonaLiq,this.filtroComercial,9,fechaSel2,1);
+                pdn11 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,11,100000,250000,fechaSel, this.filtroZonaLiq,this.filtroComercial,10,fechaSel2,1);
+                pdn12 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,12,250000,350000,fechaSel, this.filtroZonaLiq,this.filtroComercial,11,fechaSel2,1);
+                pdn13 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,13,350000,450000,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,1);
+                pdn14 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,14,450000,0,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2,1);
+               
+                // ................................................................................................................................
+               
+                jTextField217.setText(String.valueOf(pdn1));          
+                jTextField52.setText(String.valueOf(pdn2));           
+                jTextField56.setText(String.valueOf(pdn3));           
+                jTextField57.setText(String.valueOf(pdn4));        
+                jTextField165.setText(String.valueOf(pdn5));           
+                jTextField166.setText(String.valueOf(pdn6)); 
+                jTextField167.setText(String.valueOf(pdn7));  
+                jTextField224.setText(String.valueOf(pdn8));        
+                jTextField169.setText(String.valueOf(pdn9)); 
+                jTextField170.setText(String.valueOf(pdn10)); 
+                jTextField171.setText(String.valueOf(pdn11)); 
+                jTextField172.setText(String.valueOf(pdn12)); 
+                jTextField173.setText(String.valueOf(pdn13)); 
+                jTextField230.setText(String.valueOf(pdn14)); 
                 
-                vtot = v2+v4+v5+v6+v7+v8+v9+v11+v12+v13-vn1-vn2-vn3-vn4-vn5-vn6-vn7-vn8-vn9 ; 
+                // ................................................................................................................................
                 
-                jTextField71.setText(String.valueOf(vtot));
+                vdn1  = pdn1 * Double.parseDouble(jTextField216.getText());       jTextField199.setText(String.valueOf(vdn1));
+                vdn2  = pdn2 * Double.parseDouble(jTextField232.getText());       jTextField235.setText(String.valueOf(vdn2));   
+                vdn3  = pdn3 * Double.parseDouble(jTextField233.getText());       jTextField236.setText(String.valueOf(vdn3));  
+                vdn4  = pdn4 * Double.parseDouble(jTextField234.getText());       jTextField237.setText(String.valueOf(vdn4));  
+                vdn5  = pdn5 * Double.parseDouble(jTextField190.getText());       jTextField239.setText(String.valueOf(vdn5));  
+                vdn6  = pdn6 * Double.parseDouble(jTextField191.getText());       jTextField240.setText(String.valueOf(vdn6));  
+                vdn7  = pdn7 * Double.parseDouble(jTextField192.getText());       jTextField241.setText(String.valueOf(vdn7)); 
+                vdn8  = pdn8 * Double.parseDouble(jTextField193.getText());       jTextField242.setText(String.valueOf(vdn8));  
+                vdn9  = pdn9 * Double.parseDouble(jTextField194.getText());       jTextField243.setText(String.valueOf(vdn9));  
+                vdn10 = pdn10 * Double.parseDouble(jTextField195.getText());      jTextField244.setText(String.valueOf(vdn10));  
+                vdn11 = pdn11 * Double.parseDouble(jTextField196.getText());      jTextField245.setText(String.valueOf(vdn11));  
+                vdn12 = pdn12 * Double.parseDouble(jTextField197.getText());      jTextField246.setText(String.valueOf(vdn12));  
+                vdn13 = pdn13 * Double.parseDouble(jTextField198.getText());      jTextField247.setText(String.valueOf(vdn13));  
+                vdn14 = pdn14 * Double.parseDouble(jTextField214.getText());      jTextField247.setText(String.valueOf(vdn14));  
+                
+                // ................................................................................................................................
+                
+                
+                pntot = pn1+pn2+pn3+pn4+pn5+pn6+pn7+pn8+pn9+pn10+pn11+pn12+pn13+pn14+pn15+pn16+pn17+pn18+pn19+pdn1+pdn2+pdn3+pdn4+pdn5+pdn6+pdn7+pdn8+pdn9+pdn10+pdn11+pdn12+pdn13+pdn14  ;  
+                
+                jTextField70.setText(String.valueOf(ptot-pntot));
+                
+                vntot = vn1+vn2+vn3+vn4+vn5+vn6+vn7+vn8+vn9+vn10+vn11+vn12+vn13+vn14+vn15+vn16+vn17+vn18+vn19+vn20+vn21+vdn1+vdn2+vdn3+vdn4+vdn5+vdn6+vdn7+vdn8+vdn9+vdn10+vdn11+vdn12+vdn13+vdn14 ;
+                vtot = v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+v18+v19+v20+v21+vd1+vd2+vd3+vd4+vd5+vd6+vd7+vd8+vd9+vd10+vd11+vd12+vd13+vd14 ;
+               
+                System.out.println(" Resultados (ptot,pntot,vtot,vntot)=("+ptot+","+pntot+","+vtot+","+vntot+ ")") ;
+                
+                System.out.println("vtot ="+v1+"+"+v2+"+"+v3+"+"+v4+"+"+v5+"+"+v6+"+"+v7+"+"+v8+"+"+v9+"+"+v10+"+"+v11+"+"+v12+"+"+v13+"+"+v14+"+"+vd1+"+ vd2="+vd2+"+"+vd3+"+"+vd4+"+"+vd5+"+"+vd6+"+"+vd7+"+"+vd8+"+"+vd9+"+"+vd10+"+"+vd11+"+"+vd12+"+"+vd13+"+"+vd14);
+                
+                jTextField71.setText(String.valueOf(vtot-vntot));
               
                 
                 // ................................................................................................................................
@@ -7387,6 +7615,12 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 		modelCer.addColumn("Año");
 		modelCer.addColumn("Mes");
 		modelCer.addColumn("Periodo");
+                modelCer.addColumn("CUPS_Gas");
+                modelCer.addColumn("CUPS_Elect");
+                modelCer.addColumn("Grupo_comision");
+                modelCer.addColumn("Grupo_consumo");
+                modelCer.addColumn("Importe");
+                modelCer.addColumn("Producto");
                 modelCer.addColumn("Fecha");
                 modelCer.addColumn("Fecha_Recep.");
                 modelCer.addColumn("Delegacion");
@@ -7401,15 +7635,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 modelCer.addColumn("CodPost");
                 modelCer.addColumn("Municipio");
                 modelCer.addColumn("Provincia");
-                modelCer.addColumn("CUPS_Gas");
-                modelCer.addColumn("CUPS_Elect");
-                modelCer.addColumn("Importe");
-                modelCer.addColumn("Producto");
-                
-              
-                
-                
-        
+                modelCer.addColumn("Grupo_tarifa");
+               
     }
     // -------------------------------------------------------------------------------------------------------------
     

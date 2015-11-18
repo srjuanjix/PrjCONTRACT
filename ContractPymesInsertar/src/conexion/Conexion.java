@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  *
  */
 public class Conexion {
-   static String bd = "sernovenDB"; 
+   static String bd = "sernovendb"; 
    static String login = "admin02";
    static String password = "admin02";
    static String url = "jdbc:mysql://192.168.1.111/"+bd;

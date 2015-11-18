@@ -76,8 +76,9 @@ public class FormatoTablaLiquida implements TableCellRenderer{
             }
                         
         }
-        if (column == 1) {
-          if(((Integer)table.getValueAt(row, 1)).compareTo(new Integer(0))== 0){ 
+        
+        if (column == 5) {
+          if(((Integer)table.getValueAt(row, 5)).compareTo(new Integer(0))== 0){ 
              campoTexto.setText("");
              campoTexto.setOpaque(true); 
          } else {
@@ -96,8 +97,9 @@ public class FormatoTablaLiquida implements TableCellRenderer{
              campoTexto.setOpaque(true); 
           }
         }
-        if (column == 7) {
-          if(((Integer)table.getValueAt(row, 7)).compareTo(new Integer(0))== 0){ 
+        
+        if (column == 10) {
+          if(((Integer)table.getValueAt(row, 10)).compareTo(new Integer(0))== 0){ 
              campoTexto.setText("");
              campoTexto.setOpaque(true); 
          } else {
@@ -106,8 +108,8 @@ public class FormatoTablaLiquida implements TableCellRenderer{
              campoTexto.setOpaque(true); 
           }
         }
-        if (column == 8) {
-          if(((Integer)table.getValueAt(row, 8)).compareTo(new Integer(0))== 0){ 
+        if (column == 11) {
+          if(((Integer)table.getValueAt(row, 11)).compareTo(new Integer(0))== 0){ 
              campoTexto.setText("");
              campoTexto.setOpaque(true); 
          } else {
@@ -116,6 +118,7 @@ public class FormatoTablaLiquida implements TableCellRenderer{
              campoTexto.setOpaque(true); 
           }
         }
+        /*
          if (column == 9) {
           if(((Integer)table.getValueAt(row,9)).compareTo(new Integer(0))== 0){ 
              campoTexto.setText("");
@@ -176,7 +179,7 @@ public class FormatoTablaLiquida implements TableCellRenderer{
              campoTexto.setOpaque(true); 
           }
         }
-           
+         */  
         //Se verifica si el valor de la INCIDENCIA estado es igual a 1  para establecer todas las celdas de dicha fila en color amarillo
         
        

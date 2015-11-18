@@ -485,7 +485,6 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField12)
-                    .addComponent(jTextField10)
                     .addGroup(jPanel24Layout.createSequentialGroup()
                         .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -506,7 +505,8 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel24)
-                                    .addComponent(jLabel32))))
+                                    .addComponent(jLabel32)))
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 51, Short.MAX_VALUE))))
         );
         jPanel24Layout.setVerticalGroup(
@@ -1581,24 +1581,27 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
            this.tablaDatos[indice][4]  =  jTextField4.getText();    // cups electrico
            this.tablaDatos[indice][3]  =  jTextField5.getText();    // cups gas
            this.tablaDatos[indice][5]  =  jTextField7.getText();    // agente
-           this.tablaDatos[indice][6]  =  jTextField10.getText();    // CP
-           this.tablaDatos[indice][7]  =  jTextField10.getText();   // municipio 
-           this.tablaDatos[indice][8]  =  jTextField11.getText();   // provincia
-           this.tablaDatos[indice][9]  =  jTextField12.getText();   // direccion
-           this.tablaDatos[indice][10] =  jTextField13.getText();   // titular
-           this.tablaDatos[indice][11] =  jTextField14.getText();   // nif/cif
-           this.tablaDatos[indice][12] =  jTextField15.getText();   // fecha_firma_cliente
-           this.tablaDatos[indice][13] =  jTextField16.getText();   // consumo elect kwha
-           this.tablaDatos[indice][14] =  jTextField18.getText();   // consumo kwha websales electrico
+      
+           this.tablaDatos[indice][6]  =  jTextField10.getText();   // CP
+           this.tablaDatos[indice][7]  =  jTextField11.getText();   // municipio 
+           this.tablaDatos[indice][8]  =  jTextField12.getText();   // provincia
+           this.tablaDatos[indice][9]  =  jTextField13.getText();   // direccion
+           this.tablaDatos[indice][10] =  jTextField14.getText();   // titular
+           this.tablaDatos[indice][11] =  jTextField15.getText();   // nif/cif
+           this.tablaDatos[indice][12] =  jTextField16.getText();   // fecha firma cliente
+           this.tablaDatos[indice][13] =  jTextField18.getText();   // consumo kwha electrico
+                     
+           this.tablaDatos[indice][14] =  jTextField3.getText();   // consumo kwha websales electrico
+          
            this.tablaDatos[indice][15] =  jTextField2.getText();    // telefono
        
            this.tablaDatos[indice][16] =  jTextField1.getText();    // tarifa gas
-           this.tablaDatos[indice][17] =  jTextField3.getText();    // tarifa electrica
+           this.tablaDatos[indice][17] =  jTextField19.getText();    // tarifa electrica
             
            this.tablaDatos[indice][18] = jTextArea1.getText();      // observaciones
            this.tablaDatos[indice][19] = jTextArea2.getText();      // incidencia
            this.tablaDatos[indice][20] = jTextArea3.getText();      // solucion
-           this.tablaDatos[indice][21] = jTextField22.getText();    // cv comercial
+           this.tablaDatos[indice][21] = jTextField74.getText();    // cv comercial
            
             this.tablaDatos[indice][22] =  jTextField24.getText();    // fecha_memo_out
             this.tablaDatos[indice][23] =  jTextField8.getText();    // empresa origen
@@ -1700,7 +1703,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             
             jTextField4.setText(""); jTextField4.setBackground(Color.white);        // cups electrico
             jTextField5.setText(""); jTextField5.setBackground(Color.white);        // cups gas
-            jTextField6.setText(""); jTextField6.setBackground(Color.white);        // 
+            jTextField6.setText("0"); jTextField6.setBackground(Color.white);        // 
             jTextField7.setText(""); jTextField7.setBackground(Color.white);        // 
           
           
@@ -1712,24 +1715,24 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             jTextField15.setText(""); jTextField15.setBackground(Color.white);      // 
             jTextField16.setText(""); jTextField16.setBackground(Color.white);      // 
          
-            jTextField18.setText(""); jTextField18.setBackground(Color.white);      // 
+            jTextField18.setText("0"); jTextField18.setBackground(Color.white);      // 
         
             jTextField22.setText(""); jTextField22.setBackground(Color.white);      // 
             jTextField23.setText(""); jTextField23.setBackground(Color.white);      // 
             
             jTextArea1.setText("");   jTextArea1.setBackground(Color.white);        // 
-            jTextArea2.setText("");   jTextArea2.setBackground(Color.white);        // 
+            jTextArea2.setText("0");   jTextArea2.setBackground(Color.white);        // 
             jTextArea3.setText("");   jTextArea3.setBackground(Color.white);        // 
             
             jTextField2.setText(""); jTextField2.setBackground(Color.white);        // 
             
             jTextField1.setText(""); jTextField1.setBackground(Color.white);        // 
-            jTextField3.setText(""); jTextField3.setBackground(Color.white);        // 
+            jTextField3.setText("0"); jTextField3.setBackground(Color.white);        // 
             
-            jTextField24.setText(""); jTextField24.setBackground(Color.white);        // 
-            jTextField29.setText(""); jTextField29.setBackground(Color.white);        // 
+            jTextField24.setText("01-01-2000"); jTextField24.setBackground(Color.white);        // 
+            jTextField29.setText("0"); jTextField29.setBackground(Color.white);        // 
             jTextField30.setText(""); jTextField30.setBackground(Color.white);        // 
-            jTextField31.setText(""); jTextField31.setBackground(Color.white);        // 
+            jTextField31.setText("0"); jTextField31.setBackground(Color.white);        // 
             jTextField74.setText(""); jTextField74.setBackground(Color.white);        // 
             
             jTextField8.setText(""); jTextField8.setBackground(Color.white);        // 
@@ -1763,20 +1766,19 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             jTextField7.setText(this.tablaDatos[indice][5]);           // agente
             jTextField10.setText(this.tablaDatos[indice][6]);           // CP
        
-            jTextField10.setText(this.tablaDatos[indice][7]);           // municipio
-            jTextField11.setText(this.tablaDatos[indice][8]);           // provincia
-            jTextField12.setText(this.tablaDatos[indice][9]);           // direccion
-            jTextField13.setText(this.tablaDatos[indice][10]);           // titular
-            jTextField14.setText(this.tablaDatos[indice][11]);           // nif/cif
-            jTextField15.setText(this.tablaDatos[indice][12]);          // fecha firma cliente
-            jTextField16.setText(this.tablaDatos[indice][13]);          // consumo kwha electrico
-            jTextField18.setText(this.tablaDatos[indice][14]);          // consumo kwha electrico websales
-            
+            jTextField11.setText(this.tablaDatos[indice][7]);           // municipio
+            jTextField12.setText(this.tablaDatos[indice][8]);           // provincia
+            jTextField13.setText(this.tablaDatos[indice][9]);           // direccion
+            jTextField14.setText(this.tablaDatos[indice][10]);           // titular
+            jTextField15.setText(this.tablaDatos[indice][11]);           // nif/cif
+            jTextField16.setText(this.tablaDatos[indice][12]);          // fecha firma cliente
+            jTextField18.setText(this.tablaDatos[indice][13]);          // consumo kwha electrico
+            jTextField3.setText(this.tablaDatos[indice][14]);          // consumo kwha electrico websales
             
             jTextField22.setText(this.tablaDatos[indice][15]);           // Telefono
             
             jTextField1.setText(this.tablaDatos[indice][16]);           // tarifa gas
-            jTextField3.setText(this.tablaDatos[indice][17]);           // tarifa electrica
+            jTextField19.setText(this.tablaDatos[indice][17]);           // tarifa electrica
             
             jTextArea1.setText(this.tablaDatos[indice][18]);           // observaciones
             jTextArea2.setText(this.tablaDatos[indice][19]);           // incidencia
@@ -1895,14 +1897,14 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             this.tablaDatos[indice][3]  =  jTextField5.getText();    // cups gas
             this.tablaDatos[indice][5]  =  jTextField7.getText();    // agente
             this.tablaDatos[indice][6]  =  jTextField10.getText();    // CP
-            this.tablaDatos[indice][7]  =  jTextField10.getText();   // municipio 
-            this.tablaDatos[indice][8]  =  jTextField11.getText();   // provincia
-            this.tablaDatos[indice][9]  =  jTextField12.getText();   // direccion
-            this.tablaDatos[indice][10] =  jTextField13.getText();   // titular
-            this.tablaDatos[indice][11] =  jTextField14.getText();   // nif/cif
-            this.tablaDatos[indice][12] =  jTextField15.getText();   // fecha_firma_cliente
-            this.tablaDatos[indice][13] =  jTextField16.getText();   // consumo elect kwha
-            this.tablaDatos[indice][14] =  jTextField18.getText();   // consumo kwha websales electrico
+            this.tablaDatos[indice][7]  =  jTextField11.getText();   // municipio 
+            this.tablaDatos[indice][8]  =  jTextField12.getText();   // provincia
+            this.tablaDatos[indice][9]  =  jTextField13.getText();   // direccion
+            this.tablaDatos[indice][10] =  jTextField14.getText();   // titular
+            this.tablaDatos[indice][11] =  jTextField15.getText();   // nif/cif
+            this.tablaDatos[indice][12] =  jTextField16.getText();   // fecha_firma_cliente
+            this.tablaDatos[indice][13] =  jTextField18.getText();   // consumo elect kwha
+            this.tablaDatos[indice][14] =  jTextField3.getText();   // consumo kwha websales electrico
             this.tablaDatos[indice][15] =  jTextField22.getText();    // telefono
        
             this.tablaDatos[indice][16] =  jTextField20.getText();    // tarifa gas

@@ -255,6 +255,21 @@ public class PymesDao {
                     case 8:
                         strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
                     break;
+                    case 9:
+                        strquery = strquery + " AND Comercial LIKE 'ALBERTO' " ;
+                    break;
+                    case 10:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 01' " ;
+                    break;
+                    case 11:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 02' " ;
+                    break;
+                    case 12:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 03' " ;
+                    break;
+                    case 13:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 04' " ;
+                    break;
                  }
                  
                 switch (filtroMakro){
@@ -765,7 +780,7 @@ public class PymesDao {
 		}
 	}
   // -------------------------------------------------------------------------------------------------------------------------------------------------
-  public int tablaLiquidaciones(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente) {
+  public int tablaLiquidaciones(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,String fechaSel2) {
                 String str;
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
                 int nReg=0;
@@ -773,8 +788,19 @@ public class PymesDao {
                 String strquery = "SELECT idIncidencia,TurGas,CUPS_gas,CUPS_Elect,Titular,NIF_CIF,SVGCompleto,SVGXpres,SVGBasico,SVelectricXpres,Servihogar,SVGCompletoConCalef,SVGCompletoSinCalef,SPP,TarifaPlana,Observaciones FROM t_makro_residencial  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6) " ;
             //    filtroEstado = 3 ;
                  
-                strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  OR idIncidencia=5 OR idIncidencia=3 OR idIncidencia=1 OR idIncidencia=2 ) AND  Fecha LIKE '"+fechaSel+"'" ;
-                  
+                 
+                if (!fechaSel2.equals("")) {
+                    
+                   strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  OR Incidencia=5 OR Incidencia=3 OR Incidencia=1 OR Incidencia=2) AND  Fecha >= '"+fechaSel+"' AND Fecha <='"+fechaSel2+"'";
+                
+                } else {
+                    
+                   strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  OR idIncidencia=5 OR idIncidencia=3 OR idIncidencia=1 OR idIncidencia=2 ) AND  Fecha LIKE '"+fechaSel+"'" ;
+                
+                }
+                
+                
+                
                 switch (filtroProvincia){
                     
                     case 0:
@@ -822,6 +848,21 @@ public class PymesDao {
                         break;
                     case 8:
                         strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
+                    break;
+                    case 9:
+                        strquery = strquery + " AND Comercial LIKE 'ALBERTO' " ;
+                    break;
+                    case 10:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 01' " ;
+                    break;
+                    case 11:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 02' " ;
+                    break;
+                    case 12:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 03' " ;
+                    break;
+                    case 13:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 04' " ;
                     break;
                     
                         
@@ -881,7 +922,7 @@ public class PymesDao {
         return nReg;
     }
    // -------------------------------------------------------------------------------------------------------------------------------------------------
-   public int contarProductosLiquidaciones(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,int producto) {
+   public int contarProductosLiquidaciones(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,int producto,String fechaSel2) {
                 String str,prod="";
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
                   switch (producto){
@@ -945,8 +986,11 @@ public class PymesDao {
                     }
                 } 
             //    filtroEstado = 3 ;
-                 
-                strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  ) AND  Fecha LIKE '"+fechaSel+"'" ;
+                 if (!fechaSel2.equals("")) {
+                     strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  ) AND  Fecha >= '"+fechaSel+"' AND  Fecha <= '"+fechaSel2+"'" ;
+                 } else {
+                     strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  ) AND  Fecha LIKE '"+fechaSel+"'" ;
+                 }
                   
                 switch (filtroProvincia){
                     
@@ -1028,7 +1072,7 @@ public class PymesDao {
         return pTotal;
     }
     // -------------------------------------------------------------------------------------------------------------------------------------------------
-   public int contarProductosLiquidacionesNegativas(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,int producto) {
+   public int contarProductosLiquidacionesNegativas(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,int producto, String fechaSel2) {
                 String str,prod="";
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
                   switch (producto){
@@ -1070,8 +1114,12 @@ public class PymesDao {
                      strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado = 7 AND "+prod+"=1" ;
                 }
             //    filtroEstado = 3 ;
-                 
-                strquery = strquery + " AND idIncidencia=5 AND  Fecha LIKE '"+fechaSel+"'" ;
+                 if (!fechaSel2.equals("")) {
+                     strquery = strquery + " AND (idIncidencia=0 OR idIncidencia=4  ) AND  Fecha >= '"+fechaSel+"' AND  Fecha <= '"+fechaSel2+"'" ;
+                 } else { 
+                     strquery = strquery + " AND idIncidencia=5 AND  Fecha LIKE '"+fechaSel+"'" ;
+                 }
+               
                   
                 switch (filtroProvincia){
                     
@@ -1120,6 +1168,21 @@ public class PymesDao {
                         break;
                     case 8:
                         strquery = strquery + " AND Comercial LIKE 'MARIO SORIA' " ;
+                    break;
+                    case 9:
+                        strquery = strquery + " AND Comercial LIKE 'ALBERTO' " ;
+                    break;
+                    case 10:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 01' " ;
+                    break;
+                    case 11:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 02' " ;
+                    break;
+                    case 12:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 03' " ;
+                    break;
+                    case 13:
+                        strquery = strquery + " AND Comercial LIKE 'AGENTE 04' " ;
                     break;
                  }
                 
@@ -1305,12 +1368,12 @@ public class PymesDao {
                                             fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
 
                                             try {
-                                                fila[5]  = formatDateJava.format(rs.getDate(6)) ;      // fecha  ; 
-                                                fila[6]  = formatDateJava.format(rs.getDate(7)) ;      // fecha recepción ; 
+                                                fila[9]  = formatDateJava.format(rs.getDate(10)) ;      // fecha  ; 
+                                                fila[10]  = formatDateJava.format(rs.getDate(11)) ;      // fecha recepción ; 
 
                                             } catch (NullPointerException nfe){
-                                                fila[5]  = ""; 
-                                                fila[6]  = ""; 
+                                                fila[9]  = ""; 
+                                                fila[10]  = ""; 
                                             }
 
                                     model.addRow(fila);

@@ -53,7 +53,7 @@ import org.openide.awt.ActionReference;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import proceso.Proceso;
-import ventana.ClaseFrame;
+// import ventana.ClaseFrame;
 import ventana.FormatoTabla;
 import ventana.FormatoTablaLiquida;
 // import RenderArbol.RenderArbol;
@@ -155,7 +155,7 @@ public final class ResidencialTopComponent extends TopComponent {
     public int indTabla = 0 ;
        
     // .......................................................... 
-    public ClaseFrame miVentanaPrincipal;
+  //  public ClaseFrame miVentanaPrincipal;
     
     // ..........................................................
     
@@ -202,7 +202,7 @@ public final class ResidencialTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_ResidencialTopComponent());
         setToolTipText(Bundle.HINT_ResidencialTopComponent());
-        System.setProperty("netbeans.buildnumber", "2.0.1");
+        System.setProperty("netbeans.buildnumber", "2.0.5");
         
         System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
 
@@ -516,6 +516,11 @@ public final class ResidencialTopComponent extends TopComponent {
         jTextField71 = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         jTextField70 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField29 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         miBarra02 = new javax.swing.JScrollPane();
         miTablaCertifica = new javax.swing.JTable();
@@ -1482,7 +1487,7 @@ public final class ResidencialTopComponent extends TopComponent {
             }
         });
 
-        ListaAgentes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TODOS AGENTES", "J & C", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA" }));
+        ListaAgentes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TODOS AGENTES", "J & C", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "ALBERTO", "AGENTE 01", "AGENTE 02", "AGENTE 03", "AGENTE 04" }));
         ListaAgentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListaAgentesActionPerformed(evt);
@@ -1608,7 +1613,7 @@ public final class ResidencialTopComponent extends TopComponent {
         jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         org.openide.awt.Mnemonics.setLocalizedText(jLabel61, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel61.text")); // NOI18N
 
-        ListaComercialLiq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar...", "J & C Asesores", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "TODOS" }));
+        ListaComercialLiq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar...", "J & C Asesores", "ETP", "NADINE", "EMILIO-RAQUEL", "SERNOVEN", "MIGUEL", "SHEILA", "MARIO SORIA", "ALBERTO", "AGENTE 01", "AGENTE 02", "AGENTE 03", "AGENTE 04", "TODOS" }));
         ListaComercialLiq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListaComercialLiqActionPerformed(evt);
@@ -2478,6 +2483,16 @@ public final class ResidencialTopComponent extends TopComponent {
                     .addContainerGap(15, Short.MAX_VALUE)))
         );
 
+        jTextField9.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField9.text")); // NOI18N
+
+        jTextField17.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField17.text")); // NOI18N
+
+        jTextField29.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField29.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel34, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel34.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel35, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel35.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -2488,22 +2503,23 @@ public final class ResidencialTopComponent extends TopComponent {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel60)
-                                .addGap(122, 122, 122)
-                                .addComponent(jLabel61)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addGap(163, 163, 163)
+                                        .addComponent(jLabel35)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel61))
+                                    .addComponent(jLabel60))
                                 .addGap(18, 18, 18)
                                 .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel77)
                                 .addGap(18, 18, 18)
                                 .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                                 .addComponent(jLabel62))
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jLabel69))
                                     .addGroup(jPanel11Layout.createSequentialGroup()
                                         .addGap(31, 31, 31)
                                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2512,31 +2528,42 @@ public final class ResidencialTopComponent extends TopComponent {
                                             .addComponent(jLabel75))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(20, 20, 20)
-                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel74)
-                                                    .addComponent(jLabel76)))
-                                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                                .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel73)))
-                                        .addGap(66, 66, 66)
-                                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(botonActualizarCalculos, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(botonGeneraExelLiquida, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel34))
+                                        .addGap(40, 40, 40)
                                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                                .addGap(26, 26, 26)
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                        .addComponent(jLabel76)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                        .addComponent(jLabel74)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(63, 63, 63)
+                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(botonActualizarCalculos, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(botonGeneraExelLiquida, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                        .addGap(26, 26, 26)
+                                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel69)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(miBarra03)
                         .addGap(18, 18, 18)))
@@ -2561,17 +2588,23 @@ public final class ResidencialTopComponent extends TopComponent {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel61)
                             .addComponent(ListaComercialLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel77)
                             .addComponent(ListaZonaLiq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel35)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel62)))
+                        .addComponent(jLabel62)
+                        .addGap(3, 3, 3)))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(22, 22, 22)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonActualizarCalculos)
                             .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2580,21 +2613,24 @@ public final class ResidencialTopComponent extends TopComponent {
                             .addComponent(botonGeneraExelLiquida)
                             .addComponent(jButton1)))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
+                        .addGap(0, 0, 0)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel71)
-                            .addComponent(jLabel73))
+                            .addComponent(jLabel73)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel72)
-                            .addComponent(jLabel74))
+                            .addComponent(jLabel74)
+                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel75)
                             .addComponent(jTextField73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel76))))
+                            .addComponent(jLabel76)
+                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel69)
                 .addGap(18, 18, 18)
@@ -3712,6 +3748,12 @@ public final class ResidencialTopComponent extends TopComponent {
         if (str.equals("MIGUEL"))            this.filtroAgente = 6 ;
         if (str.equals("SHEILA"))            this.filtroAgente = 7 ;
         if (str.equals("MARIO SORIA"))       this.filtroAgente = 8 ;
+        if (str.equals("ALBERTO"))           this.filtroAgente = 9 ;
+        if (str.equals("AGENTE 01"))         this.filtroAgente = 10 ;
+        if (str.equals("AGENTE 02"))         this.filtroAgente = 11 ;
+        if (str.equals("AGENTE 03"))         this.filtroAgente = 12 ;
+        if (str.equals("AGENTE 04"))         this.filtroAgente = 13 ;
+        
     }//GEN-LAST:event_ListaAgentesActionPerformed
 
     private void FiltroIncidenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FiltroIncidenciaActionPerformed
@@ -3761,6 +3803,11 @@ public final class ResidencialTopComponent extends TopComponent {
         if (str.equals("MIGUEL"))               this.filtroComercial = 6 ;
         if (str.equals("SHEILA"))               this.filtroComercial = 7 ;
         if (str.equals("MARIO SORIA"))          this.filtroComercial = 8 ;
+        if (str.equals("ALBERTO"))              this.filtroComercial = 9 ;
+        if (str.equals("AGENTE 01"))            this.filtroComercial = 10 ;
+        if (str.equals("AGENTE 02"))            this.filtroComercial = 11 ;
+        if (str.equals("AGENTE 03"))            this.filtroComercial = 12 ;
+        if (str.equals("AGENTE 04"))            this.filtroComercial = 13 ;
         
         if (this.filtroComercial == 0)  this.filtroComercial = 1; 
         
@@ -4054,6 +4101,8 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -4220,6 +4269,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField167;
     private javax.swing.JTextField jTextField168;
     private javax.swing.JTextField jTextField169;
+    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField170;
     private javax.swing.JTextField jTextField171;
     private javax.swing.JTextField jTextField172;
@@ -4250,6 +4300,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField40;
@@ -4306,6 +4357,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField87;
     private javax.swing.JTextField jTextField88;
     private javax.swing.JTextField jTextField89;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextField90;
     private javax.swing.JTextField jTextField91;
     private javax.swing.JTextField jTextField92;
@@ -4417,7 +4469,7 @@ private void abrirArchivo3() {
           try {           
                 this.archivo = mostrarArchivo(this.nombre);
             } catch (IOException ex) {
-                Logger.getLogger(ClaseFrame.class.getName()).log(Level.SEVERE, null, ex);
+      //          Logger.getLogger(ClaseFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             areaDeTexto.setText(this.archivo);            
@@ -4448,7 +4500,7 @@ private void procesarArchivo() {
 
             } catch (IOException ex) {
 
-                 Logger.getLogger(ClaseFrame.class.getName()).log(Level.SEVERE, null, ex);
+   //              Logger.getLogger(ClaseFrame.class.getName()).log(Level.SEVERE, null, ex);
 
             }  
     
@@ -4475,7 +4527,7 @@ private void procesarArchivoCertificaciones() {
 
             } catch (IOException ex) {
 
-                 Logger.getLogger(ClaseFrame.class.getName()).log(Level.SEVERE, null, ex);
+        //         Logger.getLogger(ClaseFrame.class.getName()).log(Level.SEVERE, null, ex);
 
             }  
     
@@ -5270,15 +5322,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 TableColumn col7 = miTablaCer.getColumn("CUPS_Gas");
                 TableColumn col8 = miTablaCer.getColumn("CUPS_Elect");
                 TableColumn col9 = miTablaCer.getColumn("Producto");
-        /*       TableColumn col10 = miTablaCer.getColumn("IDp");
-                TableColumn col11 = miTablaCer.getColumn("Año.");
-                TableColumn col12 = miTablaCer.getColumn("Mes");
-                TableColumn col13 = miTablaCer.getColumn("NF");
-                TableColumn col14 = miTablaCer.getColumn("Escalera");
-                TableColumn col15 = miTablaCer.getColumn("Piso");
-                TableColumn col16 = miTablaCer.getColumn("Puerta");
-                TableColumn col17 = miTablaCer.getColumn("CodPost");
-          */     
+       
                 col0.setMinWidth(10);
                 col1.setMinWidth(40);
                 col2.setMinWidth(40);
@@ -5289,15 +5333,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 col7.setMinWidth(150);
                 col8.setMinWidth(150);
                 col9.setMinWidth(350);
-         /*     col10.setMinWidth(20);
-                col11.setMinWidth(20);
-                col12.setMinWidth(20);
-                col13.setMinWidth(20);
-                col14.setMinWidth(20);
-                col15.setMinWidth(20);
-                col16.setMinWidth(20);
-                col17.setMinWidth(30);
-            */    
+        
                 
                 miBarraCer.setViewportView(miTablaCer);
                 
@@ -6576,8 +6612,12 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
 		model.addColumn("Año");
 		model.addColumn("Mes");
 		model.addColumn("Periodo");
+                model.addColumn("CUPS GAS");
+                model.addColumn("CUPS ELEC.");
+                model.addColumn("Producto");
+                model.addColumn("Importe");
 		model.addColumn("Fecha");
-                model.addColumn("Fecha Rec BO");
+                model.addColumn("Fecha Rec BO");                
                 model.addColumn("Delegación");
                 model.addColumn("Codigo SAP");
 		model.addColumn("Empresa");
@@ -6592,21 +6632,26 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 model.addColumn("Puerta");
                 model.addColumn("C.Postal");
                 model.addColumn("Municipio");
-                model.addColumn("Provincia");
-                model.addColumn("CUPS GAS");
-                model.addColumn("CUPS ELEC.");
+                model.addColumn("Provincia");               
                 model.addColumn("Consumo Gas");                
-                model.addColumn("Consumo Elec");
-                model.addColumn("Importe");
-                model.addColumn("Producto");
+                model.addColumn("Consumo Elec");               
                 model.addColumn("Grupo Tarifa");
                 model.addColumn("Grupo Consumo");                
                 model.addColumn("Grupo Comision");
                               
-               
-                
 		miTablaCertifica.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		miTablaCertifica.getTableHeader().setReorderingAllowed(false);
+                
+                TableColumn columna1 = miTabla01.getColumn("CUPS GAS");
+                TableColumn columna2 = miTabla01.getColumn("CUPS ELEC.");
+                TableColumn columna3 = miTabla01.getColumn("Producto");
+                TableColumn columna4 = miTabla01.getColumn("Importe");
+               
+                columna1.setMinWidth(130);
+                columna2.setMinWidth(130);
+                columna3.setMinWidth(150);
+                columna4.setMinWidth(50);
+                
 
 		Object[] fila = new Object[33];
                 // para llenar cada columna con lo datos almacenados
@@ -7295,13 +7340,21 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 int pn1,pn2,pn3,pn4,pn5,pn6,pn7,pn8,pn9,pn10,pntot;
                 double v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,vtot,val,v11,v12,v13;
                 double vn1,vn2,vn3,vn4,vn5,vn6,vn7,vn8,vn9,vn10,vntot;
-                
+                 String fechaSel2 ="";
            
                 String dd = jTextField40.getText() ;
                 String mm = jTextField72.getText() ;
                 String aa = jTextField73.getText() ;
                 
+                String dd2 = jTextField9.getText() ;
+                String mm2 = jTextField17.getText() ;
+                String aa2 = jTextField29.getText() ;
+                
                 String fechaSel = aa+"-"+mm+"-"+dd+" 00:00:00" ;
+                
+                if (!dd2.equals("00") && !mm2.equals("00")){
+                     fechaSel2 = aa2+"-"+mm2+"-"+dd2+" 00:00:00" ;
+                }
                 
                 System.out.println("----COMIENZO EL FORMATEO TABLA LIQUIDACIONES --- Fecha = "+fechaSel);
                 
@@ -7350,25 +7403,25 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
 		 * enviamos el objeto TableModel, como mandamos el objeto podemos
 		 * manipularlo desde el metodo
 		 */
-		nReg=miPymesDao2.tablaLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial);
+		nReg=miPymesDao2.tablaLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,fechaSel2);
                 this.nLiquidaciones = nReg;
                 // ................................................................................................................................
                 
-                p1 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,0);
-                p2 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,1);
-                p3 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,2);
-                p4 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,3); 
-                p5 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,4);
-                p6 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,5);
-                p7 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,6); 
-                p8 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,7);
+                p1 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2);
+                p2 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,1,fechaSel2);
+                p3 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,2,fechaSel2);
+                p4 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,3,fechaSel2); 
+                p5 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,4,fechaSel2);
+                p6 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,5,fechaSel2);
+                p7 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,6,fechaSel2); 
+                p8 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,7,fechaSel2);
                 
-                p9 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,8);
-                p10 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,9);
+                p9 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,8,fechaSel2);
+                p10 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,9,fechaSel2);
                 
-                 p11 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,10);
-                 p12 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,11);
-                 p13 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,12);
+                 p11 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,10,fechaSel2);
+                 p12 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,11,fechaSel2);
+                 p13 = miPymesDao2.contarProductosLiquidaciones(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,12,fechaSel2);
                
                 // ................................................................................................................................
                
@@ -7412,17 +7465,17 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                   
                 // ................................................................................................................................
                 
-                pn1 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,0);
-                pn2 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,1);
-                pn3 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,2);
-                pn4 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,3); 
-                pn5 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,4);
-                pn6 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,5);
-                pn7 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,6); 
-                pn8 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,7);
+                pn1 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,0,fechaSel2);
+                pn2 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,1,fechaSel2);
+                pn3 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,2,fechaSel2);
+                pn4 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,3,fechaSel2); 
+                pn5 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,4,fechaSel2);
+                pn6 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,5,fechaSel2);
+                pn7 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,6,fechaSel2); 
+                pn8 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,7,fechaSel2);
                 
-                pn9 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,8);
-                pn10= miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,9);
+                pn9 = miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,8,fechaSel2);
+                pn10= miPymesDao2.contarProductosLiquidacionesNegativas(model,this.plogin,this.ppassword,fechaSel, this.filtroZonaLiq,this.filtroComercial,9,fechaSel2);
                
                  // ................................................................................................................................
                
@@ -7729,7 +7782,11 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 modelCer.addColumn("IDp");  
 		modelCer.addColumn("Año");
 		modelCer.addColumn("Mes");
-		modelCer.addColumn("Periodo");
+                modelCer.addColumn("Periodo");
+                modelCer.addColumn("CUPS_Gas");
+                modelCer.addColumn("CUPS_Elect");
+                modelCer.addColumn("Producto");
+                modelCer.addColumn("Importe");		
                 modelCer.addColumn("Fecha");
                 modelCer.addColumn("Fecha_Recep.");
                 modelCer.addColumn("Delegacion");
@@ -7744,12 +7801,9 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 modelCer.addColumn("CodPost");
                 modelCer.addColumn("Municipio");
                 modelCer.addColumn("Provincia");
-                modelCer.addColumn("CUPS_Gas");
-                modelCer.addColumn("CUPS_Elect");
-                modelCer.addColumn("Importe");
-                modelCer.addColumn("Producto");
-                
-              
+               
+                  
+           
                 
                 
         

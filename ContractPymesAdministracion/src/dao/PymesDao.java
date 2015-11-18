@@ -107,7 +107,7 @@ public class PymesDao {
                 int val;
                 String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
                         + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
-                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,Consumo_gas_kwha,C_servicios,Reactiva,iServicios,iPunteado,P_Fenosa_Total,Empresa_Origen,Oferta"
+                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,Consumo_gas_kwha,C_servicios,Reactiva,iServicios,iPunteado,P_Fenosa_Total,Empresa_Origen,Oferta,sve,svg "
                         + " FROM t_makro_pymes" ;
           /*
         if (str.equals("PENDIENTE"))   this.filtroEstadoSel = 0 ;
@@ -133,7 +133,7 @@ public class PymesDao {
                         strquery = strquery + " WHERE Estado = 1" ;            
                         break;       
                     case 3:
-                        strquery = strquery + " WHERE Estado <= 6" ; 
+                        strquery = strquery + " WHERE Estado <= 8" ; 
                         break; 
                     case 4:
                         strquery = strquery + " WHERE Estado = 3" ; 
@@ -143,6 +143,15 @@ public class PymesDao {
                         break; 
                     case 6:
                         strquery = strquery + " WHERE iPunteado = 0" ; 
+                        break; 
+                    case 7:
+                        strquery = strquery + " WHERE Estado = 5" ; 
+                        break; 
+                    case 8:
+                        strquery = strquery + " WHERE Estado = 6" ; 
+                        break; 
+                    case 9:
+                        strquery = strquery + " WHERE Estado = 7" ; 
                         break; 
                 }        
                   switch (filtroIncidencia){
@@ -234,25 +243,43 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND (Comercial LIKE 'JOSE' OR Comercial LIKE 'J&C') " ;
+                        strquery = strquery + " AND (Agente LIKE 'JOSE' OR Agente LIKE 'J&C') " ;
                         break;
                     case 2:
-                        strquery = strquery + " AND Comercial LIKE 'ETP' " ;
+                        strquery = strquery + " AND Agente LIKE 'ETP' " ;
                         break;
                     case 3:
-                        strquery = strquery + " AND Comercial LIKE 'NADINE' " ;
+                        strquery = strquery + " AND Agente LIKE 'NADINE' " ;
                         break;
                     case 4:
-                        strquery = strquery + " AND Comercial LIKE 'ELANTY' " ;
+                        strquery = strquery + " AND Agente LIKE 'ELANTY' " ;
                         break;
                     case 5:
-                        strquery = strquery + " AND Comercial LIKE 'SERNOVEN' " ;
+                        strquery = strquery + " AND Agente LIKE 'SERNOVEN' " ;
                         break;
                     case 6:
-                        strquery = strquery + " AND Comercial LIKE 'MIGUEL' " ;
+                        strquery = strquery + " AND Agente LIKE 'MIGUEL' " ;
                         break;
                     case 7:
-                        strquery = strquery + " AND Comercial LIKE 'SHEILA' " ;
+                        strquery = strquery + " AND Agente LIKE 'SHEILA' " ;
+                        break;
+                    case 8:
+                        strquery = strquery + " AND Agente LIKE 'MARIO SORIA' " ;
+                        break;
+                    case 9:
+                        strquery = strquery + " AND Agente LIKE 'ALBERTO' " ;
+                        break;
+                    case 10:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 01' " ;
+                        break;
+                    case 11:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 02' " ;
+                        break;
+                    case 12:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 03' " ;
+                        break;
+                    case 13:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 04' " ;
                         break;
                  }
                  
@@ -330,7 +357,7 @@ public class PymesDao {
                                         tablaDatos[cnt][3] = rs.getString("CUPS_Gas") ;                     // CUPS gas
                                         tablaDatos[cnt][4] = rs.getString("CUPS_Elect") ;                   // CUPS electrico
                                         
-                                        tablaDatos[cnt][5] = Integer.toString(rs.getInt("CodPostal")) ;     // cod_postal ;
+                                        tablaDatos[cnt][5] = rs.getString("CodPostal") ;                   // cod_postal ;
                                         tablaDatos[cnt][6] = rs.getString("Municipio");                     // municipio.toUpperCase() ;
                                         tablaDatos[cnt][7] = rs.getString("Provincia");                     //provincia.toUpperCase();
                                         tablaDatos[cnt][8] = rs.getString("Direccion");                     // direccion.toUpperCase();
@@ -376,7 +403,13 @@ public class PymesDao {
                                         tablaDatos[cnt][45]= Double.toString(rs.getDouble("P_Fenosa_Total"));   // Pagado Fenosa número
                                       
                                         tablaDatos[cnt][46]= Double.toString(rs.getDouble("Reactiva"));         // Reactiva
-                                        tablaDatos[cnt][43]="0"; // Tur GAS
+                                        
+                                        tablaDatos[cnt][43]="0";                                                // swe , swg, dual
+                                        if (rs.getInt("svg")==1 )   tablaDatos[cnt][43]="1";                    //  swg
+                                        if (rs.getInt("sve")==1 )   tablaDatos[cnt][43]="2";                    //  swe
+                                        
+                                         if (rs.getInt("svg")==1 && rs.getInt("sve")==1 )   tablaDatos[cnt][43]="3";                    //  dualfuel
+                                        
                                         tablaDatos[cnt][48]="0"; // Tarifa plana
                                         tablaDatos[cnt][51]="0"; // SPP
                                         
@@ -761,15 +794,28 @@ public class PymesDao {
 		}
 	}
   // -------------------------------------------------------------------------------------------------------------------------------------------------
-  public int tablaLiquidacionesPymes(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente) {
+  public int tablaLiquidacionesPymes(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,String fechaSel2) {
                 String str;
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
                 int nReg=0;
                 
-                String strquery = "SELECT Incidencia,CUPS_Elect,Titular,NIF_CIF,Consumo_elect_kwha,Tarifa,svg,sve,Observaciones FROM t_makro_pymes  WHERE (Estado=0 OR ESTADO=1 OR Estado=3) " ;
+                
+                
+                
+                String strquery = "SELECT Incidencia,CUPS_Elect,Titular,NIF_CIF,Consumo_elect_kwha,svg,sve,Tarifa,Oferta,Observaciones,planes,directriz FROM t_makro_pymes  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6 OR Estado=5 OR Estado=7) " ;
             //    filtroEstado = 3 ;
                  
-                strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  OR Incidencia=5 OR Incidencia=3 OR Incidencia=1 OR Incidencia=2) AND  Orden LIKE '"+fechaSel+"'" ;
+                
+                if (!fechaSel2.equals("")) {
+                    
+                   strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  OR Incidencia=5 OR Incidencia=3 OR Incidencia=1 OR Incidencia=2) AND  Orden >= '"+fechaSel+"' AND Orden <='"+fechaSel2+"'";
+                
+                } else {
+                    
+                    strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  OR Incidencia=5 OR Incidencia=3 OR Incidencia=1 OR Incidencia=2) AND  Orden LIKE '"+fechaSel+"'" ;
+                     
+                }
+                
                   
                 switch (filtroProvincia){
                     
@@ -796,7 +842,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J & C' " ;
+                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J&C' " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Agente LIKE 'ETP' " ;
@@ -816,13 +862,31 @@ public class PymesDao {
                     case 7:
                         strquery = strquery + " AND Agente LIKE 'SHEILA' " ;
                         break;
+                    case 8:
+                        strquery = strquery + " AND Agente LIKE 'MARIO SORIA' " ;
+                        break;
+                    case 9:
+                        strquery = strquery + " AND Agente LIKE 'ALBERTO' " ;
+                        break;
+                    case 10:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 01' " ;
+                        break;
+                    case 11:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 02' " ;
+                        break;
+                    case 12:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 03' " ;
+                        break;
+                    case 13:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 04' " ;
+                        break;
                         
                  }
                 
                   strquery = strquery + " ORDER BY Incidencia,id_m_p ASC";
                 
                 System.out.println("La cadena de la consulta ="+strquery);
-         Conexion conex = new Conexion(str1,str2);
+                Conexion conex = new Conexion(str1,str2);
                  int cnt =0;
                  
                //converting date to string dd/MM/yyyy format for example "14/09/2011"
@@ -835,25 +899,15 @@ public class PymesDao {
             while (rs.next()) {
                  
                  // es para obtener los datos y almacenar las filas
-                 Object[] fila = new Object[17];
-                /*
-                 p1 = rs.getInt(7);
-                 p2 = rs.getInt(8);
-                 p3 = rs.getInt(9);
-                 p4 = rs.getInt(10);
-                 p5 = rs.getInt(11);
-                 p6 = rs.getInt(12);
-                 p7 = rs.getInt(13);               
-                
-                 pTotal = p1+p2+p3+p4+p5+p6+p7 ;
-                */
+                 Object[] fila = new Object[12];
+               
                  
                 // para llenar cada columna con lo datos almacenados
-                for (int i = 0; i < 16; i++) 
+                for (int i = 0; i < 12; i++) 
                     
                     fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                   
-                fila[16] = pTotal ;
+               
                 model.addRow(fila);
                 nReg++;
 
@@ -873,7 +927,7 @@ public class PymesDao {
         return nReg;
     }
    // -------------------------------------------------------------------------------------------------------------------------------------------------
-   public int contarProductosLiquidacionesPymes(DefaultTableModel model,String str1,String str2,int idTarifa,double energ1,double energ2,String fechaSel, int filtroProvincia,int filtroAgente,int producto) {
+   public int contarProductosLiquidacionesPymes(DefaultTableModel model,String str1,String str2,int idTarifa,double energ1,double energ2,String fechaSel, int filtroProvincia,int filtroAgente,int producto,String fechaSel2,int planes) {
                 String str,prod="", tarifa="";
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
                 String strquery = "";
@@ -883,105 +937,150 @@ public class PymesDao {
                            tarifa = "";
                            prod = "CUPS_Elect";
                             strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes ";
-                            strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                            strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 1:
                            tarifa = "2.0";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 2:
                            tarifa = "2.1";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 3:
                            tarifa = "2.1";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 4:
                            tarifa = "2.1";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 5:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 6:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 7:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2; 
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2; 
                            break;
                         case 8:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                         case 9:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break; 
                         case 10:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;  
                         case 11:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                         case 12:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;   
                         case 13:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                         case 14:
                            tarifa = "3.";
                            prod = "CUPS_Elect";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
-                           strquery = strquery + " AND Consumo_elect_kwha>"+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                         case 15:
                            tarifa = "";
                            prod = "sve";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND sve=1" ;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND sve=1" ;
                            break; 
                         case 16:
                            tarifa = "";
                            prod = "svg";
-                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=6) AND svg=1" ;
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND svg=1" ;
+                           break;
+                         case 17:
+                           tarifa = "3.3";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 18:
+                           tarifa = "3.3";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 19:
+                           tarifa = "3.4";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 20:
+                           tarifa = "3.4";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 21:
+                           tarifa = "3.4";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado = 0 OR Estado= 1 OR Estado=2 OR Estado=5 OR Estado=6) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
                            break;
                   }
-                strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  ) AND  Orden LIKE '"+fechaSel+"'" ;
+                
+                  if ( fechaSel2.equals("") ){
                   
+                        strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  ) AND  Orden LIKE '"+fechaSel+"'" ;
+                  } else {
+                         strquery = strquery + " AND (Incidencia=0 OR Incidencia=4  ) AND  Orden >= '"+fechaSel+"' AND  Orden <= '"+fechaSel2+"'" ;
+                  }
+                switch (planes){
+                    
+                    case 0:
+                        strquery = strquery + " AND planes = 1 " ;
+                        break;
+                    case 1:
+                        strquery = strquery + " AND directriz = 1 " ;
+                        break;
+                }  
+                
                 switch (filtroProvincia){
                     
                     case 0:
@@ -1007,7 +1106,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J & C' " ;
+                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J&C' " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Agente LIKE 'ETP' " ;
@@ -1026,6 +1125,24 @@ public class PymesDao {
                         break;
                     case 7:
                         strquery = strquery + " AND Agente LIKE 'SHEILA' " ;
+                        break;
+                    case 8:
+                        strquery = strquery + " AND Agente LIKE 'MARIO SORIA' " ;
+                        break;
+                    case 9:
+                        strquery = strquery + " AND Agente LIKE 'ALBERTO' " ;
+                        break;
+                    case 10:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 01' " ;
+                        break;
+                    case 11:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 02' " ;
+                        break;
+                    case 12:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 03' " ;
+                        break;
+                    case 13:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 04' " ;
                         break;
                     
                  }
@@ -1057,51 +1174,160 @@ public class PymesDao {
         return pTotal;
     }
     // -------------------------------------------------------------------------------------------------------------------------------------------------
-   public int contarProductosLiquidacionesNegativas(DefaultTableModel model,String str1,String str2,String fechaSel, int filtroProvincia,int filtroAgente,int producto) {
-                String str,prod="";
+   public int contarProductosLiquidacionesNegativas(DefaultTableModel model,String str1,String str2,int idTarifa,double energ1,double energ2,String fechaSel, int filtroProvincia,int filtroAgente,int producto,String fechaSel2,int planes) {
+                String str,prod="", tarifa="";
                 int val,p1,p2,p3,p4,p5,p6,p7,p8,pTotal=0;
-                  switch (producto){
+                String strquery = "";
+                
+                  switch (idTarifa){
                        case 0:
-                           prod = "SVGCompleto";
+                           tarifa = "";
+                           prod = "CUPS_Elect";
+                            strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes ";
+                            strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2+ " AND (Estado=7)";
                            break;
                        case 1:
-                           prod = "SVGXpres";
+                           tarifa = "2.0";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 2:
-                           prod = "SVGBasico";
+                           tarifa = "2.1";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 3:
-                           prod = "SVelectricXpres";
-                           break;     
+                           tarifa = "2.1";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;
                        case 4:
-                           prod = "Servihogar";
-                           break; 
+                           tarifa = "2.1";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;
                        case 5:
-                           prod = "SVGCompletoConCalef";
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 6:
-                           prod = "SVGCompletoSinCalef";
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
                            break;
                        case 7:
-                           prod = "TurGas";
-                           break;
-                       case 8:
-                           prod = "CUPS_gas";
-                           break;
-                       case 9:
+                           tarifa = "3.";
                            prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2; 
+                           break;
+                        case 8:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;
+                        case 9:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break; 
+                        case 10:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;  
+                        case 11:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;
+                        case 12:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;   
+                        case 13:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;
+                        case 14:
+                           tarifa = "3.";
+                           prod = "CUPS_Elect";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND tarifa LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_elect_kwha>="+energ1+" AND Consumo_elect_kwha<"+energ2;
+                           break;
+                        case 15:
+                           tarifa = "";
+                           prod = "sve";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND sve=1" ;
+                           break; 
+                        case 16:
+                           tarifa = "";
+                           prod = "svg";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND svg=1" ;
+                           break;
+                         case 17:
+                           tarifa = "3.3";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 18:
+                           tarifa = "3.3";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 19:
+                           tarifa = "3.4";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 20:
+                           tarifa = "3.4";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
+                           break;
+                         case 21:
+                           tarifa = "3.4";
+                           prod = "CUPS_Gas";
+                           strquery = "SELECT COUNT("+prod+") FROM t_makro_pymes  WHERE (Estado=7) AND  Tarifa_gas LIKE '%"+tarifa+"%'" ;
+                           strquery = strquery + " AND Consumo_gas_kwha>="+energ1+" AND Consumo_gas_kwha<="+energ2;
                            break;
                   }
-                 String strquery = "";
-                if (producto ==8 || producto==9) {
-                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado <> 3 AND "+prod+" LIKE '%0%'" ;
-                } else {
-                     strquery = "SELECT COUNT("+prod+") FROM t_makro_residencial  WHERE Estado <> 3 AND "+prod+"=1" ;
-                }
-            //    filtroEstado = 3 ;
-                 
-                strquery = strquery + " AND idIncidencia=5 AND  Fecha LIKE '"+fechaSel+"'" ;
+                
+                  if ( fechaSel2.equals("") ){
                   
+                        strquery = strquery + " AND (Incidencia=5  ) AND  Orden LIKE '"+fechaSel+"'" ;
+                  } else {
+                         strquery = strquery + " AND (Incidencia=5  ) AND  Orden >= '"+fechaSel+"' AND  Orden <= '"+fechaSel2+"'" ;
+                  }
+                switch (planes){
+                    
+                    case 0:
+                        strquery = strquery + " AND planes = 1 " ;
+                        break;
+                    case 1:
+                        strquery = strquery + " AND directriz = 1 " ;
+                        break;
+                }  
+                
                 switch (filtroProvincia){
                     
                     case 0:
@@ -1111,13 +1337,13 @@ public class PymesDao {
                         strquery = strquery + " AND  Provincia LIKE 'CASTELL%'" ;
                         break;
                     case 2:
-                        strquery = strquery + " AND  Provincia LIKE 'VALENCIA'" ;            
+                        strquery = strquery + " AND  ( Provincia LIKE 'VALENCIA' OR Provincia NOT LIKE 'CASTELL%')" ;            
                         break;  
                     case 3:
                         strquery = strquery + " AND  Provincia LIKE 'ALICANTE'" ;            
                         break;  
                     case 4:
-                        strquery = strquery + " AND  Provincia NOT LIKE 'VALENCIA' AND Provincia NOT LIKE 'CASTELL%' " ;            
+                        strquery = strquery + " AND  ( Provincia NOT LIKE 'VALENCIA' OR Provincia NOT LIKE 'CASTELL%' ) " ;            
                         break;  
                    
                 }     
@@ -1127,35 +1353,52 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND Comercial LIKE 'JOSE' OR Comercial LIKE 'J & C' " ;
+                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J&C' " ;
                         break;
                     case 2:
-                        strquery = strquery + " AND Comercial LIKE 'ETP' " ;
+                        strquery = strquery + " AND Agente LIKE 'ETP' " ;
                         break;
                     case 3:
-                        strquery = strquery + " AND Comercial LIKE 'NADINE' " ;
+                        strquery = strquery + " AND Agente LIKE 'NADINE' " ;
                         break;
                      case 4:
-                        strquery = strquery + " AND Comercial LIKE 'ELANTY' " ;
+                        strquery = strquery + " AND Agente LIKE 'ELANTY' " ;
                         break;
                     case 5:
-                        strquery = strquery + " AND Comercial LIKE 'SERNOVEN' " ;
+                        strquery = strquery + " AND Agente LIKE 'SERNOVEN' " ;
                         break;
                     case 6:
-                        strquery = strquery + " AND Comercial LIKE 'MIGUEL' " ;
+                        strquery = strquery + " AND Agente LIKE 'MIGUEL' " ;
                         break;
                     case 7:
-                        strquery = strquery + " AND Comercial LIKE 'SHEILA' " ;
+                        strquery = strquery + " AND Agente LIKE 'SHEILA' " ;
                         break;
+                    case 8:
+                        strquery = strquery + " AND Agente LIKE 'MARIO SORIA' " ;
+                        break;
+                    case 9:
+                        strquery = strquery + " AND Agente LIKE 'ALBERTO' " ;
+                        break;
+                    case 10:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 01' " ;
+                        break;
+                    case 11:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 02' " ;
+                        break;
+                    case 12:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 03' " ;
+                        break;
+                    case 13:
+                        strquery = strquery + " AND Agente LIKE 'AGENTE 04' " ;
+                        break;
+                    
                  }
                 
-                  strquery = strquery + " ORDER BY id_m_r DESC";
+                strquery = strquery + " ORDER BY id_m_p DESC";
                 
                 System.out.println("La cadena de la consulta ="+strquery);
                 Conexion conex = new Conexion(str1,str2);
-                 int cnt =0;
-                 
-             
+                int cnt =0;
               
         try {
             Statement estatuto = conex.getConnection().createStatement();
@@ -1189,12 +1432,12 @@ public class PymesDao {
                 sqlStr += "nif LIKE '%"+nif+"%' " ;
                 sqlStr += "OR calle LIKE '%"+direccion+"%' ";
                 
-                if ( !cupsGas.equals(""))  sqlStr += "OR CUPS_Gas LIKE '%"+cupsGas+"%' ";                
-                if ( !cupsEle.equals(""))  sqlStr += "OR CUPS_Elect LIKE '%"+cupsEle+"%'" ;
+                if ( !cupsGas.equals("") && !cupsGas.equals("**") )  sqlStr += "OR CUPS_Gas LIKE '%"+cupsGas+"%' ";                
+                if ( !cupsEle.equals("") && !cupsGas.equals("**") )  sqlStr += "OR CUPS_Elect LIKE '%"+cupsEle+"%'" ;
                 
                 sqlStr += "ORDER BY id DESC" ;
                 
-                 System.out.println("sqlstr="+sqlStr);
+                 System.out.println("-> CERTIFICACIONES :sqlstr="+sqlStr);
                 
 		 Conexion conex = new Conexion(str1,str2);
 		try {
@@ -1223,12 +1466,12 @@ public class PymesDao {
                                             fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
 
                                             try {
-                                                fila[5]  = formatDateJava.format(rs.getDate(6)) ;      // fecha  ; 
-                                                fila[6]  = formatDateJava.format(rs.getDate(7)) ;      // fecha recepción ; 
+                                                fila[11]  = formatDateJava.format(rs.getDate(12)) ;      // fecha  ; 
+                                                fila[12]  = formatDateJava.format(rs.getDate(13)) ;      // fecha recepción ; 
 
                                             } catch (NullPointerException nfe){
-                                                fila[5]  = ""; 
-                                                fila[6]  = ""; 
+                                                fila[11]  = ""; 
+                                                fila[12]  = ""; 
                                             }
 
                                     model.addRow(fila);

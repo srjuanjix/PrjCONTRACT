@@ -84,7 +84,7 @@ public class LiquidacionesDao {
 	public void buscarLiquidaciones(DefaultTableModel model,String str1,String str2,int filtroEstado,int filtroFecha,int filtroProvincia,int filtroAgente, int filtroMakro,int filtroIncidencia,String fProd) {
                 String str;
                 int val;
-                String strquery = "SELECT * FROM t_makro_residencial" ;
+                String strquery = "SELECT * FROM t_makro_pymes" ;
             //    filtroEstado = 3 ;
                 switch (filtroEstado){
                     

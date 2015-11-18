@@ -508,6 +508,7 @@ public void leerArchivoExel() throws IOException {
 	        //
                 int cnt=0;
                 int fProblema = 0 ;
+                int nTipos = 0 ;
                 SimpleDateFormat formatDateJava = new SimpleDateFormat("dd-MM-yyyy");
               
                 HSSFRichTextString richTextString ;
@@ -530,7 +531,7 @@ public void leerArchivoExel() throws IOException {
                             
                             richTextString = (HSSFRichTextString) cell.getRichStringCellValue();
 
-                            this.nombres[j] =  richTextString.getString();      System.out.println("Cargando Nombre ="+this.nombres[j]);
+                            this.nombres[j] =  richTextString.getString();          System.out.println("Cargando Nombre ="+this.nombres[j]);
                             }
                         }
                         this.nColumnas = list.size() ;                              System.out.println("Numero de campos="+this.nColumnas);
@@ -538,7 +539,7 @@ public void leerArchivoExel() throws IOException {
                     }
                      // ...........................................................................................
                     if (cnt == 1) {                                             // CARGAMOS LOS TIPOS DE LOS CAMPOS
-                          
+                        nTipos = list.size() ; 
                         for (int j = 0; j < list.size(); j++) {
 
                             Cell cell = (Cell) list.get(j);
@@ -560,11 +561,18 @@ public void leerArchivoExel() throws IOException {
                     }
                    // ...........................................................................................
                    if (cnt > 1) {                                             // CARGAMOS LOS DATOS
-                       
+                        System.out.println("------------CARGAMOS LOS DATOS -----------");
+                        if (nTipos != list.size()) {
+                            this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") -> HAY UN PROBLEMA :EL NÚMERO DE CAMPOS DEFINIDOS Y EL QUE CONTIENE LA LÍNEA DE DATOS NO COINCIDE \n" ;
+                            fProblema = 2 ;
+                        }
+                        if (fProblema != 2) {
+                            
+                        
                         for (int j = 0; j < list.size(); j++) {
 
                             Cell cell = (Cell) list.get(j);
-                            
+                           
                                                    
                             this.tablaDatos[cnt-2][j] = "";
                             // ............................................................                                           
@@ -620,12 +628,18 @@ public void leerArchivoExel() throws IOException {
 
                             }
                             }
+                        
                             
                     }
+                        
                     // ...........................................................................................
                         
                    } 
                         cnt ++;
+                   } else {             // Nos saltamos el procesamiento de esta línea y seguimos contando.
+                        cnt ++;    
+                        fProblema = 0;
+                    }
 	        }
                                   
 	       

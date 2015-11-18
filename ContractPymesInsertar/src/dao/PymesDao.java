@@ -143,6 +143,8 @@ public class PymesDao {
 				// es para cargar los datos en filas a la tabla modelo
 				model.addRow(fila);
 
+                              
+                                
 			}
 			rs.close();
 			estatuto.close();
