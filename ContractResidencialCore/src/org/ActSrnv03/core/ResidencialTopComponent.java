@@ -356,6 +356,7 @@ public final class ResidencialTopComponent extends TopComponent {
         aumentaFuente = new javax.swing.JButton();
         ListaOrden = new javax.swing.JComboBox();
         generaExelMakro = new javax.swing.JButton();
+        jTextField30 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
         jTextField40 = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
@@ -1534,6 +1535,8 @@ public final class ResidencialTopComponent extends TopComponent {
             }
         });
 
+        jTextField30.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField30.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -1543,13 +1546,15 @@ public final class ResidencialTopComponent extends TopComponent {
                 .addComponent(botonRefrescar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ListaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(ListaTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField124, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel131)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addComponent(FiltroIncidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ListaAgentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1581,7 +1586,8 @@ public final class ResidencialTopComponent extends TopComponent {
                     .addComponent(reduceFuente)
                     .addComponent(aumentaFuente)
                     .addComponent(ListaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(generaExelMakro))
+                    .addComponent(generaExelMakro)
+                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4302,6 +4308,7 @@ public final class ResidencialTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField40;
     private javax.swing.JTextField jTextField41;
@@ -5393,7 +5400,8 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
        
        private void mostrarDatosConTableModel() {
 		
-                String fProd ="";
+                String fProd  ="";
+                String fProd2 ="";
                 System.out.println("----COMIENZO EL FORMATEO ---");
            
                 DefaultTableModel model;
@@ -5467,9 +5475,9 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
                 
                 fProd = jTextField124.getText(); fProd = fProd.trim() ;
                 
+                fProd2 = jTextField30.getText(); fProd2 = fProd2.trim();
                 
-                
-		miPymesDao1.buscarContratos(model,this.plogin,this.ppassword,this.filtroEstadoSel,this.filtroFechaSel,this.filtroProvincia,this.filtroAgente,this.filtroMakro,this.filtroIncidencia,fProd);
+		miPymesDao1.buscarContratos(model,this.plogin,this.ppassword,this.filtroEstadoSel,this.filtroFechaSel,this.filtroProvincia,this.filtroAgente,this.filtroMakro,this.filtroIncidencia,fProd,fProd2);
                 
                  //Nueva instancia de la clase que contiene el formato
                 FormatoTabla formato = new FormatoTabla();

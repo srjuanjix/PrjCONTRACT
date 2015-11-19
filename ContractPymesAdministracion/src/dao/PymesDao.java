@@ -102,7 +102,7 @@ public class PymesDao {
 	 * 
 	 * @param model
 	 */
-	public void buscarContratos(DefaultTableModel model,String str1,String str2,int filtroEstado,int filtroFecha,int filtroProvincia,int filtroAgente, int filtroMakro,int filtroIncidencia,String fProd) {
+	public void buscarContratos(DefaultTableModel model,String str1,String str2,int filtroEstado,int filtroFecha,int filtroProvincia,int filtroAgente, int filtroMakro,int filtroIncidencia,String fProd,String fProd2) {
                 String str;
                 int val;
                 String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
@@ -216,7 +216,14 @@ public class PymesDao {
                    
                 }   
                 } else {
-                      strquery = strquery + " AND  Orden LIKE '"+fProd+" 00:00:00' ";                    
+                      
+                    if ( fProd2.equals("")){
+                    
+                      strquery = strquery + " AND  Orden LIKE '"+fProd+" 00:00:00' ";     
+                    } else {
+                      strquery = strquery + " AND  Orden >= '"+fProd+" 00:00:00' AND Orden <='"+fProd2+" 00:00:00' ";    
+                    }
+                      
                 }
                 switch (filtroProvincia){
                     

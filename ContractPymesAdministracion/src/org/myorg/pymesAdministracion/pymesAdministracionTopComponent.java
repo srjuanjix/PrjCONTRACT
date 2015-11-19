@@ -312,6 +312,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         jTextField31 = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
+        jCheckBox17 = new javax.swing.JCheckBox();
+        jCheckBox18 = new javax.swing.JCheckBox();
         jLabel56 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         miBarra01 = new javax.swing.JScrollPane();
@@ -329,6 +331,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         aumentaFuente = new javax.swing.JButton();
         ListaOrden = new javax.swing.JComboBox();
         generaExelMakro = new javax.swing.JButton();
+        jTextField298 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
         jTextField40 = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
@@ -1515,6 +1518,10 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         jLabel52.setForeground(new java.awt.Color(204, 204, 204));
         org.openide.awt.Mnemonics.setLocalizedText(jLabel52, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jLabel52.text")); // NOI18N
 
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox17, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jCheckBox17.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox18, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jCheckBox18.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -1567,11 +1574,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel52))
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1580,12 +1583,23 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         .addComponent(jLabel107)
                         .addGap(129, 129, 129)
                         .addComponent(jLabel47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(32, 32, 32)
                         .addComponent(jCheckBox29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox28)
+                        .addGap(10, 10, 10)
                         .addComponent(jCheckBox30)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel52))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jCheckBox17)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox18)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jCheckBox32)
                 .addContainerGap())
@@ -1619,7 +1633,9 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                             .addComponent(jLabel47)
                             .addComponent(jCheckBox28)
                             .addComponent(jCheckBox29)
-                            .addComponent(jCheckBox30))
+                            .addComponent(jCheckBox30)
+                            .addComponent(jCheckBox17)
+                            .addComponent(jCheckBox18))
                         .addGap(1, 1, 1)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -1772,6 +1788,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             }
         });
 
+        jTextField298.setText(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jTextField298.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -1785,9 +1803,11 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 .addComponent(ListaTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField124, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel131)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField298, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
                 .addComponent(FiltroIncidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ListaAgentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1819,7 +1839,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addComponent(reduceFuente)
                     .addComponent(aumentaFuente)
                     .addComponent(ListaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(generaExelMakro))
+                    .addComponent(generaExelMakro)
+                    .addComponent(jTextField298, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -5068,6 +5089,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JCheckBox jCheckBox14;
     private javax.swing.JCheckBox jCheckBox15;
     private javax.swing.JCheckBox jCheckBox16;
+    private javax.swing.JCheckBox jCheckBox17;
+    private javax.swing.JCheckBox jCheckBox18;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox28;
     private javax.swing.JCheckBox jCheckBox29;
@@ -5545,6 +5568,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField295;
     private javax.swing.JTextField jTextField296;
     private javax.swing.JTextField jTextField297;
+    private javax.swing.JTextField jTextField298;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
@@ -6566,6 +6590,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
      private void mostrarDatosConTableModel() {
 		
                 String fProd ="";
+                String fProd2 ="";
                 System.out.println("----COMIENZO EL FORMATEO ---");
            
                 DefaultTableModel model;
@@ -6632,8 +6657,9 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 		 */
                 
                 fProd = jTextField124.getText(); fProd = fProd.trim() ;
+                fProd2 = jTextField298.getText(); fProd2 = fProd2.trim() ;
                
-		miPymesDao1.buscarContratos(model,this.plogin,this.ppassword,this.filtroEstadoSel,this.filtroFechaSel,this.filtroProvincia,this.filtroAgente,this.filtroMakro,this.filtroIncidencia,fProd);
+		miPymesDao1.buscarContratos(model,this.plogin,this.ppassword,this.filtroEstadoSel,this.filtroFechaSel,this.filtroProvincia,this.filtroAgente,this.filtroMakro,this.filtroIncidencia,fProd,fProd2);
                 
                  //Nueva instancia de la clase que contiene el formato
                 FormatoTabla formato = new FormatoTabla();

@@ -563,8 +563,8 @@ public void leerArchivoExel() throws IOException {
                    if (cnt > 1) {                                             // CARGAMOS LOS DATOS
                         System.out.println("------------CARGAMOS LOS DATOS -----------");
                         if (nTipos != list.size()) {
-                            this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") -> HAY UN PROBLEMA :EL NÚMERO DE CAMPOS DEFINIDOS Y EL QUE CONTIENE LA LÍNEA DE DATOS NO COINCIDE \n" ;
-                            fProblema = 2 ;
+                            this.sLogTxt +="AVISO: FILA DATOS("+(cnt-2)+") -> HAY UN PROBLEMA :EL NÚMERO DE CAMPOS DEFINIDOS Y EL QUE CONTIENE LA LÍNEA DE DATOS NO COINCIDE ("+nTipos+"!="+list.size()+") \n" ;
+                         //   fProblema = 2 ;
                         }
                         if (fProblema != 2) {
                             
