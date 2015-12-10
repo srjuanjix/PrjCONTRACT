@@ -31,8 +31,8 @@ public class PymesDao {
 	 * @param miPyme
 	 */
     
-        public String tablaDatos[][] = new String[5000][55] ;    // Tabla  con los datos a procesar.
-        public String tablaLiquidaciones[][] = new String[5000][15] ;    // Tabla  con los datos de la liquidación
+        public String tablaDatos[][] = new String[5000][55] ;               // Tabla  con los datos a procesar.
+        public String tablaLiquidaciones[][] = new String[5000][15] ;       // Tabla  con los datos de la liquidación
         public int nRegistros = 0;
         public int nLiquida = 0;
     
@@ -107,7 +107,7 @@ public class PymesDao {
                 int val;
                 String strquery = "SELECT id_m_p,Estado,Fecha_docout,Memo,Incidencia,Orden,CUPS_Elect,CUPS_Gas,Agente,CodPostal,Municipio,Provincia,"
                         + "Direccion,Titular,NIF_CIF,Fecha_Firma_Cliente,CV,Consumo_elect_kwha,Consumo_elect_kwha_websale,Pagado,P_Fenosa,Tarifa,Campaña,"
-                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,Consumo_gas_kwha,C_servicios,Reactiva,iServicios,iPunteado,P_Fenosa_Total,Empresa_Origen,Oferta,sve,svg "
+                        + "Telefono_Cli,Per_Contacto,Explicacion,Solucion,Observaciones,Tarifa_gas,Consumo_gas_kwha,C_servicios,Reactiva,iServicios,iPunteado,P_Fenosa_Total,Empresa_Origen,Oferta,sve,svg, planes, directriz "
                         + " FROM t_makro_pymes" ;
           /*
         if (str.equals("PENDIENTE"))   this.filtroEstadoSel = 0 ;
@@ -250,7 +250,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND (Agente LIKE 'JOSE' OR Agente LIKE 'J&C') " ;
+                        strquery = strquery + " AND (Agente LIKE 'J&C') " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Agente LIKE 'ETP' " ;
@@ -259,7 +259,7 @@ public class PymesDao {
                         strquery = strquery + " AND Agente LIKE 'NADINE' " ;
                         break;
                     case 4:
-                        strquery = strquery + " AND Agente LIKE 'ELANTY' " ;
+                        strquery = strquery + " AND Agente LIKE 'EMILIO-RAQUEL' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Agente LIKE 'SERNOVEN' " ;
@@ -325,9 +325,9 @@ public class PymesDao {
 
 			while (rs.next()) {
 				// es para obtener los datos y almacenar las filas
-				Object[] fila = new Object[34];
+				Object[] fila = new Object[41];
 				// para llenar cada columna con lo datos almacenados
-				for (int i = 0; i < 34; i++) 
+				for (int i = 0; i < 41; i++) 
 					fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                                        
                                         try {
@@ -417,9 +417,10 @@ public class PymesDao {
                                         
                                          if (rs.getInt("svg")==1 && rs.getInt("sve")==1 )   tablaDatos[cnt][43]="3";                    //  dualfuel
                                         
-                                        tablaDatos[cnt][48]="0"; // Tarifa plana
-                                        tablaDatos[cnt][51]="0"; // SPP
-                                        
+                                        tablaDatos[cnt][48]="0";                                                // PLANES
+                                        if (rs.getInt("planes")==1 )      tablaDatos[cnt][48]="1";  
+                                        tablaDatos[cnt][51]="0";                                                // DIRECTRIZ
+                                        if (rs.getInt("directriz")==1 )   tablaDatos[cnt][51]="1";  
                                         
                                 cnt ++;
                                 
@@ -604,6 +605,8 @@ public class PymesDao {
                                         + "P_Fenosa = '"+miPyme.getPFenosa() + "',"
                                         + "C_servicios = '"+miPyme.getCServicios()+ "',"
                                         + "iPunteado = "+miPyme.getPunteado()+ ","
+                                        + "Planes = "+miPyme.getPlanes()+ ","
+                                        + "Directriz = "+miPyme.getDirectriz()+ ","
                                         + "P_Fenosa_Total = "+miPyme.getPagadoFenosa()
                                         + " WHERE id_m_p ="+miPyme.getIdContrato();
                         
@@ -809,7 +812,7 @@ public class PymesDao {
                 
                 
                 
-                String strquery = "SELECT Incidencia,CUPS_Elect,Titular,NIF_CIF,Consumo_elect_kwha,svg,sve,Tarifa,Oferta,Observaciones,planes,directriz FROM t_makro_pymes  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6 OR Estado=5 OR Estado=7) " ;
+                String strquery = "SELECT Incidencia,CUPS_Elect,Titular,NIF_CIF,Consumo_elect_kwha,svg,sve,Tarifa,Oferta,Observaciones,planes,directriz,Estado FROM t_makro_pymes  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6 OR Estado=5 OR Estado=7) " ;
             //    filtroEstado = 3 ;
                  
                 
@@ -849,7 +852,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J&C' " ;
+                        strquery = strquery + " AND Agente LIKE 'J&C' " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Agente LIKE 'ETP' " ;
@@ -858,7 +861,7 @@ public class PymesDao {
                         strquery = strquery + " AND Agente LIKE 'NADINE' " ;
                         break;
                     case 4:
-                        strquery = strquery + " AND Agente LIKE 'ELANTY' " ;
+                        strquery = strquery + " AND Agente LIKE 'EMILIO-RAQUEL' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Agente LIKE 'SERNOVEN' " ;
@@ -906,11 +909,11 @@ public class PymesDao {
             while (rs.next()) {
                  
                  // es para obtener los datos y almacenar las filas
-                 Object[] fila = new Object[12];
+                 Object[] fila = new Object[13];
                
                  
                 // para llenar cada columna con lo datos almacenados
-                for (int i = 0; i < 12; i++) 
+                for (int i = 0; i < 13; i++) 
                     
                     fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                   
@@ -1113,7 +1116,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J&C' " ;
+                        strquery = strquery + " AND Agente LIKE 'J&C' " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Agente LIKE 'ETP' " ;
@@ -1122,7 +1125,7 @@ public class PymesDao {
                         strquery = strquery + " AND Agente LIKE 'NADINE' " ;
                         break;
                      case 4:
-                        strquery = strquery + " AND Agente LIKE 'ELANTY' " ;
+                        strquery = strquery + " AND Agente LIKE 'EMILIO-RAQUEL' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Agente LIKE 'SERNOVEN' " ;
@@ -1360,7 +1363,7 @@ public class PymesDao {
                         strquery = strquery + "" ;
                         break;
                     case 1:
-                        strquery = strquery + " AND Agente LIKE 'JOSE' OR Agente LIKE 'J&C' " ;
+                        strquery = strquery + " AND Agente LIKE 'J&C' " ;
                         break;
                     case 2:
                         strquery = strquery + " AND Agente LIKE 'ETP' " ;
@@ -1369,7 +1372,7 @@ public class PymesDao {
                         strquery = strquery + " AND Agente LIKE 'NADINE' " ;
                         break;
                      case 4:
-                        strquery = strquery + " AND Agente LIKE 'ELANTY' " ;
+                        strquery = strquery + " AND Agente LIKE 'EMILIO-RAQUEL' " ;
                         break;
                     case 5:
                         strquery = strquery + " AND Agente LIKE 'SERNOVEN' " ;

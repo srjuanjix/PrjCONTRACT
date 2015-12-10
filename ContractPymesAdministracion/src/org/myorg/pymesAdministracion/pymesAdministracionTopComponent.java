@@ -158,7 +158,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         initComponents();
         setName(Bundle.CTL_pymesAdministracionTopComponent());
         setToolTipText(Bundle.HINT_pymesAdministracionTopComponent());
-        System.setProperty("netbeans.buildnumber", "2.0.5");
+        System.setProperty("netbeans.buildnumber", "2.0.6");
         
         System.setProperty("netbeans.projectname","CONTRACT - SERNOVEN");
 
@@ -312,8 +312,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         jTextField31 = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
-        jCheckBox17 = new javax.swing.JCheckBox();
-        jCheckBox18 = new javax.swing.JCheckBox();
+        jComboBox5 = new javax.swing.JComboBox();
         jLabel56 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         miBarra01 = new javax.swing.JScrollPane();
@@ -1518,9 +1517,12 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         jLabel52.setForeground(new java.awt.Color(204, 204, 204));
         org.openide.awt.Mnemonics.setLocalizedText(jLabel52, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jLabel52.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox17, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jCheckBox17.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox18, org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jCheckBox18.text")); // NOI18N
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DIRECTRIZ", "PLANES", "------------" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1574,7 +1576,13 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox32))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1588,20 +1596,10 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBox28)
                         .addGap(10, 10, 10)
-                        .addComponent(jCheckBox30)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel52))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jCheckBox17)
-                        .addGap(18, 18, 18)
-                        .addComponent(jCheckBox18)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox32)
+                        .addComponent(jCheckBox30)
+                        .addGap(70, 70, 70)
+                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1634,8 +1632,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                             .addComponent(jCheckBox28)
                             .addComponent(jCheckBox29)
                             .addComponent(jCheckBox30)
-                            .addComponent(jCheckBox17)
-                            .addComponent(jCheckBox18))
+                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -1858,7 +1855,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
+                .addComponent(miBarra01, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4418,7 +4415,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+            .addComponent(miBarra02, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
@@ -4675,7 +4672,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                     .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
                     .addComponent(passw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4730,7 +4727,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollPaneAreaProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(pymesAdministracionTopComponent.class, "pymesAdministracionTopComponent.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
@@ -5053,6 +5050,18 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField256ActionPerformed
 
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        
+        String str;
+        str = jComboBox5.getSelectedItem().toString()  ;
+        System.out.println("Selecciono="+str+"  -- indGen="+this.indGen);
+
+        if (str.equals("PLANES"))          {  this.tablaDatos[this.indGen][48]="1" ;  this.tablaDatos[this.indGen][51]="0"; }
+        if (str.equals("DIRECTRIZ"))       {  this.tablaDatos[this.indGen][51]="1" ;  this.tablaDatos[this.indGen][48]="0"; }
+        
+        
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox FiltroIncidencia;
     private javax.swing.JComboBox ListaAgentes;
@@ -5089,8 +5098,6 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JCheckBox jCheckBox14;
     private javax.swing.JCheckBox jCheckBox15;
     private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox28;
     private javax.swing.JCheckBox jCheckBox29;
@@ -5107,6 +5114,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;
     private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -5788,7 +5796,15 @@ public final class pymesAdministracionTopComponent extends TopComponent {
           if (this.tablaDatos[indice][43] == "2" ) jCheckBox29.setSelected(true);    //   Luz
           if (this.tablaDatos[indice][43] == "3" ) jCheckBox30.setSelected(true);    //   Dual
                        
-          
+           ind = jComboBox5.getSelectedIndex() ;
+           if ( ind == 0) {
+                this.tablaDatos[indice][51] = "1";            System.out.println("He seleccionado DIRECTRIZ ="+ind); // estado
+                this.tablaDatos[indice][48] = "0"; 
+           }
+            if ( ind == 1) {
+                this.tablaDatos[indice][48] = "1";            System.out.println("He seleccionado PLANES ="+ind); // estado
+                this.tablaDatos[indice][51] = "0"; 
+           }
           
        }
      
@@ -5933,6 +5949,9 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                         } else {
                              miPymes.setFechaDocout("NULL"); System.out.println("------ VOY A BORRAR LA FECHA MEMO");
                         }
+                        
+                        miPymes.setPlanes(Integer.parseInt(this.tablaDatos[i][48]));        // Planes
+                        miPymes.setDirectriz(Integer.parseInt(this.tablaDatos[i][51]));     // Directriz
                         
                         estadoInsert = miPymeDao.modificarContrato(miPymes,this.plogin,this.ppassword);
                         System.out.println("Registro insertado ");
@@ -6216,13 +6235,14 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             jCheckBox30.setSelected(false);
             jCheckBox32.setSelected(false);
             
+            jComboBox5.setSelectedIndex(2);         // Planes / directriz indefinido
+            
            } else {
            
            
            if (this.nRegistros >0 ) {
                 
                 System.out.println("Indice pasado ="+indice+" y el Indice de tablaLocuciones ="+this.tablaDatos[indice][32]);
-               
                 
                 ireg = indice ;
                 this.indGenReg = ireg ;
@@ -6344,6 +6364,10 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                  
                    // .........................................................  
                     
+                    if (this.tablaDatos[ireg][48].equals("1"))  jComboBox5.setSelectedIndex(1);  // PLANES
+                    if (this.tablaDatos[ireg][51].equals("1"))  jComboBox5.setSelectedIndex(0);  // DIRECTRIZ
+                    
+                   // ......................................................... 
                 modelLoc = new DefaultTableModel();            // definimos el objeto tableModel
                
                 limpiaTablaLocuciones(modelLoc);
@@ -6634,7 +6658,14 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 model.addColumn("Reactiva kWha");
                 model.addColumn("iServicios");
                 model.addColumn("iPunteado");
-                
+                model.addColumn("P.FenosaTot");
+                model.addColumn("Empresa Origen");
+                model.addColumn("Oferta");
+                model.addColumn("sve");
+                model.addColumn("svg");
+                model.addColumn("Planes");
+                model.addColumn("Directriz");
+                               
                 
 		miTabla01.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		miTabla01.getTableHeader().setReorderingAllowed(false);
@@ -6898,124 +6929,97 @@ public final class pymesAdministracionTopComponent extends TopComponent {
         Cell celda;
           
         
-        String[] titulos = { "FECHA","G","L","Dual","CUPS Gas","CUPS Electricidad","Código Postal","Municipio",
-                             "Provincia","Dirección","Titular","NIF/CIF","Fecha Firma Cliente","Consumo Gas kWh/año","Consumo Electricidad kWh/año",
-                             "Tarifa Gas","Tarifa Electricidad",
-                             "SVGComplet","SVGXpres","SVG Básico","SVELECTRIC XPRES","SVGHOGAR","SVG CON CALEFACCION","SVG C SIN CALEFACCION","TARIFA PLANA","SPP",
-                             "OBSERVACIONES.","INCIDENCIA","EXPLICACION","telefono","Estado","Incidencia","COMERCIAL","AGENTE" };                                                                   // 24 CAMPOS
+        String[] titulos = { "ID","Estado","Docout","Memo/R&P","Incidencia","Orden","CUPS Elect","CUPS gas","Agente",
+                             "Cod Postal","Municipio","Provincia","Direccion","Titular","NIF-CIF","Fecha Firma",
+                             "CV","Cons.CTO.kWha",
+                             "Cons.WEBS.kWha","Pagado","P. Fenosa","Tarifa","Campaña","Telefono","Pers.Contacto","Problema","Solucion",
+                             "Observaciones","Tarifa gas","Consumo gas","C_servicios","Reactiva kWha","iServicios","iPunteado","P.FenosaTot",
+                             "Empresa Origen","Oferta","sve","svg","Planes","Directriz"};                                                                   // 24 CAMPOS
         
         String str,L,G,D="" ;
-        
-
-        
-
+                
         // Creamos el encabezado
 
         for (i = 0; i < titulos.length; i++) {
               celda = fila.createCell(i);
               celda.setCellValue(titulos[i]);
         }
-
        
         for (j=0; j<this.nRegistros; j++) {
-           
-           if  (!this.tablaDatos[j][4].equals("") ) L="X"; else L = "" ;
-           
-           if  (!this.tablaDatos[j][3].equals("") ) G="X"; else G = "" ;
-           
-           if  (!this.tablaDatos[j][3].equals("") && !this.tablaDatos[j][4].equals("") ) {L=""; G = ""; D="X";} else D = "" ;
-           
-                 
-           // Nueva fila 
+                                  
            i = 0 ;
            fila = hoja.createRow(j+1);
              
            System.out.println("Inserto celdas Exel en fila  ="+j);
            
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][2]);      i++;        // FECHA PROD
-           
-           celda = fila.createCell(i);  celda.setCellValue(G);                          i++;        // G
-           celda = fila.createCell(i);  celda.setCellValue(L);                          i++;        // L
-           celda = fila.createCell(i);  celda.setCellValue(D);                          i++;        // DUAL           
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][3]);      i++;        // Cups Gas
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][4]);      i++;        // Cups Luz        
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][30]);     i++;        // id
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][0]);      i++;        // Estado
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][39]);      i++;        // Docout            
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][30]);      i++;        // Memo/R&P
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][1]);      i++;        // Incidencia      
        
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][5]);      i++;        // Codigo postal
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][6]);      i++;        // municipio
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][7]);      i++;        // provincia
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][8]);      i++;        // direccion
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][9]);      i++;        // titular           
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][10]);     i++;        // Nif/CIF
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][11]);     i++;        // Fecha de firma de cliente
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][2]);      i++;        // Orden
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][4]);      i++;        // CUPS Elect
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][3]);      i++;        // CUPS gas
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][17]);      i++;        // Agente
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][5]);      i++;        // Cod Postal           
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][6]);     i++;        // Municipio
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][7]);     i++;        // Provincia
            
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][13]);     i++;        // consumo gas  kwha
-           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][12]);     i++;        // consumo electrico  kwha
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][8]);     i++;        // Direccion
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][9]);     i++;        // Titular
            
            
-           celda = fila.createCell(i);  celda.setCellValue(0);                          i++;        // tarifa gas
-           celda = fila.createCell(i);  celda.setCellValue(0);                          i++;        // tarifa electricidad
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][10]);    i++;        // NIF-CIF
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][11]);    i++;        // Fecha Firma
            
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][41]);    i++;        // cv
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][12]);    i++;        // Cons.CTO.kWha
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][13]);    i++;        // Cons.WEBS.kWha
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][37]);    i++;        // Pagado
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][38]);    i++;        // P. Fenosa
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][28]);    i++;        // Tarifa
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][35]);    i++;        // Campaña
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][16]);    i++;        // Telefono
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][36]);    i++;        // Pers.Contacto
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][20]);    i++;        // Problema
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][21]);    i++;        // Solucion
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][15]);    i++;        // Observaciones
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][29]);    i++;        // Tarifa gas
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][14]);    i++;        // Consumo gas
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][33]);    i++;        // C_servicios
+           celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][46]);    i++;        // Reactiva kWha
            
            celda = fila.createCell(i);  
-           if (this.tablaDatos[j][34].equals("1") )  celda.setCellValue("X"); else 
-                                                         celda.setCellValue("");         i++;        // SVGComplet
+           if (this.tablaDatos[j][43].equals("1") )  celda.setCellValue("X"); else 
+                                                         celda.setCellValue("");         i++;        // iServicios
         
            celda = fila.createCell(i);  
-           if (this.tablaDatos[j][35].equals("1") )  celda.setCellValue("X"); else 
-                                                         celda.setCellValue("");         i++;        // SVGXpres
+           if (this.tablaDatos[j][44].equals("1") )  celda.setCellValue("X"); else 
+                                                         celda.setCellValue("");         i++;        // iPunteado
         
-           celda = fila.createCell(i);  
-           if (this.tablaDatos[j][36].equals("1") )  celda.setCellValue("X"); else 
-                                                         celda.setCellValue("");         i++;        // SVG Básico
+            celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][45]);    i++;        // P.FenosaTot
+            celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][42]);    i++;        // Empresa Origen                                             
+            celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][34]);    i++;        // Oferta                                             
+                        
+            
+                                                         celda = fila.createCell(i);  
+           if (this.tablaDatos[j][43].equals("2") )  celda.setCellValue("X"); else 
+                                                         celda.setCellValue("");         i++;        // sve
         
           celda = fila.createCell(i);  
-          if (this.tablaDatos[j][37].equals("1") )   celda.setCellValue("X"); else 
-                                                         celda.setCellValue("");         i++;        //SVELECTRIC XPRES
+          if (this.tablaDatos[j][43].equals("1") )   celda.setCellValue("X"); else 
+                                                         celda.setCellValue("");         i++;        // svg
         
-          celda = fila.createCell(i);  
-          if (this.tablaDatos[j][38].equals("1") )  celda.setCellValue("X"); else 
-                                                        celda.setCellValue("");          i++;         //SVGHOGAR
-                                                        
-          celda = fila.createCell(i);  
-          if (this.tablaDatos[j][45].equals("1") )  celda.setCellValue("X"); else 
-                                                    celda.setCellValue("");          i++;         //SVG C CON CALEFACCIÓN                                                       
-                                                        
-          celda = fila.createCell(i);  
-          if (this.tablaDatos[j][46].equals("1") )  celda.setCellValue("X"); else 
-                                                    celda.setCellValue("");          i++;         //SVG C SIN CALEFACCIÓN                                                    
-                                                        
           celda = fila.createCell(i);  
           if (this.tablaDatos[j][48].equals("1") )  celda.setCellValue("X"); else 
-                                                    celda.setCellValue("");          i++;         //TARIFA PLANA                                                 
+                                                        celda.setCellValue("");          i++;         // Planes
                                                         
           celda = fila.createCell(i);  
           if (this.tablaDatos[j][51].equals("1") )  celda.setCellValue("X"); else 
-                                                    celda.setCellValue("");          i++;         //SPP                                             
-                                                    
-                                
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][15]);      i++;        // observaciones  
+                                                    celda.setCellValue("");          i++;           //  Directriz                                                   
+                                                        
           
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][20]);      i++;        // INCIDENCIA  
-          
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][21]);      i++;        // EXPLICACION/SOLUCION  
-          
-          
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][16]);      i++;        // telefono
-       
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][0]);       i++;        // estado
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][1]);       i++;        // incidencia         
-          
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][41]);       i++;        // COMERCIAL         
-          celda = fila.createCell(i);  celda.setCellValue(this.tablaDatos[j][17]);       i++;        // AGENTE         
-            
-             
-             /*
-              for (i = 0; i < datos.length; i++) {
-                        celda = fila.createCell(i);
-                        celda.setCellValue(datos[i]);
-              }  
-            */
-            
         }
        
           
@@ -7110,8 +7114,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 
 
             String[] titulos = { "idColor","CUPSELEC","TITULAR","CIF/NIF",
-                                 "CONSUMO kwh","SVG","SVE","TARIFA","OFERTA",
-                                 "OBSERVACIONES","PLANES","DIRECTRIZ" };                                                                  
+                                 "CONSUMO kwh","TARIFA","OFERTA","SVG","SVE",
+                                 "OBSERVACIONES","PLANES","DIRECTRIZ","ESTADO" };                                                                  
            
            
             // Creamos el encabezado
@@ -7134,7 +7138,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 
                
                col1 = String.valueOf(miTablaLiquida.getValueAt(j, 0)) ;     //idcolor
-               col2 = (String) miTablaLiquida.getValueAt(j, 1);             // cups gas
+               col2 = (String) miTablaLiquida.getValueAt(j, 1);             // cups 
                col3 = (String) miTablaLiquida.getValueAt(j, 2);             // Titular
                col4 = (String) miTablaLiquida.getValueAt(j, 3);             // cifnif
                col5 = String.valueOf(miTablaLiquida.getValueAt(j, 4)) ;     // consumo
@@ -7145,22 +7149,24 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                col10 = (String) miTablaLiquida.getValueAt(j, 9);             // observaciones
                col11 = String.valueOf(miTablaLiquida.getValueAt(j, 10));             // Planes
                col12 = String.valueOf(miTablaLiquida.getValueAt(j, 11));             // Directriz
+               col13 = String.valueOf(miTablaLiquida.getValueAt(j, 12));             // Estado
                              
                // ....................................................................................
                
-               celda = fila.createCell(i);  celda.setCellValue(col1);      i++;        // 
+               celda = fila.createCell(i);  celda.setCellValue(col1);      i++;        // idcolor
                
-               celda = fila.createCell(i);  celda.setCellValue(col2);      i++;   
-               celda = fila.createCell(i);  celda.setCellValue(col3);      i++;        // 
-               celda = fila.createCell(i);  celda.setCellValue(col4);      i++;        // 
-               celda = fila.createCell(i);  celda.setCellValue(col5);      i++;        // 
-               celda = fila.createCell(i);  celda.setCellValue(col6);      i++;        //
-               celda = fila.createCell(i);  celda.setCellValue(col7);      i++;        //      
-               celda = fila.createCell(i);  celda.setCellValue(col8);      i++;        //
-               celda = fila.createCell(i);  celda.setCellValue(col9);      i++;        // 
-               celda = fila.createCell(i);  celda.setCellValue(col10);      i++;        //
-               celda = fila.createCell(i);  celda.setCellValue(col11);      i++;        //
-               celda = fila.createCell(i);  celda.setCellValue(col12);      i++;        //
+               celda = fila.createCell(i);  celda.setCellValue(col2);      i++;         // cups 
+               celda = fila.createCell(i);  celda.setCellValue(col3);      i++;        // Titular
+               celda = fila.createCell(i);  celda.setCellValue(col4);      i++;        // cifnif
+               celda = fila.createCell(i);  celda.setCellValue(col5);      i++;        // consumo
+               celda = fila.createCell(i);  celda.setCellValue(col8);      i++;        // tarifa
+               celda = fila.createCell(i);  celda.setCellValue(col9);      i++;        // oferta    
+               celda = fila.createCell(i);  celda.setCellValue(col6);      i++;        // svg
+               celda = fila.createCell(i);  celda.setCellValue(col7);      i++;        // sve
+               celda = fila.createCell(i);  celda.setCellValue(col10);      i++;        // observaciones
+               celda = fila.createCell(i);  celda.setCellValue(col11);      i++;        // Planes
+               celda = fila.createCell(i);  celda.setCellValue(col12);      i++;        // Directriz
+               celda = fila.createCell(i);  celda.setCellValue(col13);      i++;        // Estado
                   
             }
 
@@ -7255,6 +7261,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 model.addColumn("OBSERVACIONES");
                 model.addColumn("PLANES");
                 model.addColumn("DIRECTRIZ");
+                model.addColumn("ESTADO");
                
 		miTablaLiquida.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		miTablaLiquida.getTableHeader().setReorderingAllowed(false);

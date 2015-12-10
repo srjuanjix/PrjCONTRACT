@@ -315,7 +315,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
 
         jTextField9.setText(org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jTextField9.text")); // NOI18N
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PLANES", "DIRECTRIZ" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DIRECTRIZ", "PLANES" }));
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(InsertarPymesTopComponentTopComponent.class, "InsertarPymesTopComponentTopComponent.jCheckBox28.text")); // NOI18N
 
@@ -604,20 +604,21 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(24, 24, 24)
-                                        .addComponent(jLabel108))
-                                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel138, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel108)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel138, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jLabel35)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel13)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField74)
@@ -628,30 +629,26 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                                 .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(47, 47, 47))
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextField23, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel21Layout.createSequentialGroup()
                                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(22, 22, 22)
                                         .addComponent(actuaMunicipio))
-                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel21Layout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(61, 124, Short.MAX_VALUE))))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(jLabel35)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(jTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -660,13 +657,10 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel35))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
@@ -689,10 +683,10 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                     .addComponent(jLabel138))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel35)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
@@ -1384,7 +1378,10 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
     }//GEN-LAST:event_jCheckBox29ActionPerformed
 
     private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
-        // TODO add your handling code here:
+       
+        System.out.println("Acabo de capturar el evento boton Modificar!!!");       
+        ActualizarTablaFormulario();
+       
     }//GEN-LAST:event_botonModificarActionPerformed
 
     private void botonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoActionPerformed
@@ -1614,7 +1611,20 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             this.tablaDatos[indice][30] =  jTextField31.getText();   // Pagado Fenosa Numero
             this.tablaDatos[indice][31] =  jTextField6.getText();   // reactiva
             this.tablaDatos[indice][32] =  jTextField2.getText();   // consumo kwha gas
-           
+            this.tablaDatos[indice][33] =  jTextField1.getText();   // C servicios
+               
+            // ....................................................................... 
+                       
+            if (jCheckBox28.isSelected()) {  this.tablaDatos[indice][34] = "1";} else { this.tablaDatos[indice][34] = "0"; }    //   SWG
+            if (jCheckBox29.isSelected()) {  this.tablaDatos[indice][35] = "1";} else { this.tablaDatos[indice][35] = "0"; }    //   SWE
+            // .........................................................  
+                    
+             if (this.tablaDatos[indice][36].equals("1"))  jComboBox5.setSelectedIndex(1);  // PLANES
+             if (this.tablaDatos[indice][37].equals("1"))  jComboBox5.setSelectedIndex(0);  // DIRECTRIZ
+                    
+            // ......................................................... 
+            
+            
        }
       // -------------------------------------------------------------------------------------------------------------------------
         public final void modificarArbolNuevos() {
@@ -1783,7 +1793,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             jTextArea1.setText(this.tablaDatos[indice][18]);           // observaciones
             jTextArea2.setText(this.tablaDatos[indice][19]);           // incidencia
             jTextArea3.setText(this.tablaDatos[indice][20]);           // solucion
-            jTextField2.setText(this.tablaDatos[indice][21]);          // cv comercial
+            jTextField74.setText(this.tablaDatos[indice][21]);          // cv comercial
             
             jTextField24.setText(this.tablaDatos[indice][22]);           // fecha_memo_out
             jTextField8.setText(this.tablaDatos[indice][23]);           // empresa origen
@@ -1796,7 +1806,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             jTextField31.setText(this.tablaDatos[indice][30]);          // Pagado Fenosa Numero 
             jTextField6.setText(this.tablaDatos[indice][31]);            // reactiva
             jTextField2.setText(this.tablaDatos[indice][32]);            // consumo kwha gas
-             jTextField1.setText(this.tablaDatos[indice][33]);          // C servicios
+            jTextField1.setText(this.tablaDatos[indice][33]);          // C servicios
                 
             
             ind = Integer.parseInt(this.tablaDatos[indice][14]) ;            
@@ -1813,6 +1823,15 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
              if (this.tablaDatos[indice][35].equals("1")) jCheckBox28.setSelected(true); else jCheckBox28.setSelected(false);
                     
             // .............................................................................
+             
+            // .........................................................  
+                    
+             if (this.tablaDatos[indice][36].equals("1"))  jComboBox5.setSelectedIndex(1);  // PLANES
+             if (this.tablaDatos[indice][37].equals("1"))  jComboBox5.setSelectedIndex(0);  // DIRECTRIZ
+                    
+            // .........................................................   
+             
+             
                        
             this.idt = indice ;
             
@@ -1927,6 +1946,8 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
             this.tablaDatos[indice][31] =  jTextField6.getText();   // reactiva
             this.tablaDatos[indice][32] =  jTextField2.getText();   // consumo kwha gas
             this.tablaDatos[indice][33] =  jTextField1.getText();   // C servicios
+            
+            
            
             // ....................................................................... 
             
@@ -1936,9 +1957,13 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
        
             // ..............................................
            
-            int sel = jComboBox5.getSelectedIndex()   ;
-            this.tablaDatos[indice][36] = String.valueOf(sel);       // Planes / Directriz
-            
+            int sel = jComboBox5.getSelectedIndex()   ; 
+            if (sel == 0 ) {
+                this.tablaDatos[indice][36] = "0";  this.tablaDatos[indice][37] = "1";  System.out.println("selecciono directriz") ;     // Planes / Directriz
+            }
+            if (sel == 1 ) {
+                this.tablaDatos[indice][36] = "1";  this.tablaDatos[indice][37] = "0";  System.out.println("selecciono planes") ;       // Planes / Directriz
+            }
             // ..............................................
             
             for ( j=0; j<50; j++) 
@@ -1972,9 +1997,9 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                         this.tablaDatos[i][1] = "0" ;                                   // incidencia
                         // ..............................................
                         
-                        this.tablaDatos[i][15] =jTextArea1.getText();                               // observaciones
+                        this.tablaDatos[i][18] =jTextArea1.getText();                               // observaciones
                         this.tablaDatos[i][20] =jTextArea3.getText();                               // incidencia
-                        this.tablaDatos[i][21] =jTextArea2.getText();                               // solucion
+                        this.tablaDatos[i][19] =jTextArea2.getText();                               // solucion
                         
                         // ..............................................
                          
@@ -1998,6 +2023,7 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                          }
                        
                         miPymes.setAgente(this.tablaDatos[i][5]);
+                        miPymes.setAgenteCom(this.tablaDatos[i][21]); System.out.println("AGente comercial="+this.tablaDatos[i][21]);
                         miPymes.setSwg(G);
                         miPymes.setSwe(L);
                                                  
@@ -2066,6 +2092,11 @@ public final class InsertarPymesTopComponentTopComponent extends TopComponent {
                         } else {
                              miPymes.setFechaDocout("NULL"); System.out.println("------ VOY A BORRAR LA FECHA DOC OUT");
                         }
+                        
+                          
+                        miPymes.setPlanes(Integer.parseInt(this.tablaDatos[i][36]));        // Planes
+                        miPymes.setDirectriz(Integer.parseInt(this.tablaDatos[i][37]));     // Directriz
+                        
                         
                       
                         System.out.println("Registro insertado ");

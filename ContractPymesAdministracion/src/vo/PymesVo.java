@@ -67,6 +67,37 @@ public class PymesVo {
         private String empresaOrigen;
         private String oferta;
         
+        private Integer planes;
+        private Integer directriz;
+         
+        
+        /**
+	 * @return the planes
+	 */
+	public Integer getPlanes() {
+		return planes;
+	}
+	/**
+	 * @param id_m_p the id_m_p to set
+	 */
+	public void setPlanes(Integer planes) {
+		this.planes = planes;
+	}
+        
+        /**
+	 * @return the directriz
+	 */
+	public Integer getDirectriz() {
+		return directriz;
+	}
+	/**
+	 * @param id_m_p directriz
+	 */
+	public void setDirectriz(Integer directriz) {
+		this.directriz = directriz;
+	}
+        
+        
 	/**
 	 * @return the idContrato
 	 */
