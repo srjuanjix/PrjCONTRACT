@@ -121,7 +121,7 @@ public class PymesDao {
                         strquery = strquery + " WHERE Estado = 2" ;            
                         break;       
                     case 3:
-                        strquery = strquery + " WHERE Estado <= 6" ; 
+                        strquery = strquery + " WHERE Estado <= 10" ; 
                         break; 
                     case 4:
                         strquery = strquery + " WHERE Estado = 3" ; 

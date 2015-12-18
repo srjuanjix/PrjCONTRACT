@@ -315,14 +315,15 @@
                 <Component class="javax.swing.JComboBox" name="jComboBox4">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
+                      <StringArray count="8">
                         <StringItem index="0" value="PENDIENTE"/>
                         <StringItem index="1" value="DOCOUT"/>
                         <StringItem index="2" value="CERTIFICADO"/>
                         <StringItem index="3" value="-     KO      -"/>
                         <StringItem index="4" value="VALIDADO"/>
-                        <StringItem index="5" value="ERROR WEBSALES"/>
-                        <StringItem index="6" value="DECOMISIONADO"/>
+                        <StringItem index="5" value="................."/>
+                        <StringItem index="6" value="ERROR WEBSALES"/>
+                        <StringItem index="7" value="DECOMISIONADO"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1076,6 +1077,9 @@
                           <ResourceString bundle="org/ActSrnv03/core/Bundle.properties" key="ResidencialTopComponent.jTextField7.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField74">
                     </Component>

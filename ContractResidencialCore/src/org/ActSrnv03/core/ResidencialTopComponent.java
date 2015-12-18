@@ -706,7 +706,7 @@ public final class ResidencialTopComponent extends TopComponent {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "BLANCO", "AMARILLO", "NARANJA", "ROJO", "VERDE", "MORADO", "AZUL" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "DOCOUT", "CERTIFICADO", "-     KO      -", "VALIDADO", "ERROR WEBSALES", "DECOMISIONADO" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PENDIENTE", "DOCOUT", "CERTIFICADO", "-     KO      -", "VALIDADO", ".................", "ERROR WEBSALES", "DECOMISIONADO" }));
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBox28, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jCheckBox28.text")); // NOI18N
 
@@ -1004,6 +1004,11 @@ public final class ResidencialTopComponent extends TopComponent {
         org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel13.text")); // NOI18N
 
         jTextField7.setText(org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jTextField7.text")); // NOI18N
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel20, org.openide.util.NbBundle.getMessage(ResidencialTopComponent.class, "ResidencialTopComponent.jLabel20.text")); // NOI18N
 
@@ -2619,7 +2624,6 @@ public final class ResidencialTopComponent extends TopComponent {
                             .addComponent(botonGeneraExelLiquida)
                             .addComponent(jButton1)))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel71)
@@ -3954,6 +3958,10 @@ public final class ResidencialTopComponent extends TopComponent {
     private void jTextField138ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField138ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField138ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox FiltroIncidencia;
@@ -5805,7 +5813,7 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
 
             String[] titulos = { "Contrato a devolver","Nombre","Localidad","Telefono","Gas","Luz","Dual",
                                  "SVGComplet","SVGXpres","SVG Básico","SVELECTRIC XPRES","SVGHOGAR","SVG CON CALEFACCION","SVG C SIN CALEFACCION","TARIFA PLANA","SPP",
-                                 "Comercial","OBSERVACIONES" };                                                                   // 13 CAMPOS
+                                 "Comercial","Agente","OBSERVACIONES" };                                                                   // 13 CAMPOS
 
             String str,L,G,D="" ;
 
@@ -5882,7 +5890,8 @@ private String mostrarArchivo(File abre) throws FileNotFoundException, IOExcepti
 
               System.out.println("Datos[j][41] = "+Datos[j][41]);
                                                             
-              celda = fila.createCell(i);  celda.setCellValue(Datos[j][41]);      i++;        // comercial     // 17 
+              celda = fila.createCell(i);  celda.setCellValue(Datos[j][41]);      i++;        // comercial     // 
+              celda = fila.createCell(i);  celda.setCellValue(Datos[j][17]);      i++;        // Agente        // 17 
               celda = fila.createCell(i);  celda.setCellValue(Datos[j][15]);      i++;        // observaciones  
 
             }

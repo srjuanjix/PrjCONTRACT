@@ -7082,7 +7082,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
     // -----------------------------------------------------------------------------------------------------------
        public void GenerarExelLiquida(){
            
-        String col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11,col12,col13,col14,col15,col16,col17 ;
+        String col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11,col12,col13,col14,col15,col16,col17, col18 ;
        
         
        
@@ -7113,7 +7113,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
             Cell celda;
 
 
-            String[] titulos = { "idColor","CUPSELEC","TITULAR","CIF/NIF",
+            String[] titulos = { "idColor","CUPSELEC","CUPS GAS","TITULAR","CIF/NIF",
                                  "CONSUMO kwh","TARIFA","OFERTA","SVG","SVE",
                                  "OBSERVACIONES","PLANES","DIRECTRIZ","ESTADO" };                                                                  
            
@@ -7139,6 +7139,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                
                col1 = String.valueOf(miTablaLiquida.getValueAt(j, 0)) ;     //idcolor
                col2 = (String) miTablaLiquida.getValueAt(j, 1);             // cups 
+               col18 = (String) miTablaLiquida.getValueAt(j, 13);             // cups gas
                col3 = (String) miTablaLiquida.getValueAt(j, 2);             // Titular
                col4 = (String) miTablaLiquida.getValueAt(j, 3);             // cifnif
                col5 = String.valueOf(miTablaLiquida.getValueAt(j, 4)) ;     // consumo
@@ -7156,6 +7157,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                celda = fila.createCell(i);  celda.setCellValue(col1);      i++;        // idcolor
                
                celda = fila.createCell(i);  celda.setCellValue(col2);      i++;         // cups 
+               celda = fila.createCell(i);  celda.setCellValue(col18);      i++;         // cups  gas
                celda = fila.createCell(i);  celda.setCellValue(col3);      i++;        // Titular
                celda = fila.createCell(i);  celda.setCellValue(col4);      i++;        // cifnif
                celda = fila.createCell(i);  celda.setCellValue(col5);      i++;        // consumo
@@ -7250,8 +7252,8 @@ public final class pymesAdministracionTopComponent extends TopComponent {
 		miTablaLiquida.setModel(model);
                 
                 model.addColumn("idColor"); 
-		model.addColumn("CUPS ELECTRICIDAD");
-		model.addColumn("TITULAR");
+               model.addColumn("CUPS ELECTRICIDAD");
+               model.addColumn("TITULAR");
                 model.addColumn("CIF/NIF");
                 model.addColumn("CNSUMO (kWh)");
                 model.addColumn("SVG");               
@@ -7262,6 +7264,7 @@ public final class pymesAdministracionTopComponent extends TopComponent {
                 model.addColumn("PLANES");
                 model.addColumn("DIRECTRIZ");
                 model.addColumn("ESTADO");
+                model.addColumn("CUPS GAS");
                
 		miTablaLiquida.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		miTablaLiquida.getTableHeader().setReorderingAllowed(false);

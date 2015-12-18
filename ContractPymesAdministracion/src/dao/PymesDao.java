@@ -812,7 +812,7 @@ public class PymesDao {
                 
                 
                 
-                String strquery = "SELECT Incidencia,CUPS_Elect,Titular,NIF_CIF,Consumo_elect_kwha,svg,sve,Tarifa,Oferta,Observaciones,planes,directriz,Estado FROM t_makro_pymes  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6 OR Estado=5 OR Estado=7) " ;
+                String strquery = "SELECT Incidencia,CUPS_Elect,Titular,NIF_CIF,Consumo_elect_kwha,svg,sve,Tarifa,Oferta,Observaciones,planes,directriz,Estado,CUPS_Gas FROM t_makro_pymes  WHERE (Estado=0 OR ESTADO=1 OR Estado=3 OR Estado=6 OR Estado=5 OR Estado=7) " ;
             //    filtroEstado = 3 ;
                  
                 
@@ -909,11 +909,11 @@ public class PymesDao {
             while (rs.next()) {
                  
                  // es para obtener los datos y almacenar las filas
-                 Object[] fila = new Object[13];
+                 Object[] fila = new Object[14];
                
                  
                 // para llenar cada columna con lo datos almacenados
-                for (int i = 0; i < 13; i++) 
+                for (int i = 0; i < 14; i++) 
                     
                     fila[i] = rs.getObject(i + 1);          // es para cargar los datos en filas a la tabla modelo
                   
